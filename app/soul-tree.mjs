@@ -67,6 +67,21 @@ export async function initSoulTree() {
   }
 
   function exportPlan() {
+    const date = new Date().toISOString().slice(0, 10);
+    const suggestedName = `soul-tree-plan-${date}`;
+    const inputName = window.prompt(
+      "Filename for export (without .json)",
+      suggestedName,
+    );
+    if (inputName === null) {
+      $("soul-status").textContent = "Export canceled.";
+      return;
+    }
+    const cleanedBaseName = inputName
+      .trim()
+      .replace(/[\\/:*?"<>|\u0000-\u001F]/g, "_");
+    const baseName = cleanedBaseName || suggestedName;
+    const fileName = /\.json$/i.test(baseName) ? baseName : `${baseName}.json`;
     const payload = {
       format: "zenith-soul-tree-plan-v1",
       exportedAt: new Date().toISOString(),
@@ -77,10 +92,9 @@ export async function initSoulTree() {
       type: "application/json",
     });
     const url = URL.createObjectURL(blob);
-    const date = new Date().toISOString().slice(0, 10);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = `soul-tree-plan-${date}.json`;
+    anchor.download = fileName;
     document.body.append(anchor);
     anchor.click();
     anchor.remove();
