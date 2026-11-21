@@ -1,5 +1,5 @@
-import { marked } from "/vendor/marked.js";
-import DOMPurify from "/vendor/purify.js";
+import { marked } from "./vendor/marked.js";
+import DOMPurify from "./vendor/purify.js";
 import { realms, stages, calculateQi, filterEntries } from "./model.mjs";
 import { initSoulTree } from "./soul-tree.mjs";
 
@@ -14,6 +14,12 @@ const escape = (text) =>
   );
 const format = (number) =>
   new Intl.NumberFormat("en", { maximumFractionDigits: 2 }).format(number);
+const toAppUrl = (value) => {
+  if (!value) return value;
+  if (/^https?:\/\//.test(value)) return value;
+  const normalized = String(value).replace(/^\/+/, "");
+  return new URL(normalized, document.baseURI).toString();
+};
 let data;
 let saved = {};
 let noteRequest = 0;
@@ -79,7 +85,7 @@ function showError(error) {
 function image(entry, className = "") {
   const asset = data.images[entry.image];
   if (!asset) throw new Error(`Missing local artwork: ${entry.image}`);
-  return `<img class="${className}" src="${escape(asset.src)}" alt="" loading="lazy">`;
+  return `<img class="${className}" src="${escape(toAppUrl(asset.src))}" alt="" loading="lazy">`;
 }
 function entryButton(entry, target = false) {
   return `<button type="button" class="${target ? "target-card" : "codex-card"}" data-entry="${escape(entry.id)}">${image(entry)}<div><span class="eyebrow">${escape(labels[entry.collection])} <b class="rank">${escape(entry.rank ?? `T${entry.realmTier}`)}</b></span><h3>${escape(entry.name)}</h3><p>${target ? (entry.collection === "bloodlines" ? "Your long-term offensive lightning lineage." : "Your long-term defensive lightning foundation.") : escape(entry.description)}</p><span class="text-link">View bonuses & milestones <span aria-hidden="true">↗</span></span></div></button>`;
@@ -186,15 +192,15 @@ function renderQi() {
 async function renderNotes(topic, target = "notes") {
   const request = ++noteRequest;
   const topics = {
-    lightning: "/guide/lightning-cultivator.md",
-    demonic: "/guide/demonic-cultivator.md",
-    qi: "/guide/qi-cap.md",
-    attributes: "/guide/attributes.md",
-    reincarnation: "/guide/reincarnation.md",
-    worldmap: "/guide/worldmap.md",
-    patchnotes: "/guide/patchnotes.md",
-    "dao-points": "/dao-points.md",
-    "fast-progress": "/fast-progress.md",
+    lightning: "guide/lightning-cultivator.md",
+    demonic: "guide/demonic-cultivator.md",
+    qi: "guide/qi-cap.md",
+    attributes: "guide/attributes.md",
+    reincarnation: "guide/reincarnation.md",
+    worldmap: "guide/worldmap.md",
+    patchnotes: "guide/patchnotes.md",
+    "dao-points": "dao-points.md",
+    "fast-progress": "fast-progress.md",
   };
   const selected = Object.hasOwn(topics, topic) ? topic : "lightning";
   for (const key of Object.keys(topics)) {
@@ -202,7 +208,7 @@ async function renderNotes(topic, target = "notes") {
     if (button) button.setAttribute("aria-pressed", String(selected === key));
   }
   $(target).textContent = "Loading research…";
-  const response = await fetch(topics[selected]);
+  const response = await fetch(toAppUrl(topics[selected]));
   if (!response.ok)
     throw new Error(`Research could not load (${response.status}).`);
   const markdown = await response.text();
@@ -324,7 +330,7 @@ async function route() {
   window.scrollTo(0, 0);
 }
 async function init() {
-  const response = await fetch("/data.json");
+  const response = await fetch(toAppUrl("data.json"));
   if (!response.ok)
     throw new Error(
       "Guide data is missing. Run npm.cmd run prepare:guide, then reload.",
@@ -367,7 +373,7 @@ async function init() {
   ]) {
     const heroImage = document.createElement("img");
     heroImage.className = "hero-art";
-    heroImage.src = data.images[imagePath].src;
+    heroImage.src = toAppUrl(data.images[imagePath].src);
     heroImage.alt = "";
     $(section).querySelector(".hero").prepend(heroImage);
   }

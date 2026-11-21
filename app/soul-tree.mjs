@@ -18,9 +18,15 @@ const escape = (text) =>
       ],
   );
 const format = (number) => new Intl.NumberFormat("en").format(number);
+const toAppUrl = (value) => {
+  if (!value) return value;
+  if (/^https?:\/\//.test(value)) return value;
+  const normalized = String(value).replace(/^\/+/, "");
+  return new URL(normalized, document.baseURI).toString();
+};
 
 export async function initSoulTree() {
-  const response = await fetch("/soul-tree.json");
+  const response = await fetch(toAppUrl("soul-tree.json"));
   if (!response.ok)
     throw new Error(`Soul Tree data could not load (${response.status}).`);
   const data = await response.json();
@@ -70,7 +76,7 @@ export async function initSoulTree() {
       `${format(planCost(ranks, nodes))} DSP planned`;
     $("soul-picker").value = node.id;
     $("soul-detail").innerHTML = `
-      <img class="soul-detail-art" src="${escape(node.localImage)}" alt="">
+      <img class="soul-detail-art" src="${escape(toAppUrl(node.localImage))}" alt="">
       <span class="eyebrow">${escape(node.tree)} / ROW ${node.row ?? node.tier}</span>
       <h2>${escape(node.name)}</h2>
       <p>${escape(node.description)}</p>
@@ -162,7 +168,7 @@ export async function initSoulTree() {
     const buttons = entries
       .map((node) => {
         return `<button type="button" class="soul-node" data-soul-node="${escape(node.id)}" aria-label="${escape(node.name)}" aria-pressed="false">
-        <img src="${escape(node.localImage)}" alt="" loading="lazy"><span class="soul-node-name">${escape(node.name)}</span><span class="soul-node-rank"></span>
+        <img src="${escape(toAppUrl(node.localImage))}" alt="" loading="lazy"><span class="soul-node-name">${escape(node.name)}</span><span class="soul-node-rank"></span>
       </button>`;
       })
       .join("");
