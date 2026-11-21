@@ -943,6 +943,11 @@ body.minimal-guide main > section:not(#worldmap):not(#soul-tree) {
   stroke: #8e815c;
   stroke-width: 2;
   opacity: 0.7;
+  fill: none;
+}
+.soul-edges path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .soul-node {
   position: absolute;

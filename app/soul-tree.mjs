@@ -224,7 +224,14 @@ export async function initSoulTree() {
         (node.prereqs ?? []).map((req) => {
           const a = positions.get(req.nodeId);
           const b = positions.get(node.id);
-          return `<line x1="${a.x + width / 2}" y1="${a.y + height}" x2="${b.x + width / 2}" y2="${b.y}"/>`;
+          const startX = a.x + width / 2;
+          const startY = a.y + height;
+          const endX = b.x + width / 2;
+          const endY = b.y;
+          if (Math.abs(startX - endX) < 1)
+            return `<path d="M ${startX} ${startY} L ${endX} ${endY}"/>`;
+          const midY = Math.round(startY + (endY - startY) * 0.45);
+          return `<path d="M ${startX} ${startY} V ${midY} H ${endX} V ${endY}"/>`;
         }),
       )
       .join("");
