@@ -1,25 +1,3 @@
-const tierBranchPointRequirements = Object.freeze({
-  2: 5,
-  3: 10,
-});
-
-export function requiredBranchPoints(node) {
-  return tierBranchPointRequirements[node.tier] ?? 0;
-}
-
-export function branchPoints(node, ranks, nodes) {
-  let total = 0;
-  for (const candidate of nodes.values()) {
-    if (
-      candidate.tree === node.tree &&
-      candidate.branch === node.branch &&
-      candidate.tier < node.tier
-    )
-      total += ranks[candidate.id] ?? 0;
-  }
-  return total;
-}
-
 function effectiveRequiredRanks(req, parent) {
   if (!parent || parent.maxRanks === 0) return req.ranks;
   return Math.min(req.ranks, parent.maxRanks);
@@ -71,7 +49,7 @@ export function validateTree(entries) {
 }
 
 export function missingPrerequisites(node, ranks, nodes) {
-  const missing = (node.prereqs ?? [])
+  return (node.prereqs ?? [])
     .filter((req) => {
       const parent = nodes.get(req.nodeId);
       const required = effectiveRequiredRanks(req, parent);
@@ -85,19 +63,6 @@ export function missingPrerequisites(node, ranks, nodes) {
         name: parent.name,
       };
     });
-  const requiredPoints = requiredBranchPoints(node);
-  if (requiredPoints > 0) {
-    const spentPoints = branchPoints(node, ranks, nodes);
-    if (spentPoints < requiredPoints) {
-      missing.push({
-        kind: "branch_points",
-        name: `${node.branch} branch points`,
-        ranks: requiredPoints,
-        current: spentPoints,
-      });
-    }
-  }
-  return missing;
 }
 
 export function nextCost(node, rank) {

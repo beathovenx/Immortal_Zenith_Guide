@@ -1,11 +1,9 @@
 import {
-  branchPoints,
   canRemoveRank,
   fitTreeScale,
   missingPrerequisites,
   nextCost,
   planCost,
-  requiredBranchPoints,
   validatePlan,
   validateTree,
 } from "./soul-tree-model.mjs";
@@ -138,16 +136,6 @@ export async function initSoulTree() {
           };
         })
       : [];
-    const requiredPoints = requiredBranchPoints(node);
-    if (requiredPoints > 0) {
-      const spentPoints = branchPoints(node, ranks, nodes);
-      requirements.push({
-        name: `${node.branch} branch points`,
-        ranks: requiredPoints,
-        current: spentPoints,
-        met: spentPoints >= requiredPoints,
-      });
-    }
     $("soul-spent").textContent =
       `${format(planCost(ranks, nodes))} DSP planned`;
     $("soul-picker").value = node.id;

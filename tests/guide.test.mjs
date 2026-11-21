@@ -4,13 +4,11 @@ import fs from "node:fs/promises";
 import { server } from "../tools/serve-guide.mjs";
 import { calculateQi, filterEntries, stages } from "../app/model.mjs";
 import {
-  branchPoints,
   canRemoveRank,
   fitTreeScale,
   missingPrerequisites,
   nextCost,
   planCost,
-  requiredBranchPoints,
   validatePlan,
   validateTree,
 } from "../app/soul-tree-model.mjs";
@@ -320,31 +318,6 @@ test("Fast progression budgets match Soul Tree prerequisites and costs", async (
             changed = true;
           }
         }
-        const requiredPoints = requiredBranchPoints(node);
-        if (requiredPoints > 0) {
-          let deficit = requiredPoints - branchPoints(node, normalized, nodes);
-          if (deficit > 0) {
-            const candidates = [...nodes.values()]
-              .filter(
-                (candidate) =>
-                  candidate.tree === node.tree &&
-                  candidate.branch === node.branch &&
-                  candidate.tier < node.tier,
-              )
-              .sort((a, b) => a.tier - b.tier || a.col - b.col);
-            for (const candidate of candidates) {
-              if (deficit <= 0) break;
-              const current = normalized[candidate.id] ?? 0;
-              const max =
-                candidate.maxRanks === 0 ? current + deficit : candidate.maxRanks;
-              const add = Math.min(deficit, Math.max(0, max - current));
-              if (add <= 0) continue;
-              normalized[candidate.id] = current + add;
-              deficit -= add;
-              changed = true;
-            }
-          }
-        }
       }
       if (!changed) break;
     }
@@ -416,15 +389,6 @@ test("Soul Tree snapshot resolves prerequisite paths and plans rank costs", asyn
       nodes,
     )[0].ranks,
     prereq.ranks,
-  );
-  const lifespanGain = nodes.get("lifespan_gain");
-  const branchMissing = missingPrerequisites(
-    lifespanGain,
-    { qi_gen_rate: 1, start_lifespan: 1 },
-    nodes,
-  );
-  assert(
-    branchMissing.some((item) => item.kind === "branch_points" && item.ranks === 5),
   );
   const plan = { [prereq.nodeId]: prereq.ranks, soul_wandering: 1 };
   validatePlan(plan, nodes);
