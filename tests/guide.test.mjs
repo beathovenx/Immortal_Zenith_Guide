@@ -241,7 +241,7 @@ test("World map guide is available with dedicated navigation", async () => {
     "World map tier reference",
     "Jadebrook Village",
     "World's End Market",
-    "/assets/worldmap-tier-reference.webp",
+    "assets/worldmap-tier-reference.webp",
   ])
     assert(guide.includes(phrase), phrase);
   const index = await (await fetch(base + "/")).text();

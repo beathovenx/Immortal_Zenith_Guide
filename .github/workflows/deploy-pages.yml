@@ -33,10 +33,17 @@ jobs:
       - name: Prepare Pages artifact
         run: npm run prepare:pages
 
+      - name: Pack Pages artifact
+        run: |
+          tar --directory app -cf github-pages.tar .
+          gzip -9 github-pages.tar
+
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
-          path: app
+          name: github-pages
+          path: github-pages.tar.gz
+          if-no-files-found: error
 
   deploy:
     environment:

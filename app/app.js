@@ -214,6 +214,11 @@ async function renderNotes(topic, target = "notes") {
   const markdown = await response.text();
   if (request !== noteRequest) return;
   $(target).innerHTML = DOMPurify.sanitize(marked.parse(markdown));
+  for (const image of $(target).querySelectorAll("img[src]")) {
+    const src = image.getAttribute("src");
+    if (!src || /^https?:\/\//.test(src)) continue;
+    image.src = toAppUrl(src);
+  }
   for (const anchor of $(target).querySelectorAll("a[href]")) {
     const href = anchor.getAttribute("href");
     if (href === "qi-cap.md") anchor.href = "#library/qi";
@@ -486,9 +491,10 @@ async function init() {
     (event) => {
       if (event.target instanceof HTMLImageElement) {
         event.target.classList.add("image-failed");
+        const failed = event.target.currentSrc || event.target.src || "(unknown)";
         showError(
           new Error(
-            "A local game image could not load. Run prepare:guide to restore the artwork.",
+            `A local game image could not load: ${failed}`,
           ),
         );
       }
