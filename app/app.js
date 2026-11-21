@@ -237,14 +237,14 @@ async function renderNotes(topic, target = "notes") {
   }
 }
 async function route() {
-  const [requested = "worldmap", topic] = location.hash.slice(1).split("/");
+  const [requested = "soul-tree", topic] = location.hash.slice(1).split("/");
   if (requested === "content") {
     $("content").focus();
     return;
   }
   const section = ["worldmap", "soul-tree"].includes(requested)
     ? requested
-    : "worldmap";
+    : "soul-tree";
   for (const id of [
     "overview",
     "progression",
@@ -296,7 +296,7 @@ async function route() {
 }
 async function init() {
   document.body.classList.add("minimal-guide");
-  if (!location.hash) location.hash = "#worldmap";
+  if (!location.hash) location.hash = "#soul-tree";
   const response = await fetch(toAppUrl("data.json"));
   if (!response.ok)
     throw new Error(
