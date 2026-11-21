@@ -354,85 +354,95 @@
             Explore every node and plan ranks without changing your character.
           </p>
         </div>
-        <div class="soul-toolbar">
-          <div class="soul-tabs" aria-label="Soul Tree branch">
-            <button
-              type="button"
-              data-soul-tree="cultivation"
-              aria-pressed="true"
+        <div class="soul-shell">
+          <section class="soul-panel soul-panel-controls">
+            <div class="soul-toolbar">
+              <div class="soul-tabs" aria-label="Soul Tree branch">
+                <button
+                  type="button"
+                  data-soul-tree="cultivation"
+                  aria-pressed="true"
+                >
+                  Cultivation
+                </button>
+                <button
+                  type="button"
+                  data-soul-tree="combat"
+                  aria-pressed="false"
+                >
+                  Combat
+                </button>
+                <button
+                  type="button"
+                  data-soul-tree="exploration"
+                  aria-pressed="false"
+                >
+                  Exploration
+                </button>
+                <button
+                  type="button"
+                  data-soul-tree="crafting"
+                  aria-pressed="false"
+                >
+                  Crafting
+                </button>
+              </div>
+              <strong id="soul-spent">0 DSP planned</strong>
+            </div>
+            <div class="soul-controls">
+              <label class="soul-node-picker"
+                >Find a node
+                <select id="soul-picker"></select
+              ></label>
+              <div class="soul-zoom" aria-label="Tree zoom">
+                <button id="soul-zoom-out" type="button" aria-label="Zoom out">
+                  −
+                </button>
+                <span id="soul-zoom-value">Fit</span>
+                <button
+                  id="soul-zoom-in"
+                  type="button"
+                  aria-label="Zoom in, up to fit"
+                >
+                  +
+                </button>
+              </div>
+              <div class="soul-plan-actions">
+                <button id="soul-reset" class="button" type="button">
+                  Clear plan
+                </button>
+                <button id="soul-export" class="button" type="button">
+                  Export plan
+                </button>
+                <button id="soul-import" class="button" type="button">
+                  Import plan
+                </button>
+              </div>
+            </div>
+            <p id="soul-snapshot" class="muted"></p>
+            <p id="soul-status" class="muted" role="status"></p>
+          </section>
+          <div class="soul-layout">
+            <div
+              id="soul-viewport"
+              class="soul-viewport"
+              aria-label="Soul Tree graph"
             >
-              Cultivation
-            </button>
-            <button type="button" data-soul-tree="combat" aria-pressed="false">
-              Combat
-            </button>
-            <button
-              type="button"
-              data-soul-tree="exploration"
-              aria-pressed="false"
-            >
-              Exploration
-            </button>
-            <button
-              type="button"
-              data-soul-tree="crafting"
-              aria-pressed="false"
-            >
-              Crafting
-            </button>
+              <div id="soul-sizer"><div id="soul-stage"></div></div>
+            </div>
+            <aside
+              id="soul-detail"
+              class="soul-detail"
+              aria-label="Selected node details"
+            ></aside>
           </div>
-          <strong id="soul-spent">0 DSP planned</strong>
         </div>
-        <div class="soul-controls">
-          <label
-            >Find a node
-            <select id="soul-picker"></select
-          ></label>
-          <div class="soul-zoom" aria-label="Tree zoom">
-            <button id="soul-zoom-out" type="button" aria-label="Zoom out">
-              −
-            </button>
-            <span id="soul-zoom-value">Fit</span>
-            <button
-              id="soul-zoom-in"
-              type="button"
-              aria-label="Zoom in, up to fit"
-            >
-              +
-            </button>
-          </div>
-          <button id="soul-reset" class="button" type="button">
-            Clear plan
-          </button>
-          <button id="soul-export" class="button" type="button">
-            Export plan
-          </button>
-          <button id="soul-import" class="button" type="button">
-            Import plan
-          </button>
-          <input
-            id="soul-import-file"
-            type="file"
-            accept="application/json,.json,text/plain,.txt"
-            hidden
-          />
-        </div>
-        <p id="soul-snapshot" class="muted"></p>
-        <p id="soul-status" class="muted" role="status"></p>
-        <div class="soul-layout">
-          <div
-            id="soul-viewport"
-            class="soul-viewport"
-            aria-label="Soul Tree graph"
-          >
-            <div id="soul-sizer"><div id="soul-stage"></div></div>
-          </div>
-          <aside
-            id="soul-detail"
-            class="soul-detail"
-            aria-label="Selected node details"
-          ></aside>
-        </div>
+        <input
+          id="soul-import-file"
+          type="file"
+          accept="application/json,.json,text/plain,.txt"
+          hidden
+        />
       </section>
       <section id="demonic" hidden>
         <div class="hero">
