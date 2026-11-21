@@ -59,7 +59,7 @@ export async function initSoulTree() {
       localStorage.setItem(storageKey, JSON.stringify(ranks));
       storageWarning = "";
       $("soul-status").textContent =
-        "Plan saved in this browser; no changes are sent to the game.";
+        "Saved locally in this browser. This planner never edits your character.";
     } catch (error) {
       storageWarning = `Could not save the plan: ${error.message}. Changes are only kept in this tab.`;
       $("soul-status").textContent = storageWarning;
@@ -100,7 +100,7 @@ export async function initSoulTree() {
     anchor.remove();
     URL.revokeObjectURL(url);
     $("soul-status").textContent =
-      "Plan exported as JSON. You can import it for another character.";
+      "Build exported as JSON. Use it to switch between characters.";
   }
 
   function importPlan(text) {
@@ -114,7 +114,7 @@ export async function initSoulTree() {
     save();
     renderDetails();
     $("soul-status").textContent =
-      `Imported plan with ${Object.keys(ranks).length} configured nodes.`;
+      `Loaded build with ${Object.keys(ranks).length} configured nodes.`;
   }
 
   function renderDetails() {
@@ -144,8 +144,8 @@ export async function initSoulTree() {
       <span class="eyebrow">${escape(node.tree)} / ROW ${node.row ?? node.tier}</span>
       <h2>${escape(node.name)}</h2>
       <p>${escape(node.description)}</p>
-      <div class="soul-detail-rank">Planned rank <strong>${format(rank)} / ${node.maxRanks ? format(node.maxRanks) : "∞"}</strong></div>
-      <div class="soul-detail-rank">Next rank <strong>${maxed ? "Maxed" : `${format(nextCost(node, rank))} DSP`}</strong></div>
+      <div class="soul-detail-rank">Current build <strong>${format(rank)} / ${node.maxRanks ? format(node.maxRanks) : "∞"}</strong></div>
+      <div class="soul-detail-rank">Upgrade cost <strong>${maxed ? "Maxed" : `${format(nextCost(node, rank))} DSP`}</strong></div>
       <h3>Prerequisites</h3>
       <ul class="soul-requirements">${
         requirements.length
@@ -380,7 +380,7 @@ export async function initSoulTree() {
     `Wiki snapshot: ${data.fetchedAt.slice(0, 10)} · ${nodes.size} nodes · local planning only`;
   $("soul-status").textContent =
     storageWarning ||
-    "Select a node to inspect it. Plan ranks locally; nothing is sent to the game.";
+    "Pick a node to inspect details. All planning stays local to this browser.";
   drawTree();
   new ResizeObserver(() => updateZoom()).observe($("soul-viewport"));
 }
