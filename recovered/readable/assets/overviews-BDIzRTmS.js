@@ -1,0 +1,294 @@
+const e = {
+  "overview.achievements.0.body.0":
+    "Les hauts faits suivent vos jalons dans tous les systèmes — royaumes atteints, ennemis abattus, objets fabriqués. Réclamez leurs récompenses : Pierres Spirituelles, Cristaux et Titres cosmétiques que vous pouvez arborer.",
+  "overview.achievements.0.body.1":
+    "Certains sont des premières mondiales : soyez le premier de votre monde à en obtenir un, et votre nom sera inscrit à la vue de tous.",
+  "overview.achievements.0.heading": "Exploits et titres",
+  "overview.achievements.title": "Hauts Faits",
+  "overview.bounty.0.body.0":
+    "Le Tableau des primes affiche des ennemis d'élite nommés qui valent la peine d'être traqués pour de riches récompenses. Chacun est plus coriace qu'une bête sauvage et laisse un meilleur butin.",
+  "overview.bounty.0.body.1":
+    "Vous commencez avec un seul emplacement de prime ; d'autres s'ouvrent à mesure que vous gravissez les royaumes, ce qui vous permet de mener plusieurs chasses à la fois.",
+  "overview.bounty.0.heading": "Traquez des élites nommées",
+  "overview.bounty.title": "Tableau des primes",
+  "overview.bounty.unlock":
+    "Se débloque à la Trempe du Corps (2e royaume majeur)",
+  "overview.caravan.0.body.0":
+    "La Caravane Céleste échange des Cristaux Célestes contre des consommables, des améliorations de personnage, des lots sélectionnés et des cosmétiques. Les achats arrivent directement dans votre inventaire ou sur votre compte.",
+  "overview.caravan.0.body.1":
+    "Tout ce qui s'y trouve relève du confort ou du cosmétique — le jeu entier peut se jouer sans.",
+  "overview.caravan.0.heading": "La boutique premium",
+  "overview.caravan.title": "Caravane Céleste",
+  "overview.character.0.body.0":
+    "Voici votre page d'accueil — tout ce qui définit votre cultivateur. Votre portrait, votre royaume actuel et votre Puissance du Dao (une mesure globale de votre force) figurent en haut.",
+  "overview.character.0.body.1":
+    "D'ici, vous accédez à tous les autres systèmes : touchez la bannière Cultivation pour vous asseoir et rassembler du Qi, et utilisez la roue de navigation rapide (ou la barre) en bas pour ouvrir l'Inventaire, Explorer, le Combat, et plus encore.",
+  "overview.character.0.heading": "La feuille de personnage",
+  "overview.character.1.body.0":
+    "Vos attributs déterminent votre force. Ils augmentent à mesure que vous percez les royaumes, vous équipez, apprenez des manuels et absorbez des pilules.",
+  "overview.character.1.body.1":
+    "Appuyez sur l'un d'eux pour voir exactement d'où il provient.",
+  "overview.character.1.bullets.0":
+    "Attaque / Défense — dégâts bruts infligés et bloqués.",
+  "overview.character.1.bullets.1":
+    "Santé et régénération — combien de coups vous pouvez encaisser.",
+  "overview.character.1.bullets.2":
+    "Vitesse — à quelle fréquence vous agissez en combat.",
+  "overview.character.1.bullets.3":
+    "Chance de Coup Critique / Dégâts Critiques — la probabilité et l'ampleur des coups critiques.",
+  "overview.character.1.bullets.4":
+    "Force Mentale — alimente la Révélation du Dao et résiste aux effets de contrôle.",
+  "overview.character.1.bullets.5":
+    "Réserve de Qi — la quantité de Qi que vous pouvez contenir avant une percée.",
+  "overview.character.1.bullets.6":
+    "Affinité élémentaire — une tuile par élément : votre attaque avec celui-ci en haut, votre résistance à celui-ci en bas. ABSORBE ou RENVOI prend la place de la résistance quand vous l'avez.",
+  "overview.character.1.heading": "Attributs",
+  "overview.character.2.body.0":
+    "Votre Origine est la vie dans laquelle vous êtes né — elle fixe votre position de départ et accorde de petits bonus permanents. Votre Lignée (offensive) et votre Constitution (défensive) sont des talents innés qui débloquent des bonus plus puissants à mesure que vous gravissez les royaumes.",
+  "overview.character.2.body.1":
+    "Déployez n'importe lequel d'entre eux sur la feuille pour voir exactement ce qu'il vous apporte maintenant et ce qui vous attend encore aux royaumes supérieurs.",
+  "overview.character.2.heading": "Origine, lignée et constitution",
+  "overview.character.title": "Votre cultivateur",
+  "overview.combat.0.body.0":
+    "Le combat se déroule au tour par tour. À votre tour, vous attaquez, déchaînez des techniques de combat, utilisez des objets ou vous défendez. La Vitesse détermine la fréquence de vos actions, et accumuler de l'élan vous permet de déchaîner une puissante attaque ultime.",
+  "overview.combat.0.body.1":
+    "Les ennemis viennent en meutes de cinq au maximum — choisissez votre cible, et utilisez des techniques de zone pour en frapper plusieurs à la fois.",
+  "overview.combat.0.heading": "Combats au tour par tour",
+  "overview.combat.1.body.0":
+    "Chaque attaque et chaque ennemi possède un élément. Frapper une faiblesse inflige des dégâts supplémentaires, et enchaîner les bons éléments déclenche des réactions combinées et des détonations aux dégâts explosifs.",
+  "overview.combat.1.body.1":
+    "Le champ de bataille lui-même peut porter un effet environnemental — lisez la bannière au début du combat, puis guettez-le dans le journal de combat.",
+  "overview.combat.1.heading": "Éléments et réactions",
+  "overview.combat.2.body.0":
+    "Combattre les Bêtes est accessible dès le départ. À mesure que vous gagnez en puissance, d'autres façons de combattre se débloquent sur l'écran de sélection du mode.",
+  "overview.combat.2.bullets.0":
+    "Tableau des primes — traquez des élites nommées (Trempe du Corps).",
+  "overview.combat.2.bullets.1":
+    "Conquérir la Tour — une ascension de 100 étages (Condensation du Qi).",
+  "overview.combat.2.bullets.2":
+    "Escalades Élémentaires — la campagne narrative (Formation du Noyau).",
+  "overview.combat.2.bullets.3":
+    "Royaumes Secrets — des expéditions roguelite sur grille (Noyau d'Or).",
+  "overview.combat.2.heading": "Modes de combat",
+  "overview.combat.title": "Combat",
+  "overview.crafting.0.body.0":
+    "L'artisanat transforme les matériaux récoltés en biens puissants. Chaque métier a son propre atelier, son propre niveau de maîtrise qui augmente à mesure que vous fabriquez, et des recettes verrouillées par cette maîtrise.",
+  "overview.crafting.0.bullets.0":
+    "Alchimie — raffinez pilules et élixirs dans un chaudron.",
+  "overview.crafting.0.bullets.1":
+    "Raffinage — forgez et améliorez armes, armures et artefacts.",
+  "overview.crafting.0.bullets.2":
+    "Maître des Formations — gravez des plaques de formation.",
+  "overview.crafting.0.bullets.3":
+    "Talisman — tracez des talismans qui déchaînent leurs effets en combat.",
+  "overview.crafting.0.heading": "Choisissez un métier",
+  "overview.crafting.1.body.0":
+    "L'artisanat ne se résume pas à un bouton — maîtrisez le temps et la température pour suivre la courbe idéale : un meilleur résultat donne une qualité et une quantité supérieures. Recherchez des recettes pour découvrir des variantes.",
+  "overview.crafting.1.body.1":
+    "Remplissez les Commandes d'artisanat publiées par d'autres cultivateurs (ou par votre secte) contre des récompenses, et consultez le journal pour voir ce qu'a donné votre dernière fournée.",
+  "overview.crafting.1.heading": "Chaudrons, qualité et commandes",
+  "overview.crafting.title": "Métiers d'artisanat",
+  "overview.crafting.unlock":
+    "Se débloque à la Condensation du Qi (3e royaume majeur)",
+  "overview.cultivation.0.body.0":
+    "La cultivation est le cœur du jeu : vous méditez pour attirer le Qi, qui remplit lentement votre Réserve de Qi. Cela continue même en votre absence, si bien que vous retrouvez toujours des progrès à votre retour.",
+  "overview.cultivation.0.body.1":
+    "Quand la réserve est pleine, vous êtes prêt à percer vers le royaume mineur suivant. Dix royaumes mineurs forment un royaume majeur.",
+  "overview.cultivation.0.heading": "Rassembler le Qi",
+  "overview.cultivation.1.body.0":
+    "Une fois votre réserve pleine, appuyez sur Percer pour progresser. Chaque percée augmente vos attributs et, tous les 10 paliers, vous élève vers un nouveau royaume majeur qui débloque des systèmes entiers.",
+  "overview.cultivation.1.body.1":
+    "À partir du royaume de l'Ascension Immortelle, une percée majeure déclenche une Tribulation céleste — un combat auquel vous devez survivre pour vous élever. Préparez-vous avant de la tenter.",
+  "overview.cultivation.1.heading": "Percées",
+  "overview.cultivation.2.body.0":
+    "Sur l'écran de concentration, vous choisissez également les manuels de cultivation que vous pratiquez pour la Constitution, l'Âme et l'Esprit, et vous vous entraînez avec votre arme équipée. Pratiquer un manuel le comprend au fil du temps, augmentant progressivement les statistiques qu'il confère. Le bouton Tech ouvre vos arts de combat.",
+  "overview.cultivation.2.body.1":
+    "Les cultivations de l'Âme et de l'Esprit s'ouvrent au deuxième royaume majeur (Trempe du Corps). L'entraînement du Corps et de l'arme est disponible dès le départ.",
+  "overview.cultivation.2.heading": "Techniques et entraînement aux armes",
+  "overview.cultivation.title": "Cultivation",
+  "overview.daoInsight.0.body.0":
+    "La Révélation du Dao est une contemplation quotidienne qui approfondit votre compréhension du Dao et accorde des bonus durables. Votre Force Mentale et votre royaume déterminent combien vous pouvez gagner chaque jour.",
+  "overview.daoInsight.0.body.1":
+    "Dépensez vos révélations avec sagesse — la compréhension se cumule au fil d'une longue ascension.",
+  "overview.daoInsight.0.heading": "Comprendre le Dao",
+  "overview.daoInsight.title": "Révélation du Dao",
+  "overview.explore.0.body.0":
+    "L'exploration envoie votre cultivateur dans une zone à la recherche de matériaux, d'herbes spirituelles, de minerais et d'occasions rares. Comme la cultivation, une recherche suit son propre minuteur et se poursuit en votre absence.",
+  "overview.explore.0.body.1":
+    "Choisissez une région, sélectionnez-y une zone, et lancez-vous. Le journal d'activité consigne tout ce que vous trouvez.",
+  "overview.explore.0.heading": "Fouiller les terres sauvages",
+  "overview.explore.1.body.0":
+    "De nouvelles régions s'ouvrent à mesure que vous élevez votre royaume, chacune abritant des ennemis plus coriaces et un meilleur butin. Vous pouvez aussi Observer la Nature dans une zone pour tenter d'apprendre des motifs de talisman.",
+  "overview.explore.1.body.1":
+    "Guettez le tyran errant d'une région — une puissante bête nommée qui garde les plus grandes récompenses du secteur.",
+  "overview.explore.1.heading": "Régions et Observer la Nature",
+  "overview.explore.title": "Exploration",
+  "overview.familyLine.0.body.0":
+    "Épousez un Compagnon du Dao pour pratiquer la cultivation duelle — partager vos progrès et débloquer des bonus communs. Ensemble, vous bâtissez une Lignée familiale dont l'Âme du Dao et les héritiers perpétuent votre force.",
+  "overview.familyLine.0.body.1":
+    "Un Héritier de la Famille peut même naître dans une Origine légendaire, offrant à un futur personnage une puissante longueur d'avance.",
+  "overview.familyLine.0.heading": "Compagnons et héritage",
+  "overview.familyLine.title": "Lignée familiale",
+  "overview.inventory.0.body.0":
+    "Vos emplacements d'équipement se trouvent à gauche ; votre sac, à droite. Équipez armes, armures et accessoires pour augmenter vos attributs — certains objets ajoutent une attaque ou une résistance élémentaire.",
+  "overview.inventory.0.body.1":
+    "De nombreux objets exigent un royaume minimum avant de pouvoir être équipés ou utilisés. Survolez n'importe quel objet pour voir exactement ce qu'il fait.",
+  "overview.inventory.0.heading": "Équipement et sacs",
+  "overview.inventory.1.body.0":
+    "Les pilules restaurent le Qi, soignent ou accordent des gains durables — mais il existe une limite quotidienne sûre ; la dépasser expose à des effets secondaires. Les manuels et les parchemins s'apprennent pour obtenir des techniques et des recettes.",
+  "overview.inventory.1.body.1":
+    "Les matériaux récoltés en explorant alimentent vos métiers d'artisanat. Filtrez le sac par onglet pour trouver ce qu'il vous faut.",
+  "overview.inventory.1.heading": "Consommables et matériaux",
+  "overview.inventory.title": "Inventaire et équipement",
+  "overview.market.0.body.0":
+    "Le Marché vous permet d'acheter et de vendre auprès des autres cultivateurs de votre monde contre des Pierres Spirituelles. Parcourez les annonces, ou mettez en vente votre surplus d'équipement, de pilules et de matériaux.",
+  "overview.market.0.body.1":
+    "Consultez l'onglet Tendances pour connaître la valeur des objets avant d'acheter ou de fixer vos propres prix.",
+  "overview.market.0.heading": "Commercer avec les cultivateurs",
+  "overview.market.title": "Marché",
+  "overview.quests.0.body.0":
+    "Le Tableau des quêtes propose des objectifs quotidiens et hebdomadaires — cultiver, explorer, combattre et fabriquer — récompensés par des Pierres Spirituelles, des matériaux et plus encore.",
+  "overview.quests.0.body.1":
+    "Les quêtes se renouvellent selon un minuteur et s'adaptent à votre royaume : il y a donc toujours quelque chose qui vaut la peine d'être fait.",
+  "overview.quests.0.heading": "Objectifs quotidiens et hebdomadaires",
+  "overview.quests.title": "Tableau des quêtes",
+  "overview.rankings.0.body.0":
+    "Les Classements répertorient les cultivateurs et les sectes les plus puissants de votre monde selon leur Puissance du Dao et d'autres exploits. Grimpez dans les classements pour prouver que votre ascension est la plus rapide de toutes.",
+  "overview.rankings.0.heading": "Votre place",
+  "overview.rankings.title": "Classements",
+  "overview.reincarnation.0.body.0":
+    "La Réincarnation réinitialise votre royaume mais conserve des points d'âme à dépenser dans l'Arbre de l'Âme permanent, et vous permet de choisir une nouvelle Origine pour remodeler votre vie de départ.",
+  "overview.reincarnation.0.body.1":
+    "C'est le jeu au long cours d'un véritable immortel : chaque vie grimpe plus vite que la précédente. Ne vous réincarnez que lorsque vous avez tiré de celle-ci tout ce que vous pouviez.",
+  "overview.reincarnation.0.heading": "Recommencer, plus fort",
+  "overview.reincarnation.title": "Réincarnation",
+  "overview.reincarnation.unlock":
+    "Se débloque à l'Âme Naissante (6e royaume majeur)",
+  "overview.secretRealms.0.body.0":
+    "Les Royaumes Secrets sont des expéditions sur grille dans des domaines cachés. Avancez case par case à travers combats, trésors et événements, en dépensant une réserve d'énergie quotidienne au fil de votre exploration.",
+  "overview.secretRealms.0.body.1":
+    "Plus vous poussez loin, plus le butin est grand — mais repliez-vous avec vos gains avant qu'une expédition ne tourne mal.",
+  "overview.secretRealms.0.heading": "Expéditions roguelite",
+  "overview.secretRealms.title": "Royaumes Secrets",
+  "overview.secretRealms.unlock":
+    "Se débloque au Noyau d'Or (5e royaume majeur)",
+  "overview.sect.0.body.0":
+    "Une secte est une guilde de cultivateurs. Rejoignez-en une pour gagner du Mérite grâce aux missions, le dépenser dans la Boutique de mérite, et accéder à un entrepôt partagé, à des formations et à des commandes d'artisanat.",
+  "overview.sect.0.body.1":
+    "Le centre de la secte est une carte vivante — touchez un bâtiment pour entrer dans son hall.",
+  "overview.sect.0.heading": "Rejoindre une secte",
+  "overview.sect.1.body.0":
+    "Accomplissez des missions de secte et faites des dons de ressources pour gagner du Mérite et gravir les rangs de la secte. Les rangs supérieurs confèrent plus d'influence au Hall des Anciens.",
+  "overview.sect.1.body.1":
+    "Les sectes puissantes peuvent mener une Guerre de secte contre leurs rivales — une bataille d'élimination à grande échelle, avec du butin en jeu. Vous pouvez fonder votre propre secte une fois le royaume du Noyau d'Or atteint.",
+  "overview.sect.1.heading": "Missions, rangs et guerre",
+  "overview.sect.title": "Sectes",
+  "overview.sect.unlock":
+    "Se débloque à la Trempe du Corps (2e royaume majeur)",
+  "overview.social.0.body.0":
+    "La page Social vous garde connecté : envoyez des messages privés, ajoutez des amis et inspectez leur cultivation, et rejoignez le tchat du monde et de la secte dans le Rassemblement.",
+  "overview.social.0.body.1":
+    "L'onglet Lignée est l'endroit où vous épousez un Compagnon du Dao, pratiquez ensemble la cultivation duelle et transmettez un héritage à votre descendance.",
+  "overview.social.0.heading": "Amis, tchat et famille",
+  "overview.social.title": "Social",
+  "overview.soulDemons.0.body.0":
+    "L'ascension vers le Royaume Céleste ouvre le premier des cinq sceaux de votre âme. Les autres s'ouvrent à mesure que vous montez : à l'Empereur du Vide, au Saint Céleste, à l'Empereur Céleste et au Créateur de Monde.",
+  "overview.soulDemons.0.body.1":
+    "Chaque sceau retient un démon soumis, et tout ce qu'il accorde s'applique tant qu'il reste lié — statistiques, puissance élémentaire, résistances, dégâts contre certaines créatures, ainsi que la vitesse à laquelle vous rassemblez le Qi, comprenez le Dao et maîtrisez une arme.",
+  "overview.soulDemons.0.bullets.0":
+    "Lier un démon à un sceau déjà occupé conserve les deux — l'ancien passe en réserve, et vous ne perdez que ses bonus.",
+  "overview.soulDemons.0.bullets.1":
+    "Chaque démon vous coûte aussi quelque chose. Une faiblesse ne s'atténue jamais avec la montée en puissance.",
+  "overview.soulDemons.0.heading": "Cinq sceaux en pentagramme",
+  "overview.soulDemons.1.body.0":
+    "Les pierres d'invocation s'obtiennent en explorant le Royaume Céleste et sur ses tyrans, et chacune désigne un seul démon : son élément et son rang, de un à seize.",
+  "overview.soulDemons.1.body.1":
+    "Briser une pierre ne vous livre pas le démon. Elle l'appelle, et il faut le vaincre. Un rang très au-dessus de votre royaume est un mur plutôt qu'un défi — et la pierre est consommée, que vous gagniez ou perdiez.",
+  "overview.soulDemons.1.heading":
+    "Les pierres d'invocation et le combat pour un démon",
+  "overview.soulDemons.2.body.0":
+    "Chaque valeur qu'accorde un démon est tirée une seule fois, dans une fourchette fixée par son rang. Deux cultivateurs possédant le même démon de feu de rang 12 détiennent des créatures sensiblement différentes, et l'Harmonie indique où le vôtre se situe sur l'ensemble de ces valeurs — c'est pourquoi le même démon vaut la peine d'être chassé deux fois.",
+  "overview.soulDemons.2.body.1":
+    "Nourrissez un démon avec le Qi de votre propre réserve pour le faire progresser, jusqu'au niveau 150. Ce Qi est la matière même d'une percée, si bien que chaque niveau est une percée différée : un cultivateur qui verse tout dans ses démons grimpe plus lentement, mais frappe bien plus fort en chemin.",
+  "overview.soulDemons.2.heading": "L'Harmonie, et nourrir un démon de Qi",
+  "overview.soulDemons.title": "Démons de l'Âme",
+  "overview.soulDemons.unlock":
+    "Se débloque à l'Empereur Immortel (le Royaume Céleste)",
+  "overview.soulTree.0.body.0":
+    "Lorsque vous vous réincarnez, vous conservez des points d'âme durement gagnés, à dépenser dans l'Arbre de l'Âme — un réseau d'améliorations permanentes qui vous suit d'une vie à l'autre.",
+  "overview.soulTree.0.body.1":
+    "Les branches couvrent la Mémoire, le Combat, le Corps, et plus encore. Débloquez des nœuds pour augmenter vos statistiques, conserver votre progression d'une réincarnation à l'autre et activer des actions spéciales.",
+  "overview.soulTree.0.heading": "Dépenser les points d'âme",
+  "overview.soulTree.1.body.0":
+    "Certains nœuds ouvrent des capacités entièrement nouvelles — un second emplacement d'action (Errance de l'Âme), des explorations jumelles, le combat automatique, les boss de région, et même le dépassement des plafonds normaux comme 100 % de chance de coup critique.",
+  "overview.soulTree.1.body.1":
+    "Planifiez votre chemin : les points sont précieux, et des prérequis verrouillent les nœuds les plus profonds.",
+  "overview.soulTree.1.heading": "Déblocages puissants",
+  "overview.soulTree.title": "L'Arbre de l'Âme",
+  "overview.soulTree.unlock":
+    "Se débloque après votre première Réincarnation (royaume de l'Âme Naissante)",
+  "overview.story.0.body.0":
+    "Escalades Élémentaires est le mode histoire : dix chapitres élémentaires, chacun un chemin sinueux de combats qui enseigne la maîtrise d'un élément et offre des récompenses thématiques.",
+  "overview.story.0.body.1":
+    "Terminez un chapitre en Normal pour progresser. La difficulté Difficile s'ouvre une fois tout le mode Normal terminé (et l'Ascension Immortelle atteinte) ; l'Enfer attend les véritables puissants.",
+  "overview.story.0.heading": "La campagne narrative",
+  "overview.story.title": "Escalades Élémentaires",
+  "overview.story.unlock":
+    "Se débloque à la Formation du Noyau (4e royaume majeur)",
+  "overview.techniques.0.body.0":
+    "Chaque art de combat que vous connaissez a ici sa case. Seuls les arts de vos emplacements équipés, en haut, vous suivent au combat, avec une frappe simple.",
+  "overview.techniques.0.body.1":
+    "Vous commencez avec deux emplacements. D'autres s'ouvrent aux royaumes majeurs 3, 5, 7 et 10, et un emplacement verrouillé indique le royaume qui l'ouvre.",
+  "overview.techniques.0.bullets.0":
+    "Appuyez sur un art pour voir ses éléments, ses chiffres et comment vous l'avez obtenu, puis Échangez-le pour l'équiper. Sans emplacement libre, vous choisissez quel art il remplace.",
+  "overview.techniques.0.bullets.1":
+    "Ou touchez d'abord un emplacement vide, puis l'art à y placer.",
+  "overview.techniques.0.bullets.2":
+    "Les arts passifs sont toujours actifs et n'occupent aucun emplacement.",
+  "overview.techniques.0.heading": "Vos arts et vos emplacements",
+  "overview.techniques.1.body.0":
+    "Un art apprend en servant. Chaque utilisation dans un combat que vous jouez compte pour sa maîtrise, jusqu'au niveau 10. Les ennemis très en dessous de l'art lui apprennent moins.",
+  "overview.techniques.1.body.1":
+    "Chaque niveau après le premier donne à cet art 3 points de maîtrise, pour lui seul, à dépenser dans une Variation. Les arts de lignée et de physique demandent deux fois plus d'utilisations.",
+  "overview.techniques.1.heading": "Maîtrise des arts",
+  "overview.techniques.title": "Arts de combat",
+  "overview.tower.0.body.0":
+    "La Tour est une ascension de 100 étages qui se réinitialise chaque mois avec une nouvelle graine. Chaque étage est plus difficile que le précédent, et chacun accorde une récompense lorsque vous le franchissez.",
+  "overview.tower.0.body.1":
+    "Montez aussi haut que possible avant que vos forces ne s'épuisent — votre meilleur étage est votre marque pour la saison.",
+  "overview.tower.0.heading": "Gravissez 100 étages",
+  "overview.tower.title": "Conquérir la Tour",
+  "overview.tower.unlock":
+    "Se débloque à la Condensation du Qi (3e royaume majeur)",
+  "overview.variations.0.body.0":
+    "Affiner transforme un art en une Variation à vous. Chaque paire de cases est un bonus et le fardeau qui le paie, et les changements s'affichent à côté.",
+  "overview.variations.0.body.1":
+    "Le niveau de maîtrise 2 ouvre la première paire ; les niveaux 4 et 6 ouvrent les deux autres.",
+  "overview.variations.0.heading": "Remodeler un art",
+  "overview.variations.1.body.0":
+    "Touchez une case pour voir chaque bonus ou fardeau que cet art peut prendre. Choisissez-en un et son rang pour voir exactement son effet et ce qu'il ajoute à l'équilibre.",
+  "overview.variations.1.heading": "Choisir un changement",
+  "overview.variations.2.body.0":
+    "L'équilibre oppose vos bonus à vos fardeaux. Tant que le premier nombre ne dépasse pas le second, la Variation peut être forgée.",
+  "overview.variations.2.body.1":
+    "Forger dépense les points de maîtrise de l'art et une partie de votre Qi. Retirer une Variation rend les points, mais jamais le Qi.",
+  "overview.variations.2.body.2":
+    "Une fois forgée, donnez-lui un nom à vous. Il peut contenir le nom d'un art, mais pas en être un.",
+  "overview.variations.2.heading": "Équilibre, coût et nom",
+  "overview.variations.title": "Variations",
+  "overview.weaponMastery.0.body.0":
+    "Combattre et s'entraîner avec une arme développe la maîtrise de son type — épées, lances, marteaux, haches, bâtons, dagues, éventails et boucliers progressent chacun indépendamment.",
+  "overview.weaponMastery.0.body.1":
+    "Une maîtrise plus élevée accorde des bonus chaque fois que ce type d'arme est équipé, ce qui récompense votre engagement envers un style de combat.",
+  "overview.weaponMastery.0.heading": "Maîtrisez chaque arme",
+  "overview.weaponMastery.title": "Maîtrise des Armes",
+  "overview.worldBoss.0.body.0":
+    "Un Boss du Monde est un ennemi colossal que tous les cultivateurs de votre monde attaquent ensemble. Portez des coups pour entamer son immense santé et grimper dans le classement des dégâts.",
+  "overview.worldBoss.0.body.1":
+    "Vous disposez d'un nombre limité de frappes chaque jour, et les meilleurs contributeurs obtiennent les plus grandes récompenses lorsque le boss tombe.",
+  "overview.worldBoss.0.heading": "Un raid à l'échelle du monde",
+  "overview.worldBoss.title": "Boss du Monde",
+  "overview.worldBoss.unlock":
+    "Les frappes se débloquent à la Formation du Noyau (4e royaume majeur)",
+};
+export { e as default };

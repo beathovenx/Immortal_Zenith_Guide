@@ -1,0 +1,779 @@
+const t = {
+  "tour.achievements.claim.body.0":
+    "보상은 자동으로 지급되지 않습니다. 당신이 얻은 공적은 '획득' 버튼을 기다리고 있으며, 그것이 품은 영석과 아이템, 결정석은 당신이 버튼을 누를 때 도착합니다.",
+  "tour.achievements.claim.body.1":
+    "어떤 공적은 칭호를 담고 있는데, 이는 당신의 이름 옆에 표시되며 당신을 조회하는 모든 사람에게 보입니다. 그런 것들이 바로 일부러 노력할 가치가 있는 것들입니다.",
+  "tour.achievements.claim.title": "획득하기",
+  "tour.achievements.collections.body.0":
+    "당신이 지금까지 집어든 모든 것, 그리고 훨씬 더 유용하게도 당신이 아직 본 적 없는 모든 것들입니다.",
+  "tour.achievements.collections.body.1":
+    "어떤 항목이든 탭하면 그것이 어디서 나오는지 알려줍니다: 어떤 야수가 떨어뜨리는지, 어떤 지역에서 채집되는지, 어떤 제작이 만드는지요. 레시피에서 본 적 없는 재료가 필요할 때, 이것이 그것을 어디서 찾을 수 있는지 알아내는 가장 빠른 방법입니다.",
+  "tour.achievements.collections.body.2":
+    "이것은 또한 야수 도감으로도 작용합니다. 야수를 탭하면 바로 그 전투로 이동하므로, 부족한 재료를 찾는 것은 검색하는 것보다는 두 번의 탭으로 끝납니다.",
+  "tour.achievements.collections.title": "수집품",
+  "tour.achievements.kinds.body.0":
+    "할 만한 일들의 긴 목록이며, 대부분은 당신이 노력하지 않아도 완료될 것입니다. 이들은 측정하는 바에 따라 묶여 있습니다:",
+  "tour.achievements.kinds.bullets.0":
+    "수련 - 도달한 경지, 견딘 돌파, 이해한 무공.",
+  "tour.achievements.kinds.bullets.1":
+    "전투 - 격퇴한 야수, 격파한 강자, 오른 탑의 층, 친 보스.",
+  "tour.achievements.kinds.bullets.2":
+    "제작 - 단련한 것, 정제한 것, 양조한 것, 새겨넣은 것.",
+  "tour.achievements.kinds.bullets.3":
+    "재부와 세계 - 얻은 영석, 종파, 시장, 지도 그 자체.",
+  "tour.achievements.kinds.title": "공적",
+  "tour.achievements.point-collections.body.0":
+    "이것의 두 번째 부분이 있습니다. 수집품을 열어보세요.",
+  "tour.artmastery.balance.body.0":
+    "균형은 보너스와 부담을 비교합니다. 첫 번째 숫자가 두 번째보다 크지 않으면 단련할 수 있습니다.",
+  "tour.artmastery.balance.body.1":
+    "단련하면 포인트와 기를 일부 소모합니다. 변형을 제거하면 포인트는 돌아오지만 기는 돌아오지 않습니다. 단련한 뒤에는 나만의 이름을 붙일 수 있습니다.",
+  "tour.artmastery.balance.title": "균형과 비용",
+  "tour.artmastery.mastery.body.0":
+    "알고 있는 모든 무공은 사용할수록 익숙해집니다. 직접 하는 전투에서 쓸 때마다 숙련도가 오르며, 레벨은 무공 칸에 표시됩니다. 무공보다 훨씬 약한 적에게서는 덜 배웁니다.",
+  "tour.artmastery.mastery.body.1":
+    "첫 레벨 이후 레벨마다 그 무공에만 쓰는 숙련 포인트 3점을 얻습니다. 혈통이나 체질 무공은 두 배의 사용이 필요합니다.",
+  "tour.artmastery.mastery.title": "무공 숙련도",
+  "tour.artmastery.point-art.body.0": "2레벨에 도달한 무공을 여세요.",
+  "tour.artmastery.point-character.body.0":
+    "전투 무공 하나가 숙련 2레벨에 도달했습니다. 무엇이 열렸는지 확인해 보세요.",
+  "tour.artmastery.point-cultivate.body.0": "수련 화면을 여세요.",
+  "tour.artmastery.point-refine.body.0":
+    "포인트는 여기서 씁니다. 다듬어 보세요.",
+  "tour.artmastery.point-techniques.body.0": "기술을 여세요.",
+  "tour.artmastery.variations.body.0":
+    "다듬기는 무공을 나만의 변형으로 바꿉니다. 한 쌍은 보너스와 그 대가인 부담입니다. 칸을 눌러 하나와 단계를 고르세요.",
+  "tour.artmastery.variations.bullets.0":
+    "숙련 2레벨에서 첫 쌍이, 4레벨과 6레벨에서 나머지 두 쌍이 열립니다.",
+  "tour.artmastery.variations.bullets.1":
+    "보너스는 무공의 숙련 포인트를 씁니다. 부담은 비용이 없지만 모든 전투에서 그 무공에 따라붙습니다.",
+  "tour.artmastery.variations.title": "변형",
+  "tour.bounty.board.body.0":
+    "매일 신선한 이름 있는 사냥감 한 무리가 올라오며, 각각을 격퇴했을 때의 보상과 함께 게시됩니다. 이들은 열린 들의 야수보다 강하며, 그에 따라 보상도 더 많습니다.",
+  "tour.bounty.board.body.1":
+    "각각은 한 번씩만 획득할 수 있습니다. 내일 다시 돌아오면 게시판은 새로워집니다 - 그러므로 당신이 확인하지 않은 하루는 아무도 거두지 못한 보상의 하루입니다.",
+  "tour.bounty.board.title": "현상금 게시판",
+  "tour.bounty.point-bounty-mode.body.0":
+    "현상금 게시판은 이제 당신의 것입니다. 열어보세요.",
+  "tour.bounty.point-combat.body.0":
+    "육신 단련. 당신에게 새로운 것이 열렸습니다 - 와서 보세요.",
+  "tour.bounty.point-take.body.0": "하나를 집어들고 가서 수집하세요.",
+  "tour.combat.actions.body.0":
+    "당신이 턴으로 할 수 있는 모든 것이 여기 있습니다.",
+  "tour.combat.actions.bullets.0":
+    "공격 - 당신의 무기로 평범한 일격을 합니다, 그 속성으로. 비용이 없습니다.",
+  "tour.combat.actions.bullets.1":
+    "방어 - 버티기. 이 라운드에 입는 피해가 줄어듭니다.",
+  "tour.combat.actions.bullets.2":
+    "기법 - 당신의 전투 기술, 각각 자신의 비용과 재사용 대기 시간을 가집니다.",
+  "tour.combat.actions.bullets.3":
+    "아이템 - 당신의 가방에서 나온 단약이나 부적, 전투 중입니다.",
+  "tour.combat.actions.bullets.4":
+    "집중 - Qi 파동을 모으고, 게이지가 가득 차면 해방합니다.",
+  "tour.combat.actions.bullets.5":
+    "도주 - 떠나갑니다. 무료가 아니며, 항상 가능한 것도 아니지만, 기절하는 것보다는 낫습니다.",
+  "tour.combat.actions.title": "당신의 턴",
+  "tour.combat.arena.body.0":
+    "한쪽에는 당신, 다른 쪽에는 당신의 사냥감. 모든 일격은 그 인물들 자체에 맞습니다 - 섬광의 색은 그것이 맞힌 속성이며, 숫자는 그것이 상대에게 비용한 양입니다.",
+  "tour.combat.arena.body.1":
+    "하나 이상과 대면하고 있을 때, 야수를 탭해서 그것을 당신의 목표로 만드세요. 모든 적을 공격하는 것으로 표시된 기법은 그 선택을 무시하고 모든 것을 맞힙니다.",
+  "tour.combat.arena.title": "전장",
+  "tour.combat.done.body.0":
+    "체력이 0까지 떨어지면 당신은 한동안 기절합니다 - 재앙이 아닌 지연이며, 시간 외에는 아무것도 잃지 않습니다.",
+  "tour.combat.done.body.1":
+    "이기든 지든, 이 방을 나간 후에 나를 찾아오세요. 이 방 너머에는 세계가 있고, 마지막으로 보여줄 것이 하나 있습니다.",
+  "tour.combat.done.title": "가서 이기세요",
+  "tour.combat.hunt.body.0":
+    "이것은 다음 전투의 모양을 결정합니다: 한 마리의 야수, 아니면 최대 5마리의 떼입니다.",
+  "tour.combat.hunt.body.1":
+    "떼는 더 많은 가치를 주고 당신에게 훨씬 더 많은 것을 요구합니다 - 매 라운드마다 여러 적이 행동하고, 당신의 주의가 그들 사이에 나뉩니다. 이것은 한 번 설정되면 설정된 대로 유지되므로, 전투 중에 발견하는 것이 아니라 결정으로 삼으세요.",
+  "tour.combat.hunt.body.2": "처음에는 혼자 두세요.",
+  "tour.combat.hunt.title": "혼자, 아니면 떼",
+  "tour.combat.locked-modes.body.0":
+    "다섯 개 중 넷은 쇠사슬로 잠겨 있고, 자물쇠는 어떤 경지가 각각을 열지를 말합니다. 그것은 벽이 아니라 일정표입니다 - 당신이 올라갈 때 열리며, 열린 들의 야수들이 당신을 그곳으로 실어 나릅니다.",
+  "tour.combat.locked-modes.title": "지금은 연결되어 있습니다",
+  "tour.combat.modes.body.0":
+    "게임의 모든 전투는 여기서 시작되며, 각 경로는 당신에게 다른 것을 요구합니다.",
+  "tour.combat.modes.bullets.0":
+    "야수 사냥 - 열린 벌판입니다. 당신의 경지에 가까운 생물을 골라 재료, 핵석, 수련을 위해 싸우세요.",
+  "tour.combat.modes.bullets.1":
+    "현상금 게시판 - 이름 있는 사냥감과 현상금입니다. 벌판보다 어렵고 보상이 더 큽니다.",
+  "tour.combat.modes.bullets.2":
+    "탑 정복 - 백 층짜리 탑으로, 매달 새로 생성됩니다. 당신의 최고 기록은 영구적인 기록입니다.",
+  "tour.combat.modes.bullets.3":
+    "속성 격돌 - 이야기를 올라가는 경로: 세 가지 난이도에 걸친 열 개의 속성 챕터입니다.",
+  "tour.combat.modes.bullets.4":
+    "비경 - 봉인된 곳으로의 시간제한 탐험으로, 다른 곳에서는 얻을 수 없는 것들을 찾습니다.",
+  "tour.combat.modes.title": "다섯 가지 전투 방식",
+  "tour.combat.momentum.body.0":
+    "피해를 입히고, 받고, 치명타를 맞출 때마다 게이지가 찬다. 가득 차면 당신의 기파 - 엄청난 한 번의 속성 공격이 게이지 전체를 소모한다.",
+  "tour.combat.momentum.body.1":
+    "집중하면 여유 턴이 있을 때 의도적으로 게이지를 채울 수 있다. 긴 전투에서 기파는 보통 승패를 가른다.",
+  "tour.combat.momentum.title": "Qi 기파",
+  "tour.combat.point-beast.body.0": "이제 싸울 상대를 골라보세요.",
+  "tour.combat.point-beast.waitLabel": "사냥감을 선택하세요…",
+  "tour.combat.point-beasts.body.0": "열린 벌판으로 나가세요.",
+  "tour.combat.point-challenge.body.0": "도전하세요.",
+  "tour.combat.point-combat.body.0":
+    "당신은 망토와 술법, 그리고 경지를 갖추고 있습니다. 이제 써볼 시간입니다.",
+  "tour.combat.point-tier.body.0":
+    "야수들은 경지별로 분류됩니다. 당신의 경지에 가장 가까운 등급을 열어보세요 - 그곳이 싸울 만한 전투가 있는 곳입니다.",
+  "tour.combat.point-tier.waitLabel": "등급을 선택하세요…",
+  "tour.combat.turn-order.body.0":
+    "턴 순서는 속도로 결정되며, 여기에 표시됩니다. 뭔가를 속도에서 크게 이기면 그것의 한 턴마다 당신은 두 번 행동하게 되는데, 그래서 속도는 규모보다 훨씬 더 가치 있습니다.",
+  "tour.combat.turn-order.body.1":
+    "여기서는 시간에 따라 일어나는 일이 없습니다. 전투는 당신을 기다리므로 카드를 누르기 전에 읽는 데 비용이 없습니다.",
+  "tour.combat.turn-order.title": "누가 다음에 움직이는가",
+  "tour.consumables.consumables.body.0":
+    "한 번에 전부 사용되는 것들이 여기 있으며, 각각 매우 다른 역할을 합니다.",
+  "tour.consumables.consumables.bullets.0":
+    "약 - 가장 큰 집단입니다. 어떤 것은 체력이나 Qi를 회복하고, 어떤 것은 전투를 위해 당신을 강화하며, 어떤 것은 능력치를 영구적으로 올립니다.",
+  "tour.consumables.consumables.bullets.1":
+    "부적 - 종이 부적입니다. 방어, 강화, 그리고 수련 시간을 줄여주는 것들이 있습니다.",
+  "tour.consumables.consumables.bullets.2":
+    "진법판 - 배치하면 충전된 동안 지속적인 보너스를 줍니다.",
+  "tour.consumables.consumables.bullets.3":
+    "혈맥과 체질 정수 - 드문 것들입니다. 당신이 타고난 것을 재설정하거나 개선합니다.",
+  "tour.consumables.consumables.title": "소비 아이템",
+  "tour.consumables.gift-pill.body.0":
+    "여기 - 신체 단련 약입니다. 후회 없이 한 개를 사용할 수 있습니다.",
+  "tour.consumables.pill-limit.body.0":
+    "그 체력은 영구적으로 당신의 것입니다. 능력치 약은 효력이 끝나지 않습니다 - 숫자를 영구적으로 올리기 때문에, 수련자들이 필요하기 훨씬 전부터 약을 비축하고 수련에 들여마는 이유입니다.",
+  "tour.consumables.pill-limit.body.1":
+    "바로 그것이 함정입니다. 약을 먹을 때마다 일일 부하량에 더해지고, 당신의 몸은 깨끗하게 흡수할 수 있는 양이 정해져 있습니다: 인간 경지에서는 열 개, 경지를 올릴 때마다 더 많아집니다. 총량은 자정에 리셋됩니다.",
+  "tour.consumables.pill-limit.body.2":
+    "그 한계를 넘으면 추가로 먹는 모든 약은 부작용을 확률로 갖게 되고, 부작용은 심해집니다 - 경맥 독, 핵 손상, 치료되기 전까진 남아있는 질환들. 게임은 당신을 경고하고 선을 넘기 전에 확인을 요구할 것입니다. 경고를 진지하게 받으세요: 열한 번째 약이 주는 것은 열다섯 번째 약이 할 수 있는 것의 가치가 없습니다.",
+  "tour.consumables.pill-limit.title": "경고의 말",
+  "tour.consumables.point-consumable-tab.body.0":
+    "카테고리를 소비 아이템으로 바꾸세요.",
+  "tour.consumables.point-inventory.body.0":
+    "사용 가능한 무언가가 당신의 가방에 들어왔습니다. 열어보세요.",
+  "tour.consumables.point-pill.body.0": "누르세요.",
+  "tour.consumables.point-use.body.0": "삼키세요.",
+  "tour.craftAlchemy.brew.body.0":
+    "약은 레시피와 가마 수치의 조합입니다: 얼마나 오래 끓이고 얼마나 뜨겁게 하느냐입니다. 둘 다 당신이 정하고, 둘 다 나오는 품질을 결정합니다 - 같은 레시피도 잘 끓이면 대충 끓인 것보다 훨씬 낫습니다.",
+  "tour.craftAlchemy.brew.body.1":
+    "품질은 종류가 아닌 효과를 비율대로 높입니다. 뛰어난 신체 단련 약은 열등한 것보다 더 많은 체력을 주고, 다른 것을 주지는 않습니다.",
+  "tour.craftAlchemy.brew.title": "양조",
+  "tour.craftAlchemy.expand-for-crafting.body.0":
+    "막대의 나머지를 펴세요 — 뒤에 더 있습니다.",
+  "tour.craftAlchemy.gift-craft-alchemy.body.0":
+    "받으세요. 네잎클로버는 당신이 이미 알고 있는 두 레시피의 기초이고, 연구는 확실함이 아닌 확률을 위해 재료를 씁니다 - 그래서 시작하기 전에 여러 번 시도할 수 있어야 하고, 딱 한 번만은 안 됩니다.",
+  "tour.craftAlchemy.gift-craft-alchemy.title": "열 두 잎 클로버",
+  "tour.craftAlchemy.point-crafting.body.0":
+    "그대가 연금술을 시작했도다. 도가니로 나아가거라.",
+  "tour.craftAlchemy.school.body.0":
+    "연금술은 배우기보다 발견하는 유일한 수련법이다. 연구는 재료를 소모하여 새로운 조제법을 얻을 기회를 주며, 그 중에는 변형 - 같은 약이지만 새로운 효과, 이전에 없던 전투 효과를 갖춘 것 - 도 포함된다.",
+  "tour.craftAlchemy.school.body.1":
+    "그 변형이야말로 연금술사의 가치다. 누구나 기본 조제법을 빚을 수 있지만, 변형을 발견한 자야말로 사람들이 찾아오는 연금술사다.",
+  "tour.craftAlchemy.school.title": "연구",
+  "tour.craftArray.assemble.body.0":
+    "진법은 두 단계로 세워진다: 먼저 부품, 그 다음 그것들을 조립하는 판. 판은 깔아두고 계속 작동하는 항구적 보너스이지, 한 번만 쓰고 버리는 것이 아니다.",
+  "tour.craftArray.assemble.body.1":
+    "새로운 설계는 연구에서 나온다. 진법을 연구하는 것은 그것을 이해하기 위해 재료를 소모하는 것이고, 그 이해가 판을 풀어주기에 진법 대가의 진척은 찾은 것이 아니라 알아낸 것으로 재어진다.",
+  "tour.craftArray.assemble.title": "판과 부품",
+  "tour.craftArray.charge.body.0":
+    "깔아둔 판은 충전을 머금고 그것이 소진될 때까지 작동한다. 작동하는 동안 판이 주는 모든 것은 단순히 그대의 일부다 - 인벤토리 타일은 지금 활동 중인 것을 표시하는데, 그 이유는 출처를 볼 수 없는 보너스는 그대가 잊기 쉽기 때문이다.",
+  "tour.craftArray.charge.title": "하나를 작동시키기",
+  "tour.craftArray.expand-for-crafting.body.0":
+    "막대의 나머지를 펼쳐라 — 뒤에 더 있다.",
+  "tour.craftArray.gift-craft-array.body.0":
+    "각각 하나씩 가져가라: 계열, 흐름, 구성, 그리고 정수. 이것이 정확히 한 판의 몫이며, 조립이 무엇인지 실제로 볼 수 있는 최소한의 개수다.",
+  "tour.craftArray.gift-craft-array.body.1":
+    "부품들은 조잡하다 - 가장 낮은 등급이 있다. 판이 주는 것은 그것에 들어간 것의 등급에 달려 있기에, 이것들은 상을 받는 것이라기보다 시연이다.",
+  "tour.craftArray.gift-craft-array.title": "네 개의 조잡한 부품",
+  "tour.craftArray.point-crafting.body.0":
+    "그대가 진법을 시작했도다. 작업대로 나아가거라.",
+  "tour.craftRefining.enhance.body.0":
+    "연마 정수는 완성된 물건을 한 번에 한 단계씩 더 밀어붙인다. 확률은 단계가 올라갈수록 떨어지고, 실패하면 그대가 서 있던 단계를 되돌릴 수 있다 - 그래서 멈추는 것이 올바른 선택인 지점이 있다.",
+  "tour.craftRefining.enhance.title": "강화",
+  "tour.craftRefining.expand-for-crafting.body.0":
+    "막대의 나머지를 펼쳐라 — 뒤에 더 있다.",
+  "tour.craftRefining.gift-craft-refining.body.0":
+    "이것들을 가져가라: 철, 구리, 검풀, 그리고 물리 핵심 하나. 이것이 실험이 실제로 씹을 수 있는 재료 풀이다 - 작업대가 뭔가 제안할 수 있을 정도로 충분히 다양한 재료이면서도 모두 그대의 단계라 낭비가 없다.",
+  "tour.craftRefining.gift-craft-refining.title": "광석과 핵심",
+  "tour.craftRefining.masterwork.body.0":
+    "정련사 자신의 특권: 그 능력치의 대략 두 배 가치가 있는 물건, 입을 수 있는 개수가 제한되고 시장에서 거래할 수 없다. 살 수 없고, 오직 만들고 입을 수만 있다 - 그것이 바로 그것의 요점이다.",
+  "tour.craftRefining.masterwork.title": "걸작",
+  "tour.craftRefining.point-crafting.body.0":
+    "그대가 정련을 시작했도다. 대장간으로 나아가거라.",
+  "tour.craftRefining.refine.body.0":
+    "도면은 고정된 물건이 아니다: 그것이 주는 모든 능력치는 범위이고, 각 정련은 그 안에서 굴린다. 한 도면에서 만든 두 검은 같은 검이 아니며, 좋은 굴림이 정련사가 실제로 팔고 있는 것이다.",
+  "tour.craftRefining.refine.body.1":
+    "새로운 설계도는 실험을 통해 얻어집니다 - 작업대에 재료를 공급하여 어떤 제안이 나오는지 보기 - 그리고 드롭이나 상인단에서도 얻을 수 있습니다.",
+  "tour.craftRefining.refine.title": "정련",
+  "tour.craftTailoring.cloth.body.0":
+    "도안은 정련사의 설계도와 정확히 같은 방식으로 작동합니다 - 만들 때마다 능력치 범위가 결정됩니다 - 다만 천을 만드는데, 이는 방어력을 포기하고 생명력과 정신력을 얻습니다. 이것이 강철 대신 Qi로 싸우는 수련자가 실제로 원하는 갑옷입니다.",
+  "tour.craftTailoring.cloth.body.1":
+    "게임의 모든 망토는 당신의 것입니다. 다른 누구도 만들 수 없습니다.",
+  "tour.craftTailoring.cloth.title": "천",
+  "tour.craftTailoring.expand-for-crafting.body.0":
+    "바의 나머지 부분을 열어보세요 — 그 뒤에 더 있습니다.",
+  "tour.craftTailoring.gift-craft-tailoring.body.0":
+    "이것들을 받으세요: 옥대나무, 구리, 피의나뭇잎과 화염 핵. 이들을 실험에 공급하여 어떤 도안이 나오는지 보세요 - 천도 판금과 같은 방식으로 발견되며, 이것은 말할 것이 있는 영역입니다.",
+  "tour.craftTailoring.gift-craft-tailoring.title": "대나무와 피의나뭇잎",
+  "tour.craftTailoring.heraldry.body.0":
+    "재봉사 자신만의 기술입니다: 가문의 문장과 깃발이며, 당신의 가문명을 가진 모든 사람들이 착용합니다. 문장은 장비에 새겨지며 그 품질에 따라 지속됩니다.",
+  "tour.craftTailoring.heraldry.body.1":
+    "이것은 유일하게 다른 사람들의 산물을 만드는 공예입니다. 가문이 알게 될 재봉사가 되는 것은 가치 있습니다.",
+  "tour.craftTailoring.heraldry.title": "문장",
+  "tour.craftTailoring.point-crafting.body.0":
+    "당신은 재봉을 배웠습니다. 베틀로 오세요.",
+  "tour.craftTalisman.charge.body.0":
+    "모든 부적은 충전 수준에서 새겨지며, 충전은 그 효과가 얼마나 큰지를 결정합니다. 더 높은 충전은 같은 도안에 더 많은 Qi와 종이를 소비합니다.",
+  "tour.craftTalisman.charge.body.1":
+    "보호 부적, 버프, 그리고 공예 시간을 몇 시간 단축하는 시간 왜곡 - 그 마지막 것이 모든 진지한 공예가가 부적 제작사를 가까이 두는 이유입니다.",
+  "tour.craftTalisman.charge.title": "충전",
+  "tour.craftTalisman.expand-for-crafting.body.0":
+    "바의 나머지 부분을 열어보세요 — 그 뒤에 더 있습니다.",
+  "tour.craftTalisman.gift-craft-talisman.body.0":
+    "가을 바람 깃발을 받으세요 - 당신 자신의 도안이므로 무언가를 새기기 전에 바람 영역이 앉아 있을 때까지 기다릴 필요가 없습니다 - 그리고 그것을 쓸 종이 열 장.",
+  "tour.craftTalisman.gift-craft-talisman.body.1":
+    "다른 모든 도안은 직접 찾게 될 것입니다. 이것은 당신이 먼저 책상 작업을 볼 수 있도록 하기 위한 것입니다.",
+  "tour.craftTalisman.gift-craft-talisman.title": "도안과 종이",
+  "tour.craftTalisman.patterns.body.0":
+    "부적은 종이에 새겨진 도안이며 Qi로 충전됩니다. 도안은 자연을 관찰함으로써 발견됩니다 - 한 영역에 앉아서 그 형태가 드러날 때까지 지켜보기 - 이것이 유일한 출처입니다.",
+  "tour.craftTalisman.patterns.body.1":
+    "그러므로 부적 제작사의 범위는 그들이 있었던 곳의 기록입니다. 얼어붙은 툰드라의 도안은 화산의 도안과 다릅니다.",
+  "tour.craftTalisman.patterns.title": "도안과 종이",
+  "tour.craftTalisman.point-crafting.body.0":
+    "당신은 부적을 배웠습니다. 글쓰기 책상으로 오세요.",
+  "tour.crafting.choose.body.0":
+    "전문화는 구매가 아니라 헌신이다: 그것은 슬롯을 취하고, 그대가 쌓는 숙련은 직업별이다. 깊은 혼의 나무 노드는 훨씬 나중에 더 많은 슬롯을 부여하므로, 두 번째 수련법은 가능하지만 아주 먼 길이다.",
+  "tour.crafting.choose.body.1":
+    "그대가 실제로 입는 것을 만드는 것을 고르거라. 천옷을 입고 싸우는 정련사라면 남의 직업을 고른 것이다.",
+  "tour.crafting.choose.body.2":
+    "그대에게 강요하지는 않겠노라. 준비되었을 때 하나를 취하면, 그 작업대를 보여주리라.",
+  "tour.crafting.choose.title": "하나를 고르기",
+  "tour.crafting.expand-for-crafting.body.0":
+    "막대의 나머지를 펼쳐라 — 뒤에 더 있다.",
+  "tour.crafting.point-crafting.body.0":
+    "기 응축. 그대에게 작업실이 열렸도다 - 와서 보거라.",
+  "tour.crafting.professions.body.0":
+    "수련자가 입고, 삼키고, 깔아두는 모든 것은 이 중 하나가 만들며, 그대는 한 번에 하나씩 헌신한다.",
+  "tour.crafting.professions.bullets.0":
+    "연금술 - 약환. 치유, 버프, 그리고 능력치를 영구히 올리는 것들.",
+  "tour.crafting.professions.bullets.1":
+    "정련 - 무기와 판갑옷, 도면에서 구르는 것.",
+  "tour.crafting.professions.bullets.2":
+    "재봉 - 천 갑옷과 망토, 그리고 그대 가문의 문장.",
+  "tour.crafting.professions.bullets.3":
+    "부적 - 종이 부적: 수호, 버프, 그리고 수련 시간을 단축하는 것들.",
+  "tour.crafting.professions.bullets.4":
+    "진법 - 깔아두고 작동하는 항구적 보너스를 주는 판, 충전을 머금는 동안.",
+  "tour.crafting.professions.title": "다섯 가지 수련법",
+  "tour.crafting.slots.body.0":
+    "수련에는 실제 시간이 들고, 이것들이 그것이 작동하는 슬롯이다. 뭔가를 시작하면, 그대가 없을 때도 정확히 수련처럼 작동한다 - 수련은 게임을 닫아도 낭비되지 않는다.",
+  "tour.crafting.slots.body.1":
+    "그대가 올라갈수록 더 많은 슬롯이 열리고, 시간 왜곡 부적은 처음 몇 개에서 타는 것이 무엇이든 시간을 단축한다.",
+  "tour.crafting.slots.title": "용광로들",
+  "tour.cultivation.aspects.body.0":
+    "이것들은 당신의 수련이 무엇을 위한 것인지를 선택합니다. 신체, 영혼, 정신은 각각 자신의 비급과 자신의 능력치를 가집니다; 무기는 대신 당신의 숙련도를 연습시킵니다.",
+  "tour.cultivation.aspects.body.1":
+    "당신은 한 번에 각 유형의 비급 하나씩만 활성화할 수 있으며, 셋 다 수동 능력치를 계속 제공합니다. 하지만 적극적으로 수련하는 것만 이해력을 얻습니다 - 나머지 둘은 당신이 떠난 수준에 머물러 있습니다.",
+  "tour.cultivation.aspects.body.2":
+    "따라서 선택은 어떤 비급을 소유할지가 아닙니다. 다음에 어느 것을 깊게 할지입니다.",
+  "tour.cultivation.aspects.title": "당신이 수련하는 것",
+  "tour.cultivation.broke-through.body.0":
+    "그것은 하나의 작은 경지입니다. 열 개가 큰 경지를 만들고, 큰 경지는 전체 시스템을 열어줍니다 - 공예, 종파, 영혼의 나무, 그리고 결국 환생.",
+  "tour.cultivation.broke-through.body.1":
+    "모든 돌파는 당신의 속성을 높이고, 다음 돌파를 위해 채워야 할 풀은 이전 것보다 큽니다. 첫 번째는 1분이 걸렸지만; 불로의 경지 깊숙이에 있는 것들은 며칠이 걸립니다.",
+  "tour.cultivation.broke-through.title": "첫 번째 돌파",
+  "tour.cultivation.done.body.0":
+    "Qi를 모으고, 돌파하고, 세계가 열리면서 당신은 올라갑니다.",
+  "tour.cultivation.done.body.1":
+    "남은 것이 하나 있으며, 그것이 다른 모든 것이 당신을 준비시킨 것입니다. 나가서 무언가와 싸우세요.",
+  "tour.cultivation.done.title": "수련을 하러 가세요",
+  "tour.cultivation.focus.body.0":
+    "이곳이 다른 어느 곳보다 더 많은 시간을 보낼 곳입니다. 당신의 수련자는 앉아서 세상에서 Qi를 끌어내고, 그것이 연못에 모입니다.",
+  "tour.cultivation.focus.body.1":
+    "게임을 닫을 때 멈추지 않습니다. Qi는 당신이 자거나, 일하거나, 또는 일주일 동안 떠나 있을 때도 모입니다 - 연못은 당신이 돌아올 때 간단히 가득 차 있습니다. 여기서 보지 않는 것으로 인해 잃어지는 것은 없습니다.",
+  "tour.cultivation.focus.title": "Qi 모으기",
+  "tour.cultivation.manual-here.body.0":
+    "이것이 당신이 배웠을 때 기초 체력 연습 비급이 간 곳입니다. 배우기는 그것을 당신의 손에 넣었습니다; 그것을 이해하는 것이 그것을 가치 있게 만드는 것이며, 그것은 여기서 천천히, 당신이 수련하는 동안 일어납니다.",
+  "tour.cultivation.manual-here.body.1":
+    "포드는 수준당 무엇을 주는지와 그 이정표에서 아직 기다리고 있는 것을 보여줍니다 - 15에서의 생명력, 30에서의 훈련된 반사신경, 그리고 100에서의 나머지.",
+  "tour.cultivation.manual-here.title": "당신의 비급은 여기 있습니다",
+  "tour.cultivation.point-back.body.0":
+    "당신의 명상에서 나오세요 - 보여줄 것이 하나 더 있습니다.",
+  "tour.cultivation.point-breakthrough-close.body.0":
+    "잘했다. 그것을 닫아라 — 화면의 나머지를 덮고 있다.",
+  "tour.cultivation.point-breakthrough.body.0":
+    "가득 찼다. 넌 빛나고 있다 — 자신을 눌러 돌파하자.",
+  "tour.cultivation.point-character.body.0":
+    "이것을 마치기 위해 수련자에게 돌아가자.",
+  "tour.cultivation.point-cultivate.body.0": "이 깃발은 넓은 수련이다. 눌러라.",
+  "tour.cultivation.point-trial-back.body.0":
+    "마지막으로 도의 시련입니다. 캐릭터 화면으로 돌아가세요.",
+  "tour.cultivation.point-trial-resets.body.0":
+    "일일 초기화 항목과 함께 있습니다.",
+  "tour.cultivation.point-trial.body.0": "도의 시련을 여세요.",
+  "tour.cultivation.trials.body.0":
+    "시련은 짧은 기술 게임이고, 네 가지가 있다 — 진법을 기억하기, Qi를 경맥을 따라 인도하기, 원소를 연결하기, 그리고 모으기. 다른 것이 매일 돌아온다.",
+  "tour.cultivation.trials.body.1":
+    "하루에 몇 번의 시도를 얻고, 현재 수련 중인 것에 대해 Qi와 이해도로 보상받는다. 얼마나 잘 하느냐에 따라 얼마나 받을지가 결정된다 — 이것들은 단순히 열기보다는 제대로 하는 것에 보상한다.",
+  "tour.cultivation.trials.body.2":
+    "수련에서 수동적이지 않은 유일한 부분이고, 하루에 몇 분씩 하는 것이 보는 것보다 훨씬 더 가치 있다.",
+  "tour.cultivation.trials.title": "Dao 시련",
+  "tour.cultivation.wait-for-full.body.0":
+    "못이 가득 찰 때까지 지켜봐라. 첫 번째는 빠르다 — 1분 정도다.",
+  "tour.cultivation.wait-for-full.waitLabel": "모으는 중...",
+  "tour.exploration.done.body.0":
+    "이것을 이기면 지역이 열린다 — 그 다음 탐색하면, 수련자가 시간이 지나면서 자료가 튀어나올 때까지 그것을 일군다. 수련처럼 넓이 떨어져 있어도 계속 돈다.",
+  "tour.exploration.done.body.1":
+    "수련하고, 싸우고, 모으고, 만들어라. 그것이 순환이고, 나머지는 모두 그것에 달려 있다. 다른 것은 직접 해보면서 알아낼 것이다.",
+  "tour.exploration.done.title": "세계가 열렸다",
+  "tour.exploration.gate.body.0":
+    "모든 지역은 뭔가에 의해 지켜지고, 이것이 이 지역을 지키는 것이다 — 그것을 경비하는 무리, 그리고 자신의 Dao 힘 옆에 권장 사항.",
+  "tour.exploration.gate.body.1":
+    '수치를 진지하게 받아들여라. "위험"은 싸움이 넓이를 넘는다는 뜻이고, 또 다른 시도보다는 보통 또 다른 경지나 더 나은 장비가 답이다.',
+  "tour.exploration.gate.title": "길을 막는 것",
+  "tour.exploration.map.body.0":
+    "경지는 지역 위에 있고, 지역은 지역을 포함한다. 경지는 하늘이다 — 그 아래 서 있을 만큼 강해야 한다. 지역은 나라의 한 구간이다. 지역은 서 있어 탐색할 수 있는 장소다.",
+  "tour.exploration.map.body.1":
+    "넓은 인생을 한 번에 한 지역 안에서 보낼 것이고, 그것을 따라 일할 것이다.",
+  "tour.exploration.map.title": "세계, 세 가지 계층에서",
+  "tour.exploration.point-explore.body.0": "저 밖에 세계가 있다. 와서 보아라.",
+  "tour.exploration.point-fight.body.0":
+    "그것을 취하면, 지역은 탐색할 넓이가 된다.",
+  "tour.exploration.point-region.body.0": "넓이에 열려 있는 것으로 시작해라.",
+  "tour.exploration.point-zone.body.0": "이것이 다음이다. 열어라.",
+  "tour.exploration.trail.body.0":
+    "지역은 메뉴가 아니라 사슬이다. 각 지역이 다음을 열기 때문에, 가는 길은 항상 마지막 지역 다음의 지역이다.",
+  "tour.exploration.trail.body.1":
+    "다음에 아무것도 없는 지역은 갈림이다 — 그것을 취하면 그것 자체만 열린다. 그것들은 선택사항이고, 보통 홀수 자료가 숨는 곳이다.",
+  "tour.exploration.trail.body.2":
+    "넓이 열 때마다 그곳에서 찾을 수 있는 것이 나열된다 — 광석, 약초, 야수 핵. 그 목록이 특정 장소를 가는 전체 이유다.",
+  "tour.exploration.trail.title": "흔적",
+  "tour.family.banner.body.0":
+    "문장은 재단사의 일이다. 가문의 수장이 하나의 깃발을 올리면, 가문의 모든 구성원에게 보상한다 — 1등급에서 모든 수치의 4%, 5등급에서 16%. 아무도 그것을 받기 위해 아무것도 할 필요가 없다.",
+  "tour.family.banner.body.1":
+    "깃발은 가문을 능가할 수 없다 — 5등급에는 5등급 가문이 필요하다. 문장은 공예의 다른 절반이다 — 깃발을 단일 장비로 증폭하고, 지속되기보다는 며칠 후에 다 떨어진다.",
+  "tour.family.banner.title": "깃발, 그리고 그것이 누구를 위한 것인가",
+  "tour.family.companion.body.0":
+    "혈맥은 두 수련자 사이의 유대로 시작된다. 누군가를 검사해라 — 시장에서, 종파 명부에서, 이름이 링크인 어느 곳이든 — 그리고 하나를 제안해라.",
+  "tour.family.companion.body.1":
+    "대답하는 두 가지 방법 — 선택한 이름으로 새로운 가문을 설립하거나, 이미 가진 가문에 들어간다. 어느 쪽이든 둘 다 같은 혈맥에 들어간다.",
+  "tour.family.companion.title": "Dao 동반자로 시작된다",
+  "tour.family.level.body.0":
+    "1에서 5까지, 그리고 두 가지를 동시에 센다 — 가문의 모든 영혼에 대해 3점, 모든 생존 구성원의 경지.",
+  "tour.family.level.body.1":
+    "그래서 큰 가문이 올라가고 강한 가문이 올라간다. 강한 수련자들의 큰 가문이 가장 빠르게 올라가고, 그것이 요점이다.",
+  "tour.family.level.title": "가문은 그것만의 수준을 가진다",
+  "tour.family.line.body.0":
+    "다른 모든 것은 넓이가 이 수련자에게 속한다. 가문 혈맥은 그렇지 않다 — 이름, 깃발, 그리고 계보를 보유하고, 넓이가 환생하여 그것을 설립한 신체를 떠난 후에도 여전히 서 있다.",
+  "tour.family.line.body.1":
+    "후손들은 그것으로 상속받는다. 이것이 이 탭에 대한 장기 게임이다.",
+  "tour.family.line.title": "넓이를 능가하는 이름",
+  "tour.family.soul.body.0":
+    "이 막대는 당신 둘이 서로를 슬롯에 끼우고 쌍수련할 때만 진행됩니다. 더 빠르지는 않습니다 — 전혀. 혼자 앉아만 있으면 아무것도 얻지 못하는데, 그것이 이것을 직함이 아닌 인연으로 만드는 것입니다.",
+  "tour.family.soul.body.1":
+    "막대가 꽉 차면 Dao Soul을 주조하여 당신 둘로부터 혈맥과 체질을 롤링합니다. 같은 부모는 참값을 낳습니다: 당신 둘이 같은 특성을 지니면 후손이 90% 확률로 그것을 갖습니다. 다르면 더 높은 등급이 유리합니다.",
+  "tour.family.soul.body.2":
+    "영혼은 그 다음 기다립니다. 다음에 당신이 만드는 캐릭터는 낯선 이의 운명 대신 그 롤을 가진 혈통으로 태어납니다.",
+  "tour.family.soul.title": "The Dao Soul",
+  "tour.family.tree.body.0":
+    "인연과 혈통을 그려내었습니다. 누구든 탭하면 그들을 볼 수 있습니다 — 생존자는 평범한 검사로 열리고, 이미 세상을 떠난 조상은 그들이 무엇이었는지 보여줍니다.",
+  "tour.family.tree.body.1":
+    "가문의 수장은 그 같은 창에서 누군가 다른 사람에게 이름을 넘길 수 있습니다. 오랜 부재 전에 하는 것이 좋습니다: 올려지지 않은 깃발은 아무도 도와주지 못합니다.",
+  "tour.family.tree.title": "가문도",
+  "tour.intro.attr-defence.body.0":
+    "방어와 피해 감소는 같은 칸을 공유하며 차례대로 작동합니다: 방어는 공격자의 힘에 대한 타격을 약화시키고, 그 다음 감소는 통과한 것의 몫을 갖습니다.",
+  "tour.intro.attr-defence.body.1":
+    "정신 견고함은 정신의 양쪽 버전입니다. 당신의 Dao 통찰을 담고 있으며 당신을 상처 입히는 대신 조종할 효과 — 공포, 봉인 등에 저항합니다.",
+  "tour.intro.attr-defence.title": "방어",
+  "tour.intro.attr-elements.body.0":
+    "이 세상의 모든 것은 속성을 가지고 있습니다. 여기의 각 타일은 하나의 속성이며, 그 그림으로 나타나고, 두 개의 숫자를 갖고 있습니다: 위에는 이 속성으로 당신이 주는 공격력, 아래에는 이에 대한 당신의 저항력입니다.",
+  "tour.intro.attr-elements.body.1":
+    "공격은 그 원소의 어떤 타격의 피해도 높입니다 — 당신이 배운 기법이거나 그것으로 주입된 무기. 저항은 그 원소가 당신에게 하는 것을 줄입니다. 따라서 불 수련자가 또 다른 불 수련자와 마주하는 것은 물과 마주하는 것과는 완전히 다른 싸움입니다.",
+  "tour.intro.attr-elements.body.2":
+    "두 가지 특수한 경우를 주의하세요. 당신의 혈맥이 약한 속성은 당신에게 1.5배의 피해를 줍니다. 일부 혈맥, 체질, 비급은 당신에게 속성을 흡수하도록 가르쳐주어 피해를 입는 대신 치유되며, 몇몇 혈맥과 체질은 그것을 던진 자에게 반사합니다. 그러면 타일에 당신의 저항력 대신 흡수나 반사로 표시됩니다. 어느 타일이든 탭하여 그 숫자들이 어디서 나왔는지 확인하세요.",
+  "tour.intro.attr-elements.title": "원소 친화력",
+  "tour.intro.attr-fortune.body.0":
+    "운은 숫자로 만들어진 행운입니다: 탐험하다가 행운의 조우에 마주칠 확률을 높이고, 그럴 때 보상이 얼마나 희귀한지를 높입니다.",
+  "tour.intro.attr-fortune.body.1":
+    "근원은 당신이 태어난 삶입니다. 당신이 시작한 곳 — 당신의 종파, 당신의 부, 당신의 지위 — 을 정했고, 당신의 나머지 삶 동안 작은 영구 보너스를 계속 지불합니다. 탭하여 당신의 것이 무엇을 주는지 읽어보십시오.",
+  "tour.intro.attr-fortune.title": "운 & 근원",
+  "tour.intro.attr-offence.body.0":
+    "공격은 당신이 던지는 모든 것의 무게입니다 — 모든 타격과 모든 기법은 그것으로 배율을 받습니다.",
+  "tour.intro.attr-offence.body.1":
+    "치명타는 그 옆의 쌍입니다: 첫 번째 숫자는 타격이 얼마나 자주 치명타로 맞는지이고, 두 번째는 그럴 때 얼마나 더 세게 맞는지입니다. 확률은 깊은 Soul Tree 노드가 천장을 올릴 때까지 75%로 제한됩니다.",
+  "tour.intro.attr-offence.title": "공격",
+  "tour.intro.attr-recovery.body.0":
+    "세 개의 재생 수치는 싸움 중 그리고 싸움 사이에 당신의 각 생명력이 얼마나 빨리 채워지는지입니다. 그것들을 만드는 것이 긴 싸움을 카운트다운에서 당신이 이길 수 있는 소모전으로 바꿉니다.",
+  "tour.intro.attr-recovery.body.1":
+    "속도는 당신의 차례가 얼마나 자주 오는지를 결정합니다. 상대방을 충분히 빠르게 능가하면 그들의 각 차례마다 두 번씩 행동한다는 뜻인데, 그것은 보이는 것보다 가치가 있습니다.",
+  "tour.intro.attr-recovery.title": "회복 & 속도",
+  "tour.intro.attributes.body.0":
+    "이것들은 모든 싸움이 결정되는 숫자들입니다. 경지를 돌파할 때, 더 나은 장비를 장착할 때, 수련 교본을 깨달을 때, 또는 약초를 정제할 때 올라갑니다.",
+  "tour.intro.attributes.body.1": "한 번에 몇 개씩 가져가겠습니다.",
+  "tour.intro.attributes.title": "당신의 능력",
+  "tour.intro.bloodline.body.0":
+    "당신의 혈맥은 당신의 혈관 속의 유산이며, 공격적입니다: 순수한 힘, 더 예리한 타격, 그것이 선호하는 원소와의 더 강한 친화력.",
+  "tour.intro.bloodline.body.1":
+    "그것은 자유롭지 않습니다. 강한 혈맥은 종종 단점을 가집니다 — 그것이 억제하는 능력, 또는 느린 Qi 풀 — 그리고 많은 것이 원소 약점, 당신에게 반 배 이상 피해를 주는 원소를 가집니다. 카드의 양쪽을 읽으십시오.",
+  "tour.intro.bloodline.body.2":
+    "또한 당신과 함께 성장합니다. 아래에 나열된 각 등급은 더 높은 경지에서 잠금 해제되므로, 지금 보잘 것 없어 보이는 혈맥이 나중에 생존하는 이유가 될 수 있습니다.",
+  "tour.intro.bloodline.title": "당신의 혈맥",
+  "tour.intro.done.body.0":
+    "그것이 당신의 수련자입니다. 다른 모든 것 — Qi 모으기, 탐험, 싸움, 제작, 종파 — 은 화면 아래의 막대에서 당신이 충분히 강해질 때 열립니다.",
+  "tour.intro.done.body.1":
+    '모든 페이지의 모서리에는 그것이 하는 일에 대한 짧은 개요를 포함한 "?"가 있으며, Settings에서 모두 다시 재생할 수 있습니다.',
+  "tour.intro.done.body.2":
+    "떠나기 전에 한 가지 더: 당신의 가방을 보여주고 그 안에 몇 가지를 넣어드리겠습니다.",
+  "tour.intro.done.title": "길은 당신의 것이다",
+  "tour.intro.physique.body.0":
+    "당신의 체질은 혈맥을 담는 신체이며, 다른 방향으로 기웁니다: 인내, 방어, 저항, 그리고 당신을 서 있게 하는 버프.",
+  "tour.intro.physique.body.1":
+    "그것은 같은 단계적 방식으로 잠금 해제됩니다 — 당신이 도달하는 각 경지에서 새로운 이정표. 가장 훌륭한 체질은 결국 원소를 완전히 흡수하게 해주어, 다른 누구나 상처를 입을 공격에서 치유됩니다.",
+  "tour.intro.physique.body.2":
+    "이것들 중 어느 것도 선택된 것이 아닙니다; 둘 다 태어날 때 롤링되었습니다. 윤회는 훨씬 나중에 수련자가 다시 롤링하는 방법입니다.",
+  "tour.intro.physique.title": "당신의 체질",
+  "tour.intro.point-attributes.body.0":
+    "한 가지 더 — 당신의 능력을 보려면 여기를 탭하십시오.",
+  "tour.intro.point-bloodline.body.0":
+    "당신이 태어날 때 가진 혈맥을 보려면 여기를 탭하십시오.",
+  "tour.intro.point-physique.body.0":
+    "이제 여기를 눌러 당신의 체질을 확인하세요.",
+  "tour.intro.showaround.body.0": "당신을 둘러보여 드리겠습니다…",
+  "tour.intro.vitals.body.0":
+    "이 세 개의 막대는 전투에서 소비하는 것들입니다. 각각 시간이 지나면서 저절로 회복됩니다 — 옆의 작은 숫자는 회복 속도입니다 — 따라서 패배는 진행을 잃는 것이 아니라 인내심을 시험할 뿐입니다.",
+  "tour.intro.vitals.bullets.0":
+    "생명력 — 받을 수 있는 피해입니다. 0이 되면 기절하게 되며, 다시 싸우기 전에 회복해야 합니다.",
+  "tour.intro.vitals.bullets.1":
+    "에너지 — 전투 기술의 신비로운 비용입니다. 더 미묘한 술법들이 이것을 사용합니다.",
+  "tour.intro.vitals.bullets.2":
+    "체력 — 물리적 비용입니다. 무겁고 맹렬한 공격들이 대신 이것을 소비합니다.",
+  "tour.intro.vitals.title": "당신의 세 가지 생명치",
+  "tour.intro.welcome.body.0":
+    "축하합니다 — 당신은 길 위에 발을 내디뎠습니다. 범인의 신분에서 시작하여 Qi를 모으고, 경지를 하나씩 돌파하며, 불멸을 향해 나아갈 것입니다.",
+  "tour.intro.welcome.body.1":
+    "당신이 떠나 있는 동안 아무것도 잃어지지 않습니다 — 당신의 수련자는 당신이 보고 있지 않든 항상 Qi를 모으고 있습니다. 자주 돌아오세요, 그러면 항상 진행 상황을 찾아볼 수 있을 것입니다.",
+  "tour.intro.welcome.title": "당신의 수련이 시작됩니다",
+  "tour.inventory.cape-details.body.0":
+    "아이템에 대해 알아야 할 모든 것이 이 카드에 있습니다.",
+  "tour.inventory.cape-details.bullets.0":
+    "이름의 색깔이 희귀도입니다 — 일반, 언커먼, 레어, 에픽, 레전더리 등등.",
+  "tour.inventory.cape-details.bullets.1":
+    "슬롯은 어디에 입는지를, 티어는 어느 경지를 위해 만들어졌는지를 나타냅니다. 당신의 경지보다 훨씬 낮은 등급의 장비를 입는 것이 수련자가 약해 보이는 가장 흔한 이유입니다.",
+  "tour.inventory.cape-details.bullets.2":
+    "스탯 라인들이 그것이 더해지는 것들입니다. 원소 라인들은 그 원소로 공격하거나, 또는 그 원소에 저항하는 것을 더합니다.",
+  "tour.inventory.cape-details.bullets.3":
+    "파워는 그 스탯들을 한 개의 숫자로 줄여서, 두 조각을 한눈에 비교할 수 있게 합니다.",
+  "tour.inventory.cape-details.title": "장비를 읽는 방법",
+  "tour.inventory.done.body.0":
+    "장비를 입고 배우기 — 가방의 세 가지 용도 중 두 가지입니다. 세 번째는 무언가를 써버리는 것이며, 그것을 보여드리는 것은 당신이 사용할 만한 가치가 있는 것을 처음 발견할 때입니다.",
+  "tour.inventory.done.body.1":
+    "이제 당신의 수련자에게 돌아가세요. 보여드릴 한 가지가 더 있습니다, 그것이 가장 중요한 것입니다.",
+  "tour.inventory.done.title": "당신의 가방은 당신의 무기고입니다",
+  "tour.inventory.equipped.body.0":
+    "이것이 당신의 장비 — 당신이 채울 수 있는 모든 슬롯과 각 슬롯에 있는 것입니다. 당신의 망토가 뒤쪽 슬롯을 차지했고, 그것의 스탯은 이미 당신의 일부입니다 — 캐릭터 시트의 당신의 속성에, 그리고 여기서부터 모든 전투에서 포함되어 있습니다.",
+  "tour.inventory.equipped.body.1":
+    "채워진 슬롯을 누르면 그 장비를 다시 벗을 수 있습니다. 당신이 채운 적 없는 슬롯은 당신이 없이 싸우는 슬롯이며, 빈 슬롯은 게임에서 가장 싼 파워입니다.",
+  "tour.inventory.equipped.title": "당신이 입고 있는 것",
+  "tour.inventory.filters.body.0":
+    "당신의 가방은 빠르게 가득 차므로, 이 컨트롤들이 당신이 그것 안에서 무엇이든 찾는 방법입니다. 첫 번째는 어느 카테고리를 보고 있는지를 선택하고; 나머지는 순서를 결정합니다.",
+  "tour.inventory.filters.bullets.0":
+    "카테고리 — 장비, 비급서, 소비품, 재료. 각각은 고유한 저장 제한이 있습니다.",
+  "tour.inventory.filters.bullets.1":
+    "정렬 — 이름, 티어, 파워, 또는 소분류. 파워는 장비를 실제로 당신에게 얼마나 가치 있는지로 순위를 매깁니다.",
+  "tour.inventory.filters.bullets.2":
+    "방향 — 화살표가 오름차순과 내림차순을 바꿉니다.",
+  "tour.inventory.filters.bullets.3":
+    "소분류로 정렬하면 가방도 제목 아래 그룹화되므로, 당신이 많이 가진 것을 보는 가장 빠른 방법입니다.",
+  "tour.inventory.filters.title": "물건 찾기",
+  "tour.inventory.gift-cape.body.0":
+    "자, 여기 있습니다 — 모든 제자가 망토를 받고 보내집니다. 받으세요.",
+  "tour.inventory.gift-manual.body.0":
+    "그리고 이것을 받으세요. 모든 학파가 제자에게 같은 수련으로 시작합니다.",
+  "tour.inventory.kinds.body.0":
+    "당신이 절대 집을 거의 모든 것은 네 가지 중 하나이며, 각각은 다르게 사용됩니다.",
+  "tour.inventory.kinds.bullets.0":
+    "장비 — 슬롯에 입혀집니다. 무기, 갑옷, 악세사리.",
+  "tour.inventory.kinds.bullets.1":
+    "비급서 — 수련 기술. 한 번 배우면, 영원히 연습합니다.",
+  "tour.inventory.kinds.bullets.2":
+    "소비품 — 알약, 부적, 진법판, 혈맥 정수. 써버립니다.",
+  "tour.inventory.kinds.bullets.3":
+    "재료 — 모든 제작이 만들어지는 광석, 약초, 야수 핵심들.",
+  "tour.inventory.kinds.title": "네 가지 종류",
+  "tour.inventory.manual-details.body.0":
+    "비급서의 카드는 두 가지 다른 것을 보여주며, 그 차이는 중요합니다.",
+  "tour.inventory.manual-details.body.1":
+    "레벨당 라인들은 이해도의 각 포인트가 더하는 것입니다 — 작지만, 절대 멈추지 않습니다. 이것은 당신의 생명력과 방어를 두터워지게 하고 물리 친화력을 날카롭게 합니다.",
+  "tour.inventory.manual-details.body.2":
+    "아래의 이정표들은 고정된 이해도 레벨에서의 일회성 보상입니다. 이것은 15에서 생명력 보너스를 주고, 30에서 단련된 반사 신경 전투 기술을 배우고, 100에서 다시 지급합니다. 이정표는 한 달 동안 수련한 비급서가 새로운 같은 비급서보다 가치 있는 이유입니다.",
+  "tour.inventory.manual-details.title": "비급서가 약속하는 것",
+  "tour.inventory.manuals.body.0":
+    "수련서는 당신이 수련하는 기예이지, 소지하는 물건이 아닙니다. 한 번 배우면 영원히 당신의 것이 되고, 그 후 오랜 시간에 걸쳐 서서히 이해하게 되며, 당신이 성장할수록 함께 강해집니다.",
+  "tour.inventory.manuals.body.1":
+    "세 가지 종류가 있으며, 수련자의 각 측면마다 하나씩이고, 셋을 동시에 수련할 수 있습니다.",
+  "tour.inventory.manuals.bullets.0":
+    "육체 - 체력, 방어력, 지구력. 쓰러지지 않는 수련자입니다.",
+  "tour.inventory.manuals.bullets.1":
+    "정신 - Qi 저장량과 Qi 회복. 가장 빨리 경지를 돌파하는 수련자입니다.",
+  "tour.inventory.manuals.bullets.2":
+    "심법 - 정신력과 더 미묘한 기예. 흔들리지 않는 수련자입니다.",
+  "tour.inventory.manuals.title": "수련서",
+  "tour.inventory.point-cape.body.0":
+    "그것은 당신의 것입니다. 눌러서 살펴보세요.",
+  "tour.inventory.point-equip.body.0": "착용하세요.",
+  "tour.inventory.point-inventory.body.0": "인벤토리를 열어보세요.",
+  "tour.inventory.point-learn.body.0": "배우세요.",
+  "tour.inventory.point-manual-tab.body.0": "카테고리를 수련서로 바꾸세요.",
+  "tour.inventory.point-manual.body.0": "제가 준 수련서를 눌러보세요.",
+  "tour.inventory.teach.body.0":
+    "시작을 위해 기본적인 육체 단련 기법을 가르쳐 드리겠습니다...",
+  "tour.knockout.next-time.body.0":
+    "모든 전투는 시작 전에 그 성질을 알려줍니다. 야수의 카드에는 등급이 표시되고, 고비는 당신의 Dao Power 옆에 추천 수준을 제시합니다.",
+  "tour.knockout.next-time.body.1":
+    "그 정보를 진지하게 받아들이세요. '위험'이라는 것은 전투가 당신보다 높다는 뜻이며, 보통의 답은 또 다른 시도가 아니라 더 높은 경지, 더 좋은 장비, 또는 가방 안의 약입니다.",
+  "tour.knockout.next-time.title": "다음 번에",
+  "tour.knockout.still-yours.body.0":
+    "회복은 전투만 제한합니다. 수련, 채집, 제작, 시장, 종파 모두 전과 똑같이 진행됩니다.",
+  "tour.knockout.still-yours.body.1":
+    "그리고 시간은 당신이 그것들을 할 동안 흐릅니다 — 게임이 닫혀 있는 동안에도 흐릅니다. 나가서 Qi를 모으고 기다리는 것이 당신에게 아무 손해를 주지 않습니다.",
+  "tour.knockout.still-yours.title": "전투만 멈춥니다",
+  "tour.knockout.what-happened.body.0":
+    "당신의 체력이 0에 도달했으므로 회복할 때까지 전투에서 벗어나 있습니다. 저 카운트다운이 전부입니다.",
+  "tour.knockout.what-happened.body.1":
+    "아무것도 잃지 않았습니다. 물건도, Qi도, 진행도 하나 잃지 않았습니다 — 이 게임에서의 패배는 당신에게서 시간만 빼갈 뿐 그 외엔 아무것도 아닙니다. 이는 당신이 자신보다 강한 것들을 만날 것이고, 어디가 한계인지 알아내는 것이 배우는 방법이므로, 견딜 수 있도록 설계되었습니다.",
+  "tour.knockout.what-happened.title": "기절했습니다",
+  "tour.mastery.mastery.body.0":
+    "숙련도는 당신이 특정 종류의 무기 — 검, 창, 칼, 활 — 를 다루는 능력이며, 무기 자체와는 별개입니다. 미숙한 손에 든 걸작 검은 여전히 미숙한 스윙일 뿐입니다.",
+  "tour.mastery.mastery.body.1":
+    "숙련도는 수련 화면에서 그 무기로 훈련함으로써 올라가며, 이는 수련서를 깨닫는 대신 일시적으로 합니다. 각 단계는 그 종류의 모든 것으로 당신이 입히는 피해를 높이고, 더 높은 단계는 자신의 전투 기술을 가르칩니다.",
+  "tour.mastery.mastery.body.2":
+    "하나를 고르고 계속하는 것이 가치가 있습니다. 다섯 종류의 무기에 흩어진 숙련도는 하나의 중요한 숫자 대신 다섯 개의 작은 숫자일 뿐입니다.",
+  "tour.mastery.mastery.title": "무기 숙련도",
+  "tour.mastery.point-character.body.0":
+    "당신은 무기 훈련을 시작했습니다. 그것은 이해할 가치가 있습니다.",
+  "tour.mastery.point-cultivate.body.0": "단련하는 곳인 수련 화면을 여세요.",
+  "tour.mastery.point-mastery-close.body.0": "닫으세요.",
+  "tour.mastery.point-mastery.body.0": "숙련도를 열어보세요.",
+  "tour.road.point-road-disclosure.body.0":
+    "당신을 기다리는 이야기가 있습니다. 열어보세요.",
+  "tour.road.point-road-open.body.0": "열어보고 가서 그들을 만나세요.",
+  "tour.road.point-road-tab.body.0":
+    "당신을 기다리는 이야기가 있습니다. 열어보세요.",
+  "tour.road.road-dialog.body.0":
+    "한쪽에는 당신, 다른 한쪽에는 말하는 자. 당신이 대답하는 것은 당신의 것입니다 - 아무도 채점하지 않으며, 답할 잘못된 대사는 없습니다.",
+  "tour.road.road-dialog.body.1":
+    "원할 때마다 이를 닫으세요. 길은 당신이 멈춘 곳을 기억합니다.",
+  "tour.road.road-dialog.title": "대화 중",
+  "tour.road.road-errands.body.0":
+    "길은 게임의 다른 곳에서 하는 것들을 요청합니다 - 마을에 서 있기, 무언가 만들기, 기술 배우기, 현상금 완료하기.",
+  "tour.road.road-errands.body.1":
+    "그것이 기다리고 있는 것이 여기에 쓰여 있으므로, 당신은 가서 그것을 하고 돌아올 수 있으며 무엇을 요청받았는지 기억할 필요가 없습니다.",
+  "tour.road.road-errands.bullets.0":
+    "이미 했습니까? 계산됩니다. 길은 약속이 아닌 세상을 확인합니다.",
+  "tour.road.road-errands.bullets.1":
+    "임무 옆의 작은 ?는 그것이 당신을 보내는 것의 도움말을 엽니다.",
+  "tour.road.road-errands.bullets.2": "여기에는 만료되는 것이 없습니다.",
+  "tour.road.road-errands.title": "그것이 당신을 보냅니다",
+  "tour.road.road-panel.body.0":
+    "옥류마을의 누군가가 당신에게 무언가를 말하려고 하고, 마을을 벗어나는 길은 당신이 듣든 듣지 않든 동쪽으로 갑니다.",
+  "tour.road.road-panel.body.1":
+    "이것은 당신이 수련하는 동안 걷는 이야기입니다. 그것은 당신을 기다리지도 않고 당신을 재촉하지도 않습니다.",
+  "tour.road.road-panel.title": "필멸의 길",
+  "tour.sectfounded.expand-for-sect.body.0":
+    "나머지 바를 펼쳐 보십시오 — 뒤에 더 있습니다.",
+  "tour.sectfounded.markup.body.0":
+    "마크업은 회원들이 선반의 모든 것에 대해 지불하는 금액을 결정하며, 사용된 모든 공적은 재무부로 돌아옵니다 — 따라서 상점은 비용이 아니라 공적이 순환하는 방식입니다.",
+  "tour.sectfounded.markup.body.1":
+    "개별 상품의 가격을 책정할 수도 있으며, 자동 목록 규칙이 처리하지 않은 기부품을 선반에 올리거나 보관해 둘 수 있습니다.",
+  "tour.sectfounded.markup.title": "그리고 가격",
+  "tour.sectfounded.merit-policy.body.0":
+    "상단에는 재무부, 종파가 매일 모으는 금액, 그리고 기부에 대해 지불할 금액을 찾을 수 있습니다. 마지막 것은 당신이 정하는 것입니다.",
+  "tour.sectfounded.merit-policy.body.1":
+    "기본값은 일일 수입과 일치하며, 이것이 유일하게 종파가 수취하는 것보다 더 많은 금액을 지불할 수 없는 설정입니다. 이를 올리면 기부가 충분히 보상되지만 승진 기금을 희생합니다; 이를 0으로 설정하면 종파는 기부를 받지 않습니다.",
+  "tour.sectfounded.merit-policy.title": "공적 정책",
+  "tour.sectfounded.point-sect.body.0":
+    "종파는 당신의 것입니다. 당신이 알아야 할 뒤에 숨겨진 몇 가지 레버가 있습니다.",
+  "tour.sectfounded.point-settings.body.0": "설정부터 시작하십시오.",
+  "tour.sectfounded.point-shop.body.0":
+    "이제 공적 전당입니다 — 이곳이 돈이 있는 곳입니다.",
+  "tour.sectfounded.point-storage.body.0": "한 가지 더 — 창고입니다.",
+  "tour.sectfounded.seats.body.0":
+    "아홉 개의 자리가 당신 아래에 있습니다: 부지도자, 최고 장로, 공적 장로, 집행 장로, 진법 장로 그리고 일반 장로 셋.",
+  "tour.sectfounded.seats.body.1":
+    "이들은 장식이 아닙니다. 공적 장로는 당신 없이 기부 정책을 정하고 상점의 가격을 책정할 수 있으며, 앉아있는 모든 회원은 더 큰 봉급을 받습니다 — 따라서 이들로 자리를 채우는 것은 재무부에 비용이 들지만 당신이 부재중일 때 종파를 운영할 수 있는 사람들을 사줍니다.",
+  "tour.sectfounded.seats.title": "그리고 자리들",
+  "tour.sectfounded.settings.body.0":
+    "이것이 현관입니다. 참여 모드는 올바른 경지의 누구나 들어올 수 있는지, 아니면 초대가 필요한지, 그리고 누가 초대를 할 수 있는지를 결정합니다.",
+  "tour.sectfounded.settings.bullets.0":
+    "최소 경지 — 참여를 위한 하한선입니다. 이를 높게 설정하면 더 적지만 강한 제자들을 얻습니다.",
+  "tour.sectfounded.settings.bullets.1":
+    "은둔 — 그 안에 있지 않은 누구로부터 종파를 숨깁니다.",
+  "tour.sectfounded.settings.bullets.2":
+    "휘장, 설명 그리고 정렬 — 수련자가 맹세하기 전에 읽는 것입니다.",
+  "tour.sectfounded.settings.bullets.3":
+    "참여 메시지 — 새 회원이 처음 받는 것입니다.",
+  "tour.sectfounded.settings.title": "누가 들어오고, 무엇을 보는가",
+  "tour.sectfounded.storage.body.0":
+    "기부된 모든 것이 여기에 도착합니다. 각 더미의 얼마를 상점의 선반에 올릴지, 얼마를 예비로 남길지 결정하며, 회원이나 전체 계급에 직접 물품을 줄 수 있습니다.",
+  "tour.sectfounded.storage.body.1":
+    "자동 목록 규칙은 일상적인 부분을 당신을 위해 합니다: 당신이 선택한 등급과 희귀도까지 기부된 모든 것은 당신이 건드리지 않고도 바로 판매됩니다.",
+  "tour.sectfounded.storage.title": "종파가 보유한 것",
+  "tour.sectfounded.yours.body.0":
+    "당신은 지도자의 자리를 가지고 있으며, 이것은 이 전당의 모든 설정이 당신에게 응합니다를 의미합니다. 대부분은 합리적인 기본값을 가지고 있으며 내버려 둘 수 있습니다 — 하지만 당신은 이들이 존재한다는 것을 알아야 합니다. 왜냐하면 당신의 회원들은 이 모든 것을 느낄 것이기 때문입니다.",
+  "tour.sectfounded.yours.title": "당신의 종파",
+  "tour.sectlife.contribution.body.0":
+    "여기서 거의 모든 것은 공적으로 운영됩니다: 기부하고, 임무를 수행하고, 주문을 완료함으로써 획득되며, 종파가 문 뒤에 보관하는 것에 사용됩니다.",
+  "tour.sectlife.contribution.body.1":
+    "또한 당신이 상승하는 방법이기도 합니다. 종파 내 지위는 권한을 가져옵니다 — 초대, 승진, 조건 설정 — 그리고 장로들은 모두 계속 나타난 제자들이었습니다.",
+  "tour.sectlife.contribution.title": "공적",
+  "tour.sectlife.expand-for-sect.body.0": "바를 펼쳐보세요 — 뒤에 더 있습니다.",
+  "tour.sectlife.hall.body.0":
+    "홀은 지도이며, 그 위의 각 건물은 종파가 하는 것입니다. 하나를 눌러 들어가세요.",
+  "tour.sectlife.hall.bullets.0":
+    "임무 - 종파를 대신하여 수행하는 일, 공적과 보상을 위해.",
+  "tour.sectlife.hall.bullets.1":
+    "제작 주문 - 당신의 구성원으로부터의 요청, 그 직업을 가진 누구든 완수합니다.",
+  "tour.sectlife.hall.bullets.2":
+    "등급 - 종파 내 당신의 위치, 그리고 다른 곳들 중 당신의 종파의 위치.",
+  "tour.sectlife.hall.bullets.3":
+    "금고 - 종파가 보유한 것, 그리고 당신의 공적으로 끌어낼 수 있는 것.",
+  "tour.sectlife.hall.title": "당신의 종파 홀",
+  "tour.sectlife.point-sect.body.0":
+    "당신은 종파를 가지고 있습니다. 와서 그것이 무엇을 가져다주는지 살펴보세요.",
+  "tour.sectlife.stipend.body.0":
+    "모든 회원은 아무것도 하지 않고 매일 종파의 재무부에서 공적을 받습니다. 얼마인지는 당신의 신분과 종파의 등급에 달려 있습니다 — 소(小) 종파의 외제자는 조금을 받고, 대(大) 종파의 장로는 매우 많이 받습니다.",
+  "tour.sectlife.stipend.body.1":
+    "따라서 종파는 당신이 아무것도 기여하기 전에 속할 가치가 있으며, 이후에 상승할 가치가 있습니다.",
+  "tour.sectlife.stipend.title": "당신은 여기 있으면 돈을 받습니다",
+  "tour.sectlife.treasury-economy.body.0":
+    "재무부는 무한한 냄비가 아닙니다. 종파는 매일 고정된 금액을 모으며, 이는 그 등급과 당신의 수에 의해 결정되고, 지불된 모든 것은 그것에서 나옵니다.",
+  "tour.sectlife.treasury-economy.bullets.0":
+    "수입 — 일일 수입, 그리고 공적 전당에서 사용된 모든 공적은 재무부로 돌아갑니다.",
+  "tour.sectlife.treasury-economy.bullets.1":
+    "지출 — 당신의 봉급, 그리고 종파가 기부품에 대해 회원에게 지불하는 것.",
+  "tour.sectlife.treasury-economy.bullets.2":
+    "남은 것 — 다음 승진을 위해 지불되는 것인데, 5천 공적에서 100만까지 비용이 듭니다.",
+  "tour.sectlife.treasury-economy.title": "그것이 어디에서 오는가",
+  "tour.sectlife.treasury-why-it-matters.body.0":
+    "기부에 대해 너그럽게 지불하는 종파는 승진을 위해 더 적게 가집니다. 창고를 쌓는 종파는 올라가지만 회원들에게 추가로 아무것도 지불하지 않습니다. 둘 다 잘못되지 않았습니다 — 하지만 재무부를 비우는 종파는 봉급 지불을 완전히 중단하고, 당신은 알아차릴 것입니다.",
+  "tour.sectlife.treasury-why-it-matters.body.1":
+    "공적 전당에서 재무부와 당신의 일일 수입을 볼 수 있습니다. 만약 떨어지고 있다면, 지도부는 종파가 버는 것보다 더 빠르게 지출하고 있습니다.",
+  "tour.sectlife.treasury-why-it-matters.title":
+    "이것이 그것을 주시할 가치가 있게 만드는 것",
+  "tour.sectlife.wars.body.0":
+    "종파들은 서로 싸웁니다. 전쟁이 카운트다운과 함께 선포되고, 양쪽 명단 간의 Dao Power로 대규모 제거전으로 해결되며, 승자는 다음 날들 동안 패자로부터 전리품을 얻습니다.",
+  "tour.sectlife.wars.body.1":
+    "당신이 명단에 있기 위해 아무것도 할 필요가 없습니다. 당신의 종파가 전쟁 중이면, 당신도 그렇습니다. 이것이 명단에 있을 가치가 있다는 가장 강력한 주장입니다.",
+  "tour.sectlife.wars.title": "그리고 종파 전쟁",
+  "tour.sects.expand-for-world.body.0":
+    "바의 나머지를 열어보세요. 뒤에 더 많은 것이 있습니다.",
+  "tour.sects.found.body.0":
+    "당신은 누구든 가입할 필요가 없습니다. 충분히 높은 경지에 있고 영석이 있다면, 직접 종파를 창설하고 제자를 받을 수 있습니다. 종파 페이지에서 아직 필요한 것이 정확히 무엇인지 알려줄 것입니다.",
+  "tour.sects.found.body.1":
+    "대부분의 수련자는 먼저 가입하고 나중에 창설합니다. 나가는 것에 대한 패널티는 없습니다.",
+  "tour.sects.found.title": "또는 자신의 종파를 창설하세요",
+  "tour.sects.point-sects.body.0": "그 문은 종파 전당입니다. 열어보세요.",
+  "tour.sects.point-town.body.0": "도시로 다시 들어가세요.",
+  "tour.sects.point-world.body.0":
+    "이제 경지가 되었으니, 도시에 한 가지 더 있습니다.",
+  "tour.sects.sects.body.0":
+    "종파는 수련자의 집입니다. 공유 전당, 공유 금고, 함께 받는 임무, 서로를 위해 채우는 제작 주문, 그리고 자신들 간의 순위입니다.",
+  "tour.sects.sects.body.1":
+    "이것들이 이 도시에 전당을 유지하는 확립된 종파들입니다. 각각은 원하는 것을 나타냅니다. 어떤 것은 올바른 경지의 누구에게나 문을 열고, 다른 것은 초대장으로만 가능합니다.",
+  "tour.sects.sects.body.2":
+    "하나를 누르면 그것의 전당, 구성원과 조건을 보여주며, 아래에 가입이 있습니다. 나는 당신을 위해 누르지 않겠습니다. 어느 종파에 맹세하는지는 이 게임에서 진정으로 당신의 것인 첫 번째 선택이며, 선택하기 전에 몇 개를 읽을 가치가 있습니다.",
+  "tour.sects.sects.title": "종파",
+  "tour.souldemons.costs.body.0":
+    "모든 악마는 또한 무언가를 비용으로 합니다: 그것이 억제하는 스탯, 또는 원소, 또는 당신을 더 세게 때리는 생물의 종류. 악마를 열고 결합하기 전에 양쪽 모두를 읽으세요.",
+  "tour.souldemons.costs.body.1":
+    "그것의 숫자는 한 번 굴려지며, 그것의 계급이 정하는 범위 안에 있으므로, 같은 악마는 두 번 사냥할 가치가 있습니다. 동조성은 당신의 것이 어디에 착지했는지 보여줍니다.",
+  "tour.souldemons.costs.title": "악마의 비용",
+  "tour.souldemons.point-cultivate.body.0":
+    "당신의 영혼이 새로운 것을 열었습니다. 당신의 수련으로 가세요.",
+  "tour.souldemons.point-demons.body.0":
+    "불로장생 황제에 도달하면서 당신의 영혼에 있는 오각형의 첫 번째 봉인이 열렸습니다. 열어보세요.",
+  "tour.souldemons.reserve.body.0":
+    "사용하지 않는 악마가 여기서 기다립니다. 이미 가득 찬 봉인에 하나를 결합하면 이전 것을 예비로 이동시켜 그것의 보너스만 잃게 됩니다.",
+  "tour.souldemons.reserve.body.1":
+    "당신 자신의 Qi 풀에서 악마에게 Qi를 먹여 레벨 150까지 올립니다. 그 Qi는 돌파가 이루어지는 것이므로, 모든 레벨은 연기된 돌파입니다. 더 이상 원하지 않는 악마는 대신 삼킬 수 있으며, 그것이 들고 있던 대부분이 당신이 유지하는 것들로 전달됩니다.",
+  "tour.souldemons.reserve.body.2":
+    "그들은 영구적으로 당신의 것입니다. 환생은 그들을 다음 생명으로 이월하지만, 당신이 불로장생 황제로 돌아갈 때까지 그들에게 명령할 수 없습니다.",
+  "tour.souldemons.reserve.title": "예비, 먹이기 및 삼키기",
+  "tour.souldemons.seals.body.0":
+    "각 봉인은 하나의 복종한 악마를 보유하며, 그것이 부여하는 모든 것은 그것이 결합된 상태로 유지되는 동안 적용됩니다: 스탯, 원소 력, 저항력, 특정 생물에 대한 피해, 그리고 당신이 Qi를 모으는 속도, Dao를 이해하고 무기를 숙달하는 속도.",
+  "tour.souldemons.seals.body.1":
+    "첫 번째 봉인은 불로장생 황제에서 열리고, 나머지는 허공 황제, 천상의 성인, 천상의 황제, 세상의 창조자에서 열립니다. 같은 원소의 악마는 한 번에 하나만 결합될 수 있습니다.",
+  "tour.souldemons.seals.title": "다섯 봉인",
+  "tour.souldemons.stones.body.0":
+    "악마는 발견되지 않습니다; 그들은 소환됩니다. 소환 돌은 천상의 영역을 탐색하고 그것의 폭군들로부터 떨어집니다, 그리고 각각은 하나의 악마를 명명합니다: 그것의 원소와 그것의 계급.",
+  "tour.souldemons.stones.body.1":
+    "당신의 가방에서 돌을 부수면 그 악마를 불러내고, 그것이 당신을 섬기기 전에 격파되어야 합니다. 당신의 경지보다 훨씬 높은 계급은 도전보다는 벽이며, 돌은 당신이 이기든 지든 소비됩니다.",
+  "tour.souldemons.stones.title": "악마 소환하기",
+  "tour.techniques.point-character.body.0":
+    "당신은 전투 기술을 배웠습니다. 와서 그것을 살펴보세요.",
+  "tour.techniques.point-cultivate.body.0": "수련 화면을 여세요.",
+  "tour.techniques.point-techniques-close.body.0": "살펴본 후 닫으세요.",
+  "tour.techniques.point-techniques.body.0": "기술을 열어보세요.",
+  "tour.techniques.techniques.body.0":
+    "이것은 당신이 아는 모든 전투 기술입니다. 위쪽 장착된 슬롯에 있는 것들은 당신이 싸움에서 평범한 일격과 함께 선택하는 것입니다. 당신은 두 개의 슬롯으로 시작하고, 더 많은 것이 주요 경지를 오를 때 열립니다. 어느 기술이든 탭하여 그것의 원소, 그것의 숫자, 그리고 당신이 어떻게 얻었는지 보세요.",
+  "tour.techniques.techniques.body.1":
+    "사는 것은 없습니다. 모두 얻는 것이고, 그것이 일어나는 네 가지 방법이 있습니다:",
+  "tour.techniques.techniques.bullets.0":
+    "수련서 이해 - 하나를 충분히 연습하면 중요한 지점에서 기술을 가르쳐줍니다.",
+  "tour.techniques.techniques.bullets.1":
+    "혈맥과 체질 중요 지점 - 당신의 타고난 재능은 경지를 올라갈 때 기술을 잠금 해제합니다.",
+  "tour.techniques.techniques.bullets.2":
+    "무기 숙련도 - 무기 종류의 더 높은 등급은 그 무기만 사용할 수 있는 기술을 가집니다.",
+  "tour.techniques.techniques.bullets.3":
+    "두루마리 - 탐험하다가 발견되거나 구매됩니다. 단일 기술을 가르치는 일회성입니다.",
+  "tour.techniques.techniques.title": "전투 기술",
+  "tour.tyrant.again.body.0":
+    "쓰러진 폭군은 쓰러진 채로 남으며, 당신 뒤의 지역은 영원히 열린 상태로 남습니다. 나중에 가장 강한 것들은 하루에 한 번 강화된 재경기로 다시 불려날 수 있으며, 첫 번째 처치가 주지 않는 보상을 제공합니다.",
+  "tour.tyrant.again.body.1":
+    "지금은 앞에 있는 것만 있습니다. 준비되면 받으세요.",
+  "tour.tyrant.again.title": "그리고 그 이후",
+  "tour.tyrant.gate.body.0":
+    "그것을 이기는 것은 두 가지를 합니다. 자신의 지역을 열고, 다음 지역을 엽니다. 다른 것은 그렇게 하지 않습니다. 폭군이 한 구간과 다음 구간 사이의 유일한 문이며, 이것이 전체 길이가 그것으로 이어지는 이유입니다.",
+  "tour.tyrant.gate.body.1":
+    "약속하기 전에 Dao Power 라인을 읽어보세요. 폭군은 한동안 장벽이 되어야 합니다. 위험이라고 하면, 정직한 답변은 가서 더 강해진 후 돌아오는 것입니다. 그것은 어디로 가지 않을 것입니다.",
+  "tour.tyrant.gate.title": "비용과 얻는 것",
+  "tour.tyrant.point-explore.body.0":
+    "무언가가 당신의 길을 막고 있습니다. 와서 그것을 살펴보세요.",
+  "tour.tyrant.what.body.0":
+    "모든 지역의 끝에는 그 전체를 지배하는 하나의 야수가 있습니다. 이것은 또 다른 문이 아닙니다. 이것은 지역의 주인이며, 그것을 이끈 모든 것보다 훨씬 강합니다.",
+  "tour.tyrant.what.body.1":
+    "길의 끝에 있는 지역을 찾아 열어보세요. 패널은 지역의 폭군이 이 장소를 지배한다고 말할 것입니다. 무리가 아니라.",
+  "tour.tyrant.what.title": "지역의 폭군",
+  "tour.world.map.body.0":
+    "탐험이 당신이 모으는 곳이고, 여기가 사람들과 거래하는 곳입니다. 도시들이 지도에 흩어져 있고, 그들 사이를 이동하는 것은 실제 시간이 걸립니다. 그래서 당신이 서 있는 곳이 중요합니다.",
+  "tour.world.map.body.1":
+    "모든 도시는 조금씩 다릅니다. 그곳이 무엇을 보유하고 있는지, 누가 그곳에 전당을 유지하는지, 그리고 당신이 운반하는 것에 대해 무엇을 지불할 의향이 있는지입니다.",
+  "tour.world.map.title": "세계 지도",
+  "tour.world.market.body.0":
+    "지도의 어디서나 도달할 수 있는 플레이어 시장입니다. 수련자들이 필요 없는 것을 나열하고 필요한 것을 사고, 레시피의 간격을 채우는 가장 빠른 방법입니다.",
+  "tour.world.market.body.1":
+    "판매자가 가격을 정하므로, 저녁을 꼬박 무언가를 채집하기 전에 한 번 살펴볼 가치가 있습니다.",
+  "tour.world.market.title": "Dao 시장",
+  "tour.world.point-town.body.0": "마을로 발을 옮기십시오.",
+  "tour.world.town.body.0":
+    "각 문은 서로 다른 거래처이며, 마을이 어떤 거래처를 갖추고 있을지는 그 마을에 따라 달라집니다.",
+  "tour.world.town.bullets.0":
+    "일반 잡화 - 일상용 물자이며, 남은 재료들을 팔 수 있는 곳입니다.",
+  "tour.world.town.bullets.1": "연금술사 - 환약과 그것을 만드는 약초입니다.",
+  "tour.world.town.bullets.2":
+    "대장장이 - 무기, 갑옷, 그리고 그것들을 만드는 광석입니다.",
+  "tour.world.town.bullets.3": "부적 가게 - 종이, 먹, 그리고 주문입니다.",
+  "tour.world.town.title": "마을이 갖춘 것들",
+  "tour.worldboss.boss-rewards.body.0":
+    "보스가 결국 쓰러질 때, 그것을 해친 모든 사람이 보상을 받으며, 얼마나 해쳤는지에 따라 보상받습니다 - 순위판이 바로 그 순위입니다. 가장 많은 공헌을 한 사람들이 최고의 보상을 가져가며, 여기에는 자신의 경지에 맞는 전설 장비 한 조각도 포함됩니다.",
+  "tour.worldboss.boss-rewards.body.1":
+    "따라서 하루 열 번의 공격은 그 보스가 격파 불가능해 보일 때도 취할 가치가 있습니다. 당신 혼자로는 격파 불가능할지 몰라도, 모두가 함께라면 그렇지 않습니다.",
+  "tour.worldboss.boss-rewards.title": "얻을 수 있는 것",
+  "tour.worldboss.boss.body.0":
+    "거대한 하나의 생물이 같은 경지의 모든 사람과 공유되며, 일주일간 서 있습니다. 그것을 공격하는 모든 수련자가 다른 사람들을 위해 그것을 약하게 만듭니다 - 체력바는 온 서버의 노력이지, 당신의 노력만은 아닙니다.",
+  "tour.worldboss.boss.body.1":
+    "당신은 하루에 정해진 횟수의 공격을 할 수 있으며, 보스가 일주일을 견디는 동안 매일 회복됩니다. 피해는 내내 누적되므로, 월요일에 사용한 공격도 일요일에 여전히 계산됩니다.",
+  "tour.worldboss.boss.title": "월드 보스",
+  "tour.worldboss.point-boss.body.0":
+    "온 세계가 싸우고 있던 무언가가 방금 당신의 손에 닿게 되었습니다. 열어보십시오.",
+  "tour.worldboss.point-strike.body.0":
+    "공격은 실제의 전투입니다: 당신의 공격과 당신의 전투 기술을 당신보다 훨씬 위의 무언가에 거는 것입니다. 당신이 그것을 격파할 것으로 예상되지는 않습니다 - 당신이 그것의 일부를 베어내기를 예상할 뿐입니다. 공격하십시오.",
+};
+export { t as default };

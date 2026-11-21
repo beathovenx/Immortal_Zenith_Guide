@@ -1,0 +1,278 @@
+const e = {
+  "overview.achievements.0.body.0":
+    "업적은 모든 시스템에 걸친 이정표를 기록합니다 — 도달한 경지, 쓰러뜨린 적, 제작한 아이템까지. 보상을 획득하면 영석과 수정, 그리고 착용할 수 있는 치장용 칭호를 얻습니다.",
+  "overview.achievements.0.body.1":
+    "어떤 업적은 세계 최초입니다: 당신의 세계에서 가장 먼저 달성하면 모두가 볼 수 있도록 이름이 기록됩니다.",
+  "overview.achievements.0.heading": "위업과 칭호",
+  "overview.achievements.title": "업적",
+  "overview.bounty.0.body.0":
+    "현상금 게시판에는 사냥할 가치가 있는 이름 있는 정예 적들이 두둑한 보상과 함께 게시됩니다. 각각은 야생 야수보다 강하며 더 좋은 전리품을 떨어뜨립니다.",
+  "overview.bounty.0.body.1":
+    "처음에는 현상금 슬롯이 하나뿐이지만, 경지를 올릴수록 더 많이 열려 여러 사냥을 동시에 진행할 수 있습니다.",
+  "overview.bounty.0.heading": "이름 있는 정예 사냥",
+  "overview.bounty.title": "현상금 게시판",
+  "overview.bounty.unlock": "신체 단련 경지(두 번째 대경지)에서 해금",
+  "overview.caravan.0.body.0":
+    "천상 카라반은 천상 수정으로 소모품, 캐릭터 강화, 엄선된 묶음, 치장 아이템을 거래합니다. 구매한 것은 곧바로 가방이나 계정으로 들어갑니다.",
+  "overview.caravan.0.body.1":
+    "이곳의 모든 것은 편의 기능이나 치장일 뿐입니다 — 이것 없이도 게임 전체를 즐길 수 있습니다.",
+  "overview.caravan.0.heading": "프리미엄 상점",
+  "overview.caravan.title": "천상 카라반",
+  "overview.character.0.body.0":
+    "이곳은 당신의 홈 화면입니다 — 당신의 수련자가 어떤 존재인지에 관한 모든 것이 담겨 있습니다. 초상화, 현재 경지, 그리고 Dao 파워(전체적인 강함의 척도)가 맨 위에 표시됩니다.",
+  "overview.character.0.body.1":
+    "여기서 다른 모든 시스템으로 이동할 수 있습니다: 수련 배너를 탭하면 자리에 앉아 Qi를 모으고, 하단의 빠른 이동 휠(또는 막대)로 가방, 탐험, 전투 등을 엽니다.",
+  "overview.character.0.heading": "캐릭터 시트",
+  "overview.character.1.body.0":
+    "능력치가 당신의 강함을 결정합니다. 능력치는 경지를 돌파하고, 장비를 착용하고, 비급을 익히고, 단약을 흡수할수록 성장합니다.",
+  "overview.character.1.body.1":
+    "어느 것이든 탭하면 정확히 어디에서 나오는지 볼 수 있습니다.",
+  "overview.character.1.bullets.0":
+    "공격 / 방어력 — 입히고 막아내는 순수한 피해량.",
+  "overview.character.1.bullets.1":
+    "체력과 재생 — 얼마나 많은 타격을 버틸 수 있는지.",
+  "overview.character.1.bullets.2": "속도 — 전투에서 얼마나 자주 행동하는지.",
+  "overview.character.1.bullets.3":
+    "극대 확률 / 극대 피해 — 치명타가 터질 확률과 그 크기.",
+  "overview.character.1.bullets.4":
+    "정신력 — Dao 통찰의 원동력이 되며 제어 효과에 저항합니다.",
+  "overview.character.1.bullets.5":
+    "Qi 보유량 — 돌파 전까지 담아둘 수 있는 Qi의 양.",
+  "overview.character.1.bullets.6":
+    "원소 친화성 — 원소당 한 칸: 위쪽은 그것으로 공격하는 당신, 아래쪽은 그것에 대한 저항력. 흡수나 반사가 있으면 저항력 자리를 대신합니다.",
+  "overview.character.1.heading": "능력치",
+  "overview.character.2.body.0":
+    "기원은 당신이 태어난 삶입니다 — 시작 위치를 정하고 작은 영구 보너스를 줍니다. 혈맥(공격)과 체질(방어)은 타고난 재능으로, 경지를 오를수록 더 강한 보너스가 해금됩니다.",
+  "overview.character.2.body.1":
+    "시트에서 각 항목을 펼치면 지금 정확히 무엇을 주는지, 그리고 더 높은 경지에서 무엇이 기다리고 있는지 볼 수 있습니다.",
+  "overview.character.2.heading": "기원, 혈맥과 체질",
+  "overview.character.title": "당신의 수련자",
+  "overview.combat.0.body.0":
+    "전투는 턴제입니다. 자신의 턴에 공격하거나, 전투 기법을 펼치거나, 아이템을 쓰거나, 방어합니다. 속도는 얼마나 자주 행동하는지를 결정하며, 게이지를 쌓으면 강력한 기파를 해방할 수 있습니다.",
+  "overview.combat.0.body.1":
+    "적은 최대 다섯 마리까지 무리 지어 나타납니다 — 목표를 고르고, 광역 기법으로 여럿을 한꺼번에 공격하세요.",
+  "overview.combat.0.heading": "턴제 전투",
+  "overview.combat.1.body.0":
+    "모든 공격과 적에게는 속성이 있습니다. 약점을 찌르면 추가 피해를 주고, 알맞은 속성을 연계하면 연계 반응과 폭발이 일어나 순간 피해를 크게 입힙니다.",
+  "overview.combat.1.body.1":
+    "전장 자체에 환경 효과가 깃들어 있을 수도 있습니다 — 전투 시작 시 배너를 읽고, 전투 기록에서 그 효과를 지켜보세요.",
+  "overview.combat.1.heading": "속성과 반응",
+  "overview.combat.2.body.0":
+    "야수와의 전투는 처음부터 열려 있습니다. 더 강해질수록 모드 선택 화면에서 더 많은 전투 방식이 해금됩니다.",
+  "overview.combat.2.bullets.0":
+    "현상금 게시판 — 이름 있는 정예를 사냥합니다 (신체 단련).",
+  "overview.combat.2.bullets.1": "탑 정복 — 100층을 오르는 등반 (Qi 응축).",
+  "overview.combat.2.bullets.2": "원소 격화 — 스토리 캠페인 (결단 형성).",
+  "overview.combat.2.bullets.3": "비경 — 로그라이트 격자 탐험 (금단).",
+  "overview.combat.2.heading": "전투 방식",
+  "overview.combat.title": "전투",
+  "overview.crafting.0.body.0":
+    "제작은 모은 재료를 강력한 물품으로 바꿉니다. 각 직업에는 고유한 작업장과, 제작할수록 오르는 고유한 숙련도가 있으며, 제조법은 그 숙련도에 따라 열립니다.",
+  "overview.crafting.0.bullets.0":
+    "연단술 — 가마에서 단약과 영약을 정제합니다.",
+  "overview.crafting.0.bullets.1":
+    "제련 — 무기, 방어구, 법보를 벼리고 강화합니다.",
+  "overview.crafting.0.bullets.2": "진법사 — 진법판을 새깁니다.",
+  "overview.crafting.0.bullets.3":
+    "부적 — 전투에서 효과를 발휘하는 부적을 그립니다.",
+  "overview.crafting.0.heading": "제작 선택",
+  "overview.crafting.1.body.0":
+    "제작은 버튼 하나로 끝나지 않습니다 — 시간과 온도를 조절해 이상적인 곡선을 맞추면, 결과가 좋을수록 더 높은 품질과 더 많은 수량을 얻습니다. 제조법을 연구해 변형을 발견하세요.",
+  "overview.crafting.1.body.1":
+    "다른 수련자(또는 당신의 종파)가 올린 제작 주문을 처리해 보상을 받고, 마지막 제작에서 무엇이 나왔는지 기록에서 확인하세요.",
+  "overview.crafting.1.heading": "가마, 품질과 주문",
+  "overview.crafting.title": "제작 직업",
+  "overview.crafting.unlock": "Qi 응축 경지(세 번째 대경지)에서 해금",
+  "overview.cultivation.0.body.0":
+    "수련은 게임의 핵심입니다: 명상에 잠겨 Qi를 끌어들이면 Qi 보유량이 천천히 차오릅니다. 자리를 비운 동안에도 계속되므로, 돌아올 때마다 항상 진척이 있습니다.",
+  "overview.cultivation.0.body.1":
+    "보유량이 가득 차면 다음 소경지로 돌파할 준비가 된 것입니다. 소경지 열 개가 모여 하나의 대경지를 이룹니다.",
+  "overview.cultivation.0.heading": "Qi 모으기",
+  "overview.cultivation.1.body.0":
+    "보유량이 가득 차면 돌파를 눌러 나아가세요. 돌파할 때마다 능력치가 오르고, 10단계마다 새로운 대경지에 올라 완전히 새로운 시스템들이 해금됩니다.",
+  "overview.cultivation.1.body.1":
+    "불멸 등선 경지부터는 대경지 돌파 시 하늘의 천겁이 내립니다 — 승천하려면 반드시 살아남아야 하는 전투입니다. 시도하기 전에 준비하세요.",
+  "overview.cultivation.1.heading": "돌파",
+  "overview.cultivation.2.body.0":
+    "집중 화면에서 신체, 영혼, 정신을 위해 수련할 수련 비급을 선택하고 장착한 무기로 수련합니다. 비급을 수련하면 시간이 지나면서 이해도가 높아지고 그것이 부여하는 능력치가 꾸준히 상승합니다. 기술 버튼은 전투 심법을 엽니다.",
+  "overview.cultivation.2.body.1":
+    "혼과 정신 수련은 두 번째 대경지(신체 단련)에서 열립니다. 육체 수련과 무기 수련은 처음부터 할 수 있습니다.",
+  "overview.cultivation.2.heading": "기법과 무기 수련",
+  "overview.cultivation.title": "수련",
+  "overview.daoInsight.0.body.0":
+    "Dao 통찰은 매일 하는 명상으로, Dao에 대한 깨달음을 깊게 하여 지속적인 보너스를 줍니다. 하루에 얼마나 얻을 수 있는지는 정신력과 경지가 결정합니다.",
+  "overview.daoInsight.0.body.1":
+    "통찰을 현명하게 쓰세요 — 깨달음은 긴 여정에 걸쳐 복리처럼 쌓입니다.",
+  "overview.daoInsight.0.heading": "Dao를 깨닫다",
+  "overview.daoInsight.title": "Dao 통찰",
+  "overview.explore.0.body.0":
+    "탐험은 수련자를 구역으로 보내 재료, 영초, 광석, 그리고 귀한 기연을 찾게 합니다. 수련처럼 수색도 자체 타이머로 진행되며 자리를 비운 동안에도 계속됩니다.",
+  "overview.explore.0.body.1":
+    "지역을 고르고, 그 안의 구역을 선택한 뒤 시작하세요. 활동 기록에 찾은 모든 것이 남습니다.",
+  "overview.explore.0.heading": "황야 수색",
+  "overview.explore.1.body.0":
+    "경지를 올리면 새로운 지역이 열리며, 지역마다 더 강한 적과 더 좋은 전리품이 있습니다. 구역에서 자연 관찰을 하면 부적 문양을 익힐 기회도 얻습니다.",
+  "overview.explore.1.body.1":
+    "지역을 떠도는 폭군을 주시하세요 — 그 지역 최고의 보상을 지키는 강력한 이름 있는 야수입니다.",
+  "overview.explore.1.heading": "지역과 자연 관찰",
+  "overview.explore.title": "탐험",
+  "overview.familyLine.0.body.0":
+    "도반과 혼인해 쌍수하세요 — 진척을 나누고 공동 보너스를 해금합니다. 함께 가문 계보를 세우면, 그 도혼과 후계자들이 당신의 힘을 이어갑니다.",
+  "overview.familyLine.0.body.1":
+    "가문의 후계자는 전설적인 기원으로 태어날 수도 있어, 미래의 캐릭터에게 강력한 출발점을 줍니다.",
+  "overview.familyLine.0.heading": "도반과 유산",
+  "overview.familyLine.title": "가문 계보",
+  "overview.inventory.0.body.0":
+    "왼쪽에는 장비 슬롯이, 오른쪽에는 가방이 있습니다. 무기, 방어구, 장신구를 착용해 능력치를 올리세요 — 어떤 아이템은 원소 공격이나 저항을 더해 줍니다.",
+  "overview.inventory.0.body.1":
+    "많은 아이템은 착용하거나 사용하려면 최소 경지가 필요합니다. 아이템에 마우스를 올리면 정확히 무슨 효과인지 볼 수 있습니다.",
+  "overview.inventory.0.heading": "장비와 가방",
+  "overview.inventory.1.body.0":
+    "단약은 Qi를 회복하거나, 치유하거나, 지속적인 이득을 줍니다 — 하지만 하루 안전 한도가 있어, 과다 복용하면 부작용의 위험이 있습니다. 비급과 두루마리는 익혀서 기법과 제조법을 얻습니다.",
+  "overview.inventory.1.body.1":
+    "탐험 중 모은 재료는 제작 직업에 쓰입니다. 탭으로 가방을 걸러 필요한 것을 찾으세요.",
+  "overview.inventory.1.heading": "소모품과 재료",
+  "overview.inventory.title": "가방과 장비",
+  "overview.market.0.body.0":
+    "시장에서는 같은 세계의 다른 수련자들과 영석으로 사고팔 수 있습니다. 매물을 둘러보거나, 남는 장비, 단약, 재료를 직접 판매 등록하세요.",
+  "overview.market.0.body.1":
+    "사거나 직접 가격을 매기기 전에 동향 탭에서 아이템의 가치를 확인하세요.",
+  "overview.market.0.heading": "수련자들과의 거래",
+  "overview.market.title": "시장",
+  "overview.quests.0.body.0":
+    "퀘스트 게시판은 일일 및 주간 목표를 제시합니다 — 수련, 탐험, 전투, 제작 — 영석, 재료 등을 보상으로 줍니다.",
+  "overview.quests.0.body.1":
+    "퀘스트는 일정 시간마다 갱신되고 당신의 경지에 맞춰 조정되므로, 언제나 할 만한 일이 있습니다.",
+  "overview.quests.0.heading": "일일 및 주간 목표",
+  "overview.quests.title": "퀘스트 게시판",
+  "overview.rankings.0.body.0":
+    "순위는 당신의 세계에서 가장 강한 수련자와 종파를 Dao 파워와 여러 업적으로 보여 줍니다. 순위표를 올라 당신의 승천이 누구보다 빠르다는 것을 증명하세요.",
+  "overview.rankings.0.heading": "당신의 위치",
+  "overview.rankings.title": "순위",
+  "overview.reincarnation.0.body.0":
+    "환생은 경지를 초기화하지만, 영구적인 혼 나무에 쓸 영혼 점수는 이어지며, 새로운 기원을 골라 시작하는 삶을 다시 빚을 수 있습니다.",
+  "overview.reincarnation.0.body.1":
+    "이는 진정한 불멸자의 긴 여정입니다: 매 생은 이전보다 더 빠르게 오릅니다. 이번 생에서 얻을 수 있는 모든 것을 짜낸 뒤에만 환생하세요.",
+  "overview.reincarnation.0.heading": "더 강하게, 새로이",
+  "overview.reincarnation.title": "환생",
+  "overview.reincarnation.unlock": "원영 경지(여섯 번째 대경지)에서 해금",
+  "overview.secretRealms.0.body.0":
+    "비경은 숨겨진 영역으로 들어가는 격자형 탐험입니다. 전투, 보물, 사건을 지나 한 칸씩 이동하며, 파고들수록 하루 기력을 소모합니다.",
+  "overview.secretRealms.0.body.1":
+    "깊이 들어갈수록 전리품도 커집니다 — 하지만 탐험이 틀어지기 전에 얻은 것을 챙겨 물러나세요.",
+  "overview.secretRealms.0.heading": "로그라이트 탐험",
+  "overview.secretRealms.title": "비경",
+  "overview.secretRealms.unlock": "금단 경지(다섯 번째 대경지)에서 해금",
+  "overview.sect.0.body.0":
+    "종파는 수련자들의 길드입니다. 가입하면 임무로 공적을 얻어 공적 상점에서 쓸 수 있고, 공유 창고, 진법, 제작 주문을 이용할 수 있습니다.",
+  "overview.sect.0.body.1":
+    "종파 본거지는 살아 있는 지도입니다 — 건물을 탭하면 그 전각으로 들어갑니다.",
+  "overview.sect.0.heading": "종파 가입",
+  "overview.sect.1.body.0":
+    "종파 임무를 완수하고 자원을 기부해 공적을 얻고 종파 직급을 올리세요. 직급이 높을수록 장로전에서 더 큰 영향력을 가집니다.",
+  "overview.sect.1.body.1":
+    "강력한 종파는 경쟁 종파에 종파 전쟁을 선포할 수 있습니다 — 전리품이 걸린 대규모 섬멸전입니다. 금단 경지에 도달하면 자신의 종파를 창설할 수 있습니다.",
+  "overview.sect.1.heading": "임무, 직급과 전쟁",
+  "overview.sect.title": "종파",
+  "overview.sect.unlock": "신체 단련 경지(두 번째 대경지)에서 해금",
+  "overview.social.0.body.0":
+    "소셜 페이지는 당신을 다른 이들과 이어 줍니다: 쪽지를 보내고, 친구를 추가해 그들의 수련을 살펴보고, 집회에서 월드 대화와 종파 대화에 참여하세요.",
+  "overview.social.0.body.1":
+    "가문 계보 탭에서는 도반과 혼인하고, 함께 쌍수하며, 혈맥을 따라 유산을 물려줄 수 있습니다.",
+  "overview.social.0.heading": "친구, 대화와 가문",
+  "overview.social.title": "소셜",
+  "overview.soulDemons.0.body.0":
+    "천계로 승천하면 혼에 있는 다섯 봉인 중 첫 번째가 열립니다. 나머지는 오를수록 열립니다: 공허 황제, 천계 성인, 천계 황제, 세계 창조자에서 하나씩 더 열립니다.",
+  "overview.soulDemons.0.body.1":
+    "각 봉인에는 굴복시킨 마물 하나가 깃들며, 봉인되어 있는 동안 그 마물이 주는 모든 것이 적용됩니다 — 능력치, 원소의 힘, 저항, 특정 생물에 대한 피해, 그리고 Qi를 모으고 Dao를 깨닫고 무기를 숙련하는 속도까지.",
+  "overview.soulDemons.0.bullets.0":
+    "이미 마물이 든 봉인에 다른 마물을 봉인해도 둘 다 남습니다 — 기존 마물은 보유 목록으로 돌아가며, 잃는 것은 그 효과뿐입니다.",
+  "overview.soulDemons.0.bullets.1":
+    "모든 마물은 대가도 요구합니다. 약점은 결코 줄어들지 않습니다.",
+  "overview.soulDemons.0.heading": "오망성진의 다섯 봉인",
+  "overview.soulDemons.1.body.0":
+    "소환석은 천계 탐험과 그곳의 폭군에게서 떨어지며, 각각 하나의 마물을 지목합니다: 그 원소와 1부터 16까지의 등급입니다.",
+  "overview.soulDemons.1.body.1":
+    "소환석을 부순다고 마물이 넘어오지는 않습니다. 마물을 불러낼 뿐이며, 쓰러뜨려야 합니다. 당신의 경지보다 훨씬 높은 등급은 도전이 아니라 벽입니다 — 그리고 소환석은 이기든 지든 소모됩니다.",
+  "overview.soulDemons.1.heading": "소환석, 그리고 마물을 건 싸움",
+  "overview.soulDemons.2.body.0":
+    "마물이 주는 모든 수치는 마물의 등급이 정한 범위 안에서 한 번 굴려집니다. 같은 12등급 화염 마물을 가진 두 수련자라도 확연히 다른 존재를 가진 셈이며, 친화도는 당신의 마물이 그 모든 수치에서 어디쯤 떨어졌는지를 나타냅니다 — 같은 마물을 두 번 사냥할 가치가 있는 이유입니다.",
+  "overview.soulDemons.2.body.1":
+    "자신의 보유량에서 Qi를 먹여 마물을 레벨 150까지 키우세요. 그 Qi는 돌파를 이루는 재료이므로, 레벨 하나하나가 미뤄진 돌파입니다: 마물에게 모든 것을 쏟는 수련자는 더 느리게 오르지만, 그 길에서 훨씬 강하게 내리칩니다.",
+  "overview.soulDemons.2.heading": "친화도, 그리고 마물에게 Qi 먹이기",
+  "overview.soulDemons.title": "혼마",
+  "overview.soulDemons.unlock": "불멸 황제(천계)에서 해금",
+  "overview.soulTree.0.body.0":
+    "환생하면 힘겹게 얻은 영혼 점수가 남아 혼 나무에 쓸 수 있습니다 — 모든 생에 걸쳐 이어지는 영구 강화의 그물입니다.",
+  "overview.soulTree.0.body.1":
+    "가지는 기억, 전투, 육체 등으로 나뉩니다. 노드를 해제해 능력치를 올리고, 환생 후에도 진척을 유지하며, 특별한 행동을 활성화하세요.",
+  "overview.soulTree.0.heading": "영혼 점수 쓰기",
+  "overview.soulTree.1.body.0":
+    "어떤 노드는 완전히 새로운 능력을 엽니다 — 두 번째 행동 슬롯(영혼 유랑), 쌍둥이 탐험, 자동 전투, 지역 보스, 그리고 극대 확률 100% 같은 일반적인 상한을 넘어서는 것까지.",
+  "overview.soulTree.1.body.1":
+    "경로를 계획하세요: 점수는 귀하고, 가장 깊은 노드는 선행 조건으로 막혀 있습니다.",
+  "overview.soulTree.1.heading": "강력한 해금",
+  "overview.soulTree.title": "혼 나무",
+  "overview.soulTree.unlock": "첫 환생 후 해금 (원영 경지)",
+  "overview.story.0.body.0":
+    "원소 격화는 스토리 모드입니다: 열 개의 원소 챕터로, 각각 구불구불한 전투의 길을 따라 한 원소의 숙련을 가르치고 테마에 맞는 보상을 떨어뜨립니다.",
+  "overview.story.0.body.1":
+    "보통 난이도에서 챕터를 클리어하면 진행됩니다. 어려움 난이도는 보통을 모두 클리어하고 (불멸 등선에 도달하면) 열리며, 지옥은 진정한 강자를 기다립니다.",
+  "overview.story.0.heading": "스토리 캠페인",
+  "overview.story.title": "원소 격화",
+  "overview.story.unlock": "결단 형성 경지(네 번째 대경지)에서 해금",
+  "overview.techniques.0.body.0":
+    "알고 있는 모든 전투 무공이 여기에 칸으로 표시됩니다. 위쪽 장착 칸에 있는 무공만 기본 공격과 함께 전투에 가져갑니다.",
+  "overview.techniques.0.body.1":
+    "처음에는 두 칸으로 시작합니다. 대경지 3, 5, 7, 10에서 칸이 더 열리며, 잠긴 칸에는 열리는 경지가 표시됩니다.",
+  "overview.techniques.0.bullets.0":
+    "심법을 탭하면 그것의 원소, 수치, 그리고 어떻게 얻게 되었는지 볼 수 있으며, 장착하려면 교체를 선택합니다. 빈 슬롯이 없으면 어느 심법을 대체할지 선택합니다.",
+  "overview.techniques.0.bullets.1":
+    "또는 빈 칸을 먼저 누른 뒤 넣을 무공을 누르세요.",
+  "overview.techniques.0.bullets.2":
+    "패시브 무공은 항상 발동하며 칸을 차지하지 않습니다.",
+  "overview.techniques.0.heading": "무공과 장착 칸",
+  "overview.techniques.1.body.0":
+    "무공은 사용할수록 익숙해집니다. 직접 하는 전투에서 쓸 때마다 숙련도가 올라 최대 10레벨까지 오릅니다. 무공보다 훨씬 약한 적에게서는 덜 배웁니다.",
+  "overview.techniques.1.body.1":
+    "첫 레벨 이후 레벨마다 그 무공에만 쓰는 숙련 포인트 3점을 얻어 변형에 사용합니다. 혈통과 체질 무공은 두 배의 사용이 필요합니다.",
+  "overview.techniques.1.heading": "무공 숙련도",
+  "overview.techniques.title": "전투 무공",
+  "overview.tower.0.body.0":
+    "탑은 매달 새로운 시드로 초기화되는 100층 등반입니다. 층마다 이전보다 강해지며, 통과할 때마다 보상을 줍니다.",
+  "overview.tower.0.body.1":
+    "힘이 다할 때까지 최대한 높이 오르세요 — 최고 층이 이번 시즌의 기록이 됩니다.",
+  "overview.tower.0.heading": "100층 오르기",
+  "overview.tower.title": "탑 정복",
+  "overview.tower.unlock": "Qi 응축 경지(세 번째 대경지)에서 해금",
+  "overview.variations.0.body.0":
+    "다듬기는 무공을 나만의 변형으로 바꿉니다. 칸 한 쌍은 보너스와 그 대가인 부담이며, 바뀌는 내용이 옆에 표시됩니다.",
+  "overview.variations.0.body.1":
+    "숙련 2레벨에서 첫 쌍이, 4레벨과 6레벨에서 나머지 두 쌍이 열립니다.",
+  "overview.variations.0.heading": "무공 다듬기",
+  "overview.variations.1.body.0":
+    "칸을 눌러 이 무공이 받을 수 있는 보너스나 부담을 모두 확인하세요. 하나와 그 단계를 고르면 정확한 효과와 균형에 더해지는 값이 보입니다.",
+  "overview.variations.1.heading": "변경 고르기",
+  "overview.variations.2.body.0":
+    "균형은 보너스와 부담을 비교합니다. 첫 번째 숫자가 두 번째보다 크지 않으면 변형을 단련할 수 있습니다.",
+  "overview.variations.2.body.1":
+    "단련하면 무공의 숙련 포인트와 기를 일부 소모합니다. 변형을 제거하면 포인트는 돌아오지만 기는 돌아오지 않습니다.",
+  "overview.variations.2.body.2":
+    "단련한 뒤에는 나만의 이름을 붙이세요. 무공 이름을 포함할 수는 있지만 무공 이름 그 자체여서는 안 됩니다.",
+  "overview.variations.2.heading": "균형, 비용, 이름",
+  "overview.variations.title": "변형",
+  "overview.weaponMastery.0.body.0":
+    "무기로 싸우고 수련하면 그 종류의 숙련도가 쌓입니다 — 검, 창, 망치, 도끼, 지팡이, 단검, 부채, 방패는 각각 따로 레벨이 오릅니다.",
+  "overview.weaponMastery.0.body.1":
+    "숙련도가 높을수록 그 종류의 무기를 장착했을 때 보너스를 받아, 한 가지 전투 방식에 전념한 보상을 얻습니다.",
+  "overview.weaponMastery.0.heading": "모든 무기의 숙련",
+  "overview.weaponMastery.title": "무기 숙련",
+  "overview.worldBoss.0.body.0":
+    "월드 보스는 세계의 모든 수련자가 함께 공격하는 거대한 적입니다. 공격을 적중시켜 막대한 체력을 깎아내고 피해 순위표를 올라가세요.",
+  "overview.worldBoss.0.body.1":
+    "하루에 할 수 있는 공격 횟수는 제한되어 있으며, 보스가 쓰러지면 가장 많이 기여한 이들이 가장 큰 보상을 받습니다.",
+  "overview.worldBoss.0.heading": "세계 규모의 레이드",
+  "overview.worldBoss.title": "월드 보스",
+  "overview.worldBoss.unlock": "결단 형성 경지(네 번째 대경지)에서 공격 해금",
+};
+export { e as default };

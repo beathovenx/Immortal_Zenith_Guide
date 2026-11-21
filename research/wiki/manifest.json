@@ -1,0 +1,54 @@
+{
+  "retrievedOn": "2026-11-12",
+  "purpose": "Official public wiki snapshots supporting the personalized lightning PvE guide; no authentication used.",
+  "collections": [
+    {
+      "name": "bloodlines",
+      "url": "https://api.immortalzenith.com/api/v1/public/wiki/bloodlines",
+      "file": "bloodlines.json",
+      "entries": 254,
+      "bytes": 404297,
+      "sha256": "f828c188721fc14e74987af262a1a289ca6d8c857b1f77933989f920d49539e9"
+    },
+    {
+      "name": "physiques",
+      "url": "https://api.immortalzenith.com/api/v1/public/wiki/physiques",
+      "file": "physiques.json",
+      "entries": 253,
+      "bytes": 394780,
+      "sha256": "1ff9d94e9f1d27a7c60fb015682cba41a58eee6d0630cdc19a6691653559943a"
+    },
+    {
+      "name": "manuals",
+      "url": "https://api.immortalzenith.com/api/v1/public/wiki/manuals",
+      "file": "manuals.json",
+      "entries": 193,
+      "bytes": 221592,
+      "sha256": "47731529e8c66815d1a561e54542eca28e447a8a54b1db95cbd2533573d4eb9e"
+    },
+    {
+      "name": "techniques",
+      "url": "https://api.immortalzenith.com/api/v1/public/wiki/techniques",
+      "file": "techniques.json",
+      "entries": 1543,
+      "bytes": 713725,
+      "sha256": "3ff71f1cb4d95ab1da2673149a8db289063cae281dd8a851889d32cfbeb62478"
+    },
+    {
+      "name": "creatures",
+      "url": "https://api.immortalzenith.com/api/v1/public/wiki/creatures",
+      "file": "creatures.json",
+      "entries": 724,
+      "bytes": 849899,
+      "sha256": "430999ff00105d792fc96c11fe684475863bc9d6dff21312a86cd3ac0bfc16d5"
+    },
+    {
+      "name": "regions",
+      "url": "https://api.immortalzenith.com/api/v1/public/wiki/regions",
+      "file": "regions.json",
+      "entries": 20,
+      "bytes": 344139,
+      "sha256": "4ab9b6d575dad0a437d776b514aeefdce42429768ca5bcdbeea55c4635abfb48"
+    }
+  ]
+}

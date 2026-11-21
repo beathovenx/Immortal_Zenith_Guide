@@ -1,0 +1,3248 @@
+{
+  "fetchedAt": "2026-11-21T02:10:12.561Z",
+  "source": "https://api.immortalzenith.com/api/v1/public/wiki/soultree",
+  "entries": [
+    {
+      "id": "qi_gen_rate",
+      "tree": "cultivation",
+      "branch": "qi",
+      "name": "Flowing Meridians",
+      "description": "+10% Qi generation rate. Stacks to 10.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 10,
+      "bonus": "qi_gen_pct",
+      "value": 10,
+      "image": "/trees/flowing_meridians.png",
+      "row": 0,
+      "baseCost": 20,
+      "costStep": 8,
+      "localImage": "/assets/soul-tree/flowing_meridians.3e9b5a87.webp"
+    },
+    {
+      "id": "deep_reservoir",
+      "tree": "cultivation",
+      "branch": "qi",
+      "name": "Deep Reservoir",
+      "description": "+4% Qi pool capacity per rank.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "qi_gen_rate",
+          "ranks": 1
+        }
+      ],
+      "bonus": "soul_qi_pool_pct",
+      "value": 4,
+      "image": "/trees/deep_reservoir.png",
+      "row": 1,
+      "baseCost": 177,
+      "costStep": 110,
+      "localImage": "/assets/soul-tree/deep_reservoir.ea310e01.webp"
+    },
+    {
+      "id": "start_lifespan",
+      "tree": "cultivation",
+      "branch": "qi",
+      "name": "Long Years",
+      "description": "Begin each life with +40 years of lifespan, per rank.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "qi_gen_rate",
+          "ranks": 1
+        }
+      ],
+      "bonus": "start_lifespan",
+      "value": 40,
+      "image": "/trees/long_years.png",
+      "row": 1,
+      "baseCost": 99,
+      "costStep": 54,
+      "localImage": "/assets/soul-tree/long_years.d6aa3c6e.webp"
+    },
+    {
+      "id": "stable_core",
+      "tree": "cultivation",
+      "branch": "qi",
+      "name": "Stable Core",
+      "description": "+5% to your daily safe pill limit per rank.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "qi_gen_rate",
+          "ranks": 1
+        }
+      ],
+      "bonus": "pill_limit_pct",
+      "value": 5,
+      "image": "/trees/stable_core.png",
+      "row": 1,
+      "baseCost": 199,
+      "costStep": 133,
+      "localImage": "/assets/soul-tree/stable_core.547d6385.webp"
+    },
+    {
+      "id": "lifespan_gain",
+      "tree": "cultivation",
+      "branch": "qi",
+      "name": "Unhurried Dao",
+      "description": "+4% to the lifespan every breakthrough grants, per rank.",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 8,
+      "prereqs": [
+        {
+          "nodeId": "start_lifespan",
+          "ranks": 1
+        }
+      ],
+      "bonus": "lifespan_gain_pct",
+      "value": 4,
+      "image": "/trees/unhurried_dao.png",
+      "row": 2,
+      "baseCost": 263,
+      "costStep": 168,
+      "localImage": "/assets/soul-tree/unhurried_dao.214cffdf.webp"
+    },
+    {
+      "id": "tribulation_memory",
+      "tree": "cultivation",
+      "branch": "qi",
+      "name": "Tribulation Memory",
+      "description": "Your body remembers the lightning. +4% of your health as a tribulation ward, per rank — raised for two turns when the trial begins.",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "stable_core",
+          "ranks": 1
+        }
+      ],
+      "bonus": "tribulation_pct",
+      "value": 4,
+      "image": "/trees/tribulation_memory.png",
+      "row": 2,
+      "baseCost": 301,
+      "costStep": 225,
+      "localImage": "/assets/soul-tree/tribulation_memory.1358bf50.webp"
+    },
+    {
+      "id": "demonic_communion",
+      "tree": "cultivation",
+      "branch": "qi",
+      "name": "Demonic Communion",
+      "description": "Qi you feed your soul demons counts 3% more toward their growth, per rank.",
+      "tier": 3,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "qi_gen_eternal",
+          "ranks": 1
+        }
+      ],
+      "bonus": "soul_demon_feed_pct",
+      "value": 3,
+      "image": "/trees/demonic_communion.png",
+      "row": 3,
+      "baseCost": 447,
+      "costStep": 285,
+      "localImage": "/assets/soul-tree/demonic_communion.c7a21e25.webp"
+    },
+    {
+      "id": "moral_anchor",
+      "tree": "cultivation",
+      "branch": "qi",
+      "name": "Moral Anchor",
+      "description": "Keep 15% of your alignment through rebirth, per rank, instead of starting at your new origin's.",
+      "tier": 3,
+      "col": 1,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "lifespan_gain",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_morality_pct",
+      "value": 15,
+      "image": "/trees/moral_anchor.png",
+      "row": 3,
+      "baseCost": 319,
+      "costStep": 256,
+      "localImage": "/assets/soul-tree/moral_anchor.300a244b.webp"
+    },
+    {
+      "id": "enduring_vitality",
+      "tree": "cultivation",
+      "branch": "qi",
+      "group": "breath",
+      "name": "Enduring Vitality",
+      "description": "+1% Health regeneration per rank. Stacks to 10.",
+      "tier": 3,
+      "col": 2,
+      "maxRanks": 10,
+      "prereqs": [
+        {
+          "nodeId": "tribulation_memory",
+          "ranks": 1
+        }
+      ],
+      "bonus": "regen_pct",
+      "value": 1,
+      "aspect": "health",
+      "image": "/trees/enduring_vitality.png",
+      "row": 3,
+      "baseCost": 192,
+      "costStep": 98,
+      "localImage": "/assets/soul-tree/enduring_vitality.7fd3ae26.webp"
+    },
+    {
+      "id": "endless_breath",
+      "tree": "cultivation",
+      "branch": "qi",
+      "group": "breath",
+      "name": "Endless Breath",
+      "description": "+1% Energy regeneration per rank. Stacks to 10.",
+      "tier": 3,
+      "col": 2,
+      "maxRanks": 10,
+      "prereqs": [
+        {
+          "nodeId": "tribulation_memory",
+          "ranks": 1
+        }
+      ],
+      "bonus": "regen_pct",
+      "value": 1,
+      "aspect": "energy",
+      "image": "/trees/endless_breath.png",
+      "row": 4,
+      "baseCost": 192,
+      "costStep": 98,
+      "localImage": "/assets/soul-tree/endless_breath.25d32593.webp"
+    },
+    {
+      "id": "tireless_sinew",
+      "tree": "cultivation",
+      "branch": "qi",
+      "group": "breath",
+      "name": "Tireless Sinew",
+      "description": "+1% Stamina regeneration per rank. Stacks to 10.",
+      "tier": 3,
+      "col": 2,
+      "maxRanks": 10,
+      "prereqs": [
+        {
+          "nodeId": "tribulation_memory",
+          "ranks": 1
+        }
+      ],
+      "bonus": "regen_pct",
+      "value": 1,
+      "aspect": "stamina",
+      "image": "/trees/tireless_sinew.png",
+      "row": 5,
+      "baseCost": 192,
+      "costStep": 98,
+      "localImage": "/assets/soul-tree/tireless_sinew.1f8a85e8.webp"
+    },
+    {
+      "id": "comprehension_rate",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Enlightened Heart",
+      "description": "+10% technique comprehension rate. Stacks to 10.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 10,
+      "bonus": "comprehension_rate_pct",
+      "value": 10,
+      "image": "/trees/enlightened_heart.png",
+      "row": 0,
+      "baseCost": 20,
+      "costStep": 8,
+      "localImage": "/assets/soul-tree/enlightened_heart.03d4a5a9.webp"
+    },
+    {
+      "id": "retain_soul",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Echo of the Soul",
+      "description": "Carry your active Soul technique into your next life at level 0.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "comprehension_rate",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique",
+      "aspect": "soul",
+      "image": "/trees/echo_of_the_soul.png",
+      "row": 1,
+      "baseCost": 54,
+      "localImage": "/assets/soul-tree/echo_of_the_soul.76635580.webp"
+    },
+    {
+      "id": "retain_mind",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Echo of the Mind",
+      "description": "Carry your active Mind technique into your next life at level 0.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "comprehension_rate",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique",
+      "aspect": "mind",
+      "image": "/trees/echo_of_the_mind.png",
+      "row": 1,
+      "baseCost": 54,
+      "localImage": "/assets/soul-tree/echo_of_the_mind.d8241af5.webp"
+    },
+    {
+      "id": "retain_body",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Echo of the Body",
+      "description": "Carry your active Body technique into your next life at level 0.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "comprehension_rate",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique",
+      "aspect": "body",
+      "image": "/trees/echo_of_the_body.png",
+      "row": 1,
+      "baseCost": 54,
+      "localImage": "/assets/soul-tree/echo_of_the_body.c0c08f33.webp"
+    },
+    {
+      "id": "retain_soul_l10",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Remnant Soul Memory",
+      "description": "Your retained Soul technique returns at up to level 10 (if it was that high).",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_soul",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique_level",
+      "value": 10,
+      "aspect": "soul",
+      "image": "/trees/remnant_soul_memory.png",
+      "row": 2,
+      "baseCost": 133,
+      "localImage": "/assets/soul-tree/remnant_soul_memory.db2b1619.webp"
+    },
+    {
+      "id": "retain_mind_l10",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Remnant Mind Memory",
+      "description": "Your retained Mind technique returns at up to level 10 (if it was that high).",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_mind",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique_level",
+      "value": 10,
+      "aspect": "mind",
+      "image": "/trees/remnant_mind_memory.png",
+      "row": 2,
+      "baseCost": 133,
+      "localImage": "/assets/soul-tree/remnant_mind_memory.d0d2ab64.webp"
+    },
+    {
+      "id": "retain_body_l10",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Remnant Muscle Memory",
+      "description": "Your retained Body technique returns at up to level 10 (if it was that high).",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_body",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique_level",
+      "value": 10,
+      "aspect": "body",
+      "image": "/trees/remnant_muscle_memory.png",
+      "row": 2,
+      "baseCost": 133,
+      "localImage": "/assets/soul-tree/remnant_muscle_memory.7fa0c7b1.webp"
+    },
+    {
+      "id": "retain_soul_l25",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Residual Soul Memory",
+      "description": "Your retained Soul technique returns at up to level 25 (if it was that high).",
+      "tier": 3,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_soul_l10",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique_level",
+      "value": 25,
+      "aspect": "soul",
+      "image": "/trees/residual_soul_memory.png",
+      "row": 3,
+      "baseCost": 354,
+      "localImage": "/assets/soul-tree/residual_soul_memory.d2de594e.webp"
+    },
+    {
+      "id": "retain_mind_l25",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Residual Mind Memory",
+      "description": "Your retained Mind technique returns at up to level 25 (if it was that high).",
+      "tier": 3,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_mind_l10",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique_level",
+      "value": 25,
+      "aspect": "mind",
+      "image": "/trees/residual_mind_memory.png",
+      "row": 3,
+      "baseCost": 354,
+      "localImage": "/assets/soul-tree/residual_mind_memory.228a76d6.webp"
+    },
+    {
+      "id": "retain_body_l25",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Residual Muscle Memory",
+      "description": "Your retained Body technique returns at up to level 25 (if it was that high).",
+      "tier": 3,
+      "col": 2,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_body_l10",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique_level",
+      "value": 25,
+      "aspect": "body",
+      "image": "/trees/residual_muscle_memory.png",
+      "row": 3,
+      "baseCost": 354,
+      "localImage": "/assets/soul-tree/residual_muscle_memory.dba0a256.webp"
+    },
+    {
+      "id": "retain_soul_l50",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Deep Soul Memory",
+      "description": "Your retained Soul technique returns at up to level 50 (if it was that high).",
+      "tier": 4,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_soul_l25",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique_level",
+      "value": 50,
+      "aspect": "soul",
+      "image": "/trees/deep_soul_memory.png",
+      "row": 4,
+      "baseCost": 977,
+      "localImage": "/assets/soul-tree/deep_soul_memory.ad3af2bb.webp"
+    },
+    {
+      "id": "retain_mind_l50",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Deep Mind Memory",
+      "description": "Your retained Mind technique returns at up to level 50 (if it was that high).",
+      "tier": 4,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_mind_l25",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique_level",
+      "value": 50,
+      "aspect": "mind",
+      "image": "/trees/deep_mind_memory.png",
+      "row": 4,
+      "baseCost": 977,
+      "localImage": "/assets/soul-tree/deep_mind_memory.1e84e3a1.webp"
+    },
+    {
+      "id": "retain_body_l50",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Deep Muscle Memory",
+      "description": "Your retained Body technique returns at up to level 50 (if it was that high).",
+      "tier": 4,
+      "col": 2,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_body_l25",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_technique_level",
+      "value": 50,
+      "aspect": "body",
+      "image": "/trees/deep_muscle_memory.png",
+      "row": 4,
+      "baseCost": 977,
+      "localImage": "/assets/soul-tree/deep_muscle_memory.1aa79259.webp"
+    },
+    {
+      "id": "comprehension_eternal_soul",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Boundless Soul Insight",
+      "description": "+1% Soul technique comprehension per rank. No limit.",
+      "tier": 5,
+      "col": 0,
+      "maxRanks": 0,
+      "prereqs": [
+        {
+          "nodeId": "retain_soul_l50",
+          "ranks": 1
+        }
+      ],
+      "bonus": "comprehension_rate_aspect_pct",
+      "value": 1,
+      "aspect": "soul",
+      "image": "/trees/boundless_soul_insight.png",
+      "row": 5,
+      "baseCost": 1107,
+      "costStep": 554,
+      "localImage": "/assets/soul-tree/boundless_soul_insight.75da69e8.webp"
+    },
+    {
+      "id": "comprehension_eternal_mind",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Boundless Mind Insight",
+      "description": "+1% Mind technique comprehension per rank. No limit.",
+      "tier": 5,
+      "col": 1,
+      "maxRanks": 0,
+      "prereqs": [
+        {
+          "nodeId": "retain_mind_l50",
+          "ranks": 1
+        }
+      ],
+      "bonus": "comprehension_rate_aspect_pct",
+      "value": 1,
+      "aspect": "mind",
+      "image": "/trees/boundless_mind_insight.png",
+      "row": 5,
+      "baseCost": 1107,
+      "costStep": 554,
+      "localImage": "/assets/soul-tree/boundless_mind_insight.a99598ad.webp"
+    },
+    {
+      "id": "comprehension_eternal_body",
+      "tree": "cultivation",
+      "branch": "insight",
+      "name": "Boundless Body Insight",
+      "description": "+1% Body technique comprehension per rank. No limit.",
+      "tier": 5,
+      "col": 2,
+      "maxRanks": 0,
+      "prereqs": [
+        {
+          "nodeId": "retain_body_l50",
+          "ranks": 1
+        }
+      ],
+      "bonus": "comprehension_rate_aspect_pct",
+      "value": 1,
+      "aspect": "body",
+      "image": "/trees/boundless_body_insight.png",
+      "row": 5,
+      "baseCost": 1107,
+      "costStep": 554,
+      "localImage": "/assets/soul-tree/boundless_body_insight.c79a47c0.webp"
+    },
+    {
+      "id": "origin_choices",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Many Roads",
+      "description": "+1 origin option at rebirth (up to 5, for 10 choices).",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 5,
+      "bonus": "origin_choices",
+      "value": 1,
+      "image": "/trees/many_roads.png",
+      "row": 0,
+      "baseCost": 32,
+      "costStep": 16,
+      "localImage": "/assets/soul-tree/many_roads.59164f72.webp"
+    },
+    {
+      "id": "adaptive_blood",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Adaptive Blood",
+      "description": "One further reroll of the bloodline offered at rebirth, per rank.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "origin_choices",
+          "ranks": 1
+        }
+      ],
+      "bonus": "bloodline_rerolls",
+      "value": 1,
+      "image": "/trees/adaptive_blood.png",
+      "row": 1,
+      "baseCost": 243,
+      "costStep": 199,
+      "localImage": "/assets/soul-tree/adaptive_blood.9cb2bd16.webp"
+    },
+    {
+      "id": "start_realm_1",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Rooted Foundation",
+      "description": "Begin each life at Body Tempering (realm 1) instead of Human.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "origin_choices",
+          "ranks": 1
+        }
+      ],
+      "bonus": "start_realm",
+      "value": 1,
+      "image": "/trees/rooted_foundation.png",
+      "row": 1,
+      "baseCost": 111,
+      "localImage": "/assets/soul-tree/rooted_foundation.b1309b66.webp"
+    },
+    {
+      "id": "malleable_physique",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Malleable Physique",
+      "description": "One further reroll of the physique offered at rebirth, per rank.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "origin_choices",
+          "ranks": 1
+        }
+      ],
+      "bonus": "physique_rerolls",
+      "value": 1,
+      "image": "/trees/malleable_physique.png",
+      "row": 1,
+      "baseCost": 243,
+      "costStep": 199,
+      "localImage": "/assets/soul-tree/malleable_physique.767bf8e6.webp"
+    },
+    {
+      "id": "start_realm_2",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Tempered Rebirth",
+      "description": "Begin each life at Qi Condensation (realm 2).",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "start_realm_1",
+          "ranks": 1
+        }
+      ],
+      "bonus": "start_realm",
+      "value": 2,
+      "image": "/trees/tempered_rebirth.png",
+      "row": 2,
+      "baseCost": 413,
+      "localImage": "/assets/soul-tree/tempered_rebirth.391887ec.webp"
+    },
+    {
+      "id": "retain_bloodline",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Bloodline Memory",
+      "description": "At rebirth, choose between your old bloodline and the new roll.",
+      "tier": 3,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "adaptive_blood",
+          "ranks": 3
+        }
+      ],
+      "bonus": "retain_bloodline",
+      "image": "/trees/bloodline_memory.png",
+      "row": 3,
+      "baseCost": 1661,
+      "localImage": "/assets/soul-tree/bloodline_memory.4672247b.webp"
+    },
+    {
+      "id": "start_realm_3",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Soul-Forged Start",
+      "description": "Begin each life at Core Formation (realm 3).",
+      "tier": 3,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "start_realm_2",
+          "ranks": 1
+        }
+      ],
+      "bonus": "start_realm",
+      "value": 3,
+      "image": "/trees/soulforged_start.png",
+      "row": 3,
+      "baseCost": 1277,
+      "localImage": "/assets/soul-tree/soulforged_start.8cce9254.webp"
+    },
+    {
+      "id": "retain_physique",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Physique Memory",
+      "description": "At rebirth, choose between your old physique and the new roll.",
+      "tier": 3,
+      "col": 2,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "malleable_physique",
+          "ranks": 3
+        }
+      ],
+      "bonus": "retain_physique",
+      "image": "/trees/physique_memory.png",
+      "row": 3,
+      "baseCost": 1661,
+      "localImage": "/assets/soul-tree/physique_memory.f0cca132.webp"
+    },
+    {
+      "id": "unbroken_meridians",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Unbroken Meridians",
+      "description": "A trace of your combat attributes — max health, attack, defense, mental fortitude, damage reduction, speed, crit and elemental power — survives the realm reset and grows with you as you climb back. Health, energy and stamina regeneration come with it. 0.01% per rank.",
+      "tier": 4,
+      "col": 0.5,
+      "maxRanks": 4,
+      "prereqs": [
+        {
+          "nodeId": "start_realm_3",
+          "ranks": 1
+        },
+        {
+          "nodeId": "retain_bloodline",
+          "ranks": 1
+        },
+        {
+          "nodeId": "retain_physique",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_stats_pct",
+      "value": 0.01,
+      "image": "/trees/unbroken_meridians.png",
+      "row": 4,
+      "realmGates": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "baseCost": 1303,
+      "costStep": 1036,
+      "localImage": "/assets/soul-tree/unbroken_meridians.25d568d0.webp"
+    },
+    {
+      "id": "treasured_item",
+      "tree": "cultivation",
+      "branch": "rebirth",
+      "name": "Treasured Inheritance",
+      "description": "At rebirth, name one legendary-or-better possession a treasure and hand it down to your family line or your sect. Its stats rise 10% of their base each time it is handed down and only that line or sect may wear it. Requires major realm 8.",
+      "tier": 4,
+      "col": 1.5,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "start_realm_3",
+          "ranks": 1
+        },
+        {
+          "nodeId": "retain_bloodline",
+          "ranks": 1
+        },
+        {
+          "nodeId": "retain_physique",
+          "ranks": 1
+        }
+      ],
+      "bonus": "treasured_item",
+      "image": "/trees/treasured_inheritance.png",
+      "row": 4,
+      "baseCost": 3474,
+      "localImage": "/assets/soul-tree/treasured_inheritance.7749a136.webp"
+    },
+    {
+      "id": "iron_will",
+      "tree": "combat",
+      "branch": "battle",
+      "name": "Iron Will",
+      "description": "Knocked out for 5% less time, per rank.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 3,
+      "bonus": "knockout_reduce_pct",
+      "value": 5,
+      "image": "/trees/iron_will.png",
+      "row": 0,
+      "baseCost": 65,
+      "costStep": 52,
+      "localImage": "/assets/soul-tree/iron_will.9cb53148.webp"
+    },
+    {
+      "id": "opening_strike",
+      "tree": "combat",
+      "branch": "battle",
+      "name": "Opening Strike",
+      "description": "+3% damage on your first turn of every battle, per rank.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "iron_will",
+          "ranks": 1
+        }
+      ],
+      "bonus": "opening_strike_pct",
+      "value": 3,
+      "image": "/trees/opening_strike.png",
+      "row": 1,
+      "baseCost": 111,
+      "costStep": 66,
+      "localImage": "/assets/soul-tree/opening_strike.3021417f.webp"
+    },
+    {
+      "id": "momentum_of_ages",
+      "tree": "combat",
+      "branch": "battle",
+      "name": "Momentum of Ages",
+      "description": "Begin every battle with 10% of the Qi Surge meter already filled, per rank.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 4,
+      "prereqs": [
+        {
+          "nodeId": "iron_will",
+          "ranks": 1
+        }
+      ],
+      "bonus": "start_momentum_pct",
+      "value": 10,
+      "image": "/trees/momentum_of_ages.png",
+      "row": 1,
+      "baseCost": 187,
+      "costStep": 143,
+      "localImage": "/assets/soul-tree/momentum_of_ages.b0adb259.webp"
+    },
+    {
+      "id": "crit_cap_100",
+      "tree": "combat",
+      "branch": "battle",
+      "name": "Perfect Edge",
+      "description": "Raise your critical-hit chance cap to 100% (up from 75%) — with enough crit sources, every strike can crit.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "iron_will",
+          "ranks": 1
+        }
+      ],
+      "bonus": "crit_cap",
+      "value": 100,
+      "image": "/trees/perfect_edge.png",
+      "row": 1,
+      "baseCost": 265,
+      "localImage": "/assets/soul-tree/perfect_edge.96fe1407.webp"
+    },
+    {
+      "id": "boss_slayer",
+      "tree": "combat",
+      "branch": "battle",
+      "name": "Boss Slayer",
+      "description": "+4% damage against region tyrants and world bosses, per rank.",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "opening_strike",
+          "ranks": 1
+        }
+      ],
+      "bonus": "boss_slayer_pct",
+      "value": 4,
+      "image": "/trees/boss_slayer.png",
+      "row": 2,
+      "baseCost": 301,
+      "costStep": 187,
+      "localImage": "/assets/soul-tree/boss_slayer.db2de450.webp"
+    },
+    {
+      "id": "crit_cap_200",
+      "tree": "combat",
+      "branch": "battle",
+      "name": "Transcendent Edge",
+      "description": "Raise your crit-chance cap to 200%. Crit chance above 100% has that chance to become a Mega Crit — dealing double crit damage.",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "crit_cap_100",
+          "ranks": 1
+        }
+      ],
+      "bonus": "crit_cap",
+      "value": 200,
+      "image": "/trees/transcendent_edge.png",
+      "row": 2,
+      "baseCost": 977,
+      "localImage": "/assets/soul-tree/transcendent_edge.87da5d89.webp"
+    },
+    {
+      "id": "tower_memory",
+      "tree": "combat",
+      "branch": "battle",
+      "name": "Tower Memory",
+      "description": "Each month's tower climb starts 5 floors higher per rank; the floors skipped are cleared, and their rewards wait to be claimed.",
+      "tier": 3,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "boss_slayer",
+          "ranks": 1
+        }
+      ],
+      "bonus": "tower_start_floors",
+      "value": 5,
+      "image": "/trees/tower_memory.png",
+      "row": 3,
+      "baseCost": 511,
+      "costStep": 383,
+      "localImage": "/assets/soul-tree/tower_memory.4127dc94.webp"
+    },
+    {
+      "id": "bounty_instinct",
+      "tree": "combat",
+      "branch": "battle",
+      "name": "Bounty Instinct",
+      "description": "+1 bounty on the board each day, per rank.",
+      "tier": 3,
+      "col": 1,
+      "maxRanks": 2,
+      "prereqs": [
+        {
+          "nodeId": "boss_slayer",
+          "ranks": 1
+        }
+      ],
+      "bonus": "bounty_slots",
+      "value": 1,
+      "image": "/trees/bounty_instinct.png",
+      "row": 3,
+      "baseCost": 766,
+      "costStep": 767,
+      "localImage": "/assets/soul-tree/bounty_instinct.b56c277e.webp"
+    },
+    {
+      "id": "dangerous_bounty",
+      "tree": "combat",
+      "branch": "battle",
+      "name": "Dangerous Bounty",
+      "description": "One of each day's bounties, per rank, is a dangerous one: a far stronger foe for a far richer reward.",
+      "tier": 4,
+      "col": 1,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "bounty_instinct",
+          "ranks": 1
+        }
+      ],
+      "bonus": "dangerous_bounty",
+      "value": 1,
+      "image": "/trees/dangerous_bounty.png",
+      "row": 4,
+      "baseCost": 1629,
+      "costStep": 1085,
+      "localImage": "/assets/soul-tree/dangerous_bounty.d754970c.webp"
+    },
+    {
+      "id": "auto_combat",
+      "tree": "combat",
+      "branch": "hunt",
+      "name": "Tireless Fist",
+      "description": "Unlock Auto-Combat: repeat-fight a beaten foe as an action (after 10 wins).",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 1,
+      "bonus": "auto_combat",
+      "image": "/trees/tireless_fist.png",
+      "row": 0,
+      "baseCost": 91,
+      "localImage": "/assets/soul-tree/tireless_fist.7f88870b.webp"
+    },
+    {
+      "id": "beast_lore",
+      "tree": "combat",
+      "branch": "hunt",
+      "name": "Beast Lore",
+      "description": "+4% damage per rank against any beast your soul has felled in a past life.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "auto_combat",
+          "ranks": 1
+        }
+      ],
+      "bonus": "beast_lore_pct",
+      "value": 4,
+      "image": "/trees/beast_lore.png",
+      "row": 1,
+      "baseCost": 155,
+      "costStep": 110,
+      "localImage": "/assets/soul-tree/beast_lore.d59bafaf.webp"
+    },
+    {
+      "id": "guardian_bond",
+      "tree": "combat",
+      "branch": "hunt",
+      "name": "Guardian Bond",
+      "description": "Guardian eggs hatch 10% sooner and guardian beasts gain 10% more experience, per rank.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "auto_combat",
+          "ranks": 1
+        }
+      ],
+      "bonus": "guardian_bond_pct",
+      "value": 10,
+      "image": "/trees/guardian_bond.png",
+      "row": 1,
+      "baseCost": 133,
+      "costStep": 88,
+      "localImage": "/assets/soul-tree/guardian_bond.79e9a402.webp"
+    },
+    {
+      "id": "bonus_yield_charges",
+      "tree": "combat",
+      "branch": "hunt",
+      "name": "Bountiful Hunt",
+      "description": "+10 daily Bonus Yield charges per rank (30 without). Stacks to 4.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 4,
+      "prereqs": [
+        {
+          "nodeId": "auto_combat",
+          "ranks": 1
+        }
+      ],
+      "bonus": "bonus_yield_charges",
+      "value": 10,
+      "image": "/trees/beast_lore.png",
+      "row": 1,
+      "baseCost": 177,
+      "costStep": 132,
+      "localImage": "/assets/soul-tree/beast_lore.d59bafaf.webp"
+    },
+    {
+      "id": "possessed_hunt",
+      "tree": "combat",
+      "branch": "hunt",
+      "name": "Hunter of the Possessed",
+      "description": "Unlock Possessed beasts in Fight Beasts: face any beast you have beaten in its possessed form — 5-10x harder and carrying extra traits. Winning pays 5-10x the spirit stones and its drops are rolled twice.",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "beast_lore",
+          "ranks": 1
+        }
+      ],
+      "bonus": "possessed_hunt",
+      "image": "/trees/hunter_of_the_possessed.png",
+      "row": 2,
+      "baseCost": 564,
+      "localImage": "/assets/soul-tree/hunter_of_the_possessed.995db36e.webp"
+    },
+    {
+      "id": "bonus_yield_potency",
+      "tree": "combat",
+      "branch": "hunt",
+      "name": "Abundant Harvest",
+      "description": "Bonus Yield hunts pay +0.5x more per rank: drops up to 5x, Qi up to 4x, weapon and art mastery up to 4x, comprehension up to 3x. Stacks to 4.",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 4,
+      "prereqs": [
+        {
+          "nodeId": "bonus_yield_charges",
+          "ranks": 1
+        }
+      ],
+      "bonus": "bonus_yield_potency",
+      "value": 0.5,
+      "image": "/trees/tireless_fist.png",
+      "row": 2,
+      "baseCost": 451,
+      "costStep": 338,
+      "localImage": "/assets/soul-tree/tireless_fist.7f88870b.webp"
+    },
+    {
+      "id": "regen_health",
+      "tree": "combat",
+      "branch": "vigor",
+      "name": "Health Surge",
+      "description": "+10% Health regeneration per rank. Stacks to 10.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 10,
+      "bonus": "regen_pct",
+      "value": 10,
+      "aspect": "health",
+      "image": "/trees/health_surge.png",
+      "row": 0,
+      "baseCost": 16,
+      "costStep": 6,
+      "localImage": "/assets/soul-tree/health_surge.60683144.webp"
+    },
+    {
+      "id": "regen_stamina",
+      "tree": "combat",
+      "branch": "vigor",
+      "name": "Stamina Surge",
+      "description": "+10% Stamina regeneration per rank. Stacks to 10.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 10,
+      "prereqs": [
+        {
+          "nodeId": "regen_health",
+          "ranks": 1
+        }
+      ],
+      "bonus": "regen_pct",
+      "value": 10,
+      "aspect": "stamina",
+      "image": "/trees/stamina_surge.png",
+      "row": 1,
+      "baseCost": 27,
+      "costStep": 10,
+      "localImage": "/assets/soul-tree/stamina_surge.93d22c5f.webp"
+    },
+    {
+      "id": "regen_energy",
+      "tree": "combat",
+      "branch": "vigor",
+      "name": "Energy Surge",
+      "description": "+10% Energy regeneration per rank. Stacks to 10.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 10,
+      "prereqs": [
+        {
+          "nodeId": "regen_health",
+          "ranks": 1
+        }
+      ],
+      "bonus": "regen_pct",
+      "value": 10,
+      "aspect": "energy",
+      "image": "/trees/energy_surge.png",
+      "row": 1,
+      "baseCost": 27,
+      "costStep": 10,
+      "localImage": "/assets/soul-tree/energy_surge.575ddc60.webp"
+    },
+    {
+      "id": "stat_attack",
+      "tree": "combat",
+      "branch": "vigor",
+      "group": "eternal",
+      "name": "Eternal Attack",
+      "description": "+5 Attack per rank. No limit.",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 0,
+      "prereqs": [
+        {
+          "nodeId": "regen_health",
+          "ranks": 1
+        }
+      ],
+      "bonus": "stat_add",
+      "value": 5,
+      "aspect": "attack",
+      "image": "/trees/eternal_attack.png",
+      "row": 2,
+      "baseCost": 113,
+      "costStep": 66,
+      "localImage": "/assets/soul-tree/eternal_attack.3fc2a04b.webp"
+    },
+    {
+      "id": "stat_defense",
+      "tree": "combat",
+      "branch": "vigor",
+      "group": "eternal",
+      "name": "Eternal Defense",
+      "description": "+5 Defense per rank. No limit.",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 0,
+      "prereqs": [
+        {
+          "nodeId": "regen_health",
+          "ranks": 1
+        }
+      ],
+      "bonus": "stat_add",
+      "value": 5,
+      "aspect": "defense",
+      "image": "/trees/eternal_defense.png",
+      "row": 2,
+      "baseCost": 113,
+      "costStep": 66,
+      "localImage": "/assets/soul-tree/eternal_defense.7a5890f1.webp"
+    },
+    {
+      "id": "stat_mentalFortitude",
+      "tree": "combat",
+      "branch": "vigor",
+      "group": "eternal",
+      "name": "Eternal Mental Fortitude",
+      "description": "+5 Mental Fortitude per rank. No limit.",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 0,
+      "prereqs": [
+        {
+          "nodeId": "regen_health",
+          "ranks": 1
+        }
+      ],
+      "bonus": "stat_add",
+      "value": 5,
+      "aspect": "mentalFortitude",
+      "image": "/trees/eternal_mental_fortitude.png",
+      "row": 2,
+      "baseCost": 113,
+      "costStep": 66,
+      "localImage": "/assets/soul-tree/eternal_mental_fortitude.aa701fe3.webp"
+    },
+    {
+      "id": "stat_speed",
+      "tree": "combat",
+      "branch": "vigor",
+      "group": "eternal",
+      "name": "Eternal Speed",
+      "description": "+2 Speed per rank. No limit.",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 0,
+      "prereqs": [
+        {
+          "nodeId": "regen_health",
+          "ranks": 1
+        }
+      ],
+      "bonus": "stat_add",
+      "value": 2,
+      "aspect": "speed",
+      "image": "/trees/eternal_speed.png",
+      "row": 3,
+      "baseCost": 113,
+      "costStep": 66,
+      "localImage": "/assets/soul-tree/eternal_speed.a9b6ac6f.webp"
+    },
+    {
+      "id": "weapon_start_sword",
+      "tree": "combat",
+      "branch": "arms",
+      "group": "arms",
+      "name": "Swords Instinct",
+      "description": "Start with up to 10 Swords mastery levels (if you have them). Stacks to 4.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 4,
+      "bonus": "weapon_start_levels",
+      "value": 10,
+      "aspect": "sword",
+      "image": "/trees/swords_instinct.png",
+      "row": 0,
+      "baseCost": 44,
+      "costStep": 27,
+      "localImage": "/assets/soul-tree/swords_instinct.063986a8.webp"
+    },
+    {
+      "id": "weapon_start_spear",
+      "tree": "combat",
+      "branch": "arms",
+      "group": "arms",
+      "name": "Spears Instinct",
+      "description": "Start with up to 10 Spears mastery levels (if you have them). Stacks to 4.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 4,
+      "bonus": "weapon_start_levels",
+      "value": 10,
+      "aspect": "spear",
+      "image": "/trees/spears_instinct.png",
+      "row": 0,
+      "baseCost": 44,
+      "costStep": 27,
+      "localImage": "/assets/soul-tree/spears_instinct.13a76835.webp"
+    },
+    {
+      "id": "weapon_start_hammer",
+      "tree": "combat",
+      "branch": "arms",
+      "group": "arms",
+      "name": "Hammers Instinct",
+      "description": "Start with up to 10 Hammers mastery levels (if you have them). Stacks to 4.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 4,
+      "bonus": "weapon_start_levels",
+      "value": 10,
+      "aspect": "hammer",
+      "image": "/trees/hammers_instinct.png",
+      "row": 0,
+      "baseCost": 44,
+      "costStep": 27,
+      "localImage": "/assets/soul-tree/hammers_instinct.9d0ba9d7.webp"
+    },
+    {
+      "id": "weapon_start_axe",
+      "tree": "combat",
+      "branch": "arms",
+      "group": "arms",
+      "name": "Axes Instinct",
+      "description": "Start with up to 10 Axes mastery levels (if you have them). Stacks to 4.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 4,
+      "bonus": "weapon_start_levels",
+      "value": 10,
+      "aspect": "axe",
+      "image": "/trees/axes_instinct.png",
+      "row": 1,
+      "baseCost": 44,
+      "costStep": 27,
+      "localImage": "/assets/soul-tree/axes_instinct.f0ff0b04.webp"
+    },
+    {
+      "id": "weapon_start_staff",
+      "tree": "combat",
+      "branch": "arms",
+      "group": "arms",
+      "name": "Staffs Instinct",
+      "description": "Start with up to 10 Staffs mastery levels (if you have them). Stacks to 4.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 4,
+      "bonus": "weapon_start_levels",
+      "value": 10,
+      "aspect": "staff",
+      "image": "/trees/staffs_instinct.png",
+      "row": 1,
+      "baseCost": 44,
+      "costStep": 27,
+      "localImage": "/assets/soul-tree/staffs_instinct.cc6f2a60.webp"
+    },
+    {
+      "id": "weapon_start_dagger",
+      "tree": "combat",
+      "branch": "arms",
+      "group": "arms",
+      "name": "Daggers Instinct",
+      "description": "Start with up to 10 Daggers mastery levels (if you have them). Stacks to 4.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 4,
+      "bonus": "weapon_start_levels",
+      "value": 10,
+      "aspect": "dagger",
+      "image": "/trees/daggers_instinct.png",
+      "row": 1,
+      "baseCost": 44,
+      "costStep": 27,
+      "localImage": "/assets/soul-tree/daggers_instinct.06e75d03.webp"
+    },
+    {
+      "id": "weapon_start_fan",
+      "tree": "combat",
+      "branch": "arms",
+      "group": "arms",
+      "name": "Fans Instinct",
+      "description": "Start with up to 10 Fans mastery levels (if you have them). Stacks to 4.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 4,
+      "bonus": "weapon_start_levels",
+      "value": 10,
+      "aspect": "fan",
+      "image": "/trees/fans_instinct.png",
+      "row": 2,
+      "baseCost": 44,
+      "costStep": 27,
+      "localImage": "/assets/soul-tree/fans_instinct.8174bf17.webp"
+    },
+    {
+      "id": "weapon_start_shield",
+      "tree": "combat",
+      "branch": "arms",
+      "group": "arms",
+      "name": "Shields Instinct",
+      "description": "Start with up to 10 Shields mastery levels (if you have them). Stacks to 4.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 4,
+      "bonus": "weapon_start_levels",
+      "value": 10,
+      "aspect": "shield",
+      "image": "/trees/shields_instinct.png",
+      "row": 2,
+      "baseCost": 44,
+      "costStep": 27,
+      "localImage": "/assets/soul-tree/shields_instinct.1df40541.webp"
+    },
+    {
+      "id": "weapon_start_dual_wield",
+      "tree": "combat",
+      "branch": "arms",
+      "group": "arms",
+      "name": "Dual Wielding Instinct",
+      "description": "Start with up to 10 Dual Wielding mastery levels (if you have them). Stacks to 4.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 4,
+      "bonus": "weapon_start_levels",
+      "value": 10,
+      "aspect": "dual_wield",
+      "image": "/trees/dual_wielding_instinct.png",
+      "row": 2,
+      "baseCost": 44,
+      "costStep": 27,
+      "localImage": "/assets/soul-tree/dual_wielding_instinct.94a95e1b.webp"
+    },
+    {
+      "id": "elem_res_physical",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Physical Ward",
+      "description": "+5 physical resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "physical",
+      "image": "/trees/physical_ward.png",
+      "row": 0,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/physical_ward.589db4b0.webp"
+    },
+    {
+      "id": "elem_res_fire",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Fire Ward",
+      "description": "+5 fire resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "fire",
+      "image": "/trees/fire_ward.png",
+      "row": 0,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/fire_ward.63864fa2.webp"
+    },
+    {
+      "id": "elem_res_water",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Water Ward",
+      "description": "+5 water resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "water",
+      "image": "/trees/water_ward.png",
+      "row": 0,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/water_ward.2af9857d.webp"
+    },
+    {
+      "id": "elem_res_wind",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Wind Ward",
+      "description": "+5 wind resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "wind",
+      "image": "/trees/wind_ward.png",
+      "row": 1,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/wind_ward.dca0da70.webp"
+    },
+    {
+      "id": "elem_res_earth",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Earth Ward",
+      "description": "+5 earth resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "earth",
+      "image": "/trees/earth_ward.png",
+      "row": 1,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/earth_ward.3653d353.webp"
+    },
+    {
+      "id": "elem_res_metal",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Metal Ward",
+      "description": "+5 metal resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "metal",
+      "image": "/trees/metal_ward.png",
+      "row": 1,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/metal_ward.4d32ac14.webp"
+    },
+    {
+      "id": "elem_res_lightning",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Lightning Ward",
+      "description": "+5 lightning resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "lightning",
+      "image": "/trees/lightning_ward.png",
+      "row": 2,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/lightning_ward.70b6028f.webp"
+    },
+    {
+      "id": "elem_res_mind",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Mind Ward",
+      "description": "+5 mind resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "mind",
+      "image": "/trees/mind_ward.png",
+      "row": 2,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/mind_ward.00e83352.webp"
+    },
+    {
+      "id": "elem_res_spirit",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Spirit Ward",
+      "description": "+5 spirit resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "spirit",
+      "image": "/trees/spirit_ward.png",
+      "row": 2,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/spirit_ward.f2fd6444.webp"
+    },
+    {
+      "id": "elem_res_yin",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Yin Ward",
+      "description": "+5 yin resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 0.5,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "yin",
+      "image": "/trees/yin_ward.png",
+      "row": 3,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/yin_ward.df059cd8.webp"
+    },
+    {
+      "id": "elem_res_yang",
+      "tree": "combat",
+      "branch": "wards",
+      "group": "wards",
+      "name": "Yang Ward",
+      "description": "+5 yang resistance per rank. Stacks to 4.",
+      "tier": 1,
+      "col": 1.5,
+      "maxRanks": 4,
+      "bonus": "elem_res",
+      "value": 5,
+      "aspect": "yang",
+      "image": "/trees/yang_ward.png",
+      "row": 3,
+      "baseCost": 34,
+      "costStep": 22,
+      "localImage": "/assets/soul-tree/yang_ward.384d6c19.webp"
+    },
+    {
+      "id": "retain_items",
+      "tree": "combat",
+      "branch": "legacy",
+      "name": "Hoarder's Soul",
+      "description": "Carry 1 item from your inventory into the next life. Stacks to 4.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 4,
+      "bonus": "retain_items",
+      "value": 1,
+      "image": "/trees/hoarders_soul.png",
+      "row": 0,
+      "baseCost": 32,
+      "costStep": 23,
+      "localImage": "/assets/soul-tree/hoarders_soul.2e8a200c.webp"
+    },
+    {
+      "id": "item_rarity",
+      "tree": "combat",
+      "branch": "legacy",
+      "name": "Worthy Vessels",
+      "description": "Raise the rarity of carryable items one tier (uncommon → mythic).",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "retain_items",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_item_rarity",
+      "value": 1,
+      "image": "/trees/worthy_vessels.png",
+      "row": 1,
+      "baseCost": 66,
+      "costStep": 39,
+      "localImage": "/assets/soul-tree/worthy_vessels.4a63ceab.webp"
+    },
+    {
+      "id": "retain_battle_tech",
+      "tree": "combat",
+      "branch": "legacy",
+      "name": "Martial Memory",
+      "description": "Carry one non-trait battle technique into the next life (source: Reincarnation).",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_items",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_battle_technique",
+      "image": "/trees/martial_memory.png",
+      "row": 1,
+      "baseCost": 199,
+      "localImage": "/assets/soul-tree/martial_memory.1cfa7fcc.webp"
+    },
+    {
+      "id": "gear_durability",
+      "tree": "combat",
+      "branch": "legacy",
+      "name": "Enduring Craft",
+      "description": "Durability gear you craft has +200 maximum durability per rank. Stacks to 10.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 10,
+      "prereqs": [
+        {
+          "nodeId": "retain_items",
+          "ranks": 1
+        }
+      ],
+      "bonus": "gear_durability",
+      "value": 200,
+      "image": "/trees/eternal_defense.png",
+      "row": 1,
+      "baseCost": 54,
+      "costStep": 34,
+      "localImage": "/assets/soul-tree/eternal_defense.7a5890f1.webp"
+    },
+    {
+      "id": "retain_masterwork",
+      "tree": "combat",
+      "branch": "legacy",
+      "name": "Masterwork Bond",
+      "description": "Carryable items may be masterworked.",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "item_rarity",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_masterwork",
+      "image": "/trees/masterwork_bond.png",
+      "row": 2,
+      "baseCost": 526,
+      "localImage": "/assets/soul-tree/masterwork_bond.63d0e6db.webp"
+    },
+    {
+      "id": "search_time",
+      "tree": "exploration",
+      "branch": "wayfinding",
+      "name": "Swift Wanderer",
+      "description": "-5% search interval per rank. Stacks to 10 (-50%).",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 10,
+      "bonus": "search_time_pct",
+      "value": 5,
+      "image": "/trees/swift_wanderer.png",
+      "row": 0,
+      "baseCost": 20,
+      "costStep": 8,
+      "localImage": "/assets/soul-tree/swift_wanderer.e6dcd5ee.webp"
+    },
+    {
+      "id": "lucky_wanderer",
+      "tree": "exploration",
+      "branch": "wayfinding",
+      "name": "Lucky Wanderer",
+      "description": "+1% chance per rank that a search finds something, and finds tilt toward opportunities. Exploring only.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "search_time",
+          "ranks": 1
+        }
+      ],
+      "bonus": "explore_fortune",
+      "value": 1,
+      "image": "/trees/lucky_wanderer.png",
+      "row": 1,
+      "baseCost": 88,
+      "costStep": 55,
+      "localImage": "/assets/soul-tree/lucky_wanderer.a973710e.webp"
+    },
+    {
+      "id": "region_keep_0",
+      "tree": "exploration",
+      "branch": "wayfinding",
+      "name": "Wayfarer's Instinct",
+      "description": "-4% search interval per rank. Stacks with Swift Wanderer.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "search_time",
+          "ranks": 1
+        }
+      ],
+      "bonus": "search_time_pct",
+      "value": 4,
+      "image": "/trees/wayfarers_instinct.png",
+      "row": 1,
+      "baseCost": 88,
+      "costStep": 55,
+      "localImage": "/assets/soul-tree/wayfarers_instinct.387a1744.webp"
+    },
+    {
+      "id": "deep_veins",
+      "tree": "exploration",
+      "branch": "wayfinding",
+      "name": "Deep Veins",
+      "description": "+6% chance per rank that a search yields a second helping of what it found.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "search_time",
+          "ranks": 1
+        }
+      ],
+      "bonus": "double_material_pct",
+      "value": 6,
+      "image": "/trees/deep_veins.png",
+      "row": 1,
+      "baseCost": 99,
+      "costStep": 66,
+      "localImage": "/assets/soul-tree/deep_veins.d62aa47c.webp"
+    },
+    {
+      "id": "herbalists_eye",
+      "tree": "exploration",
+      "branch": "wayfinding",
+      "name": "Herbalist's Eye",
+      "description": "10% chance per rank that an herb you find is looked over again for a higher-tier one.",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "lucky_wanderer",
+          "ranks": 1
+        }
+      ],
+      "bonus": "herb_grade_pct",
+      "value": 10,
+      "image": "/trees/herbalists_eye.png",
+      "row": 2,
+      "baseCost": 188,
+      "costStep": 133,
+      "localImage": "/assets/soul-tree/herbalists_eye.a547bb49.webp"
+    },
+    {
+      "id": "miners_eye",
+      "tree": "exploration",
+      "branch": "wayfinding",
+      "name": "Miner's Eye",
+      "description": "10% chance per rank that an ore you find is looked over again for a higher-tier one.",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "lucky_wanderer",
+          "ranks": 1
+        }
+      ],
+      "bonus": "ore_grade_pct",
+      "value": 10,
+      "image": "/trees/miners_eye.png",
+      "row": 2,
+      "baseCost": 188,
+      "costStep": 133,
+      "localImage": "/assets/soul-tree/miners_eye.c8e71825.webp"
+    },
+    {
+      "id": "region_keep_1",
+      "tree": "exploration",
+      "branch": "wayfinding",
+      "name": "Prospector's Eye",
+      "description": "+8 Fortune per rank — richer finds while exploring. No limit.",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 0,
+      "prereqs": [
+        {
+          "nodeId": "deep_veins",
+          "ranks": 1
+        }
+      ],
+      "bonus": "stat_add",
+      "value": 8,
+      "aspect": "fortune",
+      "image": "/trees/prospectors_eye.png",
+      "row": 2,
+      "baseCost": 150,
+      "costStep": 84,
+      "localImage": "/assets/soul-tree/prospectors_eye.f84ecaf4.webp"
+    },
+    {
+      "id": "swift_wanderer",
+      "tree": "exploration",
+      "branch": "roads",
+      "name": "Swift Wanderer",
+      "description": "The roads between towns are shorter for you: travel takes 8% less time per rank.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 5,
+      "bonus": "travel_time_pct",
+      "value": 8,
+      "image": "/trees/swift_wanderer_travel.png",
+      "row": 0,
+      "baseCost": 52,
+      "costStep": 39,
+      "localImage": "/assets/soul-tree/swift_wanderer_travel.a6cb9f56.webp"
+    },
+    {
+      "id": "road_between_worlds",
+      "tree": "exploration",
+      "branch": "roads",
+      "name": "The Road Between",
+      "description": "A further 20% off every journey. The world is smaller than it looks.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "swift_wanderer",
+          "ranks": 3
+        }
+      ],
+      "bonus": "travel_time_pct",
+      "value": 20,
+      "image": "/trees/the_road_between.png",
+      "row": 1,
+      "baseCost": 486,
+      "localImage": "/assets/soul-tree/the_road_between.bff94ec5.webp"
+    },
+    {
+      "id": "secret_realm_sense",
+      "tree": "exploration",
+      "branch": "roads",
+      "name": "Secret Realm Sense",
+      "description": "+10% Secret Realm energy each day, per rank.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "swift_wanderer",
+          "ranks": 1
+        }
+      ],
+      "bonus": "realm_energy_pct",
+      "value": 10,
+      "image": "/trees/secret_realm_sense.png",
+      "row": 1,
+      "baseCost": 133,
+      "costStep": 88,
+      "localImage": "/assets/soul-tree/secret_realm_sense.6a2b98ca.webp"
+    },
+    {
+      "id": "soul_wandering",
+      "tree": "exploration",
+      "branch": "roads",
+      "name": "Soul Wandering",
+      "description": "Run a second action at once (cultivate/explore/auto-combat) at 50% efficiency.",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "swift_wanderer",
+          "ranks": 5
+        }
+      ],
+      "bonus": "soul_wandering",
+      "image": "/trees/soul_wandering.png",
+      "row": 2,
+      "baseCost": 1052,
+      "localImage": "/assets/soul-tree/soul_wandering.8669045b.webp"
+    },
+    {
+      "id": "dual_explore",
+      "tree": "exploration",
+      "branch": "roads",
+      "name": "Twin Paths",
+      "description": "Your second simultaneous action may also be exploration (two zones at once).",
+      "tier": 3,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "soul_wandering",
+          "ranks": 1
+        }
+      ],
+      "bonus": "dual_explore",
+      "image": "/trees/twin_paths.png",
+      "row": 3,
+      "baseCost": 1277,
+      "localImage": "/assets/soul-tree/twin_paths.113f44b8.webp"
+    },
+    {
+      "id": "boss_0",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Verdant Mistwood Tyrant",
+      "description": "Call the tyrant of Verdant Mistwood back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "keep_region_2",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Verdant Mistwood",
+      "image": "/trees/verdant_mistwood_tyrant.png",
+      "row": 0,
+      "baseCost": 122,
+      "localImage": "/assets/soul-tree/verdant_mistwood_tyrant.819954be.webp"
+    },
+    {
+      "id": "keep_region_2",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Familiar Ground",
+      "description": "Keep your second region unlocked through rebirth, if your last life walked it.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 1,
+      "bonus": "keep_region_count",
+      "value": 2,
+      "image": "/trees/memory_of_stonevein_range.png",
+      "row": 0,
+      "baseCost": 32,
+      "localImage": "/assets/soul-tree/memory_of_stonevein_range.258769d8.webp"
+    },
+    {
+      "id": "cartographer_soul",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Cartographer's Soul",
+      "description": "Begin each life with 1 further region already unlocked, per rank.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 4,
+      "prereqs": [
+        {
+          "nodeId": "keep_region_2",
+          "ranks": 1
+        }
+      ],
+      "bonus": "start_regions",
+      "value": 1,
+      "image": "/trees/cartographers_soul.png",
+      "row": 0,
+      "baseCost": 133,
+      "costStep": 98,
+      "localImage": "/assets/soul-tree/cartographers_soul.61ebf828.webp"
+    },
+    {
+      "id": "boss_1",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Stonevein Range Tyrant",
+      "description": "Call the tyrant of Stonevein Range back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "keep_region_3",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Stonevein Range",
+      "image": "/trees/stonevein_range_tyrant.png",
+      "row": 1,
+      "baseCost": 208,
+      "localImage": "/assets/soul-tree/stonevein_range_tyrant.1fc2cac2.webp"
+    },
+    {
+      "id": "keep_region_3",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Trodden Paths",
+      "description": "Keep your third region unlocked through rebirth, if your last life walked it.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "keep_region_2",
+          "ranks": 1
+        }
+      ],
+      "bonus": "keep_region_count",
+      "value": 3,
+      "image": "/trees/trodden_paths.png",
+      "row": 1,
+      "baseCost": 78,
+      "localImage": "/assets/soul-tree/trodden_paths.62399132.webp"
+    },
+    {
+      "id": "hoarders_memory",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Hoarder's Memory",
+      "description": "Carry 10% of each stack of raw materials through rebirth, per rank.",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "cartographer_soul",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_material_pct",
+      "value": 10,
+      "image": "/trees/hoarders_memory.png",
+      "row": 1,
+      "baseCost": 263,
+      "costStep": 188,
+      "localImage": "/assets/soul-tree/hoarders_memory.d93735cf.webp"
+    },
+    {
+      "id": "boss_2",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Goldenfield Steppe Tyrant",
+      "description": "Call the tyrant of Goldenfield Steppe back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 3,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_2",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Goldenfield Steppe",
+      "image": "/trees/goldenfield_steppe_tyrant.png",
+      "row": 2,
+      "baseCost": 354,
+      "localImage": "/assets/soul-tree/goldenfield_steppe_tyrant.0c8928fa.webp"
+    },
+    {
+      "id": "region_keep_2",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Skip to the Goldenfield Steppe Tyrant",
+      "description": "Begin each life with every zone of Goldenfield Steppe already walked — only its tyrant stands between you and the region beyond.",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "keep_region_3",
+          "ranks": 1
+        }
+      ],
+      "bonus": "keep_region_named",
+      "aspect": "Goldenfield Steppe",
+      "image": "/trees/memory_of_goldenfield_steppe.png",
+      "row": 2,
+      "baseCost": 150,
+      "localImage": "/assets/soul-tree/memory_of_goldenfield_steppe.dd56ddb5.webp"
+    },
+    {
+      "id": "boss_3",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Mistral Coast Tyrant",
+      "description": "Call the tyrant of Mistral Coast back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 3,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_3",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Mistral Coast",
+      "image": "/trees/mistral_coast_tyrant.png",
+      "row": 3,
+      "baseCost": 354,
+      "localImage": "/assets/soul-tree/mistral_coast_tyrant.37e35ee1.webp"
+    },
+    {
+      "id": "region_keep_3",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Skip to the Mistral Coast Tyrant",
+      "description": "Begin each life with every zone of Mistral Coast already walked — only its tyrant stands between you and the region beyond.",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_2",
+          "ranks": 1
+        }
+      ],
+      "bonus": "keep_region_named",
+      "aspect": "Mistral Coast",
+      "image": "/trees/memory_of_mistral_coast.png",
+      "row": 3,
+      "baseCost": 150,
+      "localImage": "/assets/soul-tree/memory_of_mistral_coast.bed5e723.webp"
+    },
+    {
+      "id": "boss_4",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Emberscar Highlands Tyrant",
+      "description": "Call the tyrant of Emberscar Highlands back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 4,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_4",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Emberscar Highlands",
+      "image": "/trees/emberscar_highlands_tyrant.png",
+      "row": 4,
+      "baseCost": 601,
+      "localImage": "/assets/soul-tree/emberscar_highlands_tyrant.e525e991.webp"
+    },
+    {
+      "id": "region_keep_4",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Skip to the Emberscar Highlands Tyrant",
+      "description": "Begin each life with every zone of Emberscar Highlands already walked — only its tyrant stands between you and the region beyond.",
+      "tier": 3,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_3",
+          "ranks": 1
+        }
+      ],
+      "bonus": "keep_region_named",
+      "aspect": "Emberscar Highlands",
+      "image": "/trees/memory_of_emberscar_highlands.png",
+      "row": 4,
+      "baseCost": 255,
+      "localImage": "/assets/soul-tree/memory_of_emberscar_highlands.80074610.webp"
+    },
+    {
+      "id": "boss_5",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Frostbound Tundra Tyrant",
+      "description": "Call the tyrant of Frostbound Tundra back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 4,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_5",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Frostbound Tundra",
+      "image": "/trees/frostbound_tundra_tyrant.png",
+      "row": 5,
+      "baseCost": 601,
+      "localImage": "/assets/soul-tree/frostbound_tundra_tyrant.5b551835.webp"
+    },
+    {
+      "id": "region_keep_5",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Skip to the Frostbound Tundra Tyrant",
+      "description": "Begin each life with every zone of Frostbound Tundra already walked — only its tyrant stands between you and the region beyond.",
+      "tier": 3,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_4",
+          "ranks": 1
+        }
+      ],
+      "bonus": "keep_region_named",
+      "aspect": "Frostbound Tundra",
+      "image": "/trees/memory_of_frostbound_tundra.png",
+      "row": 5,
+      "baseCost": 255,
+      "localImage": "/assets/soul-tree/memory_of_frostbound_tundra.9a5a1f17.webp"
+    },
+    {
+      "id": "boss_6",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Stormridge Highlands Tyrant",
+      "description": "Call the tyrant of Stormridge Highlands back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 5,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_6",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Stormridge Highlands",
+      "image": "/trees/stormridge_highlands_tyrant.png",
+      "row": 6,
+      "baseCost": 1022,
+      "localImage": "/assets/soul-tree/stormridge_highlands_tyrant.1635abac.webp"
+    },
+    {
+      "id": "region_keep_6",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Skip to the Stormridge Highlands Tyrant",
+      "description": "Begin each life with every zone of Stormridge Highlands already walked — only its tyrant stands between you and the region beyond.",
+      "tier": 4,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_5",
+          "ranks": 1
+        }
+      ],
+      "bonus": "keep_region_named",
+      "aspect": "Stormridge Highlands",
+      "image": "/trees/memory_of_stormridge_highlands.png",
+      "row": 6,
+      "baseCost": 434,
+      "localImage": "/assets/soul-tree/memory_of_stormridge_highlands.e2ca3643.webp"
+    },
+    {
+      "id": "boss_7",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Shadowmere Fen Tyrant",
+      "description": "Call the tyrant of Shadowmere Fen back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 5,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_7",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Shadowmere Fen",
+      "image": "/trees/shadowmere_fen_tyrant.png",
+      "row": 7,
+      "baseCost": 1022,
+      "localImage": "/assets/soul-tree/shadowmere_fen_tyrant.81a48d90.webp"
+    },
+    {
+      "id": "region_keep_7",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Skip to the Shadowmere Fen Tyrant",
+      "description": "Begin each life with every zone of Shadowmere Fen already walked — only its tyrant stands between you and the region beyond.",
+      "tier": 4,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_6",
+          "ranks": 1
+        }
+      ],
+      "bonus": "keep_region_named",
+      "aspect": "Shadowmere Fen",
+      "image": "/trees/memory_of_shadowmere_fen.png",
+      "row": 7,
+      "baseCost": 434,
+      "localImage": "/assets/soul-tree/memory_of_shadowmere_fen.b37ab6c8.webp"
+    },
+    {
+      "id": "boss_8",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Chaotic Wastelands Tyrant",
+      "description": "Call the tyrant of Chaotic Wastelands back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 6,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_8",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Chaotic Wastelands",
+      "image": "/trees/chaotic_wastelands_tyrant.png",
+      "row": 8,
+      "baseCost": 1738,
+      "localImage": "/assets/soul-tree/chaotic_wastelands_tyrant.36111a77.webp"
+    },
+    {
+      "id": "region_keep_8",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Skip to the Chaotic Wastelands Tyrant",
+      "description": "Begin each life with every zone of Chaotic Wastelands already walked — only its tyrant stands between you and the region beyond.",
+      "tier": 5,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_7",
+          "ranks": 1
+        }
+      ],
+      "bonus": "keep_region_named",
+      "aspect": "Chaotic Wastelands",
+      "image": "/trees/memory_of_chaotic_wastelands.png",
+      "row": 8,
+      "baseCost": 738,
+      "localImage": "/assets/soul-tree/memory_of_chaotic_wastelands.4ae5a584.webp"
+    },
+    {
+      "id": "boss_9",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Empowered Endless Rifts Tyrant",
+      "description": "Call the tyrant of Endless Rifts back stronger, once its domain is yours — a harder rematch, fought again and again for rare, epic and legendary spoils.",
+      "tier": 6,
+      "col": 0,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_9",
+          "ranks": 1
+        }
+      ],
+      "bonus": "empowered_tyrant",
+      "aspect": "Endless Rifts",
+      "image": "/trees/sunken_rifts_tyrant.png",
+      "row": 9,
+      "baseCost": 1738,
+      "localImage": "/assets/soul-tree/sunken_rifts_tyrant.2f296a42.webp"
+    },
+    {
+      "id": "region_keep_9",
+      "tree": "exploration",
+      "branch": "homeland",
+      "name": "Skip to the Endless Rifts Tyrant",
+      "description": "Begin each life with every zone of Endless Rifts already walked — only its tyrant stands between you and the region beyond.",
+      "tier": 5,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "region_keep_8",
+          "ranks": 1
+        }
+      ],
+      "bonus": "keep_region_named",
+      "aspect": "Endless Rifts",
+      "image": "/trees/memory_of_sunken_rifts.png",
+      "row": 9,
+      "baseCost": 738,
+      "localImage": "/assets/soul-tree/memory_of_sunken_rifts.1fc63925.webp"
+    },
+    {
+      "id": "retain_craft_slots",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Forge Memory",
+      "description": "Keep one unlocked crafting slot through rebirth. Stacks to 5.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 5,
+      "bonus": "retain_craft_slots",
+      "value": 1,
+      "image": "/trees/forge_memory.png",
+      "row": 0,
+      "baseCost": 26,
+      "costStep": 20,
+      "localImage": "/assets/soul-tree/forge_memory.21ebbc88.webp"
+    },
+    {
+      "id": "craft_time",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Deft Artisan",
+      "description": "-5% craft time per rank. Stacks to 10 (-50%).",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 10,
+      "prereqs": [
+        {
+          "nodeId": "retain_craft_slots",
+          "ranks": 1
+        }
+      ],
+      "bonus": "craft_time_pct",
+      "value": 5,
+      "image": "/trees/deft_artisan.png",
+      "row": 1,
+      "baseCost": 34,
+      "costStep": 14,
+      "localImage": "/assets/soul-tree/deft_artisan.1f8747d3.webp"
+    },
+    {
+      "id": "material_save",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Frugal Forge",
+      "description": "5% chance not to consume one of the lowest-rarity materials when crafting (incl. enhancing).",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "retain_craft_slots",
+          "ranks": 1
+        }
+      ],
+      "bonus": "material_save",
+      "value": 5,
+      "image": "/trees/frugal_forge.png",
+      "row": 1,
+      "baseCost": 99,
+      "localImage": "/assets/soul-tree/frugal_forge.b0ed0f5d.webp"
+    },
+    {
+      "id": "guild_standing",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Guild Standing",
+      "description": "-10% market listing fees, per rank.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "retain_craft_slots",
+          "ranks": 1
+        }
+      ],
+      "bonus": "market_fee_discount_pct",
+      "value": 10,
+      "image": "/trees/guild_standing.png",
+      "row": 1,
+      "baseCost": 88,
+      "costStep": 67,
+      "localImage": "/assets/soul-tree/guild_standing.d3f0f654.webp"
+    },
+    {
+      "id": "craft_insight",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Artisan's Eye",
+      "description": "+5% chance of an insight per experiment cycle, per rank. Stacks to 4 (15% → 35%).",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 4,
+      "prereqs": [
+        {
+          "nodeId": "craft_time",
+          "ranks": 1
+        }
+      ],
+      "bonus": "craft_insight_pct",
+      "value": 5,
+      "image": "/trees/artisans_eye.png",
+      "row": 2,
+      "baseCost": 168,
+      "costStep": 92,
+      "localImage": "/assets/soul-tree/artisans_eye.2ba022b5.webp"
+    },
+    {
+      "id": "material_save_uncommon",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Frugal Forge (Uncommon)",
+      "description": "The material-save chance also applies to uncommon materials.",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "material_save",
+          "ranks": 1
+        }
+      ],
+      "bonus": "material_save_rarity",
+      "aspect": "uncommon",
+      "image": "/trees/frugal_forge_uncommon.png",
+      "row": 2,
+      "baseCost": 208,
+      "localImage": "/assets/soul-tree/frugal_forge_uncommon.fe6d46f3.webp"
+    },
+    {
+      "id": "material_save_chance",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Miser's Touch",
+      "description": "+5% material-save chance per rank. Stacks to 4.",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 4,
+      "prereqs": [
+        {
+          "nodeId": "material_save",
+          "ranks": 1
+        }
+      ],
+      "bonus": "material_save_chance_pct",
+      "value": 5,
+      "image": "/trees/misers_touch.png",
+      "row": 2,
+      "baseCost": 150,
+      "costStep": 75,
+      "localImage": "/assets/soul-tree/misers_touch.88999278.webp"
+    },
+    {
+      "id": "patient_hands",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Patient Hands",
+      "description": "5% chance per rank that an experiment's insight counts twice.",
+      "tier": 3,
+      "col": 0,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "craft_insight",
+          "ranks": 1
+        }
+      ],
+      "bonus": "experiment_double_insight_pct",
+      "value": 5,
+      "image": "/trees/patient_hands.png",
+      "row": 3,
+      "baseCost": 447,
+      "costStep": 319,
+      "localImage": "/assets/soul-tree/patient_hands.97985139.webp"
+    },
+    {
+      "id": "material_save_rare",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Frugal Forge (Rare)",
+      "description": "The material-save chance also applies to rare materials.",
+      "tier": 3,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "material_save_uncommon",
+          "ranks": 1
+        }
+      ],
+      "bonus": "material_save_rarity",
+      "aspect": "rare",
+      "image": "/trees/frugal_forge_rare.png",
+      "row": 3,
+      "baseCost": 354,
+      "localImage": "/assets/soul-tree/frugal_forge_rare.4c0d7f2a.webp"
+    },
+    {
+      "id": "material_save_epic",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Frugal Forge (Epic)",
+      "description": "The material-save chance also applies to epic materials.",
+      "tier": 4,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "material_save_rare",
+          "ranks": 1
+        }
+      ],
+      "bonus": "material_save_rarity",
+      "aspect": "epic",
+      "image": "/trees/frugal_forge_epic.png",
+      "row": 4,
+      "baseCost": 601,
+      "localImage": "/assets/soul-tree/frugal_forge_epic.dc387bdb.webp"
+    },
+    {
+      "id": "material_save_legendary",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Frugal Forge (Legendary)",
+      "description": "The material-save chance also applies to legendary materials.",
+      "tier": 5,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "material_save_epic",
+          "ranks": 1
+        }
+      ],
+      "bonus": "material_save_rarity",
+      "aspect": "legendary",
+      "image": "/trees/frugal_forge_legendary.png",
+      "row": 5,
+      "baseCost": 1022,
+      "localImage": "/assets/soul-tree/frugal_forge_legendary.6316a3d2.webp"
+    },
+    {
+      "id": "material_save_mythic",
+      "tree": "crafting",
+      "branch": "workshop",
+      "name": "Frugal Forge (Mythic)",
+      "description": "The material-save chance also applies to mythic materials.",
+      "tier": 6,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "material_save_legendary",
+          "ranks": 1
+        }
+      ],
+      "bonus": "material_save_rarity",
+      "aspect": "mythic",
+      "image": "/trees/frugal_forge_mythic.png",
+      "row": 6,
+      "baseCost": 1738,
+      "localImage": "/assets/soul-tree/frugal_forge_mythic.c3e7702d.webp"
+    },
+    {
+      "id": "start_mastery",
+      "tree": "crafting",
+      "branch": "mastery",
+      "name": "Practiced Hands",
+      "description": "Begin one mastery rank higher (if you reached it). Stacks to 5.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 5,
+      "bonus": "start_mastery_rank",
+      "value": 1,
+      "image": "/trees/practiced_hands.png",
+      "row": 0,
+      "baseCost": 32,
+      "costStep": 26,
+      "localImage": "/assets/soul-tree/practiced_hands.75ead3d4.webp"
+    },
+    {
+      "id": "steady_hands",
+      "tree": "crafting",
+      "branch": "mastery",
+      "name": "Steady Hands",
+      "description": "+3% success on any craft below your mastery, per rank.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "start_mastery",
+          "ranks": 1
+        }
+      ],
+      "bonus": "craft_success_pct",
+      "value": 3,
+      "image": "/trees/steady_hands.png",
+      "row": 1,
+      "baseCost": 122,
+      "costStep": 89,
+      "localImage": "/assets/soul-tree/steady_hands.6379009b.webp"
+    },
+    {
+      "id": "scribes_diligence",
+      "tree": "crafting",
+      "branch": "mastery",
+      "name": "Scribe's Diligence",
+      "description": "+1 design you can write to a scroll each day.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 1,
+      "prereqs": [
+        {
+          "nodeId": "start_mastery",
+          "ranks": 1
+        }
+      ],
+      "bonus": "scribe_daily_bonus",
+      "value": 1,
+      "image": "/trees/scribes_diligence.png",
+      "row": 1,
+      "baseCost": 265,
+      "localImage": "/assets/soul-tree/scribes_diligence.0193b83a.webp"
+    },
+    {
+      "id": "extra_specialization",
+      "tree": "crafting",
+      "branch": "mastery",
+      "name": "Polymath Soul",
+      "description": "Unlock an additional crafting specialization. 3 ranks → all four professions.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "start_mastery",
+          "ranks": 1
+        }
+      ],
+      "bonus": "extra_specialization",
+      "value": 1,
+      "image": "/trees/polymath_soul.png",
+      "row": 1,
+      "baseCost": 354,
+      "costStep": 265,
+      "localImage": "/assets/soul-tree/polymath_soul.7fedbb40.webp"
+    },
+    {
+      "id": "steady_fire",
+      "tree": "crafting",
+      "branch": "mastery",
+      "name": "Steady Fire",
+      "description": "A steadier cauldron: the pills you brew lean a tenth of a grade higher in quality, per rank.",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "steady_hands",
+          "ranks": 1
+        }
+      ],
+      "bonus": "alchemy_quality_bias",
+      "value": 0.1,
+      "image": "/trees/steady_fire.png",
+      "row": 2,
+      "baseCost": 225,
+      "costStep": 151,
+      "localImage": "/assets/soul-tree/steady_fire.a987fd05.webp"
+    },
+    {
+      "id": "charged_ink",
+      "tree": "crafting",
+      "branch": "mastery",
+      "name": "Charged Ink",
+      "description": "5% chance per rank that a talisman comes off the desk one charge stronger.",
+      "tier": 2,
+      "col": 1,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "steady_hands",
+          "ranks": 1
+        }
+      ],
+      "bonus": "talisman_charge_up_pct",
+      "value": 5,
+      "image": "/trees/charged_ink.png",
+      "row": 2,
+      "baseCost": 225,
+      "costStep": 151,
+      "localImage": "/assets/soul-tree/charged_ink.2cbdb439.webp"
+    },
+    {
+      "id": "masterwork_instinct",
+      "tree": "crafting",
+      "branch": "mastery",
+      "name": "Masterwork Instinct",
+      "description": "+1 masterwork a day, per rank.",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "extra_specialization",
+          "ranks": 1
+        }
+      ],
+      "bonus": "masterwork_daily_bonus",
+      "value": 1,
+      "image": "/trees/masterwork_instinct.png",
+      "row": 2,
+      "baseCost": 564,
+      "costStep": 450,
+      "localImage": "/assets/soul-tree/masterwork_instinct.8f3ab64a.webp"
+    },
+    {
+      "id": "divine_influence_refining",
+      "tree": "crafting",
+      "branch": "mastery",
+      "name": "Divine Influence (Refining)",
+      "description": "2% chance per rank that a piece you refine comes out with an extra random attribute.",
+      "tier": 3,
+      "col": 1,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "masterwork_instinct",
+          "ranks": 1
+        }
+      ],
+      "bonus": "divine_influence_refining_pct",
+      "value": 2,
+      "image": "/trees/divine_influence_refining.png",
+      "row": 3,
+      "baseCost": 575,
+      "costStep": 383,
+      "localImage": "/assets/soul-tree/divine_influence_refining.10f70766.webp"
+    },
+    {
+      "id": "divine_influence_tailoring",
+      "tree": "crafting",
+      "branch": "mastery",
+      "name": "Divine Influence (Tailoring)",
+      "description": "2% chance per rank that a piece you tailor comes out with an extra random attribute.",
+      "tier": 3,
+      "col": 2,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "masterwork_instinct",
+          "ranks": 1
+        }
+      ],
+      "bonus": "divine_influence_tailoring_pct",
+      "value": 2,
+      "image": "/trees/divine_influence_tailoring.png",
+      "row": 3,
+      "baseCost": 575,
+      "costStep": 383,
+      "localImage": "/assets/soul-tree/divine_influence_tailoring.394e9f29.webp"
+    },
+    {
+      "id": "ashes_of_the_forge",
+      "tree": "crafting",
+      "branch": "memory",
+      "name": "Ashes of the Forge",
+      "description": "Begin each life with 2 crafting mastery levels in your kept professions, per rank.",
+      "tier": 0,
+      "col": 1,
+      "maxRanks": 5,
+      "bonus": "start_craft_levels",
+      "value": 2,
+      "image": "/trees/ashes_of_the_forge.png",
+      "row": 0,
+      "baseCost": 117,
+      "costStep": 91,
+      "localImage": "/assets/soul-tree/ashes_of_the_forge.6ce30a61.webp"
+    },
+    {
+      "id": "concoction_memory",
+      "tree": "crafting",
+      "branch": "memory",
+      "name": "Concoction Memory",
+      "description": "Keep 10% of your alchemical concoction's level through rebirth, per rank.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 5,
+      "prereqs": [
+        {
+          "nodeId": "ashes_of_the_forge",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_concoction_pct",
+      "value": 10,
+      "image": "/trees/concoction_memory.png",
+      "row": 1,
+      "baseCost": 221,
+      "costStep": 177,
+      "localImage": "/assets/soul-tree/concoction_memory.a20ebf5c.webp"
+    },
+    {
+      "id": "diagram_recall",
+      "tree": "crafting",
+      "branch": "memory",
+      "name": "Diagram Recall",
+      "description": "Carry 5 array diagrams through rebirth, per rank.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 6,
+      "prereqs": [
+        {
+          "nodeId": "ashes_of_the_forge",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_array_diagrams",
+      "value": 5,
+      "image": "/trees/diagram_recall.png",
+      "row": 1,
+      "baseCost": 177,
+      "costStep": 132,
+      "localImage": "/assets/soul-tree/diagram_recall.bc7408d9.webp"
+    },
+    {
+      "id": "pill_furnace_memory",
+      "tree": "crafting",
+      "branch": "memory",
+      "name": "Pill Furnace Memory",
+      "description": "Keep 10% of your alchemy recipes through rebirth, per rank.",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "concoction_memory",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_recipe_pct",
+      "value": 10,
+      "image": "/trees/pill_furnace_memory.png",
+      "row": 2,
+      "baseCost": 376,
+      "costStep": 300,
+      "localImage": "/assets/soul-tree/pill_furnace_memory.1917c833.webp"
+    },
+    {
+      "id": "array_endurance",
+      "tree": "crafting",
+      "branch": "memory",
+      "name": "Array Endurance",
+      "description": "Array plates you wear out 10% slower, per rank.",
+      "tier": 2,
+      "col": 2,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "diagram_recall",
+          "ranks": 1
+        }
+      ],
+      "bonus": "array_wear_reduction_pct",
+      "value": 10,
+      "image": "/trees/array_endurance.png",
+      "row": 2,
+      "baseCost": 225,
+      "costStep": 151,
+      "localImage": "/assets/soul-tree/array_endurance.84faacb7.webp"
+    },
+    {
+      "id": "blueprint_memory",
+      "tree": "crafting",
+      "branch": "memory",
+      "group": "designs",
+      "name": "Blueprint Memory",
+      "description": "Keep 10% of your refining blueprints through rebirth, per rank.",
+      "tier": 1,
+      "col": 0,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "ashes_of_the_forge",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_refining_blueprint_pct",
+      "value": 10,
+      "image": "/trees/blueprint_memory.png",
+      "row": 3,
+      "baseCost": 221,
+      "costStep": 177,
+      "localImage": "/assets/soul-tree/blueprint_memory.cfd94279.webp"
+    },
+    {
+      "id": "loom_memory",
+      "tree": "crafting",
+      "branch": "memory",
+      "group": "designs",
+      "name": "Loom Memory",
+      "description": "Keep 10% of your tailoring blueprints through rebirth, per rank.",
+      "tier": 1,
+      "col": 1,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "ashes_of_the_forge",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_tailoring_blueprint_pct",
+      "value": 10,
+      "image": "/trees/loom_memory.png",
+      "row": 3,
+      "baseCost": 221,
+      "costStep": 177,
+      "localImage": "/assets/soul-tree/loom_memory.226c8f54.webp"
+    },
+    {
+      "id": "talisman_pattern_recall",
+      "tree": "crafting",
+      "branch": "memory",
+      "group": "designs",
+      "name": "Talisman Pattern Recall",
+      "description": "Keep 10% of your talisman patterns through rebirth, per rank.",
+      "tier": 1,
+      "col": 2,
+      "maxRanks": 3,
+      "prereqs": [
+        {
+          "nodeId": "ashes_of_the_forge",
+          "ranks": 1
+        }
+      ],
+      "bonus": "retain_talisman_pattern_pct",
+      "value": 10,
+      "image": "/trees/talisman_pattern_recall.png",
+      "row": 3,
+      "baseCost": 221,
+      "costStep": 177,
+      "localImage": "/assets/soul-tree/talisman_pattern_recall.cb3784fd.webp"
+    },
+    {
+      "id": "qi_gen_eternal",
+      "tree": "cultivation",
+      "branch": "qi",
+      "name": "Eternal Spring",
+      "description": "+1% Qi generation rate per rank. No limit.",
+      "tier": 2,
+      "col": 0,
+      "maxRanks": 0,
+      "prereqs": [
+        {
+          "nodeId": "deep_reservoir",
+          "ranks": 10
+        },
+        {
+          "nodeId": "qi_gen_rate",
+          "ranks": 10
+        }
+      ],
+      "bonus": "qi_gen_pct",
+      "value": 1,
+      "image": "/trees/eternal_spring.png",
+      "row": 2,
+      "baseCost": 225,
+      "costStep": 113,
+      "localImage": "/assets/soul-tree/eternal_spring.f8f49d22.webp"
+    }
+  ]
+}

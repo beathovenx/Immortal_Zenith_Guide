@@ -1,0 +1,5635 @@
+{
+  "updated": "2026-11-12",
+  "entries": [
+    {
+      "id": "thunder_viper_bloodline",
+      "name": "Thunder Viper Bloodline",
+      "rank": "C",
+      "description": "A rank-C bloodline of the Spirit Beast Lineage, attuned to lightning. Respected across provinces; a strong foundation for future cultivation.",
+      "image": "/bloodlines/thunder_viper_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "energy": 8,
+          "attack": 9,
+          "elemAtk": {
+            "lightning": 9
+          }
+        },
+        "statsPct": {
+          "energy": 3,
+          "attack": 5,
+          "elemAtk": {
+            "lightning": 5
+          }
+        },
+        "qiGenMult": 1.07,
+        "vsType": {
+          "insectoid": 0.08,
+          "lagomorph": 0.08
+        },
+        "fromType": {
+          "avian": 0.06,
+          "chimeric": 0.06
+        }
+      },
+      "drawbacks": {
+        "stats": {
+          "stamina": -7,
+          "elemRes": {
+            "earth": -4
+          }
+        },
+        "statsPct": {
+          "stamina": -5
+        },
+        "description": "An imperfect inheritance: weakened stamina and a poor guard against earth."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Thunder Viper blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 6
+            }
+          },
+          "statsPct": {
+            "attack": 4
+          },
+          "grantsBattleTechnique": "bt_bl_thunder_viper_bloodline_1",
+          "grantsBattleTechniqueName": "Thunder Viper Thundercrack"
+        },
+        {
+          "realm": 3,
+          "description": "Mastered Thunder Viper legacy: the lineage's signature art descends.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 9
+            }
+          },
+          "statsPct": {
+            "attack": 3
+          },
+          "grantsBattleTechnique": "bt_bl_thunder_viper_bloodline_2",
+          "grantsBattleTechniqueName": "Thunder Viper: Heaven-Splitting Judgment"
+        },
+        {
+          "realm": 5,
+          "description": "Ascendant Thunder Viper resonance strengthens the body and qi.",
+          "stats": {
+            "energy": 8,
+            "elemAtk": {
+              "lightning": 6
+            }
+          },
+          "statsPct": {
+            "attack": 5,
+            "elemAtk": {
+              "lightning": 4
+            }
+          }
+        }
+      ],
+      "dropsFrom": [
+        "serpentine"
+      ],
+      "collection": "bloodlines",
+      "build": "lightning"
+    },
+    {
+      "id": "thunder_stag_bloodline",
+      "name": "Thunder Stag Bloodline",
+      "rank": "C",
+      "description": "A rank-C bloodline of the Spirit Beast Lineage, attuned to lightning. Respected across provinces; a strong foundation for future cultivation.",
+      "image": "/bloodlines/thunder_stag_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "speed": 8,
+          "attack": 7,
+          "elemAtk": {
+            "lightning": 7
+          }
+        },
+        "statsPct": {
+          "speed": 5,
+          "attack": 3,
+          "elemAtk": {
+            "lightning": 5
+          }
+        },
+        "qiGenMult": 1.07,
+        "vsType": {
+          "elemental": 0.08,
+          "insectoid": 0.08
+        },
+        "fromType": {
+          "feline": 0.06,
+          "lupine": 0.06
+        }
+      },
+      "drawbacks": {
+        "stats": {
+          "stamina": -8,
+          "elemRes": {
+            "earth": -5
+          }
+        },
+        "statsPct": {
+          "stamina": -3
+        },
+        "description": "An imperfect inheritance: weakened stamina and a poor guard against earth."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Thunder Stag blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 7
+            }
+          },
+          "statsPct": {
+            "attack": 5
+          },
+          "grantsBattleTechnique": "bt_bl_thunder_stag_bloodline_1",
+          "grantsBattleTechniqueName": "Thunder Stag Voltaic Lash"
+        },
+        {
+          "realm": 3,
+          "description": "Mastered Thunder Stag legacy: the lineage's signature art descends.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 8
+            }
+          },
+          "statsPct": {
+            "attack": 3
+          },
+          "grantsBattleTechnique": "bt_bl_thunder_stag_bloodline_2",
+          "grantsBattleTechniqueName": "Thunder Stag: Heaven-Splitting Judgment"
+        },
+        {
+          "realm": 5,
+          "description": "Ascendant Thunder Stag resonance strengthens the body and qi.",
+          "stats": {
+            "speed": 8,
+            "elemAtk": {
+              "lightning": 8
+            }
+          },
+          "statsPct": {
+            "attack": 5,
+            "elemAtk": {
+              "lightning": 5
+            }
+          }
+        }
+      ],
+      "dropsFrom": [
+        "cervine"
+      ],
+      "collection": "bloodlines",
+      "build": "lightning"
+    },
+    {
+      "id": "lightning_jackdaw_bloodline",
+      "name": "Lightning Jackdaw Bloodline",
+      "rank": "B",
+      "description": "A rank-B bloodline of the Spirit Beast, attuned to lightning, wind. A formidable inheritance sought by great sects.",
+      "image": "/bloodlines/lightning_jackdaw_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "energy": 12,
+          "speed": 12,
+          "attack": 14,
+          "elemAtk": {
+            "lightning": 14,
+            "wind": 8
+          }
+        },
+        "statsPct": {
+          "speed": 7,
+          "attack": 5,
+          "elemAtk": {
+            "lightning": 6,
+            "wind": 6
+          }
+        },
+        "qiGenMult": 1.07
+      },
+      "drawbacks": {
+        "stats": {
+          "health": -8,
+          "stamina": -9,
+          "elemRes": {
+            "earth": -6
+          }
+        },
+        "statsPct": {
+          "health": -5
+        },
+        "description": "An imperfect inheritance: weakened health and a poor guard against earth."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Lightning Jackdaw blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 10
+            }
+          },
+          "statsPct": {
+            "attack": 7
+          },
+          "grantsBattleTechnique": "bt_bl_lightning_jackdaw_bloodline_1",
+          "grantsBattleTechniqueName": "Lightning Jackdaw Sparkfang"
+        },
+        {
+          "realm": 3,
+          "description": "Deepening Lightning Jackdaw power: a greater art awakens.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 11
+            }
+          },
+          "statsPct": {
+            "attack": 5
+          },
+          "grantsBattleTechnique": "bt_bl_lightning_jackdaw_bloodline_2",
+          "grantsBattleTechniqueName": "Tempest Drift of the Lightning Jackdaw"
+        },
+        {
+          "realm": 5,
+          "description": "Ascendant Lightning Jackdaw resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 14
+            }
+          },
+          "statsPct": {
+            "attack": 7
+          }
+        },
+        {
+          "realm": 7,
+          "description": "Mastered Lightning Jackdaw legacy: the lineage's signature art descends.",
+          "stats": {
+            "energy": 14,
+            "elemAtk": {
+              "lightning": 14
+            }
+          },
+          "statsPct": {
+            "attack": 6,
+            "elemAtk": {
+              "lightning": 5
+            }
+          },
+          "grantsBattleTechnique": "bt_bl_lightning_jackdaw_bloodline_3",
+          "grantsBattleTechniqueName": "Lightning Jackdaw: Levin Ascendant"
+        }
+      ],
+      "dropsFrom": [
+        "elemental"
+      ],
+      "collection": "bloodlines",
+      "build": "lightning"
+    },
+    {
+      "id": "thunder_lotus_bloodline",
+      "name": "Thunder Lotus Bloodline",
+      "rank": "A",
+      "description": "A rank-A bloodline of the Sacred Plant, attuned to lightning, spirit. A near-legendary lineage that produces Saint-realm experts.",
+      "image": "/bloodlines/thunder_lotus_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "energy": 19,
+          "speed": 12,
+          "attack": 19,
+          "fortune": 4,
+          "elemAtk": {
+            "lightning": 17,
+            "spirit": 10
+          }
+        },
+        "statsPct": {
+          "speed": 7,
+          "attack": 7,
+          "elemAtk": {
+            "lightning": 9,
+            "spirit": 10
+          }
+        },
+        "qiGenMult": 1.07
+      },
+      "drawbacks": {
+        "stats": {
+          "defense": -11,
+          "damageReduction": -12,
+          "elemRes": {
+            "earth": -3
+          }
+        },
+        "statsPct": {
+          "defense": -5
+        },
+        "description": "An imperfect inheritance: weakened defense and a poor guard against earth."
+      },
+      "milestones": [
+        {
+          "realm": 2,
+          "description": "Awakened Thunder Lotus blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 22
+            }
+          },
+          "statsPct": {
+            "attack": 9
+          },
+          "grantsBattleTechnique": "bt_bl_thunder_lotus_bloodline_1",
+          "grantsBattleTechniqueName": "Thunder Lotus Voltaic Lash"
+        },
+        {
+          "realm": 4,
+          "description": "Deepening Thunder Lotus power: a greater art awakens.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 17
+            }
+          },
+          "statsPct": {
+            "attack": 9
+          },
+          "grantsBattleTechnique": "bt_bl_thunder_lotus_bloodline_2",
+          "grantsBattleTechniqueName": "Ethereal Step of the Thunder Lotus"
+        },
+        {
+          "realm": 6,
+          "description": "Ascendant Thunder Lotus resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 20
+            }
+          },
+          "statsPct": {
+            "attack": 7
+          }
+        },
+        {
+          "realm": 8,
+          "description": "Mastered Thunder Lotus legacy: the lineage's signature art descends.",
+          "stats": {
+            "energy": 20,
+            "elemAtk": {
+              "lightning": 19
+            }
+          },
+          "statsPct": {
+            "attack": 10,
+            "elemAtk": {
+              "lightning": 9
+            }
+          },
+          "absorbElement": "lightning",
+          "grantsBattleTechnique": "bt_bl_thunder_lotus_bloodline_3",
+          "grantsBattleTechniqueName": "Thunder Lotus: Heaven-Splitting Judgment"
+        }
+      ],
+      "dropsFrom": [
+        "elemental",
+        "plant"
+      ],
+      "collection": "bloodlines",
+      "build": "lightning"
+    },
+    {
+      "id": "genesis_thunder_court_bloodline",
+      "name": "Genesis Thunder Court Bloodline",
+      "rank": "S",
+      "description": "A rank-S bloodline of the Ancient Heavenly Clan, attuned to lightning. A legendary bloodline whose bearer can change a sect's fate.",
+      "image": "/bloodlines/genesis_thunder_court_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "energy": 36,
+          "speed": 23,
+          "attack": 29,
+          "fortune": 5,
+          "elemAtk": {
+            "lightning": 29
+          }
+        },
+        "statsPct": {
+          "speed": 13,
+          "attack": 13,
+          "elemAtk": {
+            "lightning": 14
+          }
+        },
+        "qiGenMult": 1.1
+      },
+      "milestones": [
+        {
+          "realm": 3,
+          "description": "Awakened Genesis Thunder Court blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 34
+            }
+          },
+          "statsPct": {
+            "attack": 11
+          },
+          "grantsBattleTechnique": "bt_bl_genesis_thunder_court_bloodline_1",
+          "grantsBattleTechniqueName": "Whitebright Writ"
+        },
+        {
+          "realm": 5,
+          "description": "Ascendant Genesis Thunder Court resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 31
+            }
+          },
+          "statsPct": {
+            "attack": 12
+          }
+        },
+        {
+          "realm": 7,
+          "description": "Deepening Genesis Thunder Court power: a greater art awakens.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 34
+            }
+          },
+          "statsPct": {
+            "attack": 11
+          },
+          "grantsElement": "tribulation",
+          "grantsBattleTechnique": "bt_bl_genesis_thunder_court_bloodline_2",
+          "grantsBattleTechniqueName": "Thunderhead and Verdict"
+        },
+        {
+          "realm": 9,
+          "description": "Ascendant Genesis Thunder Court resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 32
+            }
+          },
+          "statsPct": {
+            "attack": 13
+          }
+        },
+        {
+          "realm": 11,
+          "description": "Mastered Genesis Thunder Court legacy: the lineage's signature art descends.",
+          "stats": {
+            "energy": 31,
+            "elemAtk": {
+              "lightning": 29
+            }
+          },
+          "statsPct": {
+            "attack": 12,
+            "elemAtk": {
+              "lightning": 10
+            }
+          },
+          "absorbElement": "lightning",
+          "grantsBattleTechnique": "bt_bl_genesis_thunder_court_bloodline_3",
+          "grantsBattleTechniqueName": "The Unanswered Fulgurite"
+        }
+      ],
+      "dropsFrom": [
+        "elemental"
+      ],
+      "collection": "bloodlines",
+      "build": "lightning"
+    },
+    {
+      "id": "emperor_of_ten_thousand_thunder_bloodline",
+      "name": "Emperor of Ten Thousand Thunder Bloodline",
+      "rank": "S+",
+      "description": "A rank-S+ bloodline of the Heavenly Court, attuned to lightning. A near-mythical lineage; every bearer altered the course of history.",
+      "image": "/bloodlines/emperor_of_ten_thousand_thunder_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "energy": 52,
+          "speed": 31,
+          "attack": 53,
+          "fortune": 10,
+          "elemAtk": {
+            "lightning": 44
+          }
+        },
+        "statsPct": {
+          "speed": 18,
+          "attack": 15,
+          "elemAtk": {
+            "lightning": 15
+          }
+        },
+        "qiGenMult": 1.07,
+        "vsType": {
+          "beast": 0.18,
+          "undead": 0.18
+        }
+      },
+      "milestones": [
+        {
+          "realm": 3,
+          "description": "Awakened Emperor of Ten Thousand Thunder blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 40
+            }
+          },
+          "statsPct": {
+            "attack": 17
+          },
+          "grantsBattleTechnique": "bt_bl_emperor_of_ten_thousand_thunder_bloodline_1",
+          "grantsBattleTechniqueName": "Arcing Throne"
+        },
+        {
+          "realm": 6,
+          "description": "Ascendant Emperor of Ten Thousand Thunder resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 49
+            }
+          },
+          "statsPct": {
+            "attack": 14
+          }
+        },
+        {
+          "realm": 9,
+          "description": "Deepening Emperor of Ten Thousand Thunder power: a greater art awakens.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 41
+            }
+          },
+          "statsPct": {
+            "attack": 15
+          },
+          "grantsElement": "divinity",
+          "grantsBattleTechnique": "bt_bl_emperor_of_ten_thousand_thunder_bloodline_2",
+          "grantsBattleTechniqueName": "Testament of the Emperor of Ten Thousand Thunder"
+        },
+        {
+          "realm": 11,
+          "description": "Ascendant Emperor of Ten Thousand Thunder resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "lightning": 44
+            }
+          },
+          "statsPct": {
+            "attack": 16
+          }
+        },
+        {
+          "realm": 13,
+          "description": "Mastered Emperor of Ten Thousand Thunder legacy: the lineage's signature art descends.",
+          "stats": {
+            "energy": 46,
+            "fortune": 13,
+            "elemAtk": {
+              "lightning": 47
+            }
+          },
+          "statsPct": {
+            "attack": 16,
+            "elemAtk": {
+              "lightning": 18
+            }
+          },
+          "absorbElement": "lightning",
+          "grantsBattleTechnique": "bt_bl_emperor_of_ten_thousand_thunder_bloodline_3",
+          "grantsBattleTechniqueName": "Emperor of Ten Thousand Thunder: The Sovereign Strike"
+        }
+      ],
+      "dropsFrom": [
+        "humanoid"
+      ],
+      "collection": "bloodlines",
+      "build": "lightning"
+    },
+    {
+      "id": "steady_pulse_physique",
+      "name": "Steady Pulse Physique",
+      "rank": "D",
+      "description": "A rank-D physique of the Balanced Constitution, attuned to physical. A modest constitution that tempers the body toward its element.",
+      "image": "/physiques/steady_pulse_physique.png",
+      "bonuses": {
+        "stats": {
+          "health": 8,
+          "stamina": 3,
+          "attack": 2,
+          "defense": 3,
+          "elemAtk": {
+            "physical": 2
+          },
+          "elemRes": {
+            "physical": 3
+          }
+        },
+        "statsPct": {
+          "stamina": 4,
+          "defense": 2,
+          "damageReduction": 3,
+          "elemRes": {
+            "physical": 3
+          }
+        },
+        "qiGenMult": 1.02
+      },
+      "drawbacks": {
+        "stats": {
+          "energy": -4
+        },
+        "statsPct": {
+          "energy": -3
+        },
+        "description": "A ponderous constitution: reduced energy."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Deepening Steady Pulse tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 5,
+            "elemRes": {
+              "physical": 2
+            }
+          },
+          "statsPct": {
+            "defense": 4
+          }
+        },
+        {
+          "realm": 2,
+          "description": "Deepening Steady Pulse tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 4,
+            "elemRes": {
+              "physical": 2
+            }
+          },
+          "statsPct": {
+            "defense": 4
+          }
+        },
+        {
+          "realm": 3,
+          "description": "Deepening Steady Pulse tempering strengthens body and resistance.",
+          "stats": {
+            "stamina": 5,
+            "defense": 4,
+            "elemRes": {
+              "physical": 2
+            }
+          },
+          "statsPct": {
+            "defense": 3,
+            "elemRes": {
+              "physical": 2
+            }
+          }
+        }
+      ],
+      "dropsFrom": [
+        "physical"
+      ],
+      "collection": "physiques",
+      "build": "lightning"
+    },
+    {
+      "id": "thunder_vessel_physique",
+      "name": "Thunder Vessel Physique",
+      "rank": "C",
+      "description": "A rank-C physique of the Storm Rift, attuned to lightning. A well-regarded constitution prized for a resilient foundation.",
+      "image": "/physiques/thunder_vessel_physique.png",
+      "bonuses": {
+        "stats": {
+          "health": 10,
+          "speed": 7,
+          "attack": 4,
+          "defense": 7,
+          "elemAtk": {
+            "lightning": 4
+          },
+          "elemRes": {
+            "lightning": 7
+          }
+        },
+        "statsPct": {
+          "speed": 4,
+          "defense": 5,
+          "damageReduction": 4,
+          "elemRes": {
+            "lightning": 5
+          }
+        },
+        "qiGenMult": 1.05
+      },
+      "drawbacks": {
+        "stats": {
+          "mentalFortitude": -10,
+          "fortune": -2
+        },
+        "statsPct": {
+          "mentalFortitude": -5
+        },
+        "description": "A ponderous constitution: reduced mentalFortitude. Fortune runs thin."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Thunder Vessel tempering: a body-tempering art stirs.",
+          "stats": {
+            "defense": 7,
+            "elemRes": {
+              "lightning": 4
+            }
+          },
+          "statsPct": {
+            "defense": 4
+          },
+          "grantsBattleTechnique": "bt_pf_thunder_vessel_physique_1",
+          "grantsBattleTechniqueName": "Thunder Vessel Quicksilver Stride"
+        },
+        {
+          "realm": 3,
+          "description": "Deepening Thunder Vessel tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 6,
+            "elemRes": {
+              "lightning": 5
+            }
+          },
+          "statsPct": {
+            "defense": 4
+          }
+        },
+        {
+          "realm": 5,
+          "description": "Deepening Thunder Vessel tempering strengthens body and resistance.",
+          "stats": {
+            "speed": 9,
+            "defense": 8,
+            "elemRes": {
+              "lightning": 5
+            }
+          },
+          "statsPct": {
+            "defense": 5,
+            "elemRes": {
+              "lightning": 3
+            }
+          }
+        }
+      ],
+      "dropsFrom": [
+        "lightning"
+      ],
+      "collection": "physiques",
+      "build": "lightning"
+    },
+    {
+      "id": "thunderheart",
+      "name": "Thunderheart",
+      "rank": "B",
+      "description": "A rank-B physique of the Skyfall Peak, attuned to lightning. A formidable body-refining constitution sought by great sects.",
+      "image": "/physiques/thunderheart.png",
+      "bonuses": {
+        "stats": {
+          "health": 18,
+          "energy": 10,
+          "speed": 12,
+          "attack": 6,
+          "defense": 11,
+          "elemAtk": {
+            "lightning": 6
+          },
+          "elemRes": {
+            "lightning": 11
+          }
+        },
+        "statsPct": {
+          "energy": 6,
+          "defense": 5,
+          "damageReduction": 6,
+          "elemRes": {
+            "lightning": 5
+          }
+        },
+        "qiGenMult": 1.03
+      },
+      "drawbacks": {
+        "stats": {
+          "stamina": -12,
+          "mentalFortitude": -13
+        },
+        "statsPct": {
+          "stamina": -5
+        },
+        "description": "A ponderous constitution: reduced stamina, mentalFortitude."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Thunderheart tempering: a body-tempering art stirs.",
+          "stats": {
+            "defense": 11,
+            "elemRes": {
+              "lightning": 7
+            }
+          },
+          "statsPct": {
+            "defense": 5
+          },
+          "grantsBattleTechnique": "bt_pf_thunderheart_1",
+          "grantsBattleTechniqueName": "Thunderheart Quicksilver Stride"
+        },
+        {
+          "realm": 3,
+          "description": "Deepening Thunderheart tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 13,
+            "elemRes": {
+              "lightning": 7
+            }
+          },
+          "statsPct": {
+            "defense": 7
+          }
+        },
+        {
+          "realm": 5,
+          "description": "Deepening Thunderheart tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 14,
+            "elemRes": {
+              "lightning": 8
+            }
+          },
+          "statsPct": {
+            "defense": 5
+          }
+        },
+        {
+          "realm": 7,
+          "description": "Mastered Thunderheart tempering: the signature art descends.",
+          "stats": {
+            "speed": 14,
+            "defense": 10,
+            "elemRes": {
+              "lightning": 8
+            }
+          },
+          "statsPct": {
+            "defense": 5,
+            "damageReduction": 3,
+            "elemRes": {
+              "lightning": 7
+            }
+          },
+          "absorbElement": "lightning",
+          "grantsBattleTechnique": "bt_pf_thunderheart_2",
+          "grantsBattleTechniqueName": "Thunderheart Arc Strike"
+        }
+      ],
+      "dropsFrom": [
+        "lightning"
+      ],
+      "collection": "physiques",
+      "build": "lightning"
+    },
+    {
+      "id": "stormbone_physique",
+      "name": "Stormbone Physique",
+      "rank": "A",
+      "description": "A rank-A physique of the Thunder Ridge, attuned to lightning, physical. A near-legendary constitution that forges Saint-realm bodies.",
+      "image": "/physiques/stormbone_physique.png",
+      "bonuses": {
+        "stats": {
+          "health": 35,
+          "energy": 14,
+          "stamina": 22,
+          "attack": 14,
+          "defense": 12,
+          "fortune": 3,
+          "elemAtk": {
+            "lightning": 10
+          },
+          "elemRes": {
+            "lightning": 19,
+            "physical": 11
+          }
+        },
+        "statsPct": {
+          "energy": 7,
+          "defense": 8,
+          "damageReduction": 8,
+          "elemRes": {
+            "lightning": 10
+          }
+        },
+        "qiGenMult": 1.03,
+        "fromType": {
+          "aquatic": -0.12,
+          "construct": -0.12
+        }
+      },
+      "drawbacks": {
+        "stats": {
+          "speed": -10,
+          "mentalFortitude": -12
+        },
+        "statsPct": {
+          "mentalFortitude": -9
+        },
+        "description": "A ponderous constitution: reduced mentalFortitude, speed."
+      },
+      "milestones": [
+        {
+          "realm": 2,
+          "description": "Awakened Stormbone tempering: a body-tempering art stirs.",
+          "stats": {
+            "defense": 22,
+            "elemRes": {
+              "lightning": 10
+            }
+          },
+          "statsPct": {
+            "defense": 9
+          },
+          "grantsBattleTechnique": "bt_pf_stormbone_physique_1",
+          "grantsBattleTechniqueName": "Stormbone Windborne Grace"
+        },
+        {
+          "realm": 4,
+          "description": "Deepening Stormbone tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 16,
+            "elemRes": {
+              "lightning": 10
+            }
+          },
+          "statsPct": {
+            "defense": 7
+          }
+        },
+        {
+          "realm": 6,
+          "description": "Deepening Stormbone tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 16,
+            "elemRes": {
+              "lightning": 10
+            }
+          },
+          "statsPct": {
+            "defense": 7
+          }
+        },
+        {
+          "realm": 8,
+          "description": "Mastered Stormbone tempering: the signature art descends.",
+          "stats": {
+            "stamina": 19,
+            "defense": 21,
+            "elemRes": {
+              "lightning": 10
+            }
+          },
+          "statsPct": {
+            "defense": 8,
+            "damageReduction": 4,
+            "elemRes": {
+              "lightning": 10
+            }
+          },
+          "absorbElement": "lightning",
+          "grantsBattleTechnique": "bt_pf_stormbone_physique_2",
+          "grantsBattleTechniqueName": "Stormbone Arc Strike"
+        }
+      ],
+      "dropsFrom": [
+        "lightning",
+        "wind"
+      ],
+      "collection": "physiques",
+      "build": "lightning"
+    },
+    {
+      "id": "heavenly_thunder_physique",
+      "name": "Heavenly Thunder Physique",
+      "rank": "S",
+      "description": "A rank-S physique of the First Heavenly Tribulation, attuned to lightning. A legendary physique whose bearer endures what would break others.",
+      "image": "/physiques/heavenly_thunder_physique.png",
+      "bonuses": {
+        "stats": {
+          "health": 45,
+          "energy": 31,
+          "speed": 9,
+          "attack": 31,
+          "defense": 38,
+          "fortune": 5,
+          "elemAtk": {
+            "lightning": 14
+          },
+          "elemRes": {
+            "lightning": 28
+          }
+        },
+        "statsPct": {
+          "energy": 13,
+          "defense": 14,
+          "damageReduction": 10,
+          "elemRes": {
+            "lightning": 13
+          }
+        },
+        "qiGenMult": 1.06,
+        "fromType": {
+          "aquatic": -0.15,
+          "construct": -0.15
+        }
+      },
+      "milestones": [
+        {
+          "realm": 3,
+          "description": "Awakened Heavenly Thunder tempering: the signature art descends.",
+          "stats": {
+            "defense": 33,
+            "elemRes": {
+              "lightning": 17
+            }
+          },
+          "statsPct": {
+            "defense": 11
+          },
+          "grantsBattleTechnique": "bt_pf_heavenly_thunder_physique_1",
+          "grantsBattleTechniqueName": "Heavenbreaker Pulse"
+        },
+        {
+          "realm": 5,
+          "description": "Deepening Heavenly Thunder tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 27,
+            "elemRes": {
+              "lightning": 19
+            }
+          },
+          "statsPct": {
+            "defense": 14
+          }
+        },
+        {
+          "realm": 7,
+          "description": "Deepening Heavenly Thunder tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 31,
+            "elemRes": {
+              "lightning": 16
+            }
+          },
+          "statsPct": {
+            "defense": 14,
+            "damageReduction": 5
+          }
+        },
+        {
+          "realm": 9,
+          "description": "Deepening Heavenly Thunder tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 28,
+            "elemRes": {
+              "lightning": 18
+            }
+          },
+          "statsPct": {
+            "defense": 14,
+            "damageReduction": 5
+          }
+        },
+        {
+          "realm": 11,
+          "description": "Mastered Heavenly Thunder tempering: the signature art descends.",
+          "stats": {
+            "speed": 32,
+            "defense": 30,
+            "elemRes": {
+              "lightning": 18
+            }
+          },
+          "statsPct": {
+            "defense": 13,
+            "damageReduction": 5,
+            "elemRes": {
+              "lightning": 13
+            }
+          },
+          "absorbElement": "lightning",
+          "grantsBattleTechnique": "bt_pf_heavenly_thunder_physique_2",
+          "grantsBattleTechniqueName": "Ninefold Judgment"
+        }
+      ],
+      "dropsFrom": [
+        "lightning"
+      ],
+      "collection": "physiques",
+      "build": "lightning"
+    },
+    {
+      "id": "sparkflash_scroll",
+      "name": "Sparkflash Scroll",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "common",
+      "realmTier": 0,
+      "description": "A soul cultivation manual: no edge, and no gap either.",
+      "image": "/items/manuals/tier_0/sparkflash_scroll.png",
+      "stats": {
+        "qiPoolCap": 6,
+        "elemAtk": {
+          "lightning": 3
+        },
+        "elemRes": {
+          "lightning": 2
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.045,
+        "attack": 0.41,
+        "energyRegen": 0.36,
+        "elemAtk": {
+          "lightning": 0.45
+        }
+      },
+      "levelQiGenMult": 1.02,
+      "growth": {
+        "qiPoolCap": 0.02,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 30,
+          "description": "Every channel widens by the same measure.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 4
+          }
+        },
+        {
+          "level": 60,
+          "description": "Insight: learn a battle art.",
+          "stats": {},
+          "statsPct": {},
+          "grantsBattleTechnique": "bt_sparkflash_scroll_1"
+        },
+        {
+          "level": 100,
+          "description": "Mastery: no edge, and no gap either.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 6
+          },
+          "qiGenMult": 1.1
+        }
+      ],
+      "wikiPath": "/wiki/manuals/sparkflash_scroll",
+      "collection": "manuals",
+      "build": "lightning"
+    },
+    {
+      "id": "blazing_yang_codex",
+      "name": "Stormcrown Codex",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "uncommon",
+      "realmTier": 2,
+      "description": "A soul cultivation manual: hardened against the element it wields.",
+      "image": "/items/manuals/tier_2/blazing_yang_codex.png",
+      "stats": {
+        "speed": 3,
+        "qiPoolCap": 5.7,
+        "elemAtk": {
+          "lightning": 12
+        },
+        "elemRes": {
+          "lightning": 16
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "speed": 0.44,
+        "qiPoolCap": 0.046,
+        "energyRegen": 0.4,
+        "elemAtk": {
+          "lightning": 0.5
+        }
+      },
+      "levelQiGenMult": 1.024,
+      "growth": {
+        "qiPoolCap": 0.026,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The element stops burning its wielder.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "speed": 6
+          },
+          "fromType": {
+            "elemental_weather": -0.04
+          },
+          "grantsBattleTechnique": "bt_blazing_yang_codex_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: hardened against the element it wields.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "lightning",
+          "fromType": {
+            "elemental_weather": -0.07
+          }
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 7.5
+          },
+          "qiGenMult": 1.15,
+          "fromType": {
+            "avian": -0.11,
+            "elemental_weather": -0.11
+          },
+          "grantsBattleTechnique": "bt_blazing_yang_codex_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/blazing_yang_codex",
+      "collection": "manuals",
+      "build": "lightning"
+    },
+    {
+      "id": "five_spirits_sutra",
+      "name": "Stormmind Sutra",
+      "kind": "manual",
+      "slot": "tech_mental",
+      "rarity": "uncommon",
+      "realmTier": 3,
+      "description": "A mind cultivation manual: insight sharpened to a point.",
+      "image": "/items/manuals/tier_3/five_spirits_sutra.png",
+      "stats": {
+        "speed": 4,
+        "mentalFortitude": 21,
+        "elemAtk": {
+          "lightning": 70
+        },
+        "elemRes": {
+          "lightning": 12
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "energy": 0.4213,
+        "speed": 0.5487,
+        "mentalFortitude": 0.3582,
+        "energyRegen": 0.3919
+      },
+      "levelQiGenMult": 1.015,
+      "growth": {
+        "mentalFortitude": 0.037
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "Insight narrows to a point and goes through.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "energy": 6
+          },
+          "vsType": {
+            "elemental_weather": 0.05
+          },
+          "grantsBattleTechnique": "bt_five_spirits_sutra_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: insight sharpened to a point.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "lightning",
+          "vsType": {
+            "elemental_weather": 0.09
+          }
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 15
+          },
+          "vsType": {
+            "avian": 0.14,
+            "elemental_weather": 0.14
+          },
+          "grantsBattleTechnique": "bt_five_spirits_sutra_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/five_spirits_sutra",
+      "collection": "manuals",
+      "build": "lightning"
+    },
+    {
+      "id": "skybreaker_lightning_manual",
+      "name": "Skybreaker Lightning Manual",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "rare",
+      "realmTier": 5,
+      "description": "A soul cultivation manual: hardened against the element it wields.",
+      "image": "/items/manuals/tier_5/skybreaker_lightning_manual.png",
+      "stats": {
+        "qiPoolCap": 4.9,
+        "elemAtk": {
+          "lightning": 179
+        },
+        "elemRes": {
+          "lightning": 306
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.0552,
+        "attack": 0.3951,
+        "energyRegen": 0.4414,
+        "elemAtk": {
+          "lightning": 0.5517
+        }
+      },
+      "levelQiGenMult": 1.03,
+      "growth": {
+        "qiPoolCap": 0.04,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The element stops burning its wielder.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "attack": 6
+          },
+          "fromType": {
+            "elemental_weather": -0.04
+          },
+          "grantsBattleTechnique": "bt_skybreaker_lightning_manual_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: hardened against the element it wields.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "lightning",
+          "fromType": {
+            "elemental_weather": -0.07
+          }
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 7.5
+          },
+          "qiGenMult": 1.15,
+          "fromType": {
+            "avian": -0.11,
+            "elemental_weather": -0.11
+          },
+          "grantsBattleTechnique": "bt_skybreaker_lightning_manual_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/skybreaker_lightning_manual",
+      "collection": "manuals",
+      "build": "lightning"
+    },
+    {
+      "id": "stormbolt_sutra",
+      "name": "Stormbolt Sutra",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "epic",
+      "realmTier": 6,
+      "description": "A soul cultivation manual: hardened against the element it wields.",
+      "image": "/items/manuals/tier_6/stormbolt_sutra.png",
+      "stats": {
+        "qiPoolCap": 4.9,
+        "elemAtk": {
+          "lightning": 469
+        },
+        "elemRes": {
+          "lightning": 799
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.0568,
+        "attack": 0.4122,
+        "energyRegen": 0.4522,
+        "elemAtk": {
+          "lightning": 0.5678
+        }
+      },
+      "levelQiGenMult": 1.032,
+      "growth": {
+        "qiPoolCap": 0.044,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The element stops burning its wielder.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "attack": 6
+          },
+          "fromType": {
+            "elemental_weather": -0.04
+          },
+          "grantsBattleTechnique": "bt_stormbolt_sutra_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: hardened against the element it wields.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "lightning",
+          "fromType": {
+            "elemental_weather": -0.07
+          }
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 7.5
+          },
+          "qiGenMult": 1.15,
+          "fromType": {
+            "avian": -0.11,
+            "elemental_weather": -0.11
+          },
+          "grantsBattleTechnique": "bt_stormbolt_sutra_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/stormbolt_sutra",
+      "collection": "manuals",
+      "build": "lightning"
+    },
+    {
+      "id": "lightning_dragon_codex",
+      "name": "Lightning Dragon Codex",
+      "kind": "manual",
+      "slot": "tech_body",
+      "rarity": "epic",
+      "realmTier": 6,
+      "description": "A body cultivation manual: no edge, and no gap either.",
+      "image": "/items/manuals/tier_6/lightning_dragon_codex.png",
+      "stats": {
+        "health": 842,
+        "elemAtk": {
+          "lightning": 631
+        },
+        "elemRes": {
+          "lightning": 421
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "health": 0.54,
+        "defense": 0.49,
+        "healthRegen": 0.38,
+        "staminaRegen": 0.43
+      },
+      "levelQiGenMult": 1.006,
+      "growth": {
+        "health": 0.048,
+        "defense": 0.032
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "Every channel widens by the same measure.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 4
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "defense": 6
+          },
+          "grantsBattleTechnique": "bt_lightning_dragon_codex_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: no edge, and no gap either.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "lightning"
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "health": 15
+          },
+          "grantsBattleTechnique": "bt_lightning_dragon_codex_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/lightning_dragon_codex",
+      "collection": "manuals",
+      "build": "lightning"
+    },
+    {
+      "id": "celestial_thunder_emperor_canon",
+      "name": "Celestial Thunder Emperor Canon",
+      "kind": "manual",
+      "slot": "tech_mental",
+      "rarity": "epic",
+      "realmTier": 7,
+      "description": "A mind cultivation manual: insight sharpened to a point.",
+      "image": "/items/manuals/tier_7/celestial_thunder_emperor_canon.png",
+      "stats": {
+        "mentalFortitude": 1081,
+        "elemAtk": {
+          "lightning": 3242
+        },
+        "elemRes": {
+          "lightning": 631
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "energy": 0.5037,
+        "speed": 0.4432,
+        "mentalFortitude": 0.4348,
+        "energyRegen": 0.4432
+      },
+      "levelQiGenMult": 1.019,
+      "growth": {
+        "mentalFortitude": 0.051
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "Insight narrows to a point and goes through.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "energy": 6
+          },
+          "vsType": {
+            "elemental_weather": 0.05
+          },
+          "grantsBattleTechnique": "bt_celestial_thunder_emperor_canon_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: insight sharpened to a point.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "lightning",
+          "vsType": {
+            "elemental_weather": 0.09
+          }
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 15
+          },
+          "vsType": {
+            "avian": 0.14,
+            "elemental_weather": 0.14
+          },
+          "grantsBattleTechnique": "bt_celestial_thunder_emperor_canon_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/celestial_thunder_emperor_canon",
+      "collection": "manuals",
+      "build": "lightning"
+    },
+    {
+      "id": "storm_emperor_sutra",
+      "name": "Storm Emperor Sutra",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "legendary",
+      "realmTier": 9,
+      "description": "A soul cultivation manual: hardened against the element it wields.",
+      "image": "/items/manuals/tier_9/storm_emperor_sutra.png",
+      "stats": {
+        "qiPoolCap": 4.9,
+        "elemAtk": {
+          "lightning": 8472
+        },
+        "elemRes": {
+          "lightning": 14435
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.0615,
+        "attack": 0.4458,
+        "energyRegen": 0.4941,
+        "elemAtk": {
+          "lightning": 0.615
+        }
+      },
+      "levelQiGenMult": 1.038,
+      "growth": {
+        "qiPoolCap": 0.056,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The element stops burning its wielder.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "attack": 6
+          },
+          "fromType": {
+            "elemental_weather": -0.04
+          },
+          "grantsBattleTechnique": "bt_storm_emperor_sutra_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: hardened against the element it wields.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "lightning",
+          "fromType": {
+            "elemental_weather": -0.07
+          }
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 7.5
+          },
+          "qiGenMult": 1.15,
+          "fromType": {
+            "avian": -0.11,
+            "elemental_weather": -0.11
+          },
+          "grantsBattleTechnique": "bt_storm_emperor_sutra_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/storm_emperor_sutra",
+      "collection": "manuals",
+      "build": "lightning"
+    },
+    {
+      "id": "shadow_weasel",
+      "name": "Shadow Weasel Bloodline",
+      "rank": "D",
+      "description": "A rank-D bloodline of the Spirit Beast Lineage, attuned to yin. Dependable and disciplined, it rewards mastery over raw power.",
+      "image": "/bloodlines/shadow_weasel_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "attack": 3,
+          "elemAtk": {
+            "yin": 5
+          }
+        },
+        "statsPct": {
+          "attack": 2,
+          "elemAtk": {
+            "yin": 4
+          }
+        },
+        "qiGenMult": 1.05
+      },
+      "drawbacks": {
+        "stats": {
+          "speed": -6,
+          "elemRes": {
+            "yang": -3
+          }
+        },
+        "statsPct": {
+          "speed": -3
+        },
+        "description": "Shallow ancestral resonance: a sluggish step and a poor guard against yang."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Shadow Weasel blood: sharper yin qi.",
+          "stats": {
+            "elemAtk": {
+              "yin": 5
+            }
+          },
+          "statsPct": {
+            "attack": 2
+          },
+          "grantsBattleTechnique": "bt_bl_shadow_weasel_1",
+          "grantsBattleTechniqueName": "Umbral Nip"
+        },
+        {
+          "realm": 2,
+          "description": "Deepening Shadow Weasel instincts: keener strikes.",
+          "stats": {
+            "attack": 4
+          },
+          "statsPct": {
+            "elemAtk": {
+              "yin": 3
+            }
+          }
+        },
+        {
+          "realm": 3,
+          "description": "Mastered Shadow Weasel legacy: the lineage's signature art awakens.",
+          "stats": {
+            "elemAtk": {
+              "yin": 7
+            }
+          },
+          "statsPct": {
+            "attack": 3,
+            "elemAtk": {
+              "yin": 3
+            }
+          },
+          "grantsBattleTechnique": "bt_bl_shadow_weasel_2",
+          "grantsBattleTechniqueName": "Devouring Dusk"
+        }
+      ],
+      "weaknesses": [
+        "yang"
+      ],
+      "dropsFrom": [
+        "rodent"
+      ],
+      "collection": "bloodlines",
+      "build": "yin"
+    },
+    {
+      "id": "moonlit_fox_bloodline",
+      "name": "Moonlit Fox Bloodline",
+      "rank": "C",
+      "description": "A rank-C bloodline of the Spirit Beast Lineage, attuned to yin, mind. Respected across provinces; a strong foundation for future cultivation.",
+      "image": "/bloodlines/moonlit_fox_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "energy": 9,
+          "attack": 7,
+          "elemAtk": {
+            "mind": 4,
+            "yin": 7
+          }
+        },
+        "statsPct": {
+          "energy": 4,
+          "attack": 5,
+          "elemAtk": {
+            "mind": 5,
+            "yin": 5
+          }
+        },
+        "qiGenMult": 1.03
+      },
+      "drawbacks": {
+        "stats": {
+          "defense": -8,
+          "elemRes": {
+            "yang": -3
+          }
+        },
+        "statsPct": {
+          "defense": -3
+        },
+        "description": "An imperfect inheritance: weakened defense and a poor guard against yang."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Moonlit Fox blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "yin": 6
+            }
+          },
+          "statsPct": {
+            "attack": 3
+          },
+          "grantsBattleTechnique": "bt_bl_moonlit_fox_bloodline_1",
+          "grantsBattleTechniqueName": "Moonlit Fox Duskrend"
+        },
+        {
+          "realm": 3,
+          "description": "Deepening Moonlit Fox power: a greater art awakens.",
+          "stats": {
+            "elemAtk": {
+              "yin": 9
+            }
+          },
+          "statsPct": {
+            "attack": 5
+          },
+          "grantsBattleTechnique": "bt_bl_moonlit_fox_bloodline_2",
+          "grantsBattleTechniqueName": "Veil of Reason of the Moonlit Fox"
+        },
+        {
+          "realm": 5,
+          "description": "Mastered Moonlit Fox legacy: the lineage's signature art descends.",
+          "stats": {
+            "energy": 6,
+            "elemAtk": {
+              "yin": 8
+            }
+          },
+          "statsPct": {
+            "attack": 5,
+            "elemAtk": {
+              "yin": 3
+            }
+          },
+          "grantsBattleTechnique": "bt_bl_moonlit_fox_bloodline_3",
+          "grantsBattleTechniqueName": "Moonlit Fox: Eclipse Ascendant"
+        }
+      ],
+      "dropsFrom": [
+        "vulpine"
+      ],
+      "collection": "bloodlines",
+      "build": "yin"
+    },
+    {
+      "id": "void_moth_bloodline",
+      "name": "Void Moth Bloodline",
+      "rank": "B",
+      "description": "A rank-B bloodline of the Spirit Beast, attuned to mind, yin. A formidable inheritance sought by great sects.",
+      "image": "/bloodlines/void_moth_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "energy": 13,
+          "attack": 14,
+          "mentalFortitude": 14,
+          "elemAtk": {
+            "mind": 14,
+            "yin": 8
+          }
+        },
+        "statsPct": {
+          "attack": 7,
+          "mentalFortitude": 7,
+          "elemAtk": {
+            "mind": 6,
+            "yin": 7
+          }
+        },
+        "qiGenMult": 1.04
+      },
+      "drawbacks": {
+        "stats": {
+          "stamina": -11,
+          "damageReduction": -13,
+          "elemRes": {
+            "spirit": -6
+          }
+        },
+        "statsPct": {
+          "damageReduction": -5
+        },
+        "description": "An imperfect inheritance: weakened damageReduction and a poor guard against spirit."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Void Moth blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "mind": 13
+            }
+          },
+          "statsPct": {
+            "attack": 6
+          },
+          "grantsBattleTechnique": "bt_bl_void_moth_bloodline_1",
+          "grantsBattleTechniqueName": "Void Moth Psychic Lance"
+        },
+        {
+          "realm": 3,
+          "description": "Deepening Void Moth power: a greater art awakens.",
+          "stats": {
+            "elemAtk": {
+              "mind": 14
+            }
+          },
+          "statsPct": {
+            "attack": 5
+          },
+          "grantsBattleTechnique": "bt_bl_void_moth_bloodline_2",
+          "grantsBattleTechniqueName": "Veil of Dusk of the Void Moth"
+        },
+        {
+          "realm": 5,
+          "description": "Ascendant Void Moth resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "mind": 13
+            }
+          },
+          "statsPct": {
+            "attack": 5
+          }
+        },
+        {
+          "realm": 7,
+          "description": "Mastered Void Moth legacy: the lineage's signature art descends.",
+          "stats": {
+            "energy": 13,
+            "elemAtk": {
+              "mind": 10
+            }
+          },
+          "statsPct": {
+            "attack": 7,
+            "elemAtk": {
+              "mind": 7
+            }
+          },
+          "grantsBattleTechnique": "bt_bl_void_moth_bloodline_3",
+          "grantsBattleTechniqueName": "Void Moth: Thought Ascendant"
+        }
+      ],
+      "weaknesses": [
+        "spirit"
+      ],
+      "dropsFrom": [
+        "insectoid"
+      ],
+      "collection": "bloodlines",
+      "build": "yin"
+    },
+    {
+      "id": "blood_moon_wolf_bloodline",
+      "name": "Blood Moon Wolf Bloodline",
+      "rank": "A",
+      "description": "A rank-A bloodline of the Heavenly Phenomenon, attuned to yin. A near-legendary lineage that produces Saint-realm experts.",
+      "image": "/bloodlines/blood_moon_wolf_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "attack": 21,
+          "damageReduction": 18,
+          "mentalFortitude": 18,
+          "fortune": 5,
+          "elemAtk": {
+            "yin": 22
+          }
+        },
+        "statsPct": {
+          "attack": 8,
+          "mentalFortitude": 8,
+          "elemAtk": {
+            "yin": 8
+          }
+        },
+        "qiGenMult": 1.06,
+        "vsType": {
+          "bovine": 0.12,
+          "cervine": 0.12
+        },
+        "fromType": {
+          "draconic": 0.09,
+          "ursine": 0.09
+        }
+      },
+      "drawbacks": {
+        "stats": {
+          "health": -11,
+          "defense": -10,
+          "elemRes": {
+            "yang": -6
+          }
+        },
+        "statsPct": {
+          "defense": -4
+        },
+        "description": "An imperfect inheritance: weakened defense and a poor guard against yang."
+      },
+      "milestones": [
+        {
+          "realm": 2,
+          "description": "Awakened Blood Moon Wolf blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "yin": 19
+            }
+          },
+          "statsPct": {
+            "attack": 10
+          },
+          "grantsBattleTechnique": "bt_bl_blood_moon_wolf_bloodline_1",
+          "grantsBattleTechniqueName": "Blood Moon Wolf Shade Fang"
+        },
+        {
+          "realm": 4,
+          "description": "Ascendant Blood Moon Wolf resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "yin": 17
+            }
+          },
+          "statsPct": {
+            "attack": 7
+          }
+        },
+        {
+          "realm": 6,
+          "description": "Ascendant Blood Moon Wolf resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "yin": 19
+            }
+          },
+          "statsPct": {
+            "attack": 8
+          }
+        },
+        {
+          "realm": 8,
+          "description": "Ascendant Blood Moon Wolf resonance strengthens the body and qi.",
+          "stats": {
+            "damageReduction": 22,
+            "elemAtk": {
+              "yin": 17
+            }
+          },
+          "statsPct": {
+            "attack": 8,
+            "elemAtk": {
+              "yin": 10
+            }
+          }
+        }
+      ],
+      "dropsFrom": [
+        "lupine"
+      ],
+      "collection": "bloodlines",
+      "build": "yin"
+    },
+    {
+      "id": "blood_moon_sovereign_bloodline",
+      "name": "Blood Moon Sovereign Bloodline",
+      "rank": "S",
+      "description": "A rank-S bloodline of the Heavenly Phenomenon, attuned to yin. A legendary bloodline whose bearer can change a sect's fate.",
+      "image": "/bloodlines/blood_moon_sovereign_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "attack": 53,
+          "damageReduction": 20,
+          "mentalFortitude": 20,
+          "fortune": 9,
+          "elemAtk": {
+            "yin": 32
+          }
+        },
+        "statsPct": {
+          "attack": 12,
+          "damageReduction": 10,
+          "elemAtk": {
+            "yin": 14
+          }
+        },
+        "qiGenMult": 1.07,
+        "vsType": {
+          "beast": 0.15,
+          "undead": 0.15
+        }
+      },
+      "milestones": [
+        {
+          "realm": 3,
+          "description": "Awakened Blood Moon Sovereign blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "yin": 26
+            }
+          },
+          "statsPct": {
+            "attack": 13
+          },
+          "grantsBattleTechnique": "bt_bl_blood_moon_sovereign_bloodline_1",
+          "grantsBattleTechniqueName": "Unbowed Remittance"
+        },
+        {
+          "realm": 5,
+          "description": "Ascendant Blood Moon Sovereign resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "yin": 31
+            }
+          },
+          "statsPct": {
+            "attack": 13
+          }
+        },
+        {
+          "realm": 7,
+          "description": "Deepening Blood Moon Sovereign power: a greater art awakens.",
+          "stats": {
+            "elemAtk": {
+              "yin": 30
+            }
+          },
+          "statsPct": {
+            "attack": 10
+          },
+          "grantsBattleTechnique": "bt_bl_blood_moon_sovereign_bloodline_2",
+          "grantsBattleTechniqueName": "Eclipse and Verdict"
+        },
+        {
+          "realm": 9,
+          "description": "Ascendant Blood Moon Sovereign resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "yin": 29
+            }
+          },
+          "statsPct": {
+            "attack": 11
+          }
+        },
+        {
+          "realm": 11,
+          "description": "Mastered Blood Moon Sovereign legacy: the lineage's signature art descends.",
+          "stats": {
+            "mentalFortitude": 31,
+            "elemAtk": {
+              "yin": 32
+            }
+          },
+          "statsPct": {
+            "attack": 10,
+            "elemAtk": {
+              "yin": 11
+            }
+          },
+          "absorbElement": "yin",
+          "grantsBattleTechnique": "bt_bl_blood_moon_sovereign_bloodline_3",
+          "grantsBattleTechniqueName": "Scoured Closure"
+        }
+      ],
+      "dropsFrom": [
+        "humanoid"
+      ],
+      "collection": "bloodlines",
+      "build": "yin"
+    },
+    {
+      "id": "netherworld_monarch_bloodline",
+      "name": "Netherworld Monarch Bloodline",
+      "rank": "S",
+      "description": "A rank-S bloodline of the Primordial Underworld, attuned to yin, spirit. A legendary bloodline whose bearer can change a sect's fate.",
+      "image": "/bloodlines/netherworld_monarch_bloodline.png",
+      "bonuses": {
+        "stats": {
+          "energy": 28,
+          "attack": 28,
+          "damageReduction": 41,
+          "fortune": 5,
+          "elemAtk": {
+            "spirit": 20,
+            "yin": 34
+          }
+        },
+        "statsPct": {
+          "attack": 13,
+          "damageReduction": 10,
+          "elemAtk": {
+            "spirit": 14,
+            "yin": 14
+          }
+        },
+        "qiGenMult": 1.08,
+        "vsType": {
+          "beast": 0.15,
+          "undead": 0.15
+        }
+      },
+      "milestones": [
+        {
+          "realm": 3,
+          "description": "Awakened Netherworld Monarch blood: its first art stirs.",
+          "stats": {
+            "elemAtk": {
+              "yin": 30
+            }
+          },
+          "statsPct": {
+            "attack": 12
+          },
+          "grantsBattleTechnique": "bt_bl_netherworld_monarch_bloodline_1",
+          "grantsBattleTechniqueName": "Overturn the Writ"
+        },
+        {
+          "realm": 5,
+          "description": "Ascendant Netherworld Monarch resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "yin": 27
+            }
+          },
+          "statsPct": {
+            "attack": 13
+          }
+        },
+        {
+          "realm": 7,
+          "description": "Deepening Netherworld Monarch power: a greater art awakens.",
+          "stats": {
+            "elemAtk": {
+              "yin": 26
+            }
+          },
+          "statsPct": {
+            "attack": 10
+          },
+          "grantsBattleTechnique": "bt_bl_netherworld_monarch_bloodline_2",
+          "grantsBattleTechniqueName": "Decree of the Netherworld Monarch"
+        },
+        {
+          "realm": 9,
+          "description": "Ascendant Netherworld Monarch resonance strengthens the body and qi.",
+          "stats": {
+            "elemAtk": {
+              "yin": 29
+            }
+          },
+          "statsPct": {
+            "attack": 14
+          }
+        },
+        {
+          "realm": 11,
+          "description": "Mastered Netherworld Monarch legacy: the lineage's signature art descends.",
+          "stats": {
+            "energy": 33,
+            "elemAtk": {
+              "yin": 27
+            }
+          },
+          "statsPct": {
+            "attack": 10,
+            "elemAtk": {
+              "yin": 11
+            }
+          },
+          "absorbElement": "yin",
+          "grantsBattleTechnique": "bt_bl_netherworld_monarch_bloodline_3",
+          "grantsBattleTechniqueName": "Umbra and Writ"
+        }
+      ],
+      "dropsFrom": [
+        "humanoid"
+      ],
+      "collection": "bloodlines",
+      "build": "yin"
+    },
+    {
+      "id": "shadow_veil_physique",
+      "name": "Shadow Veil Physique",
+      "rank": "D",
+      "description": "A rank-D physique of the Twilight Hollow, attuned to yin, mind. A modest constitution that tempers the body toward its element.",
+      "image": "/physiques/shadow_veil_physique.png",
+      "bonuses": {
+        "stats": {
+          "health": 8,
+          "attack": 2,
+          "defense": 5,
+          "mentalFortitude": 4,
+          "elemAtk": {
+            "yin": 2
+          },
+          "elemRes": {
+            "mind": 3,
+            "yin": 5
+          }
+        },
+        "statsPct": {
+          "defense": 3,
+          "damageReduction": 3,
+          "mentalFortitude": 2,
+          "elemRes": {
+            "yin": 2
+          }
+        },
+        "qiGenMult": 1.02,
+        "fromType": {
+          "aberration": -0.06,
+          "undead": -0.06
+        }
+      },
+      "drawbacks": {
+        "stats": {
+          "stamina": -6,
+          "fortune": -4
+        },
+        "statsPct": {
+          "stamina": -2
+        },
+        "description": "A ponderous constitution: reduced stamina. Fortune runs thin."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Shadow Veil tempering: a body-tempering art stirs.",
+          "stats": {
+            "defense": 5,
+            "elemRes": {
+              "yin": 2
+            }
+          },
+          "statsPct": {
+            "defense": 2
+          },
+          "grantsBattleTechnique": "bt_pf_shadow_veil_physique_1",
+          "grantsBattleTechniqueName": "Shadow Veil Unshaken Spirit"
+        },
+        {
+          "realm": 2,
+          "description": "Deepening Shadow Veil tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 5,
+            "elemRes": {
+              "yin": 3
+            }
+          },
+          "statsPct": {
+            "defense": 2
+          }
+        },
+        {
+          "realm": 3,
+          "description": "Mastered Shadow Veil tempering: a restorative art awakens.",
+          "stats": {
+            "defense": 3,
+            "mentalFortitude": 3,
+            "elemRes": {
+              "yin": 3
+            }
+          },
+          "statsPct": {
+            "defense": 4,
+            "elemRes": {
+              "yin": 2
+            }
+          },
+          "grantsBattleTechnique": "bt_pf_shadow_veil_physique_2",
+          "grantsBattleTechniqueName": "Shadow Veil Restoration"
+        }
+      ],
+      "dropsFrom": [
+        "yin"
+      ],
+      "collection": "physiques",
+      "build": "yin"
+    },
+    {
+      "id": "twilight_flesh_physique",
+      "name": "Twilight Flesh Physique",
+      "rank": "C",
+      "description": "A rank-C physique of the Eclipsed Valley, attuned to yin. A well-regarded constitution prized for a resilient foundation.",
+      "image": "/physiques/twilight_flesh_physique.png",
+      "bonuses": {
+        "stats": {
+          "health": 13,
+          "attack": 4,
+          "defense": 7,
+          "mentalFortitude": 6,
+          "elemAtk": {
+            "yin": 4
+          },
+          "elemRes": {
+            "yin": 7
+          }
+        },
+        "statsPct": {
+          "defense": 3,
+          "damageReduction": 4,
+          "mentalFortitude": 5,
+          "elemRes": {
+            "yin": 3
+          }
+        },
+        "qiGenMult": 1.05
+      },
+      "drawbacks": {
+        "stats": {
+          "stamina": -9
+        },
+        "statsPct": {
+          "stamina": -5
+        },
+        "description": "A ponderous constitution: reduced stamina."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Twilight Flesh tempering: a body-tempering art stirs.",
+          "stats": {
+            "defense": 9,
+            "elemRes": {
+              "yin": 4
+            }
+          },
+          "statsPct": {
+            "defense": 4
+          },
+          "grantsBattleTechnique": "bt_pf_twilight_flesh_physique_1",
+          "grantsBattleTechniqueName": "Twilight Flesh Sovereign Will"
+        },
+        {
+          "realm": 3,
+          "description": "Deepening Twilight Flesh tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 6,
+            "elemRes": {
+              "yin": 5
+            }
+          },
+          "statsPct": {
+            "defense": 5
+          }
+        },
+        {
+          "realm": 5,
+          "description": "Deepening Twilight Flesh tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 6,
+            "mentalFortitude": 9,
+            "elemRes": {
+              "yin": 5
+            }
+          },
+          "statsPct": {
+            "defense": 4,
+            "elemRes": {
+              "yin": 3
+            }
+          }
+        }
+      ],
+      "dropsFrom": [
+        "yin"
+      ],
+      "collection": "physiques",
+      "build": "yin"
+    },
+    {
+      "id": "moonshadow_veins",
+      "name": "Moonshadow Veins",
+      "rank": "B",
+      "description": "A rank-B physique of the Lunar Shrine, attuned to yin, mind. A formidable body-refining constitution sought by great sects.",
+      "image": "/physiques/moonshadow_veins.png",
+      "bonuses": {
+        "stats": {
+          "health": 21,
+          "attack": 6,
+          "defense": 12,
+          "damageReduction": 14,
+          "mentalFortitude": 13,
+          "elemAtk": {
+            "yin": 6
+          },
+          "elemRes": {
+            "mind": 7,
+            "yin": 12
+          }
+        },
+        "statsPct": {
+          "defense": 7,
+          "damageReduction": 6,
+          "mentalFortitude": 5,
+          "elemRes": {
+            "yin": 5
+          }
+        },
+        "qiGenMult": 1.05,
+        "fromType": {
+          "aberration": -0.1,
+          "undead": -0.1
+        }
+      },
+      "drawbacks": {
+        "stats": {
+          "energy": -9,
+          "speed": -10
+        },
+        "statsPct": {
+          "energy": -7
+        },
+        "description": "A ponderous constitution: reduced energy, speed."
+      },
+      "milestones": [
+        {
+          "realm": 1,
+          "description": "Awakened Moonshadow Veins tempering: a body-tempering art stirs.",
+          "stats": {
+            "defense": 11,
+            "elemRes": {
+              "yin": 7
+            }
+          },
+          "statsPct": {
+            "defense": 7
+          },
+          "grantsBattleTechnique": "bt_pf_moonshadow_veins_1",
+          "grantsBattleTechniqueName": "Moonshadow Veins Sovereign Will"
+        },
+        {
+          "realm": 3,
+          "description": "Deepening Moonshadow Veins tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 12,
+            "elemRes": {
+              "yin": 8
+            }
+          },
+          "statsPct": {
+            "defense": 5
+          }
+        },
+        {
+          "realm": 5,
+          "description": "Deepening Moonshadow Veins tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 10,
+            "elemRes": {
+              "yin": 7
+            }
+          },
+          "statsPct": {
+            "defense": 7
+          }
+        },
+        {
+          "realm": 7,
+          "description": "Mastered Moonshadow Veins tempering: the signature art descends.",
+          "stats": {
+            "defense": 14,
+            "damageReduction": 13,
+            "elemRes": {
+              "yin": 8
+            }
+          },
+          "statsPct": {
+            "defense": 5,
+            "damageReduction": 3,
+            "elemRes": {
+              "yin": 5
+            }
+          },
+          "grantsBattleTechnique": "bt_pf_moonshadow_veins_2",
+          "grantsBattleTechniqueName": "Moonshadow Veins Hollow Strike"
+        }
+      ],
+      "dropsFrom": [
+        "yin"
+      ],
+      "collection": "physiques",
+      "build": "yin"
+    },
+    {
+      "id": "moon_veil_physique",
+      "name": "Moon Veil Physique",
+      "rank": "A",
+      "description": "A rank-A physique of the Moon Palace, attuned to yin, mind. A near-legendary constitution that forges Saint-realm bodies.",
+      "image": "/physiques/moon_veil_physique.png",
+      "bonuses": {
+        "stats": {
+          "health": 15,
+          "energy": 13,
+          "attack": 13,
+          "defense": 32,
+          "damageReduction": 27,
+          "fortune": 5,
+          "elemAtk": {
+            "yin": 10
+          },
+          "elemRes": {
+            "mind": 13,
+            "yin": 21
+          }
+        },
+        "statsPct": {
+          "energy": 9,
+          "defense": 7,
+          "damageReduction": 8,
+          "elemRes": {
+            "yin": 10
+          }
+        },
+        "qiGenMult": 1.04
+      },
+      "drawbacks": {
+        "stats": {
+          "speed": -14,
+          "mentalFortitude": -16
+        },
+        "statsPct": {
+          "mentalFortitude": -7
+        },
+        "description": "A ponderous constitution: reduced mentalFortitude, speed."
+      },
+      "milestones": [
+        {
+          "realm": 2,
+          "description": "Awakened Moon Veil tempering: a body-tempering art stirs.",
+          "stats": {
+            "defense": 21,
+            "elemRes": {
+              "yin": 12
+            }
+          },
+          "statsPct": {
+            "defense": 9
+          },
+          "grantsBattleTechnique": "bt_pf_moon_veil_physique_1",
+          "grantsBattleTechniqueName": "Moon Veil Still Mind"
+        },
+        {
+          "realm": 4,
+          "description": "Deepening Moon Veil tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 18,
+            "elemRes": {
+              "yin": 13
+            }
+          },
+          "statsPct": {
+            "defense": 7
+          }
+        },
+        {
+          "realm": 6,
+          "description": "Deepening Moon Veil tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 20,
+            "elemRes": {
+              "yin": 10
+            }
+          },
+          "statsPct": {
+            "defense": 8
+          }
+        },
+        {
+          "realm": 8,
+          "description": "Mastered Moon Veil tempering: the signature art descends. The moon keeps no light of its own and gives back all of it.",
+          "stats": {
+            "defense": 18,
+            "damageReduction": 21,
+            "elemRes": {
+              "yin": 12
+            }
+          },
+          "statsPct": {
+            "defense": 10,
+            "damageReduction": 4,
+            "elemRes": {
+              "yin": 7
+            }
+          },
+          "reflectElement": "yin",
+          "grantsBattleTechnique": "bt_pf_moon_veil_physique_2",
+          "grantsBattleTechniqueName": "Moon Veil Hollow Strike"
+        }
+      ],
+      "dropsFrom": [
+        "yin"
+      ],
+      "collection": "physiques",
+      "build": "yin"
+    },
+    {
+      "id": "eclipsed_soul_physique",
+      "name": "Eclipsed Soul Physique",
+      "rank": "A",
+      "description": "A rank-A physique of the Twilight Gate, attuned to yin, spirit. A near-legendary constitution that forges Saint-realm bodies.",
+      "image": "/physiques/eclipsed_soul_physique.png",
+      "bonuses": {
+        "stats": {
+          "health": 21,
+          "qiPoolCap": 5.2,
+          "attack": 25,
+          "defense": 12,
+          "mentalFortitude": 21,
+          "fortune": 5,
+          "elemAtk": {
+            "yin": 10
+          },
+          "elemRes": {
+            "spirit": 11,
+            "yin": 19
+          }
+        },
+        "statsPct": {
+          "qiPoolCap": 10,
+          "defense": 9,
+          "damageReduction": 8,
+          "elemRes": {
+            "yin": 9
+          }
+        },
+        "qiGenMult": 1.05,
+        "fromType": {
+          "spirit": -0.12,
+          "undead": -0.12
+        }
+      },
+      "drawbacks": {
+        "stats": {
+          "energy": -10,
+          "speed": -14
+        },
+        "statsPct": {
+          "speed": -8
+        },
+        "description": "A ponderous constitution: reduced speed, energy."
+      },
+      "milestones": [
+        {
+          "realm": 2,
+          "description": "Awakened Eclipsed Soul tempering: a body-tempering art stirs.",
+          "stats": {
+            "defense": 21,
+            "elemRes": {
+              "yin": 13
+            }
+          },
+          "statsPct": {
+            "defense": 9
+          },
+          "grantsBattleTechnique": "bt_pf_eclipsed_soul_physique_1",
+          "grantsBattleTechniqueName": "Eclipsed Soul Clarity Ward"
+        },
+        {
+          "realm": 4,
+          "description": "Deepening Eclipsed Soul tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 20,
+            "elemRes": {
+              "yin": 12
+            }
+          },
+          "statsPct": {
+            "defense": 8
+          }
+        },
+        {
+          "realm": 6,
+          "description": "Deepening Eclipsed Soul tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 16,
+            "elemRes": {
+              "yin": 10
+            }
+          },
+          "statsPct": {
+            "defense": 8
+          }
+        },
+        {
+          "realm": 8,
+          "description": "Mastered Eclipsed Soul tempering: the signature art descends.",
+          "stats": {
+            "defense": 19,
+            "mentalFortitude": 18,
+            "elemRes": {
+              "yin": 13
+            }
+          },
+          "statsPct": {
+            "defense": 7,
+            "damageReduction": 4,
+            "elemRes": {
+              "yin": 9
+            }
+          },
+          "absorbElement": "yin",
+          "grantsBattleTechnique": "bt_pf_eclipsed_soul_physique_2",
+          "grantsBattleTechniqueName": "Eclipsed Soul Umbral Palm"
+        }
+      ],
+      "dropsFrom": [
+        "spirit"
+      ],
+      "collection": "physiques",
+      "build": "yin"
+    },
+    {
+      "id": "abyssal_heart_physique",
+      "name": "Abyssal Heart Physique",
+      "rank": "S",
+      "description": "A rank-S physique of the Endless Abyss, attuned to yin, water. A legendary physique whose bearer endures what would break others.",
+      "image": "/physiques/abyssal_heart_physique.png",
+      "bonuses": {
+        "stats": {
+          "health": 31,
+          "energy": 31,
+          "attack": 39,
+          "defense": 19,
+          "mentalFortitude": 31,
+          "fortune": 8,
+          "elemAtk": {
+            "yin": 13
+          },
+          "elemRes": {
+            "water": 16,
+            "yin": 26
+          }
+        },
+        "statsPct": {
+          "energy": 14,
+          "defense": 12,
+          "damageReduction": 10,
+          "elemRes": {
+            "yin": 14
+          }
+        },
+        "qiGenMult": 1.05,
+        "fromType": {
+          "elemental": -0.15,
+          "elemental_weather": -0.15
+        }
+      },
+      "milestones": [
+        {
+          "realm": 3,
+          "description": "Awakened Abyssal Heart tempering: the signature art descends.",
+          "stats": {
+            "defense": 32,
+            "elemRes": {
+              "yin": 17
+            }
+          },
+          "statsPct": {
+            "defense": 14
+          },
+          "grantsBattleTechnique": "bt_pf_abyssal_heart_physique_1",
+          "grantsBattleTechniqueName": "Bottomless Tide"
+        },
+        {
+          "realm": 5,
+          "description": "Deepening Abyssal Heart tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 33,
+            "elemRes": {
+              "yin": 19
+            }
+          },
+          "statsPct": {
+            "defense": 12
+          }
+        },
+        {
+          "realm": 7,
+          "description": "Deepening Abyssal Heart tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 29,
+            "elemRes": {
+              "yin": 19
+            }
+          },
+          "statsPct": {
+            "defense": 14,
+            "damageReduction": 5
+          }
+        },
+        {
+          "realm": 9,
+          "description": "Deepening Abyssal Heart tempering strengthens body and resistance.",
+          "stats": {
+            "defense": 34,
+            "elemRes": {
+              "yin": 18
+            }
+          },
+          "statsPct": {
+            "defense": 12,
+            "damageReduction": 5
+          }
+        },
+        {
+          "realm": 11,
+          "description": "Mastered Abyssal Heart tempering: the signature art descends.",
+          "stats": {
+            "defense": 30,
+            "mentalFortitude": 33,
+            "elemRes": {
+              "yin": 16
+            }
+          },
+          "statsPct": {
+            "defense": 10,
+            "damageReduction": 5,
+            "elemRes": {
+              "yin": 11
+            }
+          },
+          "absorbElement": "yin",
+          "grantsBattleTechnique": "bt_pf_abyssal_heart_physique_2",
+          "grantsBattleTechniqueName": "Silent Abyss"
+        }
+      ],
+      "dropsFrom": [
+        "water"
+      ],
+      "collection": "physiques",
+      "build": "yin"
+    },
+    {
+      "id": "strength_training_basic_manual",
+      "name": "Strength Training Basic Manual",
+      "kind": "manual",
+      "slot": "tech_body",
+      "rarity": "common",
+      "realmTier": 0,
+      "description": "A beginner's body-tempering drill - stance work, breathing, and the patient conditioning every cultivator starts from. Granted to every new disciple.",
+      "image": "/items/manuals/tier_0/strength_training_basic_manual.png",
+      "stats": {
+        "health": 4,
+        "defense": 2,
+        "elemAtk": {
+          "physical": 3
+        },
+        "elemRes": {
+          "physical": 2
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "health": 0.45,
+        "defense": 0.41,
+        "elemAtk": {
+          "physical": 0.4
+        },
+        "elemRes": {
+          "physical": 0.32
+        }
+      },
+      "levelQiGenMult": 1.006,
+      "growth": {
+        "health": 0.03,
+        "defense": 0.02
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 15,
+          "description": "The body thickens.",
+          "stats": {},
+          "statsPct": {
+            "health": 5
+          }
+        },
+        {
+          "level": 30,
+          "description": "Insight: learn Trained Reflexes.",
+          "stats": {},
+          "statsPct": {},
+          "grantsBattleTechnique": "bt_trained_reflexes"
+        },
+        {
+          "level": 100,
+          "description": "Mastery: the drill becomes the body.",
+          "stats": {},
+          "statsPct": {
+            "defense": 10,
+            "elemAtk": {
+              "physical": 10
+            }
+          }
+        }
+      ],
+      "wikiPath": "/wiki/manuals/strength_training_basic_manual",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "astral_core_manual",
+      "name": "Astral Core Manual",
+      "kind": "manual",
+      "slot": "tech_mental",
+      "rarity": "common",
+      "realmTier": 0,
+      "description": "A mind cultivation manual: a will nothing reaches.",
+      "image": "/items/manuals/tier_0/astral_core_manual.png",
+      "stats": {
+        "mentalFortitude": 6,
+        "elemAtk": {
+          "spirit": 1
+        },
+        "elemRes": {
+          "spirit": 2
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "energy": 0.2476,
+        "speed": 0.1398,
+        "mentalFortitude": 0.8541,
+        "energyRegen": 0.2485
+      },
+      "levelQiGenMult": 1.012,
+      "growth": {
+        "mentalFortitude": 0.03
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 30,
+          "description": "The mind closes. Nothing gets a foothold.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 8
+          }
+        },
+        {
+          "level": 60,
+          "description": "Insight: learn a battle art.",
+          "stats": {},
+          "statsPct": {},
+          "grantsBattleTechnique": "bt_astral_core_manual_1"
+        },
+        {
+          "level": 100,
+          "description": "Mastery: a will nothing reaches.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 12
+          }
+        }
+      ],
+      "wikiPath": "/wiki/manuals/astral_core_manual",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "abyssal_yin_scripture",
+      "name": "Abyssal Yin Scripture",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "common",
+      "realmTier": 1,
+      "description": "A soul cultivation manual: Qi that returns as fast as it is spent.",
+      "image": "/items/manuals/tier_1/abyssal_yin_scripture.png",
+      "stats": {
+        "qiPoolCap": 8,
+        "elemAtk": {
+          "water": 5
+        },
+        "elemRes": {
+          "water": 4
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.0327,
+        "attack": 0.2214,
+        "energyRegen": 0.8451,
+        "elemAtk": {
+          "water": 0.3268
+        }
+      },
+      "levelQiGenMult": 1.022,
+      "growth": {
+        "qiPoolCap": 0.024,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 30,
+          "description": "Spent Qi finds its way back before the breath ends.",
+          "stats": {},
+          "statsPct": {
+            "energyRegen": 8
+          }
+        },
+        {
+          "level": 60,
+          "description": "Insight: learn a battle art.",
+          "stats": {},
+          "statsPct": {},
+          "grantsBattleTechnique": "bt_abyssal_yin_scripture_1"
+        },
+        {
+          "level": 100,
+          "description": "Mastery: Qi that returns as fast as it is spent.",
+          "stats": {},
+          "statsPct": {
+            "energyRegen": 12
+          },
+          "qiGenMult": 1.1
+        }
+      ],
+      "wikiPath": "/wiki/manuals/abyssal_yin_scripture",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "frozen_yin_codex",
+      "name": "Frozen Yin Codex",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "uncommon",
+      "realmTier": 3,
+      "description": "A soul cultivation manual: a deep reservoir, slow to anger.",
+      "image": "/items/manuals/tier_3/frozen_yin_codex.png",
+      "stats": {
+        "qiPoolCap": 8,
+        "elemAtk": {
+          "water": 15
+        },
+        "elemRes": {
+          "water": 19
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.0948,
+        "attack": 0.2155,
+        "energyRegen": 0.3447,
+        "elemAtk": {
+          "water": 0.3318
+        }
+      },
+      "levelQiGenMult": 1.026,
+      "growth": {
+        "qiPoolCap": 0.032,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The reservoir deepens; Qi settles where it used to spill.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 4
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "attack": 6
+          },
+          "grantsBattleTechnique": "bt_frozen_yin_codex_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: a deep reservoir, slow to anger.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "water"
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 7.5
+          },
+          "qiGenMult": 1.15,
+          "grantsBattleTechnique": "bt_frozen_yin_codex_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/frozen_yin_codex",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "moonshadow_sutra",
+      "name": "Moonshadow Sutra",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "rare",
+      "realmTier": 4,
+      "description": "A soul cultivation manual: no edge, and no gap either.",
+      "image": "/items/manuals/tier_4/moonshadow_sutra.png",
+      "stats": {
+        "qiPoolCap": 6,
+        "elemAtk": {
+          "yin": 91
+        },
+        "elemRes": {
+          "yin": 61
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.051,
+        "attack": 0.46,
+        "energyRegen": 0.41,
+        "elemAtk": {
+          "yin": 0.51
+        }
+      },
+      "levelQiGenMult": 1.028,
+      "growth": {
+        "qiPoolCap": 0.036,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "Every channel widens by the same measure.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 4
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "attack": 6
+          },
+          "grantsBattleTechnique": "bt_moonshadow_sutra_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: no edge, and no gap either.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "yin"
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 7.5
+          },
+          "qiGenMult": 1.15,
+          "grantsBattleTechnique": "bt_moonshadow_sutra_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/moonshadow_sutra",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "nether_soul_sutra",
+      "name": "Nether Soul Sutra",
+      "kind": "manual",
+      "slot": "tech_mental",
+      "rarity": "rare",
+      "realmTier": 4,
+      "description": "A mind cultivation manual: thought faster than the body it wears.",
+      "image": "/items/manuals/tier_4/nether_soul_sutra.png",
+      "stats": {
+        "mentalFortitude": 113,
+        "elemAtk": {
+          "yin": 105
+        },
+        "elemRes": {
+          "yin": 56
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "energy": 0.2918,
+        "speed": 0.7866,
+        "mentalFortitude": 0.2773,
+        "energyRegen": 0.3344
+      },
+      "levelQiGenMult": 1.016,
+      "growth": {
+        "mentalFortitude": 0.042
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "Thought outruns the body carrying it.",
+          "stats": {},
+          "statsPct": {
+            "speed": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "energy": 6
+          },
+          "grantsBattleTechnique": "bt_nether_soul_sutra_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: thought faster than the body it wears.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "yin"
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 15
+          },
+          "grantsBattleTechnique": "bt_nether_soul_sutra_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/nether_soul_sutra",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "shadow_moon_sutra",
+      "name": "Shadow Moon Sutra",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "rare",
+      "realmTier": 5,
+      "description": "A soul cultivation manual: Qi that returns as fast as it is spent.",
+      "image": "/items/manuals/tier_5/shadow_moon_sutra.png",
+      "stats": {
+        "qiPoolCap": 6.7,
+        "elemAtk": {
+          "yin": 193
+        },
+        "elemRes": {
+          "yin": 145
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.0368,
+        "attack": 0.2471,
+        "energyRegen": 0.9569,
+        "elemAtk": {
+          "yin": 0.368
+        }
+      },
+      "levelQiGenMult": 1.03,
+      "growth": {
+        "qiPoolCap": 0.04,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "Spent Qi finds its way back before the breath ends.",
+          "stats": {},
+          "statsPct": {
+            "energyRegen": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "attack": 6
+          },
+          "grantsBattleTechnique": "bt_shadow_moon_sutra_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: Qi that returns as fast as it is spent.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "yin"
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 7.5
+          },
+          "qiGenMult": 1.15,
+          "grantsBattleTechnique": "bt_shadow_moon_sutra_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/shadow_moon_sutra",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "silent_yin_manual",
+      "name": "Silent Yin Manual",
+      "kind": "manual",
+      "slot": "tech_mental",
+      "rarity": "rare",
+      "realmTier": 5,
+      "description": "A mind cultivation manual: a will nothing reaches.",
+      "image": "/items/manuals/tier_5/silent_yin_manual.png",
+      "stats": {
+        "mentalFortitude": 491,
+        "elemAtk": {
+          "yin": 105
+        },
+        "elemRes": {
+          "yin": 128
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "energy": 0.2837,
+        "speed": 0.1656,
+        "mentalFortitude": 0.996,
+        "energyRegen": 0.2897
+      },
+      "levelQiGenMult": 1.017,
+      "growth": {
+        "mentalFortitude": 0.045
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The mind closes. Nothing gets a foothold.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "energy": 6
+          },
+          "grantsBattleTechnique": "bt_silent_yin_manual_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: a will nothing reaches.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "yin"
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 15
+          },
+          "grantsBattleTechnique": "bt_silent_yin_manual_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/silent_yin_manual",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "void_soul_codex",
+      "name": "Void Soul Codex",
+      "kind": "manual",
+      "slot": "tech_mental",
+      "rarity": "epic",
+      "realmTier": 6,
+      "description": "A mind cultivation manual: a mind that does not tire.",
+      "image": "/items/manuals/tier_6/void_soul_codex.png",
+      "stats": {
+        "mentalFortitude": 969,
+        "elemAtk": {
+          "yin": 528
+        },
+        "elemRes": {
+          "yin": 397
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "energy": 0.9924,
+        "speed": 0.1496,
+        "mentalFortitude": 0.3365,
+        "energyRegen": 0.3015
+      },
+      "levelQiGenMult": 1.018,
+      "growth": {
+        "mentalFortitude": 0.048
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The well of attention stops running dry.",
+          "stats": {},
+          "statsPct": {
+            "energy": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "energy": 6
+          },
+          "grantsBattleTechnique": "bt_void_soul_codex_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: a mind that does not tire.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "yin"
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 15
+          },
+          "grantsBattleTechnique": "bt_void_soul_codex_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/void_soul_codex",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "dark_moon_sovereign_sutra",
+      "name": "Dark Moon Sovereign Sutra",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "legendary",
+      "realmTier": 8,
+      "description": "A soul cultivation manual: everything spent outward.",
+      "image": "/items/manuals/tier_8/dark_moon_sovereign_sutra.png",
+      "stats": {
+        "qiPoolCap": 4.2,
+        "elemAtk": {
+          "yin": 8446
+        },
+        "elemRes": {
+          "yin": 2048
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.023,
+        "attack": 0.6998,
+        "energyRegen": 0.2599,
+        "elemAtk": {
+          "yin": 0.9202
+        }
+      },
+      "levelQiGenMult": 1.036,
+      "growth": {
+        "qiPoolCap": 0.052,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The art stops conserving. Everything goes outward.",
+          "stats": {},
+          "statsPct": {
+            "attack": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "attack": 6
+          },
+          "vsType": {
+            "undead": 0.05
+          },
+          "grantsBattleTechnique": "bt_dark_moon_sovereign_sutra_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: everything spent outward.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "yin",
+          "vsType": {
+            "undead": 0.09
+          }
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 7.5
+          },
+          "qiGenMult": 1.15,
+          "vsType": {
+            "chimeric": 0.14,
+            "undead": 0.14
+          },
+          "grantsBattleTechnique": "bt_dark_moon_sovereign_sutra_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/dark_moon_sovereign_sutra",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "eternal_yin_emperor_codex",
+      "name": "Eternal Yin Emperor Codex",
+      "kind": "manual",
+      "slot": "tech_mental",
+      "rarity": "legendary",
+      "realmTier": 9,
+      "description": "A mind cultivation manual: a mind that does not tire.",
+      "image": "/items/manuals/tier_9/eternal_yin_emperor_codex.png",
+      "stats": {
+        "mentalFortitude": 17500,
+        "elemAtk": {
+          "yin": 9545
+        },
+        "elemRes": {
+          "yin": 7159
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "energy": 1.0756,
+        "speed": 0.1639,
+        "mentalFortitude": 0.3653,
+        "energyRegen": 0.3302
+      },
+      "levelQiGenMult": 1.021,
+      "growth": {
+        "mentalFortitude": 0.057
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The well of attention stops running dry.",
+          "stats": {},
+          "statsPct": {
+            "energy": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "energy": 6
+          },
+          "grantsBattleTechnique": "bt_eternal_yin_emperor_codex_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: a mind that does not tire.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "yin"
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 15
+          },
+          "grantsBattleTechnique": "bt_eternal_yin_emperor_codex_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/eternal_yin_emperor_codex",
+      "collection": "manuals",
+      "build": "yin"
+    },
+    {
+      "id": "void_yin_emperor_canon",
+      "name": "Void Yin Emperor Canon",
+      "kind": "manual",
+      "slot": "tech_spiritual",
+      "rarity": "mythic",
+      "realmTier": 10,
+      "description": "A soul cultivation manual: hardened against the element it wields.",
+      "image": "/items/manuals/tier_10/void_yin_emperor_canon.png",
+      "stats": {
+        "qiPoolCap": 4.9,
+        "elemAtk": {
+          "yin": 22294
+        },
+        "elemRes": {
+          "yin": 37984
+        }
+      },
+      "levelStats": {},
+      "levelStatsPct": {
+        "qiPoolCap": 0.0631,
+        "attack": 0.4541,
+        "energyRegen": 0.5045,
+        "elemAtk": {
+          "yin": 0.6307
+        }
+      },
+      "levelQiGenMult": 1.04,
+      "growth": {
+        "qiPoolCap": 0.06,
+        "qiGenMult": 0.01
+      },
+      "stackable": false,
+      "comprehension": [
+        {
+          "level": 25,
+          "description": "The element stops burning its wielder.",
+          "stats": {},
+          "statsPct": {
+            "mentalFortitude": 8
+          }
+        },
+        {
+          "level": 45,
+          "description": "First art mastered.",
+          "stats": {},
+          "statsPct": {
+            "attack": 6
+          },
+          "fromType": {
+            "undead": -0.04
+          },
+          "grantsBattleTechnique": "bt_void_yin_emperor_canon_1"
+        },
+        {
+          "level": 65,
+          "description": "Mastery: hardened against the element it wields.",
+          "stats": {},
+          "statsPct": {},
+          "absorbElement": "yin",
+          "fromType": {
+            "undead": -0.07
+          }
+        },
+        {
+          "level": 90,
+          "description": "Supreme art unleashed.",
+          "stats": {},
+          "statsPct": {
+            "qiPoolCap": 7.5
+          },
+          "qiGenMult": 1.15,
+          "fromType": {
+            "chimeric": -0.11,
+            "undead": -0.11
+          },
+          "grantsBattleTechnique": "bt_void_yin_emperor_canon_2"
+        }
+      ],
+      "wikiPath": "/wiki/manuals/void_yin_emperor_canon",
+      "collection": "manuals",
+      "build": "yin"
+    }
+  ],
+  "images": {
+    "/bloodlines/thunder_viper_bloodline.png": {
+      "src": "/assets/thunder_viper_bloodline.f28f14ac.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/thunder_viper_bloodline.f28f14ac.webp"
+    },
+    "/bloodlines/thunder_stag_bloodline.png": {
+      "src": "/assets/thunder_stag_bloodline.fd015e96.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/thunder_stag_bloodline.fd015e96.webp"
+    },
+    "/bloodlines/lightning_jackdaw_bloodline.png": {
+      "src": "/assets/lightning_jackdaw_bloodline.1bc90778.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/lightning_jackdaw_bloodline.1bc90778.webp"
+    },
+    "/bloodlines/thunder_lotus_bloodline.png": {
+      "src": "/assets/thunder_lotus_bloodline.dc8075f2.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/thunder_lotus_bloodline.dc8075f2.webp"
+    },
+    "/bloodlines/genesis_thunder_court_bloodline.png": {
+      "src": "/assets/genesis_thunder_court_bloodline.5a29d6d0.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/genesis_thunder_court_bloodline.5a29d6d0.webp"
+    },
+    "/bloodlines/emperor_of_ten_thousand_thunder_bloodline.png": {
+      "src": "/assets/emperor_of_ten_thousand_thunder_bloodline.22f4e11f.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/emperor_of_ten_thousand_thunder_bloodline.22f4e11f.webp"
+    },
+    "/physiques/steady_pulse_physique.png": {
+      "src": "/assets/steady_pulse_physique.5b808d95.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/steady_pulse_physique.5b808d95.webp"
+    },
+    "/physiques/thunder_vessel_physique.png": {
+      "src": "/assets/thunder_vessel_physique.2db2fa4f.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/thunder_vessel_physique.2db2fa4f.webp"
+    },
+    "/physiques/thunderheart.png": {
+      "src": "/assets/thunderheart.b2940958.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/thunderheart.b2940958.webp"
+    },
+    "/physiques/stormbone_physique.png": {
+      "src": "/assets/stormbone_physique.d51bf136.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/stormbone_physique.d51bf136.webp"
+    },
+    "/physiques/heavenly_thunder_physique.png": {
+      "src": "/assets/heavenly_thunder_physique.81fdd9fd.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/heavenly_thunder_physique.81fdd9fd.webp"
+    },
+    "/items/manuals/tier_0/sparkflash_scroll.png": {
+      "src": "/assets/sparkflash_scroll.c2e56758.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_0/sparkflash_scroll.c2e56758.webp"
+    },
+    "/items/manuals/tier_2/blazing_yang_codex.png": {
+      "src": "/assets/blazing_yang_codex.d9b1f3fc.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_2/blazing_yang_codex.d9b1f3fc.webp"
+    },
+    "/items/manuals/tier_3/five_spirits_sutra.png": {
+      "src": "/assets/five_spirits_sutra.13ad1746.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_3/five_spirits_sutra.13ad1746.webp"
+    },
+    "/items/manuals/tier_5/skybreaker_lightning_manual.png": {
+      "src": "/assets/skybreaker_lightning_manual.d2b8eb55.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_5/skybreaker_lightning_manual.d2b8eb55.webp"
+    },
+    "/items/manuals/tier_6/stormbolt_sutra.png": {
+      "src": "/assets/stormbolt_sutra.22b2293c.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_6/stormbolt_sutra.22b2293c.webp"
+    },
+    "/items/manuals/tier_6/lightning_dragon_codex.png": {
+      "src": "/assets/lightning_dragon_codex.ff603c6a.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_6/lightning_dragon_codex.ff603c6a.webp"
+    },
+    "/items/manuals/tier_7/celestial_thunder_emperor_canon.png": {
+      "src": "/assets/celestial_thunder_emperor_canon.67b3dd40.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_7/celestial_thunder_emperor_canon.67b3dd40.webp"
+    },
+    "/items/manuals/tier_9/storm_emperor_sutra.png": {
+      "src": "/assets/storm_emperor_sutra.307dd240.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_9/storm_emperor_sutra.307dd240.webp"
+    },
+    "/bloodlines/shadow_weasel_bloodline.png": {
+      "src": "/assets/shadow_weasel_bloodline.739174f9.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/shadow_weasel_bloodline.739174f9.webp"
+    },
+    "/bloodlines/moonlit_fox_bloodline.png": {
+      "src": "/assets/moonlit_fox_bloodline.073b131b.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/moonlit_fox_bloodline.073b131b.webp"
+    },
+    "/bloodlines/void_moth_bloodline.png": {
+      "src": "/assets/void_moth_bloodline.85214165.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/void_moth_bloodline.85214165.webp"
+    },
+    "/bloodlines/blood_moon_wolf_bloodline.png": {
+      "src": "/assets/blood_moon_wolf_bloodline.55ed3aaf.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/blood_moon_wolf_bloodline.55ed3aaf.webp"
+    },
+    "/bloodlines/blood_moon_sovereign_bloodline.png": {
+      "src": "/assets/blood_moon_sovereign_bloodline.14d87844.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/blood_moon_sovereign_bloodline.14d87844.webp"
+    },
+    "/bloodlines/netherworld_monarch_bloodline.png": {
+      "src": "/assets/netherworld_monarch_bloodline.58a4b2c1.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/bloodlines/netherworld_monarch_bloodline.58a4b2c1.webp"
+    },
+    "/physiques/shadow_veil_physique.png": {
+      "src": "/assets/shadow_veil_physique.77372720.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/shadow_veil_physique.77372720.webp"
+    },
+    "/physiques/twilight_flesh_physique.png": {
+      "src": "/assets/twilight_flesh_physique.68332153.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/twilight_flesh_physique.68332153.webp"
+    },
+    "/physiques/moonshadow_veins.png": {
+      "src": "/assets/moonshadow_veins.314ea0da.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/moonshadow_veins.314ea0da.webp"
+    },
+    "/physiques/moon_veil_physique.png": {
+      "src": "/assets/moon_veil_physique.3c139f16.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/moon_veil_physique.3c139f16.webp"
+    },
+    "/physiques/eclipsed_soul_physique.png": {
+      "src": "/assets/eclipsed_soul_physique.05922f3f.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/eclipsed_soul_physique.05922f3f.webp"
+    },
+    "/physiques/abyssal_heart_physique.png": {
+      "src": "/assets/abyssal_heart_physique.caf807c4.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/physiques/abyssal_heart_physique.caf807c4.webp"
+    },
+    "/items/manuals/tier_0/strength_training_basic_manual.png": {
+      "src": "/assets/strength_training_basic_manual.26bc36fd.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_0/strength_training_basic_manual.26bc36fd.webp"
+    },
+    "/items/manuals/tier_0/astral_core_manual.png": {
+      "src": "/assets/astral_core_manual.737754bd.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_0/astral_core_manual.737754bd.webp"
+    },
+    "/items/manuals/tier_1/abyssal_yin_scripture.png": {
+      "src": "/assets/abyssal_yin_scripture.5700f394.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_1/abyssal_yin_scripture.5700f394.webp"
+    },
+    "/items/manuals/tier_3/frozen_yin_codex.png": {
+      "src": "/assets/frozen_yin_codex.bad6f2aa.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_3/frozen_yin_codex.bad6f2aa.webp"
+    },
+    "/items/manuals/tier_4/moonshadow_sutra.png": {
+      "src": "/assets/moonshadow_sutra.af4a774b.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_4/moonshadow_sutra.af4a774b.webp"
+    },
+    "/items/manuals/tier_4/nether_soul_sutra.png": {
+      "src": "/assets/nether_soul_sutra.773c3a44.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_4/nether_soul_sutra.773c3a44.webp"
+    },
+    "/items/manuals/tier_5/shadow_moon_sutra.png": {
+      "src": "/assets/shadow_moon_sutra.0c3932b3.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_5/shadow_moon_sutra.0c3932b3.webp"
+    },
+    "/items/manuals/tier_5/silent_yin_manual.png": {
+      "src": "/assets/silent_yin_manual.a31676a1.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_5/silent_yin_manual.a31676a1.webp"
+    },
+    "/items/manuals/tier_6/void_soul_codex.png": {
+      "src": "/assets/void_soul_codex.640e9f02.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_6/void_soul_codex.640e9f02.webp"
+    },
+    "/items/manuals/tier_8/dark_moon_sovereign_sutra.png": {
+      "src": "/assets/dark_moon_sovereign_sutra.1537c02d.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_8/dark_moon_sovereign_sutra.1537c02d.webp"
+    },
+    "/items/manuals/tier_9/eternal_yin_emperor_codex.png": {
+      "src": "/assets/eternal_yin_emperor_codex.d9e08cd8.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_9/eternal_yin_emperor_codex.d9e08cd8.webp"
+    },
+    "/items/manuals/tier_10/void_yin_emperor_canon.png": {
+      "src": "/assets/void_yin_emperor_canon.c20a2b16.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/items/manuals/tier_10/void_yin_emperor_canon.c20a2b16.webp"
+    },
+    "/zones/lightning_scarred_steppe.png": {
+      "src": "/assets/lightning_scarred_steppe.d5c31fb1.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/zones/lightning_scarred_steppe.d5c31fb1.webp"
+    },
+    "/sect/demonic_sect_background.png": {
+      "src": "/assets/demonic_sect_background.920e520d.webp",
+      "source": "https://d27wzk5al56txp.cloudfront.net/sect/demonic_sect_background.920e520d.webp"
+    }
+  },
+  "techniques": {
+    "bt_bl_thunder_viper_bloodline_1": {
+      "id": "bt_bl_thunder_viper_bloodline_1",
+      "name": "Thunder Viper Thundercrack",
+      "element": "lightning",
+      "description": "Thunder Viper Thundercrack — a core art of the Thunder Viper bloodline.",
+      "combatDescription": "[user] lets the meridians blaze with live current and scorches [target]",
+      "minRealmMajor": 1,
+      "kind": "damage",
+      "baseAmount": 38,
+      "scaleStat": "energy",
+      "scaleFactor": 0.95,
+      "energyCost": 20,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_thunder_viper_bloodline_2": {
+      "id": "bt_bl_thunder_viper_bloodline_2",
+      "name": "Thunder Viper: Heaven-Splitting Judgment",
+      "element": "lightning",
+      "description": "Thunder Viper: Heaven-Splitting Judgment — the signature legacy art of the Thunder Viper bloodline.",
+      "combatDescription": "[user] summons a fork of heavenly levin and hurls a heaven-splitting judgment upon [target]",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 57,
+      "scaleStat": "energy",
+      "scaleFactor": 1.15,
+      "energyCost": 28,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_bl_thunder_stag_bloodline_1": {
+      "id": "bt_bl_thunder_stag_bloodline_1",
+      "name": "Thunder Stag Voltaic Lash",
+      "element": "lightning",
+      "description": "Thunder Stag Voltaic Lash — a core art of the Thunder Stag bloodline.",
+      "combatDescription": "[user] lets the meridians blaze with live current and scorches [target]",
+      "minRealmMajor": 1,
+      "kind": "damage",
+      "baseAmount": 38,
+      "scaleStat": "energy",
+      "scaleFactor": 0.95,
+      "energyCost": 20,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_thunder_stag_bloodline_2": {
+      "id": "bt_bl_thunder_stag_bloodline_2",
+      "name": "Thunder Stag: Heaven-Splitting Judgment",
+      "element": "lightning",
+      "description": "Thunder Stag: Heaven-Splitting Judgment — the signature legacy art of the Thunder Stag bloodline.",
+      "combatDescription": "[user] summons a fork of heavenly levin and hurls a heaven-splitting judgment upon [target]",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 57,
+      "scaleStat": "energy",
+      "scaleFactor": 1.15,
+      "energyCost": 28,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_bl_lightning_jackdaw_bloodline_1": {
+      "id": "bt_bl_lightning_jackdaw_bloodline_1",
+      "name": "Lightning Jackdaw Sparkfang",
+      "element": "lightning",
+      "description": "Lightning Jackdaw Sparkfang — a core art of the Lightning Jackdaw bloodline.",
+      "combatDescription": "[user] summons a fork of heavenly levin and scorches [target]",
+      "minRealmMajor": 1,
+      "kind": "damage",
+      "baseAmount": 56,
+      "scaleStat": "energy",
+      "scaleFactor": 1.05,
+      "energyCost": 26,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_lightning_jackdaw_bloodline_2": {
+      "id": "bt_bl_lightning_jackdaw_bloodline_2",
+      "name": "Tempest Drift of the Lightning Jackdaw",
+      "element": "wind",
+      "description": "Tempest Drift of the Lightning Jackdaw — an advanced art of the Lightning Jackdaw bloodline.",
+      "combatDescription": "[user] compresses a screaming gale between their palms and looses a cutting cyclone through [target]",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 70,
+      "scaleStat": "speed",
+      "scaleFactor": 1.15,
+      "energyCost": 0,
+      "staminaCost": 31,
+      "cooldown": 2,
+      "effects": [
+        "sluggish"
+      ]
+    },
+    "bt_bl_lightning_jackdaw_bloodline_3": {
+      "id": "bt_bl_lightning_jackdaw_bloodline_3",
+      "name": "Lightning Jackdaw: Levin Ascendant",
+      "element": "lightning",
+      "elements": [
+        "lightning",
+        "wind"
+      ],
+      "description": "Lightning Jackdaw: Levin Ascendant — the signature legacy art of the Lightning Jackdaw bloodline.",
+      "combatDescription": "[user] summons a fork of heavenly levin and hurls a heaven-splitting judgment upon [target]",
+      "minRealmMajor": 7,
+      "kind": "damage",
+      "baseAmount": 84,
+      "scaleStat": "energy",
+      "scaleFactor": 1.25,
+      "energyCost": 36,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_bl_thunder_lotus_bloodline_1": {
+      "id": "bt_bl_thunder_lotus_bloodline_1",
+      "name": "Thunder Lotus Voltaic Lash",
+      "element": "lightning",
+      "description": "Thunder Lotus Voltaic Lash — a core art of the Thunder Lotus bloodline.",
+      "combatDescription": "[user] lets the meridians blaze with live current and scorches [target]",
+      "minRealmMajor": 2,
+      "kind": "damage",
+      "baseAmount": 74,
+      "scaleStat": "energy",
+      "scaleFactor": 1.15,
+      "energyCost": 32,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_thunder_lotus_bloodline_2": {
+      "id": "bt_bl_thunder_lotus_bloodline_2",
+      "name": "Ethereal Step of the Thunder Lotus",
+      "element": "spirit",
+      "description": "Ethereal Step of the Thunder Lotus — an advanced art of the Thunder Lotus bloodline.",
+      "combatDescription": "[user] calls astral power to circle them and looses a surging astral bolt at [target]",
+      "minRealmMajor": 4,
+      "kind": "damage",
+      "baseAmount": 92,
+      "scaleStat": "energy",
+      "scaleFactor": 1.25,
+      "energyCost": 38,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "soaked"
+      ]
+    },
+    "bt_bl_thunder_lotus_bloodline_3": {
+      "id": "bt_bl_thunder_lotus_bloodline_3",
+      "name": "Thunder Lotus: Heaven-Splitting Judgment",
+      "element": "lightning",
+      "elements": [
+        "lightning",
+        "spirit"
+      ],
+      "description": "Thunder Lotus: Heaven-Splitting Judgment — the signature legacy art of the Thunder Lotus bloodline.",
+      "combatDescription": "[user] lets the meridians blaze with live current and hurls a heaven-splitting judgment upon all foes around them",
+      "aoe": true,
+      "minRealmMajor": 8,
+      "kind": "damage",
+      "baseAmount": 111,
+      "scaleStat": "energy",
+      "scaleFactor": 1.35,
+      "energyCost": 45,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ],
+      "executePct": 60
+    },
+    "bt_bl_genesis_thunder_court_bloodline_1": {
+      "id": "bt_bl_genesis_thunder_court_bloodline_1",
+      "name": "Whitebright Writ",
+      "element": "lightning",
+      "description": "Genesis Thunder Court Revelation — a core art of the Genesis Thunder Court bloodline.",
+      "combatDescription": "[user] invokes the ancient authority of the Genesis Thunder Court Bloodline, releasing concentrated lightning qi toward [target].",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 92,
+      "scaleStat": "energy",
+      "scaleFactor": 1.25,
+      "energyCost": 38,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_genesis_thunder_court_bloodline_2": {
+      "id": "bt_bl_genesis_thunder_court_bloodline_2",
+      "name": "Thunderhead and Verdict",
+      "element": "tribulation",
+      "description": "Ancestral Edict — an advanced art of the Genesis Thunder Court bloodline.",
+      "combatDescription": "The lineage's ancestral will manifests behind [user], amplifying every strike directed at [target].",
+      "minRealmMajor": 7,
+      "kind": "damage",
+      "baseAmount": 115,
+      "scaleStat": "energy",
+      "scaleFactor": 1.35,
+      "energyCost": 46,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_bl_genesis_thunder_court_bloodline_3": {
+      "id": "bt_bl_genesis_thunder_court_bloodline_3",
+      "name": "The Unanswered Fulgurite",
+      "element": "lightning",
+      "description": "Legacy Incarnation — the signature legacy art of the Genesis Thunder Court bloodline.",
+      "combatDescription": "[user] briefly embodies the legendary founder of the bloodline, overwhelming [target] with peerless mastery.",
+      "aoe": true,
+      "minRealmMajor": 11,
+      "kind": "damage",
+      "baseAmount": 138,
+      "scaleStat": "energy",
+      "scaleFactor": 1.45,
+      "energyCost": 53,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun",
+        "tr_bleed_lightning"
+      ]
+    },
+    "bt_bl_emperor_of_ten_thousand_thunder_bloodline_1": {
+      "id": "bt_bl_emperor_of_ten_thousand_thunder_bloodline_1",
+      "name": "Arcing Throne",
+      "element": "lightning",
+      "description": "Emperor of Ten Thousand Thunder Proclamation — a core art of the Emperor of Ten Thousand Thunder bloodline.",
+      "combatDescription": "[user] invokes the ancient authority of the Emperor of Ten Thousand Thunder Bloodline, causing lightning qi to answer like a loyal servant before crashing into [target].",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 110,
+      "scaleStat": "energy",
+      "scaleFactor": 1.35,
+      "energyCost": 44,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_emperor_of_ten_thousand_thunder_bloodline_2": {
+      "id": "bt_bl_emperor_of_ten_thousand_thunder_bloodline_2",
+      "name": "Testament of the Emperor of Ten Thousand Thunder",
+      "element": "divinity",
+      "description": "Ancestor's Testament — an advanced art of the Emperor of Ten Thousand Thunder bloodline.",
+      "combatDescription": "An immense ancestral phantom manifests behind [user], its mere presence forcing weaker bloodlines around [target] to falter.",
+      "minRealmMajor": 9,
+      "kind": "damage",
+      "baseAmount": 138,
+      "scaleStat": "energy",
+      "scaleFactor": 1.45,
+      "energyCost": 53,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_bl_emperor_of_ten_thousand_thunder_bloodline_3": {
+      "id": "bt_bl_emperor_of_ten_thousand_thunder_bloodline_3",
+      "name": "Emperor of Ten Thousand Thunder: The Sovereign Strike",
+      "element": "lightning",
+      "description": "Heavenly Inheritance — the signature legacy art of the Emperor of Ten Thousand Thunder bloodline.",
+      "combatDescription": "The lineage fully awakens as primordial symbols circle [user]. Heaven and earth resonate with lightning before a legendary art descends upon [target].",
+      "aoe": true,
+      "minRealmMajor": 13,
+      "kind": "damage",
+      "baseAmount": 165,
+      "scaleStat": "energy",
+      "scaleFactor": 1.55,
+      "energyCost": 62,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_pf_thunder_vessel_physique_1": {
+      "id": "bt_pf_thunder_vessel_physique_1",
+      "name": "Thunder Vessel Quicksilver Stride",
+      "element": "lightning",
+      "description": "Thunder Vessel Quicksilver Stride — a body-tempering art of the Thunder Vessel physique.",
+      "combatDescription": "[user] loosens every meridian until their movements blur at the edges",
+      "minRealmMajor": 1,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 19,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_pf_thunder_vessel_physique_1_speed"
+      ]
+    },
+    "bt_pf_thunderheart_1": {
+      "id": "bt_pf_thunderheart_1",
+      "name": "Thunderheart Quicksilver Stride",
+      "element": "lightning",
+      "description": "Thunderheart Quicksilver Stride — a body-tempering art of the Thunderheart physique.",
+      "combatDescription": "[user] loosens every meridian until their movements blur at the edges",
+      "minRealmMajor": 1,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 24,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_pf_thunderheart_1_speed"
+      ]
+    },
+    "bt_pf_thunderheart_2": {
+      "id": "bt_pf_thunderheart_2",
+      "name": "Thunderheart Arc Strike",
+      "element": "lightning",
+      "description": "Thunderheart Arc Strike — a signature attack of the Thunderheart physique.",
+      "combatDescription": "[user] discharges tempered qi in a thunderous strike that convulses [target]",
+      "minRealmMajor": 7,
+      "kind": "damage",
+      "baseAmount": 64,
+      "scaleStat": "resistance",
+      "scaleFactor": 1.16,
+      "energyCost": 24,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_pf_stormbone_physique_1": {
+      "id": "bt_pf_stormbone_physique_1",
+      "name": "Stormbone Windborne Grace",
+      "element": "lightning",
+      "description": "Stormbone Windborne Grace — a body-tempering art of the Stormbone physique.",
+      "combatDescription": "[user] loosens every meridian until their movements blur at the edges",
+      "minRealmMajor": 2,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 29,
+      "staminaCost": 0,
+      "cooldown": 4,
+      "effects": [
+        "bt_pf_stormbone_physique_1_speed",
+        "bt_pf_stormbone_physique_1_defense"
+      ]
+    },
+    "bt_pf_stormbone_physique_2": {
+      "id": "bt_pf_stormbone_physique_2",
+      "name": "Stormbone Arc Strike",
+      "element": "lightning",
+      "elements": [
+        "lightning",
+        "physical"
+      ],
+      "description": "Stormbone Arc Strike — a signature attack of the Stormbone physique.",
+      "combatDescription": "[user] discharges tempered qi in a thunderous strike that convulses [target]",
+      "minRealmMajor": 8,
+      "kind": "damage",
+      "baseAmount": 85,
+      "scaleStat": "resistance",
+      "scaleFactor": 1.26,
+      "energyCost": 29,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ],
+      "selfEffects": [
+        "tr_drink"
+      ]
+    },
+    "bt_pf_heavenly_thunder_physique_1": {
+      "id": "bt_pf_heavenly_thunder_physique_1",
+      "name": "Heavenbreaker Pulse",
+      "element": "lightning",
+      "description": "Heavenbreaker Pulse — a signature attack of the Heavenly Thunder physique.",
+      "combatDescription": "Lightning flashes beneath [user]'s skin before exploding outward in concentric rings. Every pulse grows stronger than the last until a final bolt descends directly upon [target].",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 76,
+      "scaleStat": "resistance",
+      "scaleFactor": 1.2,
+      "energyCost": 34,
+      "staminaCost": 0,
+      "cooldown": 1,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_pf_heavenly_thunder_physique_2": {
+      "id": "bt_pf_heavenly_thunder_physique_2",
+      "name": "Ninefold Judgment",
+      "element": "lightning",
+      "description": "Ninefold Judgment — a signature attack of the Heavenly Thunder physique.",
+      "combatDescription": "Nine pillars of heavenly lightning strike in sequence around [target], shrinking the circle of escape before the final bolt descends from directly overhead.",
+      "aoe": true,
+      "minRealmMajor": 11,
+      "kind": "damage",
+      "baseAmount": 106,
+      "scaleStat": "resistance",
+      "scaleFactor": 1.36,
+      "energyCost": 34,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ],
+      "foeEffects": [
+        "tr_bleed_lightning",
+        "tr_rend"
+      ]
+    },
+    "bt_sparkflash_scroll_1": {
+      "id": "bt_sparkflash_scroll_1",
+      "name": "Sparkflash: White Instant Arrives Before the Sound",
+      "element": "lightning",
+      "description": "A lightning art of the Sparkflash school.",
+      "combatDescription": "[user] unleashes a thunderous discharge that scorches [target]",
+      "aoe": true,
+      "minRealmMajor": 0,
+      "kind": "damage",
+      "baseAmount": 6,
+      "scaleStat": "energy",
+      "scaleFactor": 0.7,
+      "energyCost": 12,
+      "staminaCost": 0,
+      "cooldown": 1,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_blazing_yang_codex_1": {
+      "id": "bt_blazing_yang_codex_1",
+      "name": "Stormcrown: Unhesitating Skysplit",
+      "element": "lightning",
+      "description": "A lightning art of the Stormcrown school.",
+      "combatDescription": "[user] cracks a white filament of lightning across [target]",
+      "minRealmMajor": 1,
+      "kind": "damage",
+      "baseAmount": 42,
+      "scaleStat": "energy",
+      "scaleFactor": 0.84,
+      "energyCost": 20,
+      "staminaCost": 0,
+      "cooldown": 1,
+      "effects": [
+        "sluggish"
+      ]
+    },
+    "bt_blazing_yang_codex_2": {
+      "id": "bt_blazing_yang_codex_2",
+      "name": "Stormcrown: Flashburn of the White Instant",
+      "element": "lightning",
+      "description": "A lightning art of the Stormcrown school.",
+      "combatDescription": "[user] winds the art into a standing circle that will not be crossed",
+      "minRealmMajor": 4,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 28,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_ward_lightning"
+      ]
+    },
+    "bt_five_spirits_sutra_1": {
+      "id": "bt_five_spirits_sutra_1",
+      "name": "Stormmind: The White Instant",
+      "element": "lightning",
+      "description": "A lightning art of the Stormmind school.",
+      "combatDescription": "[user] thinks the strike and the bolt is already inside [target]",
+      "minRealmMajor": 2,
+      "kind": "damage",
+      "baseAmount": 112,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 0.91,
+      "energyCost": 24,
+      "staminaCost": 0,
+      "cooldown": 1,
+      "effects": [
+        "sluggish"
+      ]
+    },
+    "bt_five_spirits_sutra_2": {
+      "id": "bt_five_spirits_sutra_2",
+      "name": "Stormmind: Fulgurite",
+      "element": "lightning",
+      "description": "A lightning art of the Stormmind school.",
+      "combatDescription": "[user] narrows to a single unspoken intent aimed at [target]",
+      "telegraph": true,
+      "minRealmMajor": 5,
+      "kind": "damage",
+      "baseAmount": 800,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.05,
+      "energyCost": 32,
+      "staminaCost": 0,
+      "cooldown": 3
+    },
+    "bt_skybreaker_lightning_manual_1": {
+      "id": "bt_skybreaker_lightning_manual_1",
+      "name": "Skybreaker Lightning: Arcline of the Split Sky",
+      "element": "lightning",
+      "description": "A lightning art of the Skybreaker Lightning school.",
+      "combatDescription": "[user] unleashes a thunderous discharge that scorches [target]",
+      "aoe": true,
+      "minRealmMajor": 4,
+      "kind": "damage",
+      "baseAmount": 800,
+      "scaleStat": "energy",
+      "scaleFactor": 1.05,
+      "energyCost": 32,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_skybreaker_lightning_manual_2": {
+      "id": "bt_skybreaker_lightning_manual_2",
+      "name": "Skybreaker Lightning: Skysplit Arcline",
+      "element": "lightning",
+      "description": "A lightning art of the Skybreaker Lightning school.",
+      "combatDescription": "[user] winds the art into a standing circle that will not be crossed",
+      "minRealmMajor": 7,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 40,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_ward_lightning"
+      ]
+    },
+    "bt_stormbolt_sutra_1": {
+      "id": "bt_stormbolt_sutra_1",
+      "name": "Stormbolt: The Nine Heavens",
+      "element": "lightning",
+      "description": "A lightning art of the Stormbolt school.",
+      "combatDescription": "[user] calls down a forking storm of lightning that arcs across [target]",
+      "aoe": true,
+      "minRealmMajor": 5,
+      "kind": "damage",
+      "baseAmount": 2100,
+      "scaleStat": "energy",
+      "scaleFactor": 1.12,
+      "energyCost": 36,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_stormbolt_sutra_2": {
+      "id": "bt_stormbolt_sutra_2",
+      "name": "Stormbolt: Heaven's Nail Strikes Twice",
+      "element": "lightning",
+      "description": "A lightning art of the Stormbolt school.",
+      "combatDescription": "[user] winds the art into a standing circle that will not be crossed",
+      "minRealmMajor": 8,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 44,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_ward_lightning"
+      ]
+    },
+    "bt_lightning_dragon_codex_1": {
+      "id": "bt_lightning_dragon_codex_1",
+      "name": "Lightning Dragon: Thunderfall",
+      "element": "lightning",
+      "description": "A lightning art of the Lightning Dragon school.",
+      "combatDescription": "[user] calls down a forking storm of lightning that arcs across [target]",
+      "aoe": true,
+      "minRealmMajor": 5,
+      "kind": "damage",
+      "baseAmount": 2100,
+      "scaleStat": "stamina",
+      "scaleFactor": 1.12,
+      "energyCost": 0,
+      "staminaCost": 36,
+      "cooldown": 2,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_lightning_dragon_codex_2": {
+      "id": "bt_lightning_dragon_codex_2",
+      "name": "Lightning Dragon: White Instant Chooses the Tallest",
+      "element": "lightning",
+      "description": "A lightning art of the Lightning Dragon school.",
+      "combatDescription": "[user] gathers thunder in their cupped hands and hurls a bolt at [target]",
+      "minRealmMajor": 8,
+      "kind": "damage",
+      "baseAmount": 14500,
+      "scaleStat": "stamina",
+      "scaleFactor": 1.26,
+      "energyCost": 0,
+      "staminaCost": 44,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_celestial_thunder_emperor_canon_1": {
+      "id": "bt_celestial_thunder_emperor_canon_1",
+      "name": "Celestial Thunder Emperor: Arcline",
+      "element": "lightning",
+      "description": "A lightning art of the Celestial Thunder Emperor school.",
+      "combatDescription": "[user] calls down a forking storm of lightning that arcs across [target]",
+      "aoe": true,
+      "minRealmMajor": 6,
+      "kind": "damage",
+      "baseAmount": 5500,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.19,
+      "energyCost": 40,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_celestial_thunder_emperor_canon_2": {
+      "id": "bt_celestial_thunder_emperor_canon_2",
+      "name": "Celestial Thunder Emperor: Sparkfall",
+      "element": "lightning",
+      "description": "A lightning art of the Celestial Thunder Emperor school.",
+      "combatDescription": "[user] narrows to a single unspoken intent aimed at [target]",
+      "telegraph": true,
+      "minRealmMajor": 9,
+      "kind": "damage",
+      "baseAmount": 38000,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.33,
+      "energyCost": 48,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_storm_emperor_sutra_1": {
+      "id": "bt_storm_emperor_sutra_1",
+      "name": "Storm Emperor: Stormfall",
+      "element": "lightning",
+      "description": "A lightning art of the Storm Emperor school.",
+      "combatDescription": "[user] unleashes a thunderous discharge that scorches [target]",
+      "aoe": true,
+      "minRealmMajor": 8,
+      "kind": "damage",
+      "baseAmount": 38000,
+      "scaleStat": "energy",
+      "scaleFactor": 1.33,
+      "energyCost": 48,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "stun"
+      ]
+    },
+    "bt_storm_emperor_sutra_2": {
+      "id": "bt_storm_emperor_sutra_2",
+      "name": "Storm Emperor: Sparkfall of the White Instant",
+      "element": "lightning",
+      "description": "A lightning art of the Storm Emperor school.",
+      "combatDescription": "[user] winds the art into a standing circle that will not be crossed",
+      "minRealmMajor": 11,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 56,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_ward_lightning"
+      ]
+    },
+    "bt_bl_shadow_weasel_1": {
+      "id": "bt_bl_shadow_weasel_1",
+      "name": "Umbral Nip",
+      "element": "yin",
+      "description": "Umbral Nip — a lesser art of the Shadow Weasel bloodline.",
+      "combatDescription": "[user] slips through a seam of shadow and nips the qi from [target]",
+      "minRealmMajor": 1,
+      "kind": "damage",
+      "baseAmount": 22,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 0.7,
+      "energyCost": 12,
+      "staminaCost": 0,
+      "cooldown": 0
+    },
+    "bt_bl_shadow_weasel_2": {
+      "id": "bt_bl_shadow_weasel_2",
+      "name": "Devouring Dusk",
+      "element": "yin",
+      "description": "Devouring Dusk — the signature legacy art of the Shadow Weasel bloodline.",
+      "combatDescription": "[user] unfurls a devouring dusk that swallows the warmth of [target]",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 44,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 0.9,
+      "energyCost": 25,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_bl_moonlit_fox_bloodline_1": {
+      "id": "bt_bl_moonlit_fox_bloodline_1",
+      "name": "Moonlit Fox Duskrend",
+      "element": "yin",
+      "description": "Moonlit Fox Duskrend — a core art of the Moonlit Fox bloodline.",
+      "combatDescription": "[user] gathers a devouring hush of shadow and drains the warmth from [target]",
+      "minRealmMajor": 1,
+      "kind": "damage",
+      "baseAmount": 38,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 0.95,
+      "energyCost": 20,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_moonlit_fox_bloodline_2": {
+      "id": "bt_bl_moonlit_fox_bloodline_2",
+      "name": "Veil of Reason of the Moonlit Fox",
+      "element": "mind",
+      "description": "Veil of Reason of the Moonlit Fox — an advanced art of the Moonlit Fox bloodline.",
+      "combatDescription": "[user] sharpens their will into a silent lance and drives a psychic lance through [target]",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 48,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.05,
+      "energyCost": 24,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_bl_moonlit_fox_bloodline_3": {
+      "id": "bt_bl_moonlit_fox_bloodline_3",
+      "name": "Moonlit Fox: Eclipse Ascendant",
+      "element": "yin",
+      "elements": [
+        "yin",
+        "mind"
+      ],
+      "description": "Moonlit Fox: Eclipse Ascendant — the signature legacy art of the Moonlit Fox bloodline.",
+      "combatDescription": "[user] gathers a devouring hush of shadow and unfurls a devouring nightfall across [target]",
+      "minRealmMajor": 5,
+      "kind": "damage",
+      "baseAmount": 57,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.15,
+      "energyCost": 28,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_bl_void_moth_bloodline_1": {
+      "id": "bt_bl_void_moth_bloodline_1",
+      "name": "Void Moth Psychic Lance",
+      "element": "mind",
+      "description": "Void Moth Psychic Lance — a core art of the Void Moth bloodline.",
+      "combatDescription": "[user] sharpens their will into a silent lance and fractures the focus of [target]",
+      "minRealmMajor": 1,
+      "kind": "damage",
+      "baseAmount": 56,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.05,
+      "energyCost": 26,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_void_moth_bloodline_2": {
+      "id": "bt_bl_void_moth_bloodline_2",
+      "name": "Veil of Dusk of the Void Moth",
+      "element": "yin",
+      "description": "Veil of Dusk of the Void Moth — an advanced art of the Void Moth bloodline.",
+      "combatDescription": "[user] gathers a devouring hush of shadow and swallows [target] in cold shadow",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 70,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.15,
+      "energyCost": 31,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_bl_void_moth_bloodline_3": {
+      "id": "bt_bl_void_moth_bloodline_3",
+      "name": "Void Moth: Thought Ascendant",
+      "element": "mind",
+      "elements": [
+        "mind",
+        "yin"
+      ],
+      "description": "Void Moth: Thought Ascendant — the signature legacy art of the Void Moth bloodline.",
+      "combatDescription": "[user] sharpens their will into a silent lance and shatters the very will of [target]",
+      "minRealmMajor": 7,
+      "kind": "damage",
+      "baseAmount": 84,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.25,
+      "energyCost": 36,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_bl_blood_moon_wolf_bloodline_1": {
+      "id": "bt_bl_blood_moon_wolf_bloodline_1",
+      "name": "Blood Moon Wolf Shade Fang",
+      "element": "yin",
+      "description": "Blood Moon Wolf Shade Fang — a core art of the Blood Moon Wolf bloodline.",
+      "combatDescription": "[user] unfurls a shroud of cold yin qi and drains the warmth from [target]",
+      "minRealmMajor": 2,
+      "kind": "damage",
+      "baseAmount": 74,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.15,
+      "energyCost": 32,
+      "staminaCost": 0,
+      "cooldown": 1,
+      "executePct": 60
+    },
+    "bt_bl_blood_moon_sovereign_bloodline_1": {
+      "id": "bt_bl_blood_moon_sovereign_bloodline_1",
+      "name": "Unbowed Remittance",
+      "element": "yin",
+      "description": "Blood Moon Sovereign Revelation — a core art of the Blood Moon Sovereign bloodline.",
+      "combatDescription": "[user] invokes the ancient authority of the Blood Moon Sovereign Bloodline, releasing concentrated yin qi toward [target].",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 92,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.25,
+      "energyCost": 38,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_blood_moon_sovereign_bloodline_2": {
+      "id": "bt_bl_blood_moon_sovereign_bloodline_2",
+      "name": "Eclipse and Verdict",
+      "element": "yin",
+      "description": "Ancestral Edict — an advanced art of the Blood Moon Sovereign bloodline.",
+      "combatDescription": "The lineage's ancestral will manifests behind [user], amplifying every strike directed at [target].",
+      "minRealmMajor": 7,
+      "kind": "damage",
+      "baseAmount": 115,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.35,
+      "energyCost": 46,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_bl_blood_moon_sovereign_bloodline_3": {
+      "id": "bt_bl_blood_moon_sovereign_bloodline_3",
+      "name": "Scoured Closure",
+      "element": "yin",
+      "description": "Legacy Incarnation — the signature legacy art of the Blood Moon Sovereign bloodline.",
+      "combatDescription": "[user] briefly embodies the legendary founder of the bloodline, overwhelming [target] with peerless mastery.",
+      "aoe": true,
+      "minRealmMajor": 11,
+      "kind": "damage",
+      "baseAmount": 138,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.45,
+      "energyCost": 53,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_bl_netherworld_monarch_bloodline_1": {
+      "id": "bt_bl_netherworld_monarch_bloodline_1",
+      "name": "Overturn the Writ",
+      "element": "yin",
+      "description": "Netherworld Monarch Revelation — a core art of the Netherworld Monarch bloodline.",
+      "combatDescription": "[user] invokes the ancient authority of the Netherworld Monarch Bloodline, releasing concentrated yin qi toward [target].",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 92,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.25,
+      "energyCost": 38,
+      "staminaCost": 0,
+      "cooldown": 1
+    },
+    "bt_bl_netherworld_monarch_bloodline_2": {
+      "id": "bt_bl_netherworld_monarch_bloodline_2",
+      "name": "Decree of the Netherworld Monarch",
+      "element": "spirit",
+      "description": "Ancestral Edict — an advanced art of the Netherworld Monarch bloodline.",
+      "combatDescription": "[user] channels spirit qi as ancient sigils surround the battlefield and suppress [target].",
+      "minRealmMajor": 7,
+      "kind": "damage",
+      "baseAmount": 115,
+      "scaleStat": "energy",
+      "scaleFactor": 1.35,
+      "energyCost": 46,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "soaked"
+      ]
+    },
+    "bt_bl_netherworld_monarch_bloodline_3": {
+      "id": "bt_bl_netherworld_monarch_bloodline_3",
+      "name": "Umbra and Writ",
+      "element": "yin",
+      "elements": [
+        "yin",
+        "spirit"
+      ],
+      "splitElement": true,
+      "description": "Legacy Incarnation — the signature legacy art of the Netherworld Monarch bloodline.",
+      "combatDescription": "The bloodline fully awakens, harmonizing yin, spirit into a legendary finishing technique.",
+      "aoe": true,
+      "minRealmMajor": 11,
+      "kind": "damage",
+      "baseAmount": 138,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.45,
+      "energyCost": 53,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_pf_shadow_veil_physique_1": {
+      "id": "bt_pf_shadow_veil_physique_1",
+      "name": "Shadow Veil Unshaken Spirit",
+      "element": "yin",
+      "description": "Shadow Veil Unshaken Spirit — a body-tempering art of the Shadow Veil physique.",
+      "combatDescription": "[user] stills every stray thought, their spirit settling into an unshakable calm",
+      "minRealmMajor": 1,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 14,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_pf_shadow_veil_physique_1_mentalFortitude"
+      ]
+    },
+    "bt_pf_shadow_veil_physique_2": {
+      "id": "bt_pf_shadow_veil_physique_2",
+      "name": "Shadow Veil Restoration",
+      "element": "yin",
+      "elements": [
+        "yin",
+        "mind"
+      ],
+      "description": "Shadow Veil Restoration — a restorative art of the Shadow Veil physique.",
+      "combatDescription": "[user] draws on a deep well of body-tempered vitality, wounds sealing over",
+      "minRealmMajor": 3,
+      "kind": "heal",
+      "baseAmount": 29,
+      "scaleStat": "energy",
+      "scaleFactor": 0.4,
+      "energyCost": 18,
+      "staminaCost": 0,
+      "cooldown": 2
+    },
+    "bt_pf_twilight_flesh_physique_1": {
+      "id": "bt_pf_twilight_flesh_physique_1",
+      "name": "Twilight Flesh Sovereign Will",
+      "element": "yin",
+      "description": "Twilight Flesh Sovereign Will — a body-tempering art of the Twilight Flesh physique.",
+      "combatDescription": "[user] stills every stray thought, their spirit settling into an unshakable calm",
+      "minRealmMajor": 1,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 19,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_pf_twilight_flesh_physique_1_mentalFortitude"
+      ]
+    },
+    "bt_pf_moonshadow_veins_1": {
+      "id": "bt_pf_moonshadow_veins_1",
+      "name": "Moonshadow Veins Sovereign Will",
+      "element": "yin",
+      "description": "Moonshadow Veins Sovereign Will — a body-tempering art of the Moonshadow Veins physique.",
+      "combatDescription": "[user] stills every stray thought, their spirit settling into an unshakable calm",
+      "minRealmMajor": 1,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 24,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_pf_moonshadow_veins_1_mentalFortitude"
+      ]
+    },
+    "bt_pf_moonshadow_veins_2": {
+      "id": "bt_pf_moonshadow_veins_2",
+      "name": "Moonshadow Veins Hollow Strike",
+      "element": "yin",
+      "elements": [
+        "yin",
+        "mind"
+      ],
+      "description": "Moonshadow Veins Hollow Strike — a signature attack of the Moonshadow Veins physique.",
+      "combatDescription": "[user] drives a cold, hollowing palm that drains the warmth from [target]",
+      "minRealmMajor": 7,
+      "kind": "damage",
+      "baseAmount": 64,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.16,
+      "energyCost": 24,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_pf_moon_veil_physique_1": {
+      "id": "bt_pf_moon_veil_physique_1",
+      "name": "Moon Veil Still Mind",
+      "element": "yin",
+      "description": "Moon Veil Still Mind — a body-tempering art of the Moon Veil physique.",
+      "combatDescription": "[user] stills every stray thought, their spirit settling into an unshakable calm",
+      "minRealmMajor": 2,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 29,
+      "staminaCost": 0,
+      "cooldown": 4,
+      "effects": [
+        "bt_pf_moon_veil_physique_1_mentalFortitude",
+        "bt_pf_moon_veil_physique_1_defense"
+      ]
+    },
+    "bt_pf_moon_veil_physique_2": {
+      "id": "bt_pf_moon_veil_physique_2",
+      "name": "Moon Veil Hollow Strike",
+      "element": "yin",
+      "elements": [
+        "yin",
+        "mind"
+      ],
+      "description": "Moon Veil Hollow Strike — a signature attack of the Moon Veil physique.",
+      "combatDescription": "[user] drives a cold, hollowing palm that drains the warmth from [target]",
+      "minRealmMajor": 8,
+      "kind": "damage",
+      "baseAmount": 85,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.26,
+      "energyCost": 29,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_pf_eclipsed_soul_physique_1": {
+      "id": "bt_pf_eclipsed_soul_physique_1",
+      "name": "Eclipsed Soul Clarity Ward",
+      "element": "yin",
+      "description": "Eclipsed Soul Clarity Ward — a body-tempering art of the Eclipsed Soul physique.",
+      "combatDescription": "[user] stills every stray thought, their spirit settling into an unshakable calm",
+      "minRealmMajor": 2,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 29,
+      "staminaCost": 0,
+      "cooldown": 4,
+      "effects": [
+        "bt_pf_eclipsed_soul_physique_1_mentalFortitude",
+        "bt_pf_eclipsed_soul_physique_1_defense"
+      ]
+    },
+    "bt_pf_eclipsed_soul_physique_2": {
+      "id": "bt_pf_eclipsed_soul_physique_2",
+      "name": "Eclipsed Soul Umbral Palm",
+      "element": "yin",
+      "elements": [
+        "yin",
+        "spirit"
+      ],
+      "description": "Eclipsed Soul Umbral Palm — a signature attack of the Eclipsed Soul physique.",
+      "combatDescription": "[user] drives a cold, hollowing palm that drains the warmth from [target]",
+      "minRealmMajor": 8,
+      "kind": "damage",
+      "baseAmount": 85,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.26,
+      "energyCost": 29,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ],
+      "selfEffects": [
+        "tr_drink"
+      ]
+    },
+    "bt_pf_abyssal_heart_physique_1": {
+      "id": "bt_pf_abyssal_heart_physique_1",
+      "name": "Bottomless Tide",
+      "element": "water",
+      "description": "Bottomless Tide — a signature attack of the Abyssal Heart physique.",
+      "combatDescription": "Dark blue currents spread quietly across the ground before rising into towering walls that fold inward from every direction around [target].",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 76,
+      "scaleStat": "resistance",
+      "scaleFactor": 1.2,
+      "energyCost": 34,
+      "staminaCost": 0,
+      "cooldown": 1,
+      "effects": [
+        "soaked"
+      ]
+    },
+    "bt_pf_abyssal_heart_physique_2": {
+      "id": "bt_pf_abyssal_heart_physique_2",
+      "name": "Silent Abyss",
+      "element": "yin",
+      "elements": [
+        "yin",
+        "water"
+      ],
+      "description": "Silent Abyss — a signature attack of the Abyssal Heart physique.",
+      "combatDescription": "The sounds of battle vanish as a sphere of tranquil darkness expands from [user]. Within its boundaries, every movement by [target] feels unbearably heavy, as though submerged beneath the deepest ocean.",
+      "aoe": true,
+      "minRealmMajor": 11,
+      "kind": "damage",
+      "baseAmount": 106,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.36,
+      "energyCost": 34,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ],
+      "selfEffects": [
+        "tr_bulwark"
+      ]
+    },
+    "bt_trained_reflexes": {
+      "id": "bt_trained_reflexes",
+      "name": "Held Inwardturn",
+      "element": "physical",
+      "description": "Drilled footwork and breathing raise your speed 15% for 3 turns.",
+      "combatDescription": "[user] settles into a drilled stance, breathing evening out as their footwork sharpens",
+      "minRealmMajor": 0,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 0,
+      "staminaCost": 8,
+      "cooldown": 3,
+      "effects": [
+        "trained_reflexes"
+      ]
+    },
+    "bt_astral_core_manual_1": {
+      "id": "bt_astral_core_manual_1",
+      "name": "Astral Core: Hollowing of the Thin Veil",
+      "element": "spirit",
+      "description": "A spirit art of the Astral Core school.",
+      "combatDescription": "[user] condenses raw spiritual essence into a bolt and fires it at [target]",
+      "minRealmMajor": 0,
+      "kind": "damage",
+      "baseAmount": 6,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 0.7,
+      "energyCost": 12,
+      "staminaCost": 0,
+      "cooldown": 1,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_abyssal_yin_scripture_1": {
+      "id": "bt_abyssal_yin_scripture_1",
+      "name": "Abyssal Yin: Falling Water Finds the Crack",
+      "element": "water",
+      "description": "A water art of the Abyssal Yin school.",
+      "combatDescription": "[user] gathers the surging Qi of the deep and sends it crashing into [target]",
+      "minRealmMajor": 0,
+      "kind": "damage",
+      "baseAmount": 16,
+      "scaleStat": "energy",
+      "scaleFactor": 0.77,
+      "energyCost": 16,
+      "staminaCost": 0,
+      "cooldown": 1,
+      "effects": [
+        "soaked"
+      ]
+    },
+    "bt_frozen_yin_codex_1": {
+      "id": "bt_frozen_yin_codex_1",
+      "name": "Frozen Yin: Cataract of the Turning Tide",
+      "element": "water",
+      "description": "A water art of the Frozen Yin school.",
+      "combatDescription": "[user] weaves flowing currents into a spear of water and drives it through [target]",
+      "minRealmMajor": 2,
+      "kind": "damage",
+      "baseAmount": 112,
+      "scaleStat": "energy",
+      "scaleFactor": 0.91,
+      "energyCost": 24,
+      "staminaCost": 0,
+      "cooldown": 1,
+      "effects": [
+        "soaked"
+      ]
+    },
+    "bt_frozen_yin_codex_2": {
+      "id": "bt_frozen_yin_codex_2",
+      "name": "Frozen Yin: Hundred Rivers Closes Over",
+      "element": "water",
+      "description": "A water art of the Frozen Yin school.",
+      "combatDescription": "[user] turns the art inward, and the Qi that would have struck knits instead",
+      "minRealmMajor": 5,
+      "kind": "heal",
+      "baseAmount": 400,
+      "scaleStat": "energy",
+      "scaleFactor": 0.4725,
+      "energyCost": 32,
+      "staminaCost": 0,
+      "cooldown": 3
+    },
+    "bt_moonshadow_sutra_1": {
+      "id": "bt_moonshadow_sutra_1",
+      "name": "Moonshadow: Turning Year Does Not Warm",
+      "element": "yin",
+      "description": "A yin art of the Moonshadow school.",
+      "combatDescription": "[user] exhales a frigid, ghostly palm that drains the warmth from [target]",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 300,
+      "scaleStat": "energy",
+      "scaleFactor": 0.98,
+      "energyCost": 28,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_moonshadow_sutra_2": {
+      "id": "bt_moonshadow_sutra_2",
+      "name": "Moonshadow: Moonless Umbral",
+      "element": "yin",
+      "description": "A yin art of the Moonshadow school.",
+      "combatDescription": "[user] gathers cold yin Qi into a shroud and presses it onto [target]",
+      "minRealmMajor": 6,
+      "kind": "damage",
+      "baseAmount": 2100,
+      "scaleStat": "energy",
+      "scaleFactor": 1.12,
+      "energyCost": 36,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_nether_soul_sutra_1": {
+      "id": "bt_nether_soul_sutra_1",
+      "name": "Nether Soul: Nightwater of Nine Cold Springs",
+      "element": "yin",
+      "description": "A yin art of the Nether Soul school.",
+      "combatDescription": "[user] gathers cold yin Qi into a shroud and presses it onto [target]",
+      "minRealmMajor": 3,
+      "kind": "damage",
+      "baseAmount": 300,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 0.98,
+      "energyCost": 28,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_nether_soul_sutra_2": {
+      "id": "bt_nether_soul_sutra_2",
+      "name": "Nether Soul: Coldfall of the Waning Moon",
+      "element": "yin",
+      "description": "A yin art of the Nether Soul school.",
+      "combatDescription": "[user] exhales a frigid, ghostly palm that drains the warmth from [target]",
+      "minRealmMajor": 6,
+      "kind": "damage",
+      "baseAmount": 2100,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.12,
+      "energyCost": 36,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_shadow_moon_sutra_1": {
+      "id": "bt_shadow_moon_sutra_1",
+      "name": "Shadow Moon: Winterhold of Nine Cold Springs",
+      "element": "yin",
+      "description": "A yin art of the Shadow Moon school.",
+      "combatDescription": "[user] reaches out with spectral cold to wither [target]",
+      "minRealmMajor": 4,
+      "kind": "damage",
+      "baseAmount": 800,
+      "scaleStat": "energy",
+      "scaleFactor": 1.05,
+      "energyCost": 32,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_shadow_moon_sutra_2": {
+      "id": "bt_shadow_moon_sutra_2",
+      "name": "Shadow Moon: Waning",
+      "element": "yin",
+      "description": "A yin art of the Shadow Moon school.",
+      "combatDescription": "[user] turns the art inward, and the Qi that would have struck knits instead",
+      "minRealmMajor": 7,
+      "kind": "heal",
+      "baseAmount": 2750,
+      "scaleStat": "energy",
+      "scaleFactor": 0.5355,
+      "energyCost": 40,
+      "staminaCost": 0,
+      "cooldown": 3
+    },
+    "bt_silent_yin_manual_1": {
+      "id": "bt_silent_yin_manual_1",
+      "name": "Silent Yin: Frostbound Waning",
+      "element": "yin",
+      "description": "A yin art of the Silent Yin school.",
+      "combatDescription": "[user] exhales a frigid, ghostly palm that drains the warmth from [target]",
+      "minRealmMajor": 4,
+      "kind": "damage",
+      "baseAmount": 800,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.05,
+      "energyCost": 32,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_silent_yin_manual_2": {
+      "id": "bt_silent_yin_manual_2",
+      "name": "Silent Yin: Breathhold of the Inward Turn",
+      "element": "yin",
+      "description": "Channels the art inward, empowering the cultivator.",
+      "combatDescription": "[user] draws their art into themselves, body and spirit ringing with new strength",
+      "minRealmMajor": 7,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 31,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "keen_focus"
+      ]
+    },
+    "bt_void_soul_codex_1": {
+      "id": "bt_void_soul_codex_1",
+      "name": "Void Soul: Bone Chill Does Not Warm",
+      "element": "yin",
+      "description": "A yin art of the Void Soul school.",
+      "combatDescription": "[user] gathers cold yin Qi into a shroud and presses it onto [target]",
+      "minRealmMajor": 5,
+      "kind": "damage",
+      "baseAmount": 2100,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.12,
+      "energyCost": 36,
+      "staminaCost": 0,
+      "cooldown": 2,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_void_soul_codex_2": {
+      "id": "bt_void_soul_codex_2",
+      "name": "Void Soul: Duskline",
+      "elements": [
+        "yin",
+        "spirit"
+      ],
+      "description": "A yin art of the Void Soul school.",
+      "combatDescription": "[user] closes every open thought at once, and the body follows the quiet",
+      "minRealmMajor": 8,
+      "kind": "heal",
+      "baseAmount": 7250,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 0.567,
+      "energyCost": 44,
+      "staminaCost": 0,
+      "cooldown": 3
+    },
+    "bt_dark_moon_sovereign_sutra_1": {
+      "id": "bt_dark_moon_sovereign_sutra_1",
+      "name": "Dark Moon Sovereign: Nightwater",
+      "element": "yin",
+      "description": "A yin art of the Dark Moon Sovereign school.",
+      "combatDescription": "[user] exhales a frigid, ghostly palm that drains the warmth from [target]",
+      "minRealmMajor": 7,
+      "kind": "damage",
+      "baseAmount": 14500,
+      "scaleStat": "energy",
+      "scaleFactor": 1.26,
+      "energyCost": 44,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_dark_moon_sovereign_sutra_2": {
+      "id": "bt_dark_moon_sovereign_sutra_2",
+      "name": "Dark Moon Sovereign: Umbral",
+      "element": "yin",
+      "description": "A yin art of the Dark Moon Sovereign school.",
+      "combatDescription": "[user] draws the whole reservoir up into one held shape, and the air goes tight",
+      "telegraph": true,
+      "minRealmMajor": 10,
+      "kind": "damage",
+      "baseAmount": 100000,
+      "scaleStat": "energy",
+      "scaleFactor": 1.4,
+      "energyCost": 52,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_eternal_yin_emperor_codex_1": {
+      "id": "bt_eternal_yin_emperor_codex_1",
+      "name": "Eternal Yin Emperor: Hushed Nightwater",
+      "element": "yin",
+      "description": "A yin art of the Eternal Yin Emperor school.",
+      "combatDescription": "[user] gathers cold yin Qi into a shroud and presses it onto [target]",
+      "minRealmMajor": 8,
+      "kind": "damage",
+      "baseAmount": 38000,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 1.33,
+      "energyCost": 48,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_eternal_yin_emperor_codex_2": {
+      "id": "bt_eternal_yin_emperor_codex_2",
+      "name": "Eternal Yin Emperor: The Turning Year",
+      "element": "yin",
+      "description": "A yin art of the Eternal Yin Emperor school.",
+      "combatDescription": "[user] closes every open thought at once, and the body follows the quiet",
+      "minRealmMajor": 11,
+      "kind": "heal",
+      "baseAmount": 75000,
+      "scaleStat": "mentalFortitude",
+      "scaleFactor": 0.6615,
+      "energyCost": 56,
+      "staminaCost": 0,
+      "cooldown": 3
+    },
+    "bt_void_yin_emperor_canon_1": {
+      "id": "bt_void_yin_emperor_canon_1",
+      "name": "Void Yin Emperor: Waning of the Unlit",
+      "element": "yin",
+      "description": "A yin art of the Void Yin Emperor school.",
+      "combatDescription": "[user] gathers cold yin Qi into a shroud and presses it onto [target]",
+      "minRealmMajor": 9,
+      "kind": "damage",
+      "baseAmount": 100000,
+      "scaleStat": "energy",
+      "scaleFactor": 1.4,
+      "energyCost": 52,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "weaken"
+      ]
+    },
+    "bt_void_yin_emperor_canon_2": {
+      "id": "bt_void_yin_emperor_canon_2",
+      "name": "Void Yin Emperor: Bone Chill Takes the Colour",
+      "element": "yin",
+      "description": "A yin art of the Void Yin Emperor school.",
+      "combatDescription": "[user] winds the art into a standing circle that will not be crossed",
+      "minRealmMajor": 12,
+      "kind": "buff",
+      "baseAmount": 0,
+      "scaleStat": "",
+      "scaleFactor": 0,
+      "energyCost": 60,
+      "staminaCost": 0,
+      "cooldown": 3,
+      "effects": [
+        "bt_ward_yin"
+      ]
+    }
+  }
+}

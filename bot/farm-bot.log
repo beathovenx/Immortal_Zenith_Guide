@@ -1,0 +1,245 @@
+﻿2026-11-13 16:15:22 | config loaded: monsterScrollSteps=24, monsterYOffsetScan=-80,-40,40,80, attackDelayMs=120
+2026-11-13 16:15:22 | auto-start enabled
+2026-11-13 16:15:22 | tick state=wait_home_hp
+2026-11-13 16:15:23 | home hp=0.0
+2026-11-13 16:15:23 | switch state=open_combat
+2026-11-13 16:15:23 | tick state=open_combat
+2026-11-13 16:15:23 | tick state=open_combat
+2026-11-13 16:15:23 | click combatTab via coords at 1245,1407
+2026-11-13 16:15:24 | tick state=open_fight_beasts
+2026-11-13 16:15:24 | tick state=open_fight_beasts
+2026-11-13 16:15:24 | click fightBeasts via coords at 1280,298
+2026-11-13 16:15:25 | tick state=select_tier
+2026-11-13 16:15:25 | tick state=select_tier
+2026-11-13 16:15:25 | click tierButton via coords at 634,223
+2026-11-13 16:15:25 | tick state=select_monster
+2026-11-13 16:15:25 | tick state=select_monster
+2026-11-13 16:15:28 | scrolled monster list steps=24 at 1000,820
+2026-11-13 16:15:28 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 16:15:29 | click monsterButton via y-scan at 625,744 (offset=-80)
+2026-11-13 16:15:29 | click monsterButton via y-scan at 625,784 (offset=-40)
+2026-11-13 16:15:30 | click monsterButton via y-scan at 625,864 (offset=40)
+2026-11-13 16:15:30 | click monsterButton via y-scan at 625,904 (offset=80)
+2026-11-13 16:15:30 | monster select retry attempt=1
+2026-11-13 16:15:30 | tick state=select_monster
+2026-11-13 16:15:30 | tick state=select_monster
+2026-11-13 16:15:30 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 16:15:31 | click monsterButton via y-scan at 625,744 (offset=-80)
+2026-11-13 16:15:31 | click monsterButton via y-scan at 625,784 (offset=-40)
+2026-11-13 16:15:31 | click monsterButton via y-scan at 625,864 (offset=40)
+2026-11-13 16:15:32 | click monsterButton via y-scan at 625,904 (offset=80)
+2026-11-13 16:15:32 | monster select retry attempt=2
+2026-11-13 16:15:32 | tick state=select_monster
+2026-11-13 16:15:32 | tick state=select_monster
+2026-11-13 16:15:32 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 16:15:32 | click monsterButton via y-scan at 625,744 (offset=-80)
+2026-11-13 16:15:33 | click monsterButton via y-scan at 625,784 (offset=-40)
+2026-11-13 16:15:33 | click monsterButton via y-scan at 625,864 (offset=40)
+2026-11-13 16:15:33 | click monsterButton via y-scan at 625,904 (offset=80)
+2026-11-13 16:15:34 | monster select retry attempt=3
+2026-11-13 16:15:34 | tick state=select_monster
+2026-11-13 16:15:34 | tick state=select_monster
+2026-11-13 16:15:34 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 16:15:34 | click monsterButton via y-scan at 625,744 (offset=-80)
+2026-11-13 16:15:35 | click monsterButton via y-scan at 625,784 (offset=-40)
+2026-11-13 16:15:35 | click monsterButton via y-scan at 625,864 (offset=40)
+2026-11-13 16:15:35 | click monsterButton via y-scan at 625,904 (offset=80)
+2026-11-13 16:15:36 | monster select retry attempt=4
+2026-11-13 16:15:36 | tick state=select_monster
+2026-11-13 16:15:36 | tick state=select_monster
+2026-11-13 16:15:36 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 16:15:36 | click monsterButton via y-scan at 625,744 (offset=-80)
+2026-11-13 16:15:36 | click monsterButton via y-scan at 625,784 (offset=-40)
+2026-11-13 16:15:37 | click monsterButton via y-scan at 625,864 (offset=40)
+2026-11-13 16:15:37 | click monsterButton via y-scan at 625,904 (offset=80)
+2026-11-13 16:15:37 | monster select retry attempt=5
+2026-11-13 16:15:37 | monster select hard reset (re-scroll)
+2026-11-13 16:15:37 | tick state=select_monster
+2026-11-13 16:15:38 | tick state=select_monster
+2026-11-13 16:15:41 | scrolled monster list steps=24 at 1000,820
+2026-11-13 16:15:41 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 16:15:41 | click monsterButton via y-scan at 625,744 (offset=-80)
+2026-11-13 16:15:41 | click monsterButton via y-scan at 625,784 (offset=-40)
+2026-11-13 16:15:42 | click monsterButton via y-scan at 625,864 (offset=40)
+2026-11-13 16:15:42 | click monsterButton via y-scan at 625,904 (offset=80)
+2026-11-13 16:15:42 | monster select retry attempt=1
+2026-11-13 16:15:42 | tick state=paused
+2026-11-13 16:15:42 | tick state=paused
+2026-11-13 16:15:43 | tick state=wait_home_hp
+2026-11-13 16:15:44 | home hp=0.0
+2026-11-13 16:15:44 | switch state=open_combat
+2026-11-13 16:15:44 | tick state=open_combat
+2026-11-13 16:15:44 | tick state=open_combat
+2026-11-13 16:15:44 | click combatTab via coords at 1245,1407
+2026-11-13 16:15:45 | tick state=open_fight_beasts
+2026-11-13 16:15:45 | tick state=open_fight_beasts
+2026-11-13 16:15:45 | click fightBeasts via coords at 1280,298
+2026-11-13 16:15:45 | tick state=select_tier
+2026-11-13 16:15:46 | tick state=select_tier
+2026-11-13 16:15:46 | click tierButton via coords at 634,223
+2026-11-13 16:15:48 | tick state=select_monster
+2026-11-13 16:15:52 | scrolled monster list steps=24 at 1000,820
+2026-11-13 16:15:52 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 16:15:52 | click monsterButton via y-scan at 625,744 (offset=-80)
+2026-11-13 16:15:52 | click monsterButton via y-scan at 625,784 (offset=-40)
+2026-11-13 16:15:53 | click monsterButton via y-scan at 625,864 (offset=40)
+2026-11-13 16:15:53 | click monsterButton via y-scan at 625,904 (offset=80)
+2026-11-13 16:15:53 | monster select retry attempt=1
+2026-11-13 16:15:53 | tick state=select_monster
+2026-11-13 16:15:54 | tick state=paused
+2026-11-13 16:15:54 | tick state=wait_home_hp
+2026-11-13 16:15:55 | home hp=0.0
+2026-11-13 16:15:55 | switch state=open_combat
+2026-11-13 16:15:55 | tick state=open_combat
+2026-11-13 16:15:55 | tick state=open_combat
+2026-11-13 16:15:55 | click combatTab via coords at 1245,1407
+2026-11-13 16:15:56 | tick state=open_fight_beasts
+2026-11-13 16:15:56 | tick state=open_fight_beasts
+2026-11-13 16:15:56 | click fightBeasts via coords at 1280,298
+2026-11-13 16:15:57 | tick state=select_tier
+2026-11-13 16:15:57 | tick state=select_tier
+2026-11-13 16:15:57 | click tierButton via coords at 634,223
+2026-11-13 16:15:57 | tick state=select_monster
+2026-11-13 16:15:57 | tick state=select_monster
+2026-11-13 16:16:00 | scrolled monster list steps=24 at 1000,820
+2026-11-13 16:16:00 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 16:16:01 | click monsterButton via y-scan at 625,744 (offset=-80)
+2026-11-13 16:16:01 | monster selection confirmed (combat scene)
+2026-11-13 16:16:02 | tick state=combat_loop
+2026-11-13 16:16:02 | tick state=combat_loop
+2026-11-13 16:16:02 | click basicAttackButton via coords at 579,750
+2026-11-13 16:16:02 | clicked attack mode=basic
+2026-11-13 16:16:03 | post-attack hp=93.3
+2026-11-13 16:16:03 | tick state=combat_loop
+2026-11-13 16:16:04 | tick state=combat_loop
+2026-11-13 16:16:08 | victory hp=0.0
+2026-11-13 16:16:09 | click againButton via victory-scan at 1186,848 (xOff=0, yOff=0)
+2026-11-13 16:16:12 | click againButton via victory-scan at 1006,848 (xOff=-180, yOff=0)
+2026-11-13 16:16:12 | againButton victory-scan success after attempts=2
+2026-11-13 16:16:12 | clicked again
+2026-11-13 16:16:13 | tick state=combat_loop
+2026-11-13 16:16:13 | tick state=combat_loop
+2026-11-13 16:16:13 | click basicAttackButton via coords at 579,750
+2026-11-13 16:16:13 | clicked attack mode=basic
+2026-11-13 16:16:15 | post-attack hp=0.0
+2026-11-13 16:16:15 | tick state=combat_loop
+2026-11-13 16:16:15 | tick state=combat_loop
+2026-11-13 16:16:15 | click basicAttackButton via coords at 579,750
+2026-11-13 16:16:15 | clicked attack mode=basic
+2026-11-13 16:16:17 | post-attack hp=93.3
+2026-11-13 16:16:17 | tick state=combat_loop
+2026-11-13 16:16:17 | tick state=combat_loop
+2026-11-13 16:16:17 | click basicAttackButton via coords at 579,750
+2026-11-13 16:16:17 | clicked attack mode=basic
+2026-11-13 16:16:18 | post-attack hp=93.3
+2026-11-13 16:16:18 | tick state=combat_loop
+2026-11-13 16:16:19 | tick state=combat_loop
+2026-11-13 16:16:23 | victory hp=0.0
+2026-11-13 16:16:23 | click againButton via victory-scan at 1186,848 (xOff=0, yOff=0)
+2026-11-13 16:16:27 | againButton victory-scan success after attempts=1
+2026-11-13 16:16:27 | clicked again
+2026-11-13 16:16:28 | tick state=combat_loop
+2026-11-13 16:16:28 | tick state=combat_loop
+2026-11-13 16:16:28 | click basicAttackButton via coords at 579,750
+2026-11-13 16:16:28 | clicked attack mode=basic
+2026-11-13 16:16:29 | post-attack hp=0.0
+2026-11-13 16:16:29 | tick state=combat_loop
+2026-11-13 16:16:30 | tick state=combat_loop
+2026-11-13 16:16:30 | click basicAttackButton via coords at 579,750
+2026-11-13 16:16:30 | clicked attack mode=basic
+2026-11-13 16:16:31 | post-attack hp=93.3
+2026-11-13 16:16:31 | tick state=combat_loop
+2026-11-13 16:16:31 | tick state=combat_loop
+2026-11-13 16:16:36 | victory hp=0.0
+2026-11-13 16:16:36 | click againButton via victory-scan at 1186,848 (xOff=0, yOff=0)
+2026-11-13 16:16:40 | click againButton via victory-scan at 1006,848 (xOff=-180, yOff=0)
+2026-11-13 16:16:44 | click againButton via victory-scan at 1066,848 (xOff=-120, yOff=0)
+2026-11-13 16:16:47 | click againButton via victory-scan at 1106,848 (xOff=-80, yOff=0)
+2026-11-13 16:16:51 | click againButton via victory-scan at 1146,848 (xOff=-40, yOff=0)
+2026-11-13 16:16:54 | click againButton via victory-scan at 1226,848 (xOff=40, yOff=0)
+2026-11-13 16:16:58 | click againButton via victory-scan at 1266,848 (xOff=80, yOff=0)
+2026-11-13 16:17:02 | click againButton via victory-scan at 1306,848 (xOff=120, yOff=0)
+2026-11-13 16:17:02 | againButton victory-scan success after attempts=8
+2026-11-13 16:17:02 | clicked again
+2026-11-13 16:17:02 | stop requested
+2026-11-13 17:17:30 | tick state=wait_home_hp
+2026-11-13 17:17:31 | home hp=81.1
+2026-11-13 17:17:31 | switch state=open_combat
+2026-11-13 17:17:31 | tick state=open_combat
+2026-11-13 17:17:31 | tick state=open_combat
+2026-11-13 17:17:32 | click combatTab via coords at 1245,1407
+2026-11-13 17:17:32 | tick state=open_fight_beasts
+2026-11-13 17:17:32 | tick state=open_fight_beasts
+2026-11-13 17:17:32 | click fightBeasts via coords at 1280,298
+2026-11-13 17:17:33 | tick state=select_tier
+2026-11-13 17:17:33 | tick state=select_tier
+2026-11-13 17:17:33 | click tierButton via coords at 634,223
+2026-11-13 17:17:33 | tick state=select_monster
+2026-11-13 17:17:33 | tick state=select_monster
+2026-11-13 17:17:36 | scrolled monster list steps=24 at 1000,820
+2026-11-13 17:17:37 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 17:17:37 | monster selection confirmed (combat scene)
+2026-11-13 17:17:39 | tick state=combat_loop
+2026-11-13 17:17:39 | click basicAttackButton via coords at 579,750
+2026-11-13 17:17:39 | clicked attack mode=basic
+2026-11-13 17:17:41 | post-attack hp=93.3
+2026-11-13 17:17:41 | stop requested
+2026-11-13 17:17:42 | tick state=wait_home_hp
+2026-11-13 17:17:43 | home hp=81.1
+2026-11-13 17:17:43 | switch state=open_combat
+2026-11-13 17:17:43 | tick state=open_combat
+2026-11-13 17:17:43 | tick state=open_combat
+2026-11-13 17:17:43 | click combatTab via coords at 1245,1407
+2026-11-13 17:17:44 | tick state=open_fight_beasts
+2026-11-13 17:17:44 | tick state=open_fight_beasts
+2026-11-13 17:17:44 | click fightBeasts via coords at 1280,298
+2026-11-13 17:17:45 | stop requested
+2026-11-13 17:19:02 | tick state=wait_home_hp
+2026-11-13 17:19:04 | home hp=81.1
+2026-11-13 17:19:04 | switch state=open_combat
+2026-11-13 17:19:04 | tick state=open_combat
+2026-11-13 17:19:04 | tick state=open_combat
+2026-11-13 17:19:04 | click combatTab via coords at 1245,1407
+2026-11-13 17:19:05 | tick state=open_fight_beasts
+2026-11-13 17:19:05 | tick state=open_fight_beasts
+2026-11-13 17:19:05 | click fightBeasts via coords at 1280,298
+2026-11-13 17:19:05 | tick state=select_tier
+2026-11-13 17:19:05 | tick state=select_tier
+2026-11-13 17:19:05 | click tierButton via coords at 634,223
+2026-11-13 17:19:06 | tick state=select_monster
+2026-11-13 17:19:06 | tick state=select_monster
+2026-11-13 17:19:09 | scrolled monster list steps=24 at 1000,820
+2026-11-13 17:19:09 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 17:19:09 | monster selection confirmed (combat scene)
+2026-11-13 17:20:13 | tick state=combat_loop
+2026-11-13 17:20:13 | click basicAttackButton via coords at 579,750
+2026-11-13 17:20:13 | clicked attack mode=basic
+2026-11-13 17:20:15 | post-attack hp=93.3
+2026-11-13 17:20:15 | tick state=combat_loop
+2026-11-13 17:20:15 | tick state=combat_loop
+2026-11-13 17:20:20 | victory hp=0.0
+2026-11-13 17:20:20 | click againButton via victory-scan at 1186,848 (xOff=0, yOff=0)
+2026-11-13 17:20:23 | click againButton via victory-scan at 1006,848 (xOff=-180, yOff=0)
+2026-11-13 17:20:27 | click againButton via victory-scan at 1066,848 (xOff=-120, yOff=0)
+2026-11-13 17:20:30 | againButton victory-scan success after attempts=3
+2026-11-13 17:20:30 | clicked again
+2026-11-13 17:20:31 | tick state=paused
+2026-11-13 17:20:31 | tick state=paused
+2026-11-13 17:20:31 | tick state=wait_home_hp
+2026-11-13 17:20:33 | home hp=81.1
+2026-11-13 17:20:33 | switch state=open_combat
+2026-11-13 17:20:33 | tick state=open_combat
+2026-11-13 17:20:33 | tick state=open_combat
+2026-11-13 17:20:33 | click combatTab via coords at 1245,1407
+2026-11-13 17:20:33 | tick state=open_fight_beasts
+2026-11-13 17:20:33 | tick state=open_fight_beasts
+2026-11-13 17:20:33 | click fightBeasts via coords at 1280,298
+2026-11-13 17:20:34 | tick state=select_tier
+2026-11-13 17:20:34 | tick state=select_tier
+2026-11-13 17:20:34 | click tierButton via coords at 634,223
+2026-11-13 17:20:35 | tick state=select_monster
+2026-11-13 17:20:35 | tick state=select_monster
+2026-11-13 17:20:38 | scrolled monster list steps=24 at 1000,820
+2026-11-13 17:20:38 | click monsterButton via y-scan at 625,824 (offset=0)
+2026-11-13 17:20:38 | monster selection confirmed (combat scene)
+2026-11-13 17:20:39 | stop requested

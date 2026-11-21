@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Immortal Zenith · Cultivator's Atlas</title>
+    <link rel="icon" href="/assets/logo.webp" />
+    <link rel="stylesheet" href="/theme.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <aside class="sidebar">
+      <a class="brand" href="#overview"
+        ><img src="/assets/logo.webp" alt="" /><span
+          >IMMORTAL ZENITH<small>CULTIVATOR'S ATLAS</small></span
+        ></a
+      >
+      <div class="private-label"><span></span> LOCAL / PRIVATE GUIDE</div>
+      <nav aria-label="Guide sections">
+        <a href="#overview">01 <span>Your path</span></a>
+        <a href="#progression">02 <span>Realm progression</span></a>
+        <a href="#codex">03 <span>Build codex</span></a>
+        <a href="#qi">04 <span>Qi Cap laboratory</span></a>
+        <a href="#library">05 <span>Field notes & sources</span></a>
+        <a href="#demonic">06 <span>Demonic / yin path</span></a>
+        <a href="#attributes">07 <span>Attributes explained</span></a>
+        <a href="#reincarnation">08 <span>Reincarnation & soul</span></a>
+        <a href="#soul-tree">09 <span>Soul Tree planner</span></a>
+        <a href="#dao-points">10 <span>Maximize Dao points</span></a>
+        <a href="#fast-progress">11 <span>Fast progression</span></a>
+        <a href="#worldmap">12 <span>World map tiers</span></a>
+        <a href="#patchnotes">13 <span>Patch notes highlights</span></a>
+      </nav>
+      <section class="sidebar-note">
+        <span class="eyebrow">YOUR NORTH STAR</span>
+        <h3>Power without<br />losing your way.</h3>
+        <p>
+          Useful intermediates. Deliberate upgrades. No rare drop required to
+          begin.
+        </p>
+      </section>
+      <footer>
+        Unofficial companion<br />Client 1.31.0 · research 12 Nov 2026<br />Not
+        connected to your game.
+      </footer>
+    </aside>
+    <main id="content" tabindex="-1">
+      <header class="topbar">
+        <span id="path-label">THE LIGHTNING PATH</span
+        ><span class="top-status">Local artwork · No account required</span>
+      </header>
+      <div id="error" role="alert" hidden></div>
+      <section id="overview">
+        <div class="hero">
+          <div class="hero-shade"></div>
+          <div class="hero-content">
+            <span class="eyebrow">A PERSONAL CULTIVATION JOURNEY</span>
+            <h1>Become the<br /><em>coming storm.</em></h1>
+            <p>
+              A lightning-first PvE route, from your first battle art to a
+              lineage worthy of the heavens.
+            </p>
+            <a class="button primary" href="#progression"
+              >Explore your progression <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <div class="hero-caption">
+            LIGHTNING-SCARRED STEPPE / GAME ARTWORK
+          </div>
+        </div>
+        <div class="character-strip">
+          <div>
+            <span class="eyebrow">STARTING SNAPSHOT</span
+            ><strong>Qi Condensation <b>6</b></strong>
+          </div>
+          <div><span>BLOODLINE</span><strong>Mortal Blood</strong></div>
+          <div>
+            <span>PHYSIQUE</span><strong>Steady Pulse <small>D</small></strong>
+          </div>
+          <div>
+            <span>BATTLE ARTS</span
+            ><strong
+              >0 learned <small class="attention">Priority</small></strong
+            >
+          </div>
+        </div>
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">FIRST THINGS FIRST</span>
+            <h2>Make your next move count.</h2>
+          </div>
+          <span class="muted">Planning checklist, not live game progress</span>
+        </div>
+        <div id="tasks" class="task-grid"></div>
+        <p id="save-status" class="muted" role="status" data-save-status></p>
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">THE LONG VIEW</span>
+            <h2>Your destination, not your starting line.</h2>
+          </div>
+        </div>
+        <div id="targets" class="target-grid"></div>
+        <div class="notice">
+          <strong>Upgrade deliberately.</strong> Equal-rank trait replacement
+          can fail or destroy a trait. Replacing traits removes their old arts
+          and milestones. You do not need every intermediate.
+        </div>
+      </section>
+      <section id="progression" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">ONE REALM AT A TIME</span>
+          <h1>Chart the ascent.</h1>
+          <p>
+            A practical route, not a mandatory shopping list. Manual tiers and
+            an art's realm gate are separate requirements.
+          </p>
+        </div>
+        <label class="realm-picker"
+          >Plan for your realm
+          <select id="realm"></select
+        ></label>
+        <div id="stage-detail"></div>
+        <div id="timeline" class="timeline"></div>
+      </section>
+      <section id="codex" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">KNOW WHAT YOU ARE CHOOSING</span>
+          <h1>The build codex.</h1>
+          <p>
+            Actual bonuses and unlocks from the official public wiki snapshot.
+            Select an entry for its milestones and drawbacks.
+          </p>
+        </div>
+        <div class="filters">
+          <label
+            >Build
+            <select id="build">
+              <option value="all">All builds</option>
+              <option value="lightning">Lightning</option>
+              <option value="yin">Darkness / yin</option>
+            </select></label
+          >
+          <label
+            >Search
+            <input
+              id="search"
+              type="search"
+              placeholder="Find a trait or manual…" /></label
+          ><label
+            >Category
+            <select id="category">
+              <option value="all">All entries</option>
+              <option value="bloodlines">Bloodlines</option>
+              <option value="physiques">Physiques</option>
+              <option value="manuals">Manuals</option>
+            </select></label
+          >
+        </div>
+        <p id="results" class="muted" role="status"></p>
+        <div id="cards" class="codex-grid"></div>
+      </section>
+      <section id="qi" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">THE COST OF A WIDER DANTIAN</span>
+          <h1>Qi Cap laboratory.</h1>
+          <p>
+            Explore the pool and time trade-off. This does not predict
+            unverified breakthrough rewards.
+          </p>
+        </div>
+        <div class="calculator">
+          <form id="qi-form">
+            <label
+              >Base pool (Qi)<input
+                id="base"
+                type="number"
+                min="1"
+                step="any"
+                value="10000"
+                required /></label
+            ><label
+              >Effective Qi Cap bonus (%)<input
+                id="bonus"
+                type="number"
+                min="-99.99"
+                step="any"
+                value="50"
+                required /></label
+            ><label
+              >Qi generation per second<input
+                id="rate"
+                type="number"
+                min="0.001"
+                step="any"
+                value="100"
+                required /></label
+            ><label
+              >Current Qi<input
+                id="current"
+                type="number"
+                min="0"
+                step="any"
+                value="0"
+                required
+            /></label>
+          </form>
+          <div id="qi-result" aria-live="polite"></div>
+        </div>
+        <div class="notice">
+          <strong>Evidence boundary.</strong> Pool = base × (1 + bonus / 100) is
+          the percentage interpretation of patch text, not recovered server
+          code. Multiple-source stacking and rounding remain unverified. More
+          Energy and Stamina per breakthrough is documented; the exact
+          multiplier and a Health benefit are not established.
+        </div>
+        <a class="text-link" href="#library/qi"
+          >Read the complete Qi Cap research →</a
+        >
+      </section>
+      <section id="library" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">READ THE EVIDENCE</span>
+          <h1>Field notes.</h1>
+          <p>
+            The full research, including caveats, farming categories and
+            martial-art tables.
+          </p>
+        </div>
+        <div class="library-tabs">
+          <button id="lightning-notes" type="button">Lightning build</button
+          ><button id="demonic-notes" type="button">Demonic / yin build</button
+          ><button id="qi-notes" type="button">Qi Cap research</button
+          ><button id="attributes-notes" type="button">Attributes</button
+          ><button id="reincarnation-notes" type="button">Reincarnation</button
+          ><button id="worldmap-notes" type="button">World map tiers</button
+          ><button id="patchnotes-notes" type="button">
+            Patch highlights
+          </button
+          ><button id="dao-points-notes" type="button">Dao points</button
+          ><button id="fast-progress-notes" type="button">
+            Fast progression
+          </button>
+        </div>
+        <article id="notes" class="prose"></article>
+      </section>
+      <section id="attributes" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">KNOW WHAT YOUR NUMBERS MEAN</span>
+          <h1>Attributes explained.</h1>
+          <p>
+            Combat stats, cultivation rates, Fortune and elemental defenses.
+            Verified descriptions, practical examples and explicit uncertainty.
+          </p>
+        </div>
+        <article id="attributes-guide" class="prose"></article>
+      </section>
+      <section id="reincarnation" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">MANY LIVES / ONE SOUL</span>
+          <h1>Return stronger.</h1>
+          <p>
+            When to begin again, what your soul keeps, and a practical route
+            through the four Soul Trees.
+          </p>
+        </div>
+        <div class="task-grid">
+          <div class="task-card">
+            <span class="task-number">01</span>
+            <h3>Climb before resetting</h3>
+            <p>
+              Nascent Soul unlocks rebirth; it is not automatically the best
+              time to use it.
+            </p>
+          </div>
+          <div class="task-card">
+            <span class="task-number">02</span>
+            <h3>Plan the first 100</h3>
+            <p>
+              Tireless Fist and two cultivation roots are a useful
+              farming-oriented starting package.
+            </p>
+          </div>
+          <div class="task-card">
+            <span class="task-number">03</span>
+            <h3>Build for your bottleneck</h3>
+            <p>
+              Preserve manuals, skip early realms or work toward a second action
+              in later lives.
+            </p>
+          </div>
+        </div>
+        <div class="notice">
+          <strong>Before confirming rebirth:</strong> inspect the reward preview
+          and carryover choices. Possessions and progression are lost unless
+          protected. Costs and recommendations are a dated snapshot, not a live
+          character plan.
+        </div>
+        <article id="reincarnation-guide" class="prose"></article>
+      </section>
+      <section id="dao-points" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">A HIGHER PEAK / A STRONGER SOUL</span>
+          <h1>Make this life count.</h1>
+          <p>
+            A practical route to a larger Dao Soul Point reward, grounded in the
+            game's explanations and your own reward preview.
+          </p>
+        </div>
+        <div class="notice">
+          <strong>Start here:</strong> push your realm, check your final Dao
+          Power, and compare the preview before committing. The exact reward
+          formula is not public.
+        </div>
+        <article id="dao-points-guide" class="prose"></article>
+        <a class="text-link" href="#soul-tree">Plan your Soul Tree →</a>
+      </section>
+      <section id="fast-progress" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">MORE QI / LESS DOWNTIME</span>
+          <h1>Accelerate the ascent.</h1>
+          <p>
+            A practical cultivation-first route through rebirths, permanent
+            upgrades and Soul Wandering.
+          </p>
+        </div>
+        <div class="notice">
+          <strong>Your priority:</strong> build Qi generation, then work toward
+          Soul Wandering's second action. Adjust the route to your current
+          bottleneck rather than treating it as a guaranteed optimum.
+        </div>
+        <article id="fast-progress-guide" class="prose"></article>
+        <a class="text-link" href="#soul-tree">Plan your Soul Tree →</a>
+      </section>
+      <section id="worldmap" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">SETTLEMENT TIER REFERENCE</span>
+          <h1>World map tiers.</h1>
+          <p>
+            Confirmed town tier ranges from the in-game world map, consolidated
+            as a quick reference.
+          </p>
+        </div>
+        <article id="worldmap-guide" class="prose"></article>
+      </section>
+      <section id="patchnotes" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">WHAT CHANGED MOST</span>
+          <h1>Patch notes highlights.</h1>
+          <p>
+            Biggest gameplay and system changes from the latest recovered patch
+            notes.
+          </p>
+        </div>
+        <article id="patchnotes-guide" class="prose"></article>
+      </section>
+      <section id="soul-tree" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">FOUR TREES / ONE ENDURING SOUL</span>
+          <h1>The Soul Tree.</h1>
+          <p>
+            Explore every node and plan ranks without changing your character.
+          </p>
+        </div>
+        <div class="soul-toolbar">
+          <div class="soul-tabs" aria-label="Soul Tree branch">
+            <button
+              type="button"
+              data-soul-tree="cultivation"
+              aria-pressed="true"
+            >
+              Cultivation
+            </button>
+            <button type="button" data-soul-tree="combat" aria-pressed="false">
+              Combat
+            </button>
+            <button
+              type="button"
+              data-soul-tree="exploration"
+              aria-pressed="false"
+            >
+              Exploration
+            </button>
+            <button
+              type="button"
+              data-soul-tree="crafting"
+              aria-pressed="false"
+            >
+              Crafting
+            </button>
+          </div>
+          <strong id="soul-spent">0 DSP planned</strong>
+        </div>
+        <div class="soul-controls">
+          <label
+            >Find a node
+            <select id="soul-picker"></select
+          ></label>
+          <div class="soul-zoom" aria-label="Tree zoom">
+            <button id="soul-zoom-out" type="button" aria-label="Zoom out">
+              −
+            </button>
+            <span id="soul-zoom-value">Fit</span>
+            <button
+              id="soul-zoom-in"
+              type="button"
+              aria-label="Zoom in, up to fit"
+            >
+              +
+            </button>
+          </div>
+          <button id="soul-reset" class="button" type="button">
+            Clear plan
+          </button>
+        </div>
+        <p id="soul-snapshot" class="muted"></p>
+        <p id="soul-status" class="muted" role="status"></p>
+        <div class="soul-layout">
+          <div
+            id="soul-viewport"
+            class="soul-viewport"
+            aria-label="Soul Tree graph"
+          >
+            <div id="soul-sizer"><div id="soul-stage"></div></div>
+          </div>
+          <aside
+            id="soul-detail"
+            class="soul-detail"
+            aria-label="Selected node details"
+          ></aside>
+        </div>
+        <p class="muted">
+          The tree fits the available width; scroll the page to see lower rows.
+          Gold nodes have planned ranks; dim nodes need prerequisites. Costs are
+          a wiki snapshot and may differ from the live game.
+        </p>
+        <a class="text-link" href="#reincarnation"
+          >Read the reincarnation guide →</a
+        >
+      </section>
+      <section id="demonic" hidden>
+        <div class="hero">
+          <div class="hero-shade"></div>
+          <div class="hero-content">
+            <span class="eyebrow">A FRESH CHARACTER / DARKNESS & YIN</span>
+            <h1>Walk the<br /><em>moonless path.</em></h1>
+            <p>
+              Mental Fortitude-led yin offense, practical intermediate traits,
+              and a foundation that does not depend on a rare book.
+            </p>
+            <a class="button primary" href="#codex/yin"
+              >Browse the yin codex →</a
+            >
+          </div>
+          <div class="hero-caption">DEMONIC SECT HALL / GAME ARTWORK</div>
+        </div>
+        <div class="notice">
+          <strong>Yin is an element; Demonic is also a sect alignment.</strong>
+          This build does not automatically change morality or grant sect entry.
+          Named manual and essence acquisition sources remain unverified.
+        </div>
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">YOUR FIRST SESSION</span>
+            <h2>Start with what works.</h2>
+          </div>
+          <span class="muted">Separate from your lightning checklist</span>
+        </div>
+        <div id="demonic-tasks" class="task-grid"></div>
+        <p
+          id="demonic-save-status"
+          class="muted"
+          role="status"
+          data-save-status
+        ></p>
+        <div class="section-title">
+          <div>
+            <span class="eyebrow"
+              >LONG-TERM TARGETS / NOT REQUIRED TO BEGIN</span
+            >
+            <h2>A blood moon over the abyss.</h2>
+          </div>
+        </div>
+        <div id="demonic-targets" class="target-grid"></div>
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">FROM HUMAN TO WORLD CREATOR</span>
+            <h2>The complete route.</h2>
+          </div>
+        </div>
+        <article id="demonic-guide" class="prose"></article>
+      </section>
+      <footer class="main-footer">
+        An unofficial, local companion. Game artwork belongs to its respective
+        owners. No public redistribution intended.
+      </footer>
+    </main>
+    <dialog id="detail">
+      <button
+        id="close-detail"
+        class="close"
+        type="button"
+        aria-label="Close entry"
+      >
+        ×
+      </button>
+      <div id="detail-body"></div>
+    </dialog>
+  </body>
+</html>

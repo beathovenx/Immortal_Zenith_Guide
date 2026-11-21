@@ -1,0 +1,22 @@
+{
+  "name": "immortal-zenith-guide-analysis",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node tools/serve-guide.mjs",
+    "prepare:guide": "node tools/prepare-guide.mjs",
+    "prepare:soul-tree": "node tools/prepare-soul-tree.mjs",
+    "prepare:pages": "node tools/prepare-pages.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "extract": "node tools/extract-tauri.mjs",
+    "verify": "node tools/extract-tauri.mjs --verify",
+    "check": "node --check tools/extract-tauri.mjs && prettier --check \"recovered/readable/**/*.{js,css,html,json,svg}\""
+  },
+  "dependencies": {
+    "dompurify": "^3.3.0",
+    "marked": "^17.0.0"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}

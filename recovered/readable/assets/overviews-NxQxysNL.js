@@ -1,0 +1,292 @@
+const e = {
+  "overview.achievements.0.body.0":
+    "Gli Obiettivi tengono traccia dei traguardi in ogni sistema: reami raggiunti, nemici abbattuti, oggetti creati. Riscuoti le loro ricompense per ottenere Pietre Spirituali, Cristalli e Titoli cosmetici da indossare.",
+  "overview.achievements.0.body.1":
+    "Alcuni sono primati mondiali: sii il primo nel tuo mondo a ottenerne uno e il tuo nome verrà registrato perché tutti lo vedano.",
+  "overview.achievements.0.heading": "Imprese e titoli",
+  "overview.achievements.title": "Obiettivi",
+  "overview.bounty.0.body.0":
+    "La Bacheca delle Taglie affigge nemici d'élite con un nome, da cacciare in cambio di ricche ricompense. Ognuno è più duro di una bestia selvatica e lascia un bottino migliore.",
+  "overview.bounty.0.body.1":
+    "Inizi con uno slot per le taglie; altri se ne aprono man mano che sali attraverso i reami, permettendoti di tenere attive più cacce contemporaneamente.",
+  "overview.bounty.0.heading": "Caccia le élite con un nome",
+  "overview.bounty.title": "Bacheca delle Taglie",
+  "overview.bounty.unlock": "Si sblocca a Tempra del Corpo (2° reame maggiore)",
+  "overview.caravan.0.body.0":
+    "La Carovana Celeste commercia in Cristalli Celesti: consumabili, potenziamenti del personaggio, pacchetti selezionati e oggetti cosmetici. Gli acquisti finiscono direttamente nel tuo inventario o nel tuo account.",
+  "overview.caravan.0.body.1":
+    "Tutto ciò che trovi qui è una comodità o un oggetto cosmetico: l'intero gioco si può giocare senza.",
+  "overview.caravan.0.heading": "Il negozio premium",
+  "overview.caravan.title": "Carovana Celeste",
+  "overview.character.0.body.0":
+    "Questa è la tua pagina principale: tutto ciò che riguarda chi è il tuo coltivatore. In alto trovi il tuo ritratto, il tuo reame attuale e il tuo Potere del Dao (una misura complessiva della tua forza).",
+  "overview.character.0.body.1":
+    "Da qui raggiungi ogni altro sistema: tocca lo striscione della Coltivazione per sederti a raccogliere Qi, e usa la ruota di navigazione rapida (o la barra) in basso per aprire Inventario, Esplora, Combattimento e altro ancora.",
+  "overview.character.0.heading": "La scheda del personaggio",
+  "overview.character.1.body.0":
+    "I tuoi attributi decidono quanto sei forte. Crescono man mano che sfondi i reami, equipaggi oggetti, studi manuali e assorbi pillole.",
+  "overview.character.1.body.1":
+    "Tocca uno qualsiasi di essi per vedere esattamente da dove proviene.",
+  "overview.character.1.bullets.0":
+    "Attacco / Difesa: i danni grezzi inflitti e bloccati.",
+  "overview.character.1.bullets.1":
+    "Salute e rigenerazione: quanta punizione puoi sopportare.",
+  "overview.character.1.bullets.2":
+    "Velocità: quanto spesso agisci in battaglia.",
+  "overview.character.1.bullets.3":
+    "Probabilità di Critico / Danno Critico: le probabilità e l'entità dei colpi critici.",
+  "overview.character.1.bullets.4":
+    "Forza Mentale: alimenta l'intuizione del Dao e resiste agli effetti di controllo.",
+  "overview.character.1.bullets.5":
+    "Riserva Qi: quanto Qi puoi contenere prima di uno sfondamento.",
+  "overview.character.1.bullets.6":
+    "Affinità elementale — una casella per elemento: il tuo attacco con esso in alto, la tua resistenza ad esso sotto. ASSORBE o RIFLETTE prende il posto della resistenza quando la possiedi.",
+  "overview.character.1.heading": "Attributi",
+  "overview.character.2.body.0":
+    "La tua Origine è la vita in cui sei nato: stabilisce la tua posizione di partenza e concede piccoli bonus permanenti. La tua Stirpe (offensiva) e il tuo Fisico (difensivo) sono talenti innati che sbloccano bonus più forti man mano che sali di reame.",
+  "overview.character.2.body.1":
+    "Espandi uno qualsiasi di essi sulla scheda per vedere esattamente cosa ti concede ora e cosa ti attende ancora nei reami superiori.",
+  "overview.character.2.heading": "Origine, stirpe e fisico",
+  "overview.character.title": "Il tuo coltivatore",
+  "overview.combat.0.body.0":
+    "Il combattimento è a turni. Nel tuo turno attacchi, scateni tecniche di battaglia, usi oggetti o ti difendi. La Velocità decide quanto spesso agisci, e accumulare slancio ti permette di scatenare una potente mossa suprema.",
+  "overview.combat.0.body.1":
+    "I nemici arrivano in branchi fino a cinque: scegli il tuo bersaglio e usa le tecniche ad area per colpirne diversi contemporaneamente.",
+  "overview.combat.0.heading": "Battaglie a turni",
+  "overview.combat.1.body.0":
+    "Ogni attacco e ogni nemico ha un elemento. Colpire una debolezza infligge danni extra, e concatenare gli elementi giusti innesca reazioni combinate e detonazioni per danni esplosivi.",
+  "overview.combat.1.body.1":
+    "Il campo di battaglia stesso può portare con sé un effetto ambientale: leggi lo striscione all'inizio dello scontro, poi tienilo d'occhio nel registro di battaglia.",
+  "overview.combat.1.heading": "Elementi e reazioni",
+  "overview.combat.2.body.0":
+    "Combattere le Bestie è possibile fin dall'inizio. Man mano che diventi più forte, altri modi di combattere si sbloccano dalla schermata di selezione della modalità.",
+  "overview.combat.2.bullets.0":
+    "Bacheca delle Taglie: caccia le élite con un nome (Tempra del Corpo).",
+  "overview.combat.2.bullets.1":
+    "Conquista la Torre: una scalata di 100 piani (Condensazione del Qi).",
+  "overview.combat.2.bullets.2":
+    "Escalation Elementali: la campagna della storia (Formazione del Nucleo).",
+  "overview.combat.2.bullets.3":
+    "Reami Segreti: spedizioni roguelite su griglia (Nucleo Dorato).",
+  "overview.combat.2.heading": "Modalità di battaglia",
+  "overview.combat.title": "Combattimento",
+  "overview.crafting.0.body.0":
+    "L'artigianato trasforma i materiali raccolti in beni potenti. Ogni professione ha il suo laboratorio, il suo livello di maestria che cresce mentre crei e ricette vincolate a quella maestria.",
+  "overview.crafting.0.bullets.0":
+    "Alchimia: raffina pillole ed elisir in un calderone.",
+  "overview.crafting.0.bullets.1":
+    "Raffinazione: forgia e potenzia armi, armature e artefatti.",
+  "overview.crafting.0.bullets.2":
+    "Maestro delle Formazioni: incidi piastre di formazione.",
+  "overview.crafting.0.bullets.3":
+    "Talismano: traccia talismani che scatenano effetti in battaglia.",
+  "overview.crafting.0.heading": "Scegli un mestiere",
+  "overview.crafting.1.body.0":
+    "Creare è più che premere un pulsante: controlla tempo e temperatura per seguire la curva ideale, e un risultato migliore offre qualità e quantità più elevate. Ricerca le ricette per scoprirne le varianti.",
+  "overview.crafting.1.body.1":
+    "Evadi gli Ordini di creazione pubblicati da altri coltivatori (o dalla tua setta) in cambio di ricompense, e controlla il registro per vedere cosa è uscito dal tuo ultimo lotto.",
+  "overview.crafting.1.heading": "Calderoni, qualità e ordini",
+  "overview.crafting.title": "Professioni artigiane",
+  "overview.crafting.unlock":
+    "Si sblocca a Condensazione del Qi (3° reame maggiore)",
+  "overview.cultivation.0.body.0":
+    "La coltivazione è il cuore del gioco: ti siedi in meditazione per attirare il Qi, che riempie lentamente la tua Riserva Qi. Questo continua anche quando sei via, così al tuo ritorno trovi sempre dei progressi.",
+  "overview.cultivation.0.body.1":
+    "Quando la riserva è piena sei pronto a sfondare verso il reame minore successivo. Dieci reami minori formano un reame maggiore.",
+  "overview.cultivation.0.heading": "Raccogliere il Qi",
+  "overview.cultivation.1.body.0":
+    "Una volta piena la riserva, premi Sfonda per avanzare. Ogni sfondamento aumenta i tuoi attributi e, a ogni decimo passo, ti eleva a un nuovo reame maggiore che sblocca interi nuovi sistemi.",
+  "overview.cultivation.1.body.1":
+    "Dal reame di Ascensione Immortale in poi, uno sfondamento maggiore scatena una Tribolazione Celeste: una battaglia a cui devi sopravvivere per ascendere. Preparati prima di tentarla.",
+  "overview.cultivation.1.heading": "Sfondamenti",
+  "overview.cultivation.2.body.0":
+    "Nella schermata di concentrazione scegli anche quali manuali di Coltivazione pratichi per il Corpo, l'Anima e la Mente, e ti alleni con l'arma equipaggiata. Praticando un manuale lo comprendi nel tempo, aumentando costantemente le statistiche che concede. Il pulsante Tecnica apre le tue arti di battaglia.",
+  "overview.cultivation.2.body.1":
+    "La coltivazione dell'Anima e della Mente si apre al secondo reame maggiore (Tempra del Corpo). L'addestramento del Corpo e quello con l'arma sono disponibili fin dall'inizio.",
+  "overview.cultivation.2.heading": "Tecniche e addestramento con l'arma",
+  "overview.cultivation.title": "Coltivazione",
+  "overview.daoInsight.0.body.0":
+    "L'Intuizione del Dao è una contemplazione quotidiana che approfondisce la tua comprensione del Dao, concedendo bonus duraturi. La tua Forza Mentale e il tuo reame decidono quanto puoi ottenere ogni giorno.",
+  "overview.daoInsight.0.body.1":
+    "Spendi le tue intuizioni con saggezza: la comprensione si accumula nel corso di una lunga ascesa.",
+  "overview.daoInsight.0.heading": "Comprendere il Dao",
+  "overview.daoInsight.title": "Intuizione del Dao",
+  "overview.explore.0.body.0":
+    "L'esplorazione manda il tuo coltivatore in una zona alla ricerca di materiali, erbe spirituali, minerali e rare opportunità. Come la coltivazione, una ricerca procede con un proprio timer e continua anche quando sei via.",
+  "overview.explore.0.body.1":
+    "Scegli una regione, seleziona una zona al suo interno e comincia. Il registro attività annota tutto ciò che trovi.",
+  "overview.explore.0.heading": "Esplorare le terre selvagge",
+  "overview.explore.1.body.0":
+    "Nuove regioni si aprono man mano che elevi il tuo reame, ognuna con nemici più duri e bottino migliore. In una zona puoi anche Osservare la Natura per avere la possibilità di apprendere schemi di talismani.",
+  "overview.explore.1.body.1":
+    "Fai attenzione al tiranno errante di ogni regione: una potente bestia con un nome che custodisce le ricompense più grandi della zona.",
+  "overview.explore.1.heading": "Regioni e Osservare la Natura",
+  "overview.explore.title": "Esplorazione",
+  "overview.familyLine.0.body.0":
+    "Sposa un Compagno del Dao per praticare la coltivazione duale: condividete i progressi e sbloccate bonus comuni. Insieme costruite una Linea Familiare la cui Anima del Dao e i cui eredi portano avanti la vostra forza.",
+  "overview.familyLine.0.body.1":
+    "Un Erede della Famiglia può persino nascere in un'Origine leggendaria, dando a un futuro personaggio un potente vantaggio iniziale.",
+  "overview.familyLine.0.heading": "Compagni ed eredità",
+  "overview.familyLine.title": "Linea Familiare",
+  "overview.inventory.0.body.0":
+    "Gli slot dell'equipaggiamento sono a sinistra; la tua borsa a destra. Equipaggia armi, armature e accessori per aumentare i tuoi attributi: alcuni oggetti aggiungono attacco o resistenza elementale.",
+  "overview.inventory.0.body.1":
+    "Molti oggetti richiedono un reame minimo prima di poterli equipaggiare o usare. Passa il cursore su qualsiasi oggetto per vedere esattamente cosa fa.",
+  "overview.inventory.0.heading": "Equipaggiamento e borse",
+  "overview.inventory.1.body.0":
+    "Le pillole ripristinano il Qi, curano o concedono benefici duraturi, ma esiste un limite di sicurezza giornaliero: superarlo rischia effetti collaterali. Manuali e pergamene si studiano per ottenere tecniche e ricette.",
+  "overview.inventory.1.body.1":
+    "I materiali raccolti esplorando alimentano le tue professioni artigiane. Filtra la borsa per scheda per trovare ciò che ti serve.",
+  "overview.inventory.1.heading": "Consumabili e materiali",
+  "overview.inventory.title": "Inventario ed equipaggiamento",
+  "overview.market.0.body.0":
+    "Il mercato ti permette di comprare e vendere con altri coltivatori del tuo mondo usando le Pietre Spirituali. Sfoglia le inserzioni, oppure metti in vendita il tuo equipaggiamento, le tue pillole e i tuoi materiali in eccesso.",
+  "overview.market.0.body.1":
+    "Controlla la scheda Tendenze per vedere quanto valgono gli oggetti prima di comprare o di fissare il prezzo dei tuoi.",
+  "overview.market.0.heading": "Commerciare con i coltivatori",
+  "overview.market.title": "Mercato",
+  "overview.quests.0.body.0":
+    "La Bacheca delle missioni offre obiettivi giornalieri e settimanali (coltivare, esplorare, combattere e creare) che ricompensano con Pietre Spirituali, materiali e altro ancora.",
+  "overview.quests.0.body.1":
+    "Le missioni si rinnovano a tempo e si adattano al tuo reame, così c'è sempre qualcosa che valga la pena fare.",
+  "overview.quests.0.heading": "Obiettivi giornalieri e settimanali",
+  "overview.quests.title": "Bacheca delle missioni",
+  "overview.rankings.0.body.0":
+    "Le Classifiche elencano i coltivatori e le sette più forti del tuo mondo per Potere del Dao e altre imprese. Scala le classifiche per dimostrare che la tua ascesa è la più rapida di tutte.",
+  "overview.rankings.0.heading": "La tua posizione",
+  "overview.rankings.title": "Classifiche",
+  "overview.reincarnation.0.body.0":
+    "La Reincarnazione azzera il tuo reame ma conserva i punti anima da spendere nel permanente Albero dell'Anima, e ti permette di scegliere una nuova Origine per rimodellare la tua vita iniziale.",
+  "overview.reincarnation.0.body.1":
+    "È la partita a lungo termine di un vero immortale: ogni vita sale più in fretta della precedente. Reincarnati solo quando hai spremuto tutto ciò che potevi da questa.",
+  "overview.reincarnation.0.heading": "Ricomincia, più forte",
+  "overview.reincarnation.title": "Reincarnazione",
+  "overview.reincarnation.unlock":
+    "Si sblocca ad Anima Nascente (6° reame maggiore)",
+  "overview.secretRealms.0.body.0":
+    "I Reami Segreti sono spedizioni su griglia in domini nascosti. Avanza casella per casella tra battaglie, tesori ed eventi, consumando una riserva di energia giornaliera mentre ti addentri.",
+  "overview.secretRealms.0.body.1":
+    "Più ti spingi in profondità, maggiore è il bottino, ma ritirati con i tuoi guadagni prima che una spedizione vada storta.",
+  "overview.secretRealms.0.heading": "Spedizioni roguelite",
+  "overview.secretRealms.title": "Reami Segreti",
+  "overview.secretRealms.unlock":
+    "Si sblocca a Nucleo Dorato (5° reame maggiore)",
+  "overview.sect.0.body.0":
+    "Una setta è una gilda di coltivatori. Unisciti a una per guadagnare Merito con le missioni, spenderlo nel Negozio del Merito e ottenere l'accesso a un deposito condiviso, a formazioni e a ordini di creazione.",
+  "overview.sect.0.body.1":
+    "Il centro della setta è una mappa viva: tocca un edificio per entrare nella sua sala.",
+  "overview.sect.0.heading": "Unirsi a una setta",
+  "overview.sect.1.body.0":
+    "Completa le missioni della setta e dona risorse per guadagnare Merito e scalare i ranghi della setta. I ranghi più alti concedono più influenza nella Sala degli Anziani.",
+  "overview.sect.1.body.1":
+    "Le sette potenti possono dichiarare la Guerra tra Sette ai rivali: una battaglia a eliminazione su larga scala con il bottino in palio. Puoi fondare la tua setta una volta raggiunto il reame del Nucleo Dorato.",
+  "overview.sect.1.heading": "Missioni, ranghi e guerra",
+  "overview.sect.title": "Sette",
+  "overview.sect.unlock": "Si sblocca a Tempra del Corpo (2° reame maggiore)",
+  "overview.social.0.body.0":
+    "La pagina Sociale ti tiene in contatto: invia messaggi diretti, aggiungi amici e ispeziona la loro coltivazione, e partecipa alla chat del mondo e della setta nel Raduno.",
+  "overview.social.0.body.1":
+    "La scheda Linea Familiare è dove sposi un Compagno del Dao, pratichi insieme la coltivazione duale e tramandi un'eredità lungo la tua stirpe.",
+  "overview.social.0.heading": "Amici, chat e famiglia",
+  "overview.social.title": "Sociale",
+  "overview.soulDemons.0.body.0":
+    "Ascendere al Reame Celeste apre il primo dei cinque sigilli della tua anima. Gli altri si aprono mentre sali: a Imperatore del Vuoto, Santo Celeste, Imperatore Celeste e Creatore di Mondi.",
+  "overview.soulDemons.0.body.1":
+    "Ogni sigillo contiene un demone soggiogato, e tutto ciò che concede vale finché resta vincolato: statistiche, potere elementale, resistenze, danni contro creature particolari e la velocità con cui raccogli il Qi, comprendi il Dao e padroneggi un'arma.",
+  "overview.soulDemons.0.bullets.0":
+    "Vincolare un demone al posto di uno già presente in un sigillo li conserva entrambi: il vecchio va in riserva, e perdi soltanto i suoi bonus.",
+  "overview.soulDemons.0.bullets.1":
+    "Ogni demone ti costa anche qualcosa. Una debolezza non viene mai ridotta con la scala.",
+  "overview.soulDemons.0.heading": "Cinque sigilli in un pentagramma",
+  "overview.soulDemons.1.body.0":
+    "Le pietre di evocazione si ottengono esplorando il Reame Celeste e dai suoi tiranni, e ognuna nomina un singolo demone: il suo elemento e il suo rango, da uno a sedici.",
+  "overview.soulDemons.1.body.1":
+    "Spezzare una pietra non ti consegna il demone. Lo richiama, e va sconfitto. Un rango molto al di sopra del tuo reame è un muro più che una sfida, e la pietra si consuma che tu vinca o perda.",
+  "overview.soulDemons.1.heading":
+    "Le pietre di evocazione e la lotta per un demone",
+  "overview.soulDemons.2.body.0":
+    "Ogni valore che un demone concede viene tirato una sola volta, entro una fascia decisa dal rango del demone. Due coltivatori con lo stesso demone del fuoco di rango 12 possiedono creature sensibilmente diverse, e la Sintonia indica dove si è collocato il tuo rispetto a tutti loro: ecco perché lo stesso demone vale la pena di essere cacciato due volte.",
+  "overview.soulDemons.2.body.1":
+    "Nutri un demone con il Qi della tua riserva per potenziarlo, fino al livello 150. Quel Qi è ciò di cui è fatto uno sfondamento, quindi ogni livello è uno sfondamento rimandato: un coltivatore che riversa tutto nei propri demoni sale più lentamente e colpisce molto più forte lungo la strada.",
+  "overview.soulDemons.2.heading": "La Sintonia e nutrire un demone di Qi",
+  "overview.soulDemons.title": "Demoni dell'Anima",
+  "overview.soulDemons.unlock":
+    "Si sblocca a Imperatore Immortale (il Reame Celeste)",
+  "overview.soulTree.0.body.0":
+    "Quando ti Reincarni conservi i punti anima guadagnati a fatica da spendere nell'Albero dell'Anima: una rete di potenziamenti permanenti che ti accompagna in ogni vita.",
+  "overview.soulTree.0.body.1":
+    "I rami comprendono Memoria, Combattimento, Corpo e altro ancora. Sblocca i nodi per aumentare le statistiche, conservare i progressi attraverso la reincarnazione e abilitare azioni speciali.",
+  "overview.soulTree.0.heading": "Spendere i punti anima",
+  "overview.soulTree.1.body.0":
+    "Alcuni nodi aprono abilità del tutto nuove: un secondo slot di azione (Vagare dell'Anima), esplorazioni gemelle, combattimento automatico, boss di regione e persino il superamento dei limiti normali come il 100% di probabilità di critico.",
+  "overview.soulTree.1.body.1":
+    "Pianifica il tuo percorso: i punti sono preziosi e i prerequisiti vincolano i nodi più profondi.",
+  "overview.soulTree.1.heading": "Sblocchi potenti",
+  "overview.soulTree.title": "L'Albero dell'Anima",
+  "overview.soulTree.unlock":
+    "Si sblocca dopo la tua prima Reincarnazione (reame di Anima Nascente)",
+  "overview.story.0.body.0":
+    "Escalation Elementali è la modalità storia: dieci capitoli elementali, ognuno un sentiero tortuoso di battaglie che insegna la maestria di un elemento e offre ricompense a tema.",
+  "overview.story.0.body.1":
+    "Completa un capitolo a difficoltà Normale per progredire. La difficoltà Difficile si apre quando completi tutta la Normale (e raggiungi Ascensione Immortale); la difficoltà Infernale attende i veramente potenti.",
+  "overview.story.0.heading": "La campagna della storia",
+  "overview.story.title": "Escalation Elementali",
+  "overview.story.unlock":
+    "Si sblocca a Formazione del Nucleo (4° reame maggiore)",
+  "overview.techniques.0.body.0":
+    "Ogni arte di combattimento che conosci ha qui il suo riquadro. Solo le arti negli slot equipaggiati in alto ti seguono in battaglia, insieme a un colpo semplice.",
+  "overview.techniques.0.body.1":
+    "Inizi con due slot. Altri si aprono ai reami maggiori 3, 5, 7 e 10, e uno slot bloccato indica il reame che lo apre.",
+  "overview.techniques.0.bullets.0":
+    "Tocca un'arte per vederne gli elementi, i numeri e come l'hai ottenuta, quindi Scambia per equipaggiarla. Senza uno slot libero, scegli quale arte sostituisce.",
+  "overview.techniques.0.bullets.1":
+    "Oppure tocca prima uno slot vuoto, poi l'arte da metterci.",
+  "overview.techniques.0.bullets.2":
+    "Le arti passive sono sempre attive e non occupano slot.",
+  "overview.techniques.0.heading": "Le tue arti e i tuoi slot",
+  "overview.techniques.1.body.0":
+    "Un'arte impara con l'uso. Ogni utilizzo in una battaglia che giochi conta per la sua maestria, fino al livello 10. I nemici molto al di sotto dell'arte le insegnano meno.",
+  "overview.techniques.1.body.1":
+    "Ogni livello dopo il primo dà a quell'arte 3 punti maestria, solo per lei, da spendere in una Variante. Le arti di stirpe e di fisico richiedono il doppio degli usi.",
+  "overview.techniques.1.heading": "Maestria delle arti",
+  "overview.techniques.title": "Arti di combattimento",
+  "overview.tower.0.body.0":
+    "La Torre è una scalata di 100 piani che si azzera ogni mese con un nuovo seme. Ogni piano è più duro del precedente, e ciascuno concede una ricompensa quando lo superi.",
+  "overview.tower.0.body.1":
+    "Spingiti più in alto che puoi prima che la tua forza si esaurisca: il tuo miglior piano è il tuo segno per la stagione.",
+  "overview.tower.0.heading": "Scala 100 piani",
+  "overview.tower.title": "Conquista la Torre",
+  "overview.tower.unlock":
+    "Si sblocca a Condensazione del Qi (3° reame maggiore)",
+  "overview.variations.0.body.0":
+    "Affina trasforma un'arte in una Variante tutta tua. Ogni coppia di riquadri è un bonus e il fardello che lo paga, con le modifiche mostrate accanto.",
+  "overview.variations.0.body.1":
+    "Il livello di maestria 2 apre la prima coppia; i livelli 4 e 6 aprono le altre due.",
+  "overview.variations.0.heading": "Rimodellare un'arte",
+  "overview.variations.1.body.0":
+    "Tocca un riquadro per vedere ogni bonus o fardello che quest'arte può prendere. Scegline uno e il suo grado per vedere esattamente cosa fa e quanto aggiunge all'equilibrio.",
+  "overview.variations.1.heading": "Scegliere una modifica",
+  "overview.variations.2.body.0":
+    "L'equilibrio mette a confronto i tuoi bonus con i tuoi fardelli. Finché il primo numero non supera il secondo, la Variante si può forgiare.",
+  "overview.variations.2.body.1":
+    "Forgiare spende i punti maestria dell'arte e parte del tuo Qi. Rimuovere una Variante restituisce i punti, ma mai il Qi.",
+  "overview.variations.2.body.2":
+    "Una volta forgiata, dalle un nome tutto tuo. Può contenere il nome di un'arte, ma non esserlo.",
+  "overview.variations.2.heading": "Equilibrio, costo e nome",
+  "overview.variations.title": "Varianti",
+  "overview.weaponMastery.0.body.0":
+    "Combattere e allenarsi con un'arma sviluppa la maestria nel suo tipo: spade, lance, martelli, asce, bastoni, pugnali, ventagli e scudi salgono di livello ciascuno in modo indipendente.",
+  "overview.weaponMastery.0.body.1":
+    "Una maestria più alta concede bonus ogni volta che quel tipo di arma è equipaggiato, premiandoti per esserti dedicato a uno stile di combattimento.",
+  "overview.weaponMastery.0.heading": "Padroneggia ogni arma",
+  "overview.weaponMastery.title": "Maestria d'Arma",
+  "overview.worldBoss.0.body.0":
+    "Un Boss del Mondo è un nemico colossale che ogni coltivatore del tuo mondo attacca insieme. Mettendo a segno i colpi intacchi la sua enorme salute e scali la classifica dei danni.",
+  "overview.worldBoss.0.body.1":
+    "Hai un numero limitato di colpi ogni giorno, e chi contribuisce di più ottiene le ricompense maggiori quando il boss cade.",
+  "overview.worldBoss.0.heading": "Un'incursione mondiale",
+  "overview.worldBoss.title": "Boss del Mondo",
+  "overview.worldBoss.unlock":
+    "Il colpo si sblocca a Formazione del Nucleo (4° reame maggiore)",
+};
+export { e as default };

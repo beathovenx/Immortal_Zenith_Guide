@@ -1,0 +1,106 @@
+import { W as d } from "./index-NLmKZ9vy.js";
+const o = (c) => () => {
+    throw new Error(
+      `firebase/messaging.${c} is not available: this build stubs the Firebase web SDK (see src/lib/firebaseMessagingWebStub.ts). Web push uses platform/web.ts instead.`,
+    );
+  },
+  p = o("deleteToken"),
+  r = o("getMessaging"),
+  l = o("getToken"),
+  m = o("onMessage"),
+  n = async () => !1;
+class a extends d {
+  constructor() {
+    (super(),
+      n().then((e) => {
+        if (!e) return;
+        const i = r();
+        m(i, (t) => this.handleNotificationReceived(t));
+      }));
+  }
+  async checkPermissions() {
+    return (await n())
+      ? {
+          receive: this.convertNotificationPermissionToPermissionState(
+            Notification.permission,
+          ),
+        }
+      : { receive: "denied" };
+  }
+  async requestPermissions() {
+    if (!(await n())) return { receive: "denied" };
+    const i = await Notification.requestPermission();
+    return { receive: this.convertNotificationPermissionToPermissionState(i) };
+  }
+  async isSupported() {
+    return { isSupported: await n() };
+  }
+  async getToken(e) {
+    const i = r();
+    return {
+      token: await l(i, {
+        vapidKey: e.vapidKey,
+        serviceWorkerRegistration: e.serviceWorkerRegistration,
+      }),
+    };
+  }
+  async deleteToken() {
+    const e = r();
+    await p(e);
+  }
+  async getDeliveredNotifications() {
+    this.throwUnimplementedError();
+  }
+  async removeDeliveredNotifications(e) {
+    this.throwUnimplementedError();
+  }
+  async removeAllDeliveredNotifications() {
+    this.throwUnimplementedError();
+  }
+  async subscribeToTopic(e) {
+    this.throwUnimplementedError();
+  }
+  async unsubscribeFromTopic(e) {
+    this.throwUnimplementedError();
+  }
+  async createChannel(e) {
+    this.throwUnimplementedError();
+  }
+  async deleteChannel(e) {
+    this.throwUnimplementedError();
+  }
+  async listChannels() {
+    this.throwUnimplementedError();
+  }
+  handleNotificationReceived(e) {
+    const t = { notification: this.createNotificationResult(e) };
+    this.notifyListeners(a.notificationReceivedEvent, t);
+  }
+  createNotificationResult(e) {
+    var i, t, s;
+    return {
+      body: (i = e.notification) === null || i === void 0 ? void 0 : i.body,
+      data: e.data,
+      id: e.messageId,
+      image: (t = e.notification) === null || t === void 0 ? void 0 : t.image,
+      title: (s = e.notification) === null || s === void 0 ? void 0 : s.title,
+    };
+  }
+  convertNotificationPermissionToPermissionState(e) {
+    let i = "prompt";
+    switch (e) {
+      case "granted":
+        i = "granted";
+        break;
+      case "denied":
+        i = "denied";
+        break;
+    }
+    return i;
+  }
+  throwUnimplementedError() {
+    throw this.unimplemented("Not implemented on web.");
+  }
+}
+a.notificationReceivedEvent = "notificationReceived";
+export { a as FirebaseMessagingWeb };

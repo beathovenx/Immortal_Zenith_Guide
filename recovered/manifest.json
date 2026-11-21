@@ -1,0 +1,571 @@
+{
+  "extractedAt": "2026-11-21T01:30:44.308Z",
+  "method": "PE64 Rust PHF asset slices; Brotli decompression",
+  "source": {
+    "path": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Immortal Zenith Idle to Ascension\\immortal-zenith.exe",
+    "bytes": 10181120,
+    "sha256": "5f00c78ac79cf9c6bc8b441c99bb97592da9c3f09861fe9d236e96b89aa2623e"
+  },
+  "assets": [
+    {
+      "path": "/assets/base-CuaBAuOp.js",
+      "tableOffset": 7550312,
+      "dataOffset": 6567740,
+      "compressedBytes": 867,
+      "bytes": 2595,
+      "sha256": "c283995b452ea77a4dd801d5f686c28711e3c5bfb2fbb8a406948e150de9fbc8"
+    },
+    {
+      "path": "/assets/core-DhEqZVGG.js",
+      "tableOffset": 7550440,
+      "dataOffset": 7219361,
+      "compressedBytes": 904,
+      "bytes": 2441,
+      "sha256": "8261a5e51510afea7347ee6c40e783127639b88b158982711196012d6d50ceb3"
+    },
+    {
+      "path": "/assets/index-C2lK6w9m.js",
+      "tableOffset": 7551272,
+      "dataOffset": 7345363,
+      "compressedBytes": 353,
+      "bytes": 637,
+      "sha256": "9e14f2e0b70d7b37c1f05a498a7c25e0ae4d6a486a5d80c7c21b1294dcbff110"
+    },
+    {
+      "path": "/assets/index-CDLv01B7.js",
+      "tableOffset": 7549736,
+      "dataOffset": 6340238,
+      "compressedBytes": 216,
+      "bytes": 344,
+      "sha256": "c3f845cfac30e87366e9cf331e45a654f3d5fc15c827b8c97dd38095c48f07eb"
+    },
+    {
+      "path": "/assets/index-DCExT4Dp.js",
+      "tableOffset": 7550504,
+      "dataOffset": 7220415,
+      "compressedBytes": 355,
+      "bytes": 553,
+      "sha256": "8dd46e6e12669253f6a2faf0203be202fbd085adf784f4cacc09892eedcc588d"
+    },
+    {
+      "path": "/assets/index-DEfITpUE.js",
+      "tableOffset": 7550024,
+      "dataOffset": 6446587,
+      "compressedBytes": 210,
+      "bytes": 339,
+      "sha256": "82f03d17752bcee9b4f0c654754f7bdae2fca0b51500d83d0f085736211169fe"
+    },
+    {
+      "path": "/assets/index-DH-bgUe1.js",
+      "tableOffset": 7549832,
+      "dataOffset": 6347659,
+      "compressedBytes": 221,
+      "bytes": 354,
+      "sha256": "8e6b43e708b1b86891efdac2d351d15c1cdde321b92359a198b7297af1d3ddda"
+    },
+    {
+      "path": "/assets/index-DzvAoees.js",
+      "tableOffset": 7549416,
+      "dataOffset": 6215186,
+      "compressedBytes": 215,
+      "bytes": 332,
+      "sha256": "57b39bd642605ac46f58e61b09a8af12bb8d0cbfb0168410d89d58cb6df7643f"
+    },
+    {
+      "path": "/assets/index-F_pTd4Yj.css",
+      "tableOffset": 7550600,
+      "dataOffset": 7241137,
+      "compressedBytes": 19921,
+      "bytes": 129232,
+      "sha256": "d95c35cebf203af97bcc780d15a352bc609277756e500060b6341e95a473ab1d"
+    },
+    {
+      "path": "/assets/index-NLmKZ9vy.js",
+      "tableOffset": 7550408,
+      "dataOffset": 6572573,
+      "compressedBytes": 646764,
+      "bytes": 2866969,
+      "sha256": "acf6b069ce4e65a816e0f0d34c2293181a79144471eab46b7d215b5648eabf98"
+    },
+    {
+      "path": "/assets/index-vMUQAKvi.js",
+      "tableOffset": 7549448,
+      "dataOffset": 6215426,
+      "compressedBytes": 514,
+      "bytes": 1296,
+      "sha256": "afc3e8ecb06dd43f7b618e6ae155b7a7ff4f27c2c73b6ea14f73d7f35e578de8"
+    },
+    {
+      "path": "/assets/native-BGt1Gdo4.js",
+      "tableOffset": 7551464,
+      "dataOffset": 7381828,
+      "compressedBytes": 331,
+      "bytes": 780,
+      "sha256": "7dca7d0f7f7f2e9202600efb8590db63542876bed701da675b0480d6f1e83832"
+    },
+    {
+      "path": "/assets/overviews-BDIzRTmS.js",
+      "tableOffset": 7551144,
+      "dataOffset": 7333010,
+      "compressedBytes": 8198,
+      "bytes": 24890,
+      "sha256": "d8370b8d1defd7166943ae3d42acd86940b87937c6e5220bed5036f620178e6d"
+    },
+    {
+      "path": "/assets/overviews-CnNSP9Te.js",
+      "tableOffset": 7551080,
+      "dataOffset": 7323607,
+      "compressedBytes": 8339,
+      "bytes": 23999,
+      "sha256": "fb6206b422b29beb8c9f52ef9752d22082855f501d20a0e2371918eb704fc0dd"
+    },
+    {
+      "path": "/assets/overviews-DhWYcA21.js",
+      "tableOffset": 7550760,
+      "dataOffset": 7275332,
+      "compressedBytes": 7622,
+      "bytes": 23837,
+      "sha256": "2d2aede553302e11636e245e3bed4b4227a7fc830903b37dc3b2b3027987c193"
+    },
+    {
+      "path": "/assets/overviews-NxQxysNL.js",
+      "tableOffset": 7550280,
+      "dataOffset": 6559816,
+      "compressedBytes": 7900,
+      "bytes": 23321,
+      "sha256": "b92b1b78714b46d8110281d60b8f877c42a03e34992a2332bdd72ec6a1853dc5"
+    },
+    {
+      "path": "/assets/overviews-WAzJfID7.js",
+      "tableOffset": 7549960,
+      "dataOffset": 6356741,
+      "compressedBytes": 7726,
+      "bytes": 23134,
+      "sha256": "c44a801c1b2b7976c874b24f41a7d644907eff2d1dc7e7216aaf5d16cf565faa"
+    },
+    {
+      "path": "/assets/patch-notes-1.10.0-Br3RVc_g.js",
+      "tableOffset": 7551592,
+      "dataOffset": 7545682,
+      "compressedBytes": 3702,
+      "bytes": 8203,
+      "sha256": "491ec49e04b5cb9ba02c2a47e5e83268337bcffd475598c5db4555998bb1d79e"
+    },
+    {
+      "path": "/assets/patch-notes-1.11.0-peJJmzd3.js",
+      "tableOffset": 7550088,
+      "dataOffset": 6447329,
+      "compressedBytes": 3769,
+      "bytes": 8886,
+      "sha256": "84edb7f119e4f45b8e3eea99fd5c9e8d88984d036c458bae1d0ad3364287ad8c"
+    },
+    {
+      "path": "/assets/patch-notes-1.11.1-BTgHVEVK.js",
+      "tableOffset": 7550824,
+      "dataOffset": 7283224,
+      "compressedBytes": 1113,
+      "bytes": 2427,
+      "sha256": "5dbaacc5866f9bf4d47d3d7eb7f1edf0206c025cc0f0d0260e79c28608df6965"
+    },
+    {
+      "path": "/assets/patch-notes-1.12.0-CPXdogSb.js",
+      "tableOffset": 7549544,
+      "dataOffset": 6299576,
+      "compressedBytes": 4310,
+      "bytes": 10052,
+      "sha256": "3eb58010eabb00b11d8f420b20d0e600b5d749f61ce5dfe6b1f0cb216cb10881"
+    },
+    {
+      "path": "/assets/patch-notes-1.13.0-hmDZiLsi.js",
+      "tableOffset": 7551336,
+      "dataOffset": 7366972,
+      "compressedBytes": 4790,
+      "bytes": 11232,
+      "sha256": "4365d9c05b5149d5f389d1b7850d7c7922a1e1e737f05ac4e35cb53458b0d465"
+    },
+    {
+      "path": "/assets/patch-notes-1.14.0-Cr2baeq4.js",
+      "tableOffset": 7550984,
+      "dataOffset": 7317278,
+      "compressedBytes": 2588,
+      "bytes": 5932,
+      "sha256": "4d23acef11f02b4584f90c8edc70f53f6e1da7353f9d6e56789fb701a9c4fd5e"
+    },
+    {
+      "path": "/assets/patch-notes-1.15.0-bTshV8Dl.js",
+      "tableOffset": 7549640,
+      "dataOffset": 6330654,
+      "compressedBytes": 2970,
+      "bytes": 6937,
+      "sha256": "6b124e7fe9a0d30e345031a0b9a16715aa9ec81dd6a11eceed59949086f654de"
+    },
+    {
+      "path": "/assets/patch-notes-1.16.0-UBQELUDY.js",
+      "tableOffset": 7549704,
+      "dataOffset": 6335045,
+      "compressedBytes": 5168,
+      "bytes": 12502,
+      "sha256": "be0de02485d1a88bb0204a591314710dc2334443a0b6b0f2c97eb1ebdd43fb4a"
+    },
+    {
+      "path": "/assets/patch-notes-1.17.0-Bxe6MxSX.js",
+      "tableOffset": 7550920,
+      "dataOffset": 7292213,
+      "compressedBytes": 4706,
+      "bytes": 11197,
+      "sha256": "ab474690ff3b427f7b1977594db3ee0c42e7f8974f901c9e8caa42c721e382fa"
+    },
+    {
+      "path": "/assets/patch-notes-1.18.0-B3ukb9GU.js",
+      "tableOffset": 7551240,
+      "dataOffset": 7342824,
+      "compressedBytes": 2514,
+      "bytes": 5707,
+      "sha256": "09e7e1ad67ea2f322548adaa6cf430fe2593a97301aaaeb96fa431294386b0a1"
+    },
+    {
+      "path": "/assets/patch-notes-1.19.0-CsPYT_9j.js",
+      "tableOffset": 7551528,
+      "dataOffset": 7461861,
+      "compressedBytes": 2445,
+      "bytes": 5620,
+      "sha256": "1e12626305afbad7c55e04cf2707935c540f41c981f9d4a0dde6470c8c44c471"
+    },
+    {
+      "path": "/assets/patch-notes-1.20.0-BT5Qcvgv.js",
+      "tableOffset": 7550856,
+      "dataOffset": 7284375,
+      "compressedBytes": 3478,
+      "bytes": 8039,
+      "sha256": "4aeb9040cd46da662fab6ecd0a52dc321f424157d6f692e1e0070223826d4a29"
+    },
+    {
+      "path": "/assets/patch-notes-1.21.0-DcAkpcSt.js",
+      "tableOffset": 7549864,
+      "dataOffset": 6347918,
+      "compressedBytes": 4443,
+      "bytes": 10679,
+      "sha256": "52316debce1c2571a03f0e0b9e575a6ac4e20a30d94a36397383656111b15482"
+    },
+    {
+      "path": "/assets/patch-notes-1.22.0-CtU53W8y.js",
+      "tableOffset": 7550888,
+      "dataOffset": 7287891,
+      "compressedBytes": 4284,
+      "bytes": 10153,
+      "sha256": "6af73dd78a621a92e5fe49dde5b0e354f1dd454a940bcc484d84d4a27aadbcda"
+    },
+    {
+      "path": "/assets/patch-notes-1.23.0-CNIkz-QW.js",
+      "tableOffset": 7550248,
+      "dataOffset": 6555128,
+      "compressedBytes": 4659,
+      "bytes": 10921,
+      "sha256": "9696c8e82c3d14f6337b8e77cbad3f5c6bac33defeca682558611be142e26c2f"
+    },
+    {
+      "path": "/assets/patch-notes-1.24.0-Bb5UBe0A.js",
+      "tableOffset": 7550728,
+      "dataOffset": 7271327,
+      "compressedBytes": 3976,
+      "bytes": 9163,
+      "sha256": "020e7850af0a084d0a1dc8f9e225de9d93a8e252fa782290d0ba35f06b6e760c"
+    },
+    {
+      "path": "/assets/patch-notes-1.25.0-BKh8Uftl.js",
+      "tableOffset": 7549576,
+      "dataOffset": 6303924,
+      "compressedBytes": 5641,
+      "bytes": 13404,
+      "sha256": "9c105d40e308a0a56ca3a326c5e8a0c3b1b311537e65f180c429936881377c6f"
+    },
+    {
+      "path": "/assets/patch-notes-1.25.1-CZZa5qOB.js",
+      "tableOffset": 7551400,
+      "dataOffset": 7376505,
+      "compressedBytes": 1531,
+      "bytes": 3509,
+      "sha256": "e252b6b8b4f4f84e24aff651f53ee858bb12ed888b9d20494cd51ad2233eeef8"
+    },
+    {
+      "path": "/assets/patch-notes-1.26.0-Dsji_PNc.js",
+      "tableOffset": 7549768,
+      "dataOffset": 6340492,
+      "compressedBytes": 3111,
+      "bytes": 7325,
+      "sha256": "f62314ce5a222a3fe6ae1cf665586f59684e9fff64ab7391ea15dceb2957435f"
+    },
+    {
+      "path": "/assets/patch-notes-1.27.0-DqYGvhgn.js",
+      "tableOffset": 7549672,
+      "dataOffset": 6333662,
+      "compressedBytes": 1345,
+      "bytes": 2984,
+      "sha256": "0c9d78c51e3e94991fb76902206ae8eb3f2efc96f9c1cf03dccc906204827ef4"
+    },
+    {
+      "path": "/assets/patch-notes-1.28.0-PBUKGWuE.js",
+      "tableOffset": 7550632,
+      "dataOffset": 7261096,
+      "compressedBytes": 2365,
+      "bytes": 5206,
+      "sha256": "f1ca9a1bdc4a3c54cd76a6d12ee1cff468c101a746ea278a77deb17da74ceb1e"
+    },
+    {
+      "path": "/assets/patch-notes-1.29.0-DCPdFv_0.js",
+      "tableOffset": 7549928,
+      "dataOffset": 6354550,
+      "compressedBytes": 2162,
+      "bytes": 4982,
+      "sha256": "17b9716d1d7df32f594d94324df48acfcf1e8ad18831a23c14c6f7bf4406a8cd"
+    },
+    {
+      "path": "/assets/patch-notes-1.30.0-Dq_wiYT2.js",
+      "tableOffset": 7549384,
+      "dataOffset": 6212214,
+      "compressedBytes": 2947,
+      "bytes": 6866,
+      "sha256": "993224aad8ecbe8fea06151319f1cf32d15417edb7d4336828d481dbf13b1cc2"
+    },
+    {
+      "path": "/assets/patch-notes-1.31.0-DOI-GocG.js",
+      "tableOffset": 7549480,
+      "dataOffset": 6215978,
+      "compressedBytes": 3697,
+      "bytes": 8798,
+      "sha256": "a531fbc3c467dee5f7edef43ccaafaab7e59dafef52381295977527aa4927ed1"
+    },
+    {
+      "path": "/assets/patch-notes-1.32.0-s5qL7mt8.js",
+      "tableOffset": 7549800,
+      "dataOffset": 6343641,
+      "compressedBytes": 3993,
+      "bytes": 9377,
+      "sha256": "4cf4423aef9daa583f3cdbe5e5431dd1eb3c13eb16295ab18c74e2a088b9ad63"
+    },
+    {
+      "path": "/assets/patch-notes-1.33.0-BZhgmUMB.js",
+      "tableOffset": 7550664,
+      "dataOffset": 7263499,
+      "compressedBytes": 4283,
+      "bytes": 9807,
+      "sha256": "5f76fcfc693b52e351a778c79a4eac554f32500490b8706a94dee8b8ac12a75d"
+    },
+    {
+      "path": "/assets/patch-notes-1.33.1-DqcHGSs5.js",
+      "tableOffset": 7551112,
+      "dataOffset": 7331984,
+      "compressedBytes": 997,
+      "bytes": 2072,
+      "sha256": "70f116419355bb641ea2f3e3dff6e350759e75b9c1e561172f8a2e886c68ac09"
+    },
+    {
+      "path": "/assets/patch-notes-1.5.0-6yKZj3c7.js",
+      "tableOffset": 7549896,
+      "dataOffset": 6352398,
+      "compressedBytes": 2114,
+      "bytes": 4618,
+      "sha256": "3c02d8335c88856f391cb01f6771d5b00793ace02f523dfbd9a1675824e53f4d"
+    },
+    {
+      "path": "/assets/patch-notes-1.6.0-DBGERNPW.js",
+      "tableOffset": 7550344,
+      "dataOffset": 6568644,
+      "compressedBytes": 3492,
+      "bytes": 7928,
+      "sha256": "4fd9be81e26ebaad1e7fdadb46c783cf3a7a4daa3f085ce8e24b9ac05f3520d7"
+    },
+    {
+      "path": "/assets/patch-notes-1.7.0-DeLxVUUC.js",
+      "tableOffset": 7550696,
+      "dataOffset": 7267819,
+      "compressedBytes": 3470,
+      "bytes": 7819,
+      "sha256": "ac1cfcd9544960ae53fe64dda4857ea8baf6d2a859577c338bef6ac19126a00a"
+    },
+    {
+      "path": "/assets/patch-notes-1.8.0-C8tDik6Q.js",
+      "tableOffset": 7551048,
+      "dataOffset": 7320349,
+      "compressedBytes": 3229,
+      "bytes": 7380,
+      "sha256": "41ce3d6b8a23cea63ed018c8135b38e35237651afcedbd9fa0de45f261e4a14b"
+    },
+    {
+      "path": "/assets/patch-notes-1.9.0-D9DutwxB.js",
+      "tableOffset": 7550216,
+      "dataOffset": 6551850,
+      "compressedBytes": 3240,
+      "bytes": 7459,
+      "sha256": "99f2f7b436cf96b7e81766e3908d4128d707db0b17cffa012f2d9a6b99440bea"
+    },
+    {
+      "path": "/assets/site-logo-DInD1iBQ.webp",
+      "tableOffset": 7551368,
+      "dataOffset": 7371793,
+      "compressedBytes": 4674,
+      "bytes": 4670,
+      "sha256": "679ab828176fb0f64d49dffaa951040183a425a3b356bd30bac01992f04ee897"
+    },
+    {
+      "path": "/assets/tours-BkbSsdgI.js",
+      "tableOffset": 7550568,
+      "dataOffset": 7221141,
+      "compressedBytes": 19970,
+      "bytes": 64031,
+      "sha256": "a9ba05f054f6f7aa8d828c17d39a7e27e78fc57caee1d4150edb924c7e05586f"
+    },
+    {
+      "path": "/assets/tours-CdBsfAk0.js",
+      "tableOffset": 7550952,
+      "dataOffset": 7296944,
+      "compressedBytes": 20296,
+      "bytes": 65310,
+      "sha256": "6f56c27ab7bcf07acbd7c2885b277a37908c19eadbca665daca09841e7f89680"
+    },
+    {
+      "path": "/assets/tours-DrS6khSh.js",
+      "tableOffset": 7549608,
+      "dataOffset": 6309590,
+      "compressedBytes": 21026,
+      "bytes": 73502,
+      "sha256": "80e0905af59c38390a5a22e352b5480cfdf9d8ed142aef7c5708f7a424b23c0c"
+    },
+    {
+      "path": "/assets/tours-DU49s3E7.js",
+      "tableOffset": 7551304,
+      "dataOffset": 7345741,
+      "compressedBytes": 21193,
+      "bytes": 68864,
+      "sha256": "0272c29671b73f7007c033aead6942b618ec5b963bcead435138749daeb18cc9"
+    },
+    {
+      "path": "/assets/tours-wNq8e-IC.js",
+      "tableOffset": 7550152,
+      "dataOffset": 6529287,
+      "compressedBytes": 21724,
+      "bytes": 68458,
+      "sha256": "b564eaba4990cc8efe5006f9321bf60f10867bba7ef44582f9fb676d6ae2ac7f"
+    },
+    {
+      "path": "/assets/ui-BITUyv6F.js",
+      "tableOffset": 7549992,
+      "dataOffset": 6364489,
+      "compressedBytes": 82073,
+      "bytes": 279389,
+      "sha256": "8088fb97cb0be3be55829a48ef8a87a3605006b2d452419e89bfc4b913e6cddf"
+    },
+    {
+      "path": "/assets/ui-Bk9SyMgF.js",
+      "tableOffset": 7549512,
+      "dataOffset": 6219697,
+      "compressedBytes": 79841,
+      "bytes": 274389,
+      "sha256": "6f9165abdf7e4ce4f17379ad41310585d884ff152ea3d16b1438463636c5c786"
+    },
+    {
+      "path": "/assets/ui-BXGbc_sJ.js",
+      "tableOffset": 7550120,
+      "dataOffset": 6451120,
+      "compressedBytes": 78142,
+      "bytes": 283951,
+      "sha256": "fbe890632a89603ea55f5bd993f22d973451a765487d706084f58d7970e9bfec"
+    },
+    {
+      "path": "/assets/ui-CWKbrztq.js",
+      "tableOffset": 7551560,
+      "dataOffset": 7464328,
+      "compressedBytes": 81316,
+      "bytes": 283526,
+      "sha256": "eff5100b4c8f0120692e46b07e14a882623671104140de843dbaa27b3bf09aae"
+    },
+    {
+      "path": "/assets/ui-rFWNvspv.js",
+      "tableOffset": 7551496,
+      "dataOffset": 7382181,
+      "compressedBytes": 79642,
+      "bytes": 273544,
+      "sha256": "aa9615e557664e6eaf9fef7f3fb3332ba7c2ee3703372edf2720d39b94d6f67a"
+    },
+    {
+      "path": "/assets/web-0WUeaYZY.js",
+      "tableOffset": 7550472,
+      "dataOffset": 7220288,
+      "compressedBytes": 102,
+      "bytes": 119,
+      "sha256": "c4ad200849c1237f28bdf4100adfc58c3017eb67226c990a792ef9edf9e52cfe"
+    },
+    {
+      "path": "/assets/web-B-AesKdw.js",
+      "tableOffset": 7550536,
+      "dataOffset": 7220793,
+      "compressedBytes": 323,
+      "bytes": 842,
+      "sha256": "259d3c3ae82c5edab8d10feca4fe80bdd6a926cc99901cf0046624c45d5ef438"
+    },
+    {
+      "path": "/assets/web-CXCb8KVD.js",
+      "tableOffset": 7551016,
+      "dataOffset": 7319889,
+      "compressedBytes": 423,
+      "bytes": 954,
+      "sha256": "e1fa7357bb2ab0b99c4a1087ea234982e8345b8a800a67c4e4a28bd9c6f02ea1"
+    },
+    {
+      "path": "/assets/web-DVNxv7Gf.js",
+      "tableOffset": 7550792,
+      "dataOffset": 7282977,
+      "compressedBytes": 209,
+      "bytes": 379,
+      "sha256": "a0d68a89b64d3bc63f6ce70cd1053f994d92e383da2cdc7c2fb51923516f7ad7"
+    },
+    {
+      "path": "/assets/web-J-8xzRar.js",
+      "tableOffset": 7550056,
+      "dataOffset": 6446820,
+      "compressedBytes": 471,
+      "bytes": 1153,
+      "sha256": "9dfef622caf575e66b0e080415f43b380f996f9256dd40f7c01eec1d7ac0c804"
+    },
+    {
+      "path": "/assets/web-N4EgKPX_.js",
+      "tableOffset": 7550376,
+      "dataOffset": 6572159,
+      "compressedBytes": 389,
+      "bytes": 821,
+      "sha256": "e487195a8af2c209ad735887eb7dd8a238d97de12963fa1f27aa26931a7f9b27"
+    },
+    {
+      "path": "/assets/web-yoomd-1m.js",
+      "tableOffset": 7550184,
+      "dataOffset": 6551034,
+      "compressedBytes": 779,
+      "bytes": 2183,
+      "sha256": "4b5b7a4022aee4ffbd3c8ec3abfbb8b9ac1dad1ee4cc1d8b8c995226cac04053"
+    },
+    {
+      "path": "/assets/webview-BIpmkz54.js",
+      "tableOffset": 7551176,
+      "dataOffset": 7341235,
+      "compressedBytes": 1052,
+      "bytes": 3303,
+      "sha256": "a9ee6f596a056f99115d2cf06648ba46d926c13993b6973bba779bef558a82e6"
+    },
+    {
+      "path": "/assets/window-BNyhyH58.js",
+      "tableOffset": 7551432,
+      "dataOffset": 7378062,
+      "compressedBytes": 3740,
+      "bytes": 15396,
+      "sha256": "428357d1abe9464b811a3f8fb819af7a702974a92c2084e2a3bbefa9f969bd3d"
+    },
+    {
+      "path": "/index.html",
+      "tableOffset": 7551208,
+      "dataOffset": 7342298,
+      "compressedBytes": 488,
+      "bytes": 1079,
+      "sha256": "0f1f5468131651722271bb3f6d15af6a3afa531d92cfb511e243b5ceab29d5f7"
+    }
+  ]
+}
