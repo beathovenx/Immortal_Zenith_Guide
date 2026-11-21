@@ -28,9 +28,10 @@
         <a href="#attributes">07 <span>Attributes explained</span></a>
         <a href="#reincarnation">08 <span>Reincarnation & soul</span></a>
         <a href="#soul-tree">1 <span>Soul Tree planner</span></a>
+        <a href="#worldmap">2 <span>World map tiers</span></a>
+        <a href="#manuals">3 <span>Manual stat tables</span></a>
         <a href="#dao-points">10 <span>Maximize Dao points</span></a>
         <a href="#fast-progress">11 <span>Fast progression</span></a>
-        <a href="#worldmap">2 <span>World map tiers</span></a>
         <a href="#patchnotes">13 <span>Patch notes highlights</span></a>
       </nav>
       <footer>
@@ -323,6 +324,28 @@
         </div>
         <article id="fast-progress-guide" class="prose"></article>
         <a class="text-link" href="#soul-tree">Plan your Soul Tree →</a>
+      </section>
+      <section id="manuals" hidden>
+        <div class="page-heading">
+          <span class="eyebrow">MANUAL STAT TABLES</span>
+          <h1>Soul / Mind / Body manuals.</h1>
+          <p>
+            Sort by any visible stat. Values are from the local snapshot and are
+            not final in-combat totals.
+          </p>
+        </div>
+        <div class="library-tabs" id="manual-slot-tabs" aria-label="Manual type">
+          <button type="button" data-manual-slot="tech_spiritual">Soul</button>
+          <button type="button" data-manual-slot="tech_mental">Mind</button>
+          <button type="button" data-manual-slot="tech_body">Body</button>
+        </div>
+        <p id="manuals-results" class="muted" role="status"></p>
+        <div class="manual-table-wrap">
+          <table class="manual-table">
+            <thead><tr id="manuals-table-head"></tr></thead>
+            <tbody id="manuals-table-body"></tbody>
+          </table>
+        </div>
       </section>
       <section id="worldmap" hidden>
         <div class="page-heading">

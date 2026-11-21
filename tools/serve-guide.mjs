@@ -23,11 +23,12 @@ const routes = {
   "/guide/reincarnation.md": ["guide", "reincarnation.md"],
   "/guide/worldmap.md": ["guide", "worldmap.md"],
   "/guide/patchnotes.md": ["guide", "patchnotes.md"],
+  "/manuals.json": ["research", "wiki", "manuals.json"],
 };
 export const server = http.createServer(async (req, res) => {
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+    "default-src 'self'; img-src 'self' https://d27wzk5al56txp.cloudfront.net; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
   );
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.setHeader("Referrer-Policy", "no-referrer");

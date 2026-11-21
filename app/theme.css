@@ -693,6 +693,65 @@ select {
 .prose tr:nth-child(even) {
   background: #111c21;
 }
+.manual-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #2f4044;
+  border-radius: 8px;
+  background: #0f171b;
+}
+.manual-table {
+  width: 100%;
+  min-width: 1150px;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.manual-table th,
+.manual-table td {
+  border: 1px solid #29383d;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+.manual-table th {
+  background: #18252a;
+}
+.manual-table tbody tr:nth-child(even) {
+  background: #111c21;
+}
+.table-sort {
+  border: 0;
+  background: none;
+  color: var(--gold);
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+.manual-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+.manual-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 1px solid #3a4b4f;
+}
+.manual-icon-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--gold);
+  background: #1a262b;
+}
 .prose a {
   color: var(--gold);
   text-decoration: underline;
@@ -805,10 +864,14 @@ dialog::backdrop {
 .image-failed {
   outline: 2px solid #ad6551;
 }
-body.minimal-guide nav a:not([href="#worldmap"]):not([href="#soul-tree"]) {
+body.minimal-guide
+  nav
+  a:not([href="#worldmap"]):not([href="#soul-tree"]):not([href="#manuals"]) {
   display: none;
 }
-body.minimal-guide main > section:not(#worldmap):not(#soul-tree) {
+body.minimal-guide
+  main
+  > section:not(#worldmap):not(#soul-tree):not(#manuals) {
   display: none !important;
 }
 .soul-toolbar,

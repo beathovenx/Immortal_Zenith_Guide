@@ -21,6 +21,8 @@ const toAppUrl = (value) => {
   return new URL(normalized, document.baseURI).toString();
 };
 let data;
+let allManuals = [];
+let manualIconMap = {};
 let saved = {};
 let noteRequest = 0;
 let soulTreePromise;
@@ -75,6 +77,180 @@ const demonicTasks = [
     "#codex/yin",
   ],
 ];
+const manualSlotLabels = {
+  tech_spiritual: "Soul",
+  tech_mental: "Mind",
+  tech_body: "Body",
+};
+const manualRarityOrder = {
+  common: 1,
+  uncommon: 2,
+  rare: 3,
+  epic: 4,
+  legendary: 5,
+  mythical: 6,
+};
+const manualSharedColumns = [
+  {
+    key: "name",
+    label: "Manual",
+    sortValue: (entry) => entry.name.toLowerCase(),
+    renderCell: (entry) =>
+      `<span class="manual-name">${manualIcon(entry)}<span>${escape(entry.name)}</span></span>`,
+  },
+  {
+    key: "tier",
+    label: "Tier",
+    sortValue: (entry) => entry.realmTier,
+    renderCell: (entry) => `T${escape(entry.realmTier)}`,
+  },
+  {
+    key: "rarity",
+    label: "Rarity",
+    sortValue: (entry) =>
+      manualRarityOrder[entry.rarity] ?? Number.MAX_SAFE_INTEGER,
+    renderCell: (entry) => escape(entry.rarity ?? "—"),
+  },
+];
+const manualColumnsBySlot = {
+  tech_spiritual: [
+    ...manualSharedColumns,
+    {
+      key: "baseElemAttack",
+      label: "Base Elem ATK",
+      sortValue: (entry) => elemSummary(entry.stats?.elemAtk).value,
+      renderCell: (entry) => escape(elemSummary(entry.stats?.elemAtk).text),
+    },
+    {
+      key: "lvlElemAttack",
+      label: "Elem ATK / lvl %",
+      sortValue: (entry) => elemSummary(entry.levelStatsPct?.elemAtk).value,
+      renderCell: (entry) => escape(elemSummary(entry.levelStatsPct?.elemAtk).text),
+    },
+    {
+      key: "lvlQiCap",
+      label: "Qi Cap / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.qiPoolCap),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.qiPoolCap)),
+    },
+    {
+      key: "lvlAttack",
+      label: "ATK / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.attack),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.attack)),
+    },
+    {
+      key: "lvlEnergyRegen",
+      label: "Energy Regen / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.energyRegen),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.energyRegen)),
+    },
+    {
+      key: "qiGen",
+      label: "Qi Gen Mult",
+      sortValue: (entry) => statNumber(entry.levelQiGenMult),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelQiGenMult)),
+    },
+  ],
+  tech_mental: [
+    ...manualSharedColumns,
+    {
+      key: "baseElemAttack",
+      label: "Base Elem ATK",
+      sortValue: (entry) => elemSummary(entry.stats?.elemAtk).value,
+      renderCell: (entry) => escape(elemSummary(entry.stats?.elemAtk).text),
+    },
+    {
+      key: "lvlEnergy",
+      label: "Energy / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.energy),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.energy)),
+    },
+    {
+      key: "lvlSpeed",
+      label: "Speed / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.speed),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.speed)),
+    },
+    {
+      key: "lvlMentalFortitude",
+      label: "Mental Fortitude / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.mentalFortitude),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.mentalFortitude)),
+    },
+    {
+      key: "lvlEnergyRegen",
+      label: "Energy Regen / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.energyRegen),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.energyRegen)),
+    },
+    {
+      key: "qiGen",
+      label: "Qi Gen Mult",
+      sortValue: (entry) => statNumber(entry.levelQiGenMult),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelQiGenMult)),
+    },
+  ],
+  tech_body: [
+    ...manualSharedColumns,
+    {
+      key: "lvlHealth",
+      label: "Health / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.health),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.health)),
+    },
+    {
+      key: "lvlDefense",
+      label: "Defense / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.defense),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.defense)),
+    },
+    {
+      key: "lvlHealthRegen",
+      label: "Health Regen / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.healthRegen),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.healthRegen)),
+    },
+    {
+      key: "lvlStaminaRegen",
+      label: "Stamina Regen / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.staminaRegen),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.staminaRegen)),
+    },
+    {
+      key: "lvlQiCap",
+      label: "Qi Cap / lvl %",
+      sortValue: (entry) => statNumber(entry.levelStatsPct?.qiPoolCap),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelStatsPct?.qiPoolCap)),
+    },
+    {
+      key: "qiGen",
+      label: "Qi Gen Mult",
+      sortValue: (entry) => statNumber(entry.levelQiGenMult),
+      renderCell: (entry) =>
+        formatManualLevelStat(statNumber(entry.levelQiGenMult)),
+    },
+  ],
+};
+const manualState = {
+  slot: "tech_spiritual",
+  sortKey: "tier",
+  sortDir: "desc",
+};
 function showError(error) {
   console.error(error);
   $("error").hidden = false;
@@ -189,6 +365,105 @@ function renderQi() {
     $("qi-result").textContent = error.message;
   }
 }
+function manualIcon(entry) {
+  const asset = data.images[entry.image];
+  const fallback = manualSlotLabels[entry.slot]?.charAt(0) ?? "M";
+  if (asset)
+    return `<img class="manual-icon" data-manual-icon="true" data-fallback-letter="${escape(fallback)}" src="${escape(toAppUrl(asset.src))}" alt="" loading="lazy">`;
+  const mapped = manualIconMap[entry.image];
+  if (mapped)
+    return `<img class="manual-icon" data-manual-icon="true" data-fallback-letter="${escape(fallback)}" src="${escape(toAppUrl(mapped))}" alt="" loading="lazy">`;
+  return `<span class="manual-icon manual-icon-fallback" aria-hidden="true">${escape(fallback)}</span>`;
+}
+function statNumber(value) {
+  return Number.isFinite(value) ? value : null;
+}
+function elemSummary(stats) {
+  if (!stats || typeof stats !== "object") return { text: "—", value: null };
+  const entries = Object.entries(stats).filter(([, value]) =>
+    Number.isFinite(value),
+  );
+  if (!entries.length) return { text: "—", value: null };
+  const text = entries.map(([element, value]) => `${element} ${format(value)}`);
+  const value = entries.reduce((sum, [, stat]) => sum + stat, 0);
+  return { text: text.join(" / "), value };
+}
+function getManualColumns(slot) {
+  return manualColumnsBySlot[slot] ?? manualColumnsBySlot.tech_spiritual;
+}
+function sortManuals(manuals, columns) {
+  const { sortKey, sortDir } = manualState;
+  const direction = sortDir === "asc" ? 1 : -1;
+  const activeColumn = columns.find((column) => column.key === sortKey) ?? columns[0];
+  return [...manuals].sort((left, right) => {
+    const a = activeColumn.sortValue(left);
+    const b = activeColumn.sortValue(right);
+    if (typeof a === "string" && typeof b === "string")
+      return a.localeCompare(b) * direction;
+    if (a == null && b == null)
+      return left.name.localeCompare(right.name) * direction;
+    if (a == null) return 1;
+    if (b == null) return -1;
+    if (a === b) return left.name.localeCompare(right.name) * direction;
+    return (a - b) * direction;
+  });
+}
+function formatManualStat(value) {
+  return value == null ? "—" : format(value);
+}
+function formatManualLevelStat(value) {
+  return value == null ? "—" : Number(value).toFixed(4);
+}
+function renderManualTable() {
+  const source = allManuals.length
+    ? allManuals
+    : data.entries.filter((entry) => entry.collection === "manuals");
+  const manuals = source.filter(
+    (entry) =>
+      entry.slot &&
+      Object.hasOwn(manualSlotLabels, entry.slot) &&
+      entry.slot === manualState.slot,
+  );
+  for (const [slot, label] of Object.entries(manualSlotLabels)) {
+    const button = document.querySelector(`[data-manual-slot="${slot}"]`);
+    if (button) button.setAttribute("aria-pressed", String(slot === manualState.slot));
+    if (button) button.textContent = label;
+  }
+  const columns = getManualColumns(manualState.slot);
+  if (!columns.some((column) => column.key === manualState.sortKey)) {
+    manualState.sortKey = "tier";
+    manualState.sortDir = "desc";
+  }
+  const head = $("manuals-table-head");
+  head.innerHTML = "";
+  for (const column of columns) {
+    const active = manualState.sortKey === column.key;
+    const arrow = active ? (manualState.sortDir === "asc" ? " ↑" : " ↓") : "";
+    const header = document.createElement("th");
+    header.setAttribute(
+      "aria-sort",
+      active
+        ? manualState.sortDir === "asc"
+          ? "ascending"
+          : "descending"
+        : "none",
+    );
+    header.innerHTML = `<button type="button" class="table-sort" data-manual-sort="${column.key}">${escape(column.label)}${arrow}</button>`;
+    head.append(header);
+  }
+  const sorted = sortManuals(manuals, columns);
+  const sortLabel =
+    columns.find((column) => column.key === manualState.sortKey)?.label ??
+    manualState.sortKey;
+  $("manuals-results").textContent =
+    `${sorted.length} ${sorted.length === 1 ? "manual" : "manuals"} · ${manualSlotLabels[manualState.slot]} slot · sorted by ${sortLabel} (${manualState.sortDir})`;
+  $("manuals-table-body").innerHTML = sorted
+    .map(
+      (entry) =>
+        `<tr>${columns.map((column) => `<td>${column.renderCell(entry)}</td>`).join("")}</tr>`,
+    )
+    .join("");
+}
 async function renderNotes(topic, target = "notes") {
   const request = ++noteRequest;
   const topics = {
@@ -242,7 +517,7 @@ async function route() {
     $("content").focus();
     return;
   }
-  const section = ["worldmap", "soul-tree"].includes(requested)
+  const section = ["worldmap", "soul-tree", "manuals"].includes(requested)
     ? requested
     : "soul-tree";
   for (const id of [
@@ -255,6 +530,7 @@ async function route() {
     "attributes",
     "reincarnation",
     "worldmap",
+    "manuals",
     "patchnotes",
     "soul-tree",
     "dao-points",
@@ -286,12 +562,17 @@ async function route() {
     });
     await soulTreePromise;
   }
+  if (section === "manuals") renderManualTable();
   if (section === "codex" && ["yin", "lightning"].includes(topic)) {
     $("build").value = topic;
     renderCodex();
   }
-  $("path-label").textContent =
-    section === "soul-tree" ? "THE SOUL TREE" : "THE WORLD MAP TIERS";
+  const labelsBySection = {
+    "soul-tree": "THE SOUL TREE",
+    worldmap: "THE WORLD MAP TIERS",
+    manuals: "MANUAL STAT TABLES",
+  };
+  $("path-label").textContent = labelsBySection[section] ?? "THE SOUL TREE";
   window.scrollTo(0, 0);
 }
 async function init() {
@@ -303,6 +584,22 @@ async function init() {
       "Guide data is missing. Run npm.cmd run prepare:guide, then reload.",
     );
   data = await response.json();
+  const manualsResponse = await fetch(toAppUrl("manuals.json"));
+  if (!manualsResponse.ok)
+    throw new Error(
+      "Manual dataset is missing. Check tools/serve-guide.mjs routes and reload.",
+    );
+  const manualsPayload = await manualsResponse.json();
+  allManuals = Array.isArray(manualsPayload.entries) ? manualsPayload.entries : [];
+  const iconMapResponse = await fetch(toAppUrl("manual-icon-map.json"));
+  if (!iconMapResponse.ok)
+    throw new Error(
+      "Manual icon map is missing. Check app/manual-icon-map.json and reload.",
+    );
+  const iconMapPayload = await iconMapResponse.json();
+  if (!iconMapPayload.icons || typeof iconMapPayload.icons !== "object")
+    throw new Error("Manual icon map format is invalid.");
+  manualIconMap = iconMapPayload.icons;
   try {
     const stored = JSON.parse(
       localStorage.getItem("zenith-guide-tasks") ?? "{}",
@@ -359,7 +656,26 @@ async function init() {
   renderStage();
   renderCodex();
   renderQi();
+  renderManualTable();
   document.addEventListener("click", (event) => {
+    const slot = event.target.closest("[data-manual-slot]");
+    if (slot) {
+      manualState.slot = slot.dataset.manualSlot;
+      renderManualTable();
+      return;
+    }
+    const sort = event.target.closest("[data-manual-sort]");
+    if (sort) {
+      const key = sort.dataset.manualSort;
+      if (manualState.sortKey === key)
+        manualState.sortDir = manualState.sortDir === "asc" ? "desc" : "asc";
+      else {
+        manualState.sortKey = key;
+        manualState.sortDir = key === "name" || key === "rarity" ? "asc" : "desc";
+      }
+      renderManualTable();
+      return;
+    }
     const entry = event.target.closest("[data-entry]");
     if (entry) {
       try {
@@ -452,6 +768,14 @@ async function init() {
     "error",
     (event) => {
       if (event.target instanceof HTMLImageElement) {
+        if (event.target.dataset.manualIcon === "true") {
+          const fallback = document.createElement("span");
+          fallback.className = "manual-icon manual-icon-fallback";
+          fallback.setAttribute("aria-hidden", "true");
+          fallback.textContent = event.target.dataset.fallbackLetter || "M";
+          event.target.replaceWith(fallback);
+          return;
+        }
         event.target.classList.add("image-failed");
         const failed = event.target.currentSrc || event.target.src || "(unknown)";
         showError(

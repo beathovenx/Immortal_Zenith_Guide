@@ -24,6 +24,7 @@ const toAppUrl = (value) => {
   const normalized = String(value).replace(/^\/+/, "");
   return new URL(normalized, document.baseURI).toString();
 };
+const sharedTrunkParents = new Set(["ashes_of_the_forge", "qi_gen_rate"]);
 
 export async function initSoulTree() {
   const response = await fetch(toAppUrl("soul-tree.json"));
@@ -333,6 +334,164 @@ export async function initSoulTree() {
         },
       ]),
     );
+    const nodeBoxes = new Map(
+      entries.map((node) => {
+        const pos = positions.get(node.id);
+        return [
+          node.id,
+          {
+            left: pos.x,
+            right: pos.x + width,
+            top: pos.y,
+            bottom: pos.y + height,
+            row: node.row ?? node.tier,
+            branch: node.branch ?? "main",
+          },
+        ];
+      }),
+    );
+    const branchSpan = new Map();
+    for (const node of entries) {
+      const branch = node.branch ?? "main";
+      const box = nodeBoxes.get(node.id);
+      const current = branchSpan.get(branch) ?? {
+        left: Number.POSITIVE_INFINITY,
+        right: Number.NEGATIVE_INFINITY,
+      };
+      current.left = Math.min(current.left, box.left);
+      current.right = Math.max(current.right, box.right);
+      branchSpan.set(branch, current);
+    }
+    const globalLeft = Math.min(
+      ...Array.from(branchSpan.values(), (span) => span.left),
+    );
+    const globalRight = Math.max(
+      ...Array.from(branchSpan.values(), (span) => span.right),
+    );
+    const globalCenterX = (globalLeft + globalRight) / 2;
+    const branchInnerLanes = new Map();
+    for (const [branch, branchNodes] of entriesByBranch.entries()) {
+      const starts = Array.from(
+        new Set(
+          branchNodes
+            .map((node) => {
+              const box = nodeBoxes.get(node.id);
+              return `${box.left}:${box.right}`;
+            })
+            .sort((a, b) => Number(a.split(":")[0]) - Number(b.split(":")[0])),
+        ),
+      ).map((pair) => {
+        const [left, right] = pair.split(":").map(Number);
+        return { left, right };
+      });
+      const lanes = [];
+      for (let i = 0; i < starts.length - 1; i++) {
+        const current = starts[i];
+        const next = starts[i + 1];
+        if (next.left - current.right > 6)
+          lanes.push((current.right + next.left) / 2);
+      }
+      branchInnerLanes.set(branch, lanes);
+    }
+    const hasVerticalCollision = (x, y1, y2, parentId, childId, ignoredIds) => {
+      const minY = Math.min(y1, y2);
+      const maxY = Math.max(y1, y2);
+      return entries.some((node) => {
+        if (node.id === parentId || node.id === childId) return false;
+        if (ignoredIds?.has(node.id)) return false;
+        const box = nodeBoxes.get(node.id);
+        return (
+          x > box.left - 4 &&
+          x < box.right + 4 &&
+          maxY > box.top - 4 &&
+          minY < box.bottom + 4
+        );
+      });
+    };
+    const hasHorizontalCollision = (y, x1, x2, parentId, childId, ignoredIds) => {
+      const minX = Math.min(x1, x2);
+      const maxX = Math.max(x1, x2);
+      return entries.some((node) => {
+        if (node.id === parentId || node.id === childId) return false;
+        if (ignoredIds?.has(node.id)) return false;
+        const box = nodeBoxes.get(node.id);
+        return (
+          y > box.top - 4 &&
+          y < box.bottom + 4 &&
+          maxX > box.left - 4 &&
+          minX < box.right + 4
+        );
+      });
+    };
+    const routeCrossesNodes = (points, parentId, childId, ignoredIds) => {
+      for (let i = 0; i < points.length - 1; i++) {
+        const from = points[i];
+        const to = points[i + 1];
+        if (Math.abs(from.x - to.x) < 0.5) {
+          if (
+            hasVerticalCollision(
+              from.x,
+              from.y,
+              to.y,
+              parentId,
+              childId,
+              ignoredIds,
+            )
+          )
+            return true;
+        } else if (Math.abs(from.y - to.y) < 0.5) {
+          if (
+            hasHorizontalCollision(
+              from.y,
+              from.x,
+              to.x,
+              parentId,
+              childId,
+              ignoredIds,
+            )
+          )
+            return true;
+        }
+      }
+      return false;
+    };
+    const staggerOffset = (useCount, step = 8, maxSteps = 4) => {
+      if (useCount <= 0) return 0;
+      const tier = Math.min(maxSteps, Math.ceil(useCount / 2));
+      const direction = useCount % 2 === 1 ? 1 : -1;
+      return direction * tier * step;
+    };
+    const roundedPolyline = (points, radius = 12) => {
+      if (points.length < 2) return "";
+      let path = `M ${points[0].x} ${points[0].y}`;
+      for (let index = 1; index < points.length; index++) {
+        const current = points[index];
+        const previous = points[index - 1];
+        const next = points[index + 1];
+        if (!next) {
+          path += ` L ${current.x} ${current.y}`;
+          continue;
+        }
+        const inDx = current.x - previous.x;
+        const inDy = current.y - previous.y;
+        const outDx = next.x - current.x;
+        const outDy = next.y - current.y;
+        const inLength = Math.hypot(inDx, inDy);
+        const outLength = Math.hypot(outDx, outDy);
+        if (!inLength || !outLength) {
+          path += ` L ${current.x} ${current.y}`;
+          continue;
+        }
+        const bend = Math.min(radius, inLength / 2, outLength / 2);
+        const enterX = current.x - (inDx / inLength) * bend;
+        const enterY = current.y - (inDy / inLength) * bend;
+        const leaveX = current.x + (outDx / outLength) * bend;
+        const leaveY = current.y + (outDy / outLength) * bend;
+        path += ` L ${enterX} ${enterY} Q ${current.x} ${current.y} ${leaveX} ${leaveY}`;
+      }
+      return path;
+    };
+    const laneUse = new Map();
     const canvasWidth = Math.ceil(
       Math.max(...entries.map((node) => positions.get(node.id).x + width)) +
         pad,
@@ -344,6 +503,7 @@ export async function initSoulTree() {
     const edges = entries
       .flatMap((node) =>
         (node.prereqs ?? []).map((req) => {
+          const parentNode = nodes.get(req.nodeId);
           const a = positions.get(req.nodeId);
           const b = positions.get(node.id);
           const startX = a.x + width / 2;
@@ -351,10 +511,221 @@ export async function initSoulTree() {
           const endX = b.x + width / 2;
           const endY = b.y;
           const attrs = `class=\"edge\" data-edge-parent=\"${escape(req.nodeId)}\" data-edge-child=\"${escape(node.id)}\" data-edge-required=\"${req.ranks}\"`;
-          if (Math.abs(startX - endX) < 1)
-            return `<path ${attrs} d="M ${startX} ${startY} L ${endX} ${endY}"/>`;
+          const parentRow = parentNode?.row ?? parentNode?.tier ?? 0;
+          const childRow = node.row ?? node.tier;
+          if (
+            (req.nodeId.startsWith("keep_region_") ||
+              req.nodeId.startsWith("region_keep_")) &&
+            node.branch === "homeland" &&
+            childRow === parentRow &&
+            Math.abs(startX - endX) > 1
+          ) {
+            const sideY = a.y + height / 2;
+            const startSideX = endX < startX ? a.x : a.x + width;
+            const endSideX = endX < startX ? b.x + width : b.x;
+            const sidePoints = [
+              { x: startSideX, y: sideY },
+              { x: endSideX, y: sideY },
+            ];
+            if (!routeCrossesNodes(sidePoints, req.nodeId, node.id))
+              return `<path ${attrs} d="${roundedPolyline(sidePoints, 8)}"/>`;
+          }
+          const middleTrunkVigorNodes = new Set([
+            "regen_stamina",
+            "regen_energy",
+            "stat_attack",
+            "stat_mentalFortitude",
+            "stat_defense",
+            "stat_speed",
+          ]);
+          if (
+            req.nodeId === "regen_health" &&
+            node.branch === "vigor" &&
+            middleTrunkVigorNodes.has(node.id)
+          ) {
+            const sideY = b.y + height / 2;
+            const sideX = endX < startX ? b.x + width : b.x;
+            const fanoutPoints = [
+              { x: startX, y: startY },
+              { x: startX, y: sideY },
+              { x: sideX, y: sideY },
+            ];
+            if (!routeCrossesNodes(fanoutPoints, req.nodeId, node.id))
+              return `<path ${attrs} d="${roundedPolyline(fanoutPoints, 12)}"/>`;
+          }
+          const tribulationSplitNodes = new Set([
+            "enduring_vitality",
+            "endless_breath",
+            "tireless_sinew",
+          ]);
+          if (
+            req.nodeId === "tribulation_memory" &&
+            node.branch === "qi" &&
+            tribulationSplitNodes.has(node.id)
+          ) {
+            const moralPos = positions.get("moral_anchor");
+            const tirelessPos = positions.get("tireless_sinew");
+            const trunkX = tirelessPos ? tirelessPos.x + width / 2 : endX;
+            const trunkY = moralPos ? moralPos.y + height + 8 : startY + 36;
+            const splitY = Math.max(trunkY, endY - 10);
+            const splitPoints = [
+              { x: startX, y: startY },
+              { x: startX, y: trunkY },
+              { x: trunkX, y: trunkY },
+              { x: trunkX, y: splitY },
+              { x: endX, y: splitY },
+              { x: endX, y: endY },
+            ];
+            if (!routeCrossesNodes(splitPoints, req.nodeId, node.id))
+              return `<path ${attrs} d="${roundedPolyline(splitPoints, 11)}"/>`;
+          }
+          if (
+            Math.abs(startX - endX) < 1 &&
+            !hasVerticalCollision(startX, startY, endY, req.nodeId, node.id)
+          )
+            return `<path ${attrs} d="M ${startX} ${startY} C ${startX} ${startY + 26} ${endX} ${endY - 26} ${endX} ${endY}"/>`;
           const midY = Math.round(startY + (endY - startY) * 0.45);
-          return `<path ${attrs} d="M ${startX} ${startY} V ${midY} H ${endX} V ${endY}"/>`;
+          const defaultCrossesNode =
+            hasVerticalCollision(startX, startY, midY, req.nodeId, node.id) ||
+            hasHorizontalCollision(midY, startX, endX, req.nodeId, node.id) ||
+            hasVerticalCollision(endX, midY, endY, req.nodeId, node.id);
+          if (!defaultCrossesNode && Math.abs(childRow - parentRow) <= 1)
+            return `<path ${attrs} d="${roundedPolyline(
+              [
+                { x: startX, y: startY },
+                { x: startX, y: midY },
+                { x: endX, y: midY },
+                { x: endX, y: endY },
+              ],
+              12,
+            )}"/>`;
+          if (req.nodeId === "qi_gen_rate" && node.id === "qi_gen_eternal") {
+            const overlapNodeId = "deep_reservoir";
+            const overlapPos = positions.get(overlapNodeId);
+            const overlapX = overlapPos ? overlapPos.x + width / 2 : endX;
+            const overlapTopY = overlapPos ? overlapPos.y : endY;
+            const overlapBottomY = overlapPos ? overlapPos.y + height : endY;
+            const overlapY = Math.round(
+              startY + (overlapTopY - startY) * 0.45,
+            );
+            const splitX = Math.round((startX + overlapX) / 2);
+            const mergeY = Math.round((overlapBottomY + endY) / 2);
+            const overlapPoints = [
+              { x: startX, y: startY },
+              { x: startX, y: overlapY },
+              { x: splitX, y: overlapY },
+              { x: splitX, y: mergeY },
+              { x: overlapX, y: mergeY },
+            ];
+            if (!routeCrossesNodes(overlapPoints, req.nodeId, node.id))
+              return `<path ${attrs} d="${roundedPolyline(overlapPoints, 12)}"/>`;
+          }
+          if (sharedTrunkParents.has(req.nodeId) && childRow - parentRow >= 2) {
+            const yStartLane = Math.min(endY - 12, startY + 10);
+            const trunkY = Math.max(yStartLane + 10, endY - 18);
+            const sharedCandidates = [];
+            const branchInner = branchInnerLanes.get(node.branch ?? "main") ?? [];
+            for (const laneX of branchInner)
+              sharedCandidates.push({
+                x: laneX,
+                score: Math.abs(((startX + endX) / 2) - laneX),
+              });
+            sharedCandidates.push({
+              x: startX,
+              score: Math.abs(startX - endX) + 30,
+            });
+            sharedCandidates.sort((a, b) => a.score - b.score);
+            for (const candidate of sharedCandidates) {
+              const mergedPoints = [
+                { x: startX, y: startY },
+                { x: startX, y: yStartLane },
+                { x: candidate.x, y: yStartLane },
+                { x: candidate.x, y: trunkY },
+                { x: candidate.x, y: endY - 10 },
+                { x: endX, y: endY - 10 },
+                { x: endX, y: endY },
+              ];
+              if (!routeCrossesNodes(mergedPoints, req.nodeId, node.id))
+                return `<path ${attrs} d="${roundedPolyline(mergedPoints, 12)}"/>`;
+            }
+          }
+          const branch = node.branch ?? "main";
+          const span = branchSpan.get(branch);
+          const yStartLane = Math.min(endY - 10, startY + 10);
+          const yEndLane = Math.max(startY + 10, endY - 10);
+          const innerLanes = branchInnerLanes.get(branch) ?? [];
+          const candidateInner = innerLanes
+            .map((laneX, index) => {
+              const key = `${branch}:inner:${index}`;
+              const use = laneUse.get(key) ?? 0;
+              const shiftedX = laneX + staggerOffset(use);
+              return {
+                key,
+                x: shiftedX,
+                cost:
+                  Math.abs(startX - shiftedX) +
+                  Math.abs(endX - shiftedX) +
+                  Math.abs(((startX + endX) / 2) - shiftedX) * 0.2 +
+                  use * 3,
+              };
+            })
+            .sort((a, b) => a.cost - b.cost);
+          for (const candidate of candidateInner) {
+            const points = [
+              { x: startX, y: startY },
+              { x: startX, y: yStartLane },
+              { x: candidate.x, y: yStartLane },
+              { x: candidate.x, y: yEndLane },
+              { x: endX, y: yEndLane },
+              { x: endX, y: endY },
+            ];
+            if (!routeCrossesNodes(points, req.nodeId, node.id)) {
+              laneUse.set(candidate.key, (laneUse.get(candidate.key) ?? 0) + 1);
+              return `<path ${attrs} d="${roundedPolyline(points, 11)}"/>`;
+            }
+          }
+          const leftKey = `${branch}:left`;
+          const rightKey = `${branch}:right`;
+          const leftUse = laneUse.get(leftKey) ?? 0;
+          const rightUse = laneUse.get(rightKey) ?? 0;
+          const leftX = span.left - 18 - leftUse * 8;
+          const rightX = span.right + 18 + rightUse * 8;
+          const branchCenter = (span.left + span.right) / 2;
+          const insideSide = branchCenter < globalCenterX ? "right" : "left";
+          const options =
+            insideSide === "right"
+              ? [
+                  { key: rightKey, x: rightX },
+                  { key: leftKey, x: leftX },
+                ]
+              : [
+                  { key: leftKey, x: leftX },
+                  { key: rightKey, x: rightX },
+                ];
+          for (const option of options) {
+            const points = [
+              { x: startX, y: startY },
+              { x: startX, y: yStartLane },
+              { x: option.x, y: yStartLane },
+              { x: option.x, y: yEndLane },
+              { x: endX, y: yEndLane },
+              { x: endX, y: endY },
+            ];
+            if (!routeCrossesNodes(points, req.nodeId, node.id)) {
+              laneUse.set(option.key, (laneUse.get(option.key) ?? 0) + 1);
+              return `<path ${attrs} d="${roundedPolyline(points, 11)}"/>`;
+            }
+          }
+          const fallbackPoints = [
+            { x: startX, y: startY },
+            { x: startX, y: yStartLane },
+            { x: options[0].x, y: yStartLane },
+            { x: options[0].x, y: yEndLane },
+            { x: endX, y: yEndLane },
+            { x: endX, y: endY },
+          ];
+          laneUse.set(options[0].key, (laneUse.get(options[0].key) ?? 0) + 1);
+          return `<path ${attrs} d="${roundedPolyline(fallbackPoints, 11)}"/>`;
         }),
       )
       .join("");

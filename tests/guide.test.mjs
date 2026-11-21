@@ -248,6 +248,27 @@ test("World map guide is available with dedicated navigation", async () => {
   assert.match(index, /href="#worldmap"/);
   assert.match(index, /id="worldmap-guide"/);
 });
+test("Manual stats tab is available with soul, mind, and body coverage", async () => {
+  const manualsResponse = await fetch(base + "/manuals.json");
+  assert.equal(manualsResponse.status, 200);
+  const manualsPayload = await manualsResponse.json();
+  const manuals = manualsPayload.entries;
+  assert.equal(manuals.length, 193);
+  const iconMapResponse = await fetch(base + "/manual-icon-map.json");
+  assert.equal(iconMapResponse.status, 200);
+  const iconMap = await iconMapResponse.json();
+  assert(iconMap.icons["/items/manuals/tier_1/abyssal_current_manual.png"]);
+  for (const slot of ["tech_spiritual", "tech_mental", "tech_body"]) {
+    assert(
+      manuals.some((entry) => entry.slot === slot),
+      `Expected manuals for ${slot}`,
+    );
+  }
+  const index = await (await fetch(base + "/")).text();
+  assert.match(index, /href="#manuals"/);
+  assert.match(index, /id="manual-slot-tabs"/);
+  assert.match(index, /id="manuals-table-body"/);
+});
 test("Patch notes highlights are available with dedicated navigation", async () => {
   const response = await fetch(base + "/guide/patchnotes.md");
   assert.equal(response.status, 200);
@@ -448,6 +469,8 @@ test("Guide serves only intended app routes and local dependencies", async () =>
     "/guide/reincarnation.md",
     "/guide/worldmap.md",
     "/guide/patchnotes.md",
+    "/manuals.json",
+    "/manual-icon-map.json",
   ]) {
     const response = await fetch(base + route);
     assert.equal(response.status, 200, route);
