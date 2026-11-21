@@ -2,7 +2,7 @@
 
 Consolidated from the in-game world map labels.
 
-![Immortal Zenith world map town tiers](/assets/worldmap-tier-reference.webp)
+![Immortal Zenith world map town tiers](assets/worldmap-tier-reference.webp)
 
 ## Confirmed town tiers
 
