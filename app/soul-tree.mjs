@@ -53,6 +53,41 @@ export async function initSoulTree() {
   const rowHeight = 96;
   const pad = 18;
   const branchGap = 64;
+  const branchLayoutPresets = {
+    cultivation: {
+      rows: [
+        ["qi", "insight"],
+        ["rebirth"],
+      ],
+      colGap: 46,
+      rowGap: 52,
+    },
+    combat: {
+      rows: [
+        ["battle", "hunt"],
+        ["vigor", "arms"],
+        ["legacy", "wards"],
+      ],
+      colGap: 46,
+      rowGap: 52,
+    },
+    exploration: {
+      rows: [
+        ["wayfinding", "roads"],
+        ["homeland"],
+      ],
+      colGap: 46,
+      rowGap: 52,
+    },
+    crafting: {
+      rows: [
+        ["mastery", "memory"],
+        ["workshop"],
+      ],
+      colGap: 46,
+      rowGap: 52,
+    },
+  };
 
   function save() {
     try {
@@ -179,6 +214,29 @@ export async function initSoulTree() {
             : ""
           : `${itemRank}/${item.maxRanks || "∞"}`;
     });
+    updateEdgeStyles();
+  }
+
+  function updateEdgeStyles() {
+    $("soul-stage")
+      .querySelectorAll(".soul-edges [data-edge-parent]")
+      .forEach((edge) => {
+        const parentId = edge.dataset.edgeParent;
+        const childId = edge.dataset.edgeChild;
+        const required = Number(edge.dataset.edgeRequired || 1);
+        const parent = nodes.get(parentId);
+        if (!parent) return;
+        const effectiveRequired =
+          parent.maxRanks === 0 ? required : Math.min(required, parent.maxRanks);
+        const parentRank = ranks[parentId] ?? 0;
+        const childRank = ranks[childId] ?? 0;
+        edge.classList.toggle("edge-unlocked", parentRank >= effectiveRequired);
+        edge.classList.toggle("edge-active", parentRank > 0 || childRank > 0);
+        edge.classList.toggle(
+          "edge-focused",
+          parentId === selected || childId === selected,
+        );
+      });
   }
 
   function drawTree() {
@@ -193,21 +251,85 @@ export async function initSoulTree() {
       }
       entriesByBranch.get(branch).push(node);
     }
-    let cursorX = pad;
+    const branchBounds = new Map(
+      branchOrder.map((branch) => {
+        const branchNodes = entriesByBranch.get(branch);
+        const minCol = Math.min(...branchNodes.map((node) => node.col));
+        const maxCol = Math.max(...branchNodes.map((node) => node.col));
+        const minRow = Math.min(
+          ...branchNodes.map((node) => node.row ?? node.tier),
+        );
+        const maxRow = Math.max(
+          ...branchNodes.map((node) => node.row ?? node.tier),
+        );
+        return [
+          branch,
+          {
+            minCol,
+            maxCol,
+            minRow,
+            maxRow,
+            width: (maxCol - minCol + 1) * colWidth,
+            height: (maxRow - minRow + 1) * rowHeight,
+          },
+        ];
+      }),
+    );
     const branchOffsets = new Map();
-    for (const branch of branchOrder) {
-      const branchNodes = entriesByBranch.get(branch);
-      const minCol = Math.min(...branchNodes.map((node) => node.col));
-      const maxCol = Math.max(...branchNodes.map((node) => node.col));
-      branchOffsets.set(branch, cursorX - minCol * colWidth);
-      cursorX += (maxCol - minCol + 1) * colWidth + branchGap;
+    const preset = branchLayoutPresets[tree];
+    if (preset) {
+      const rows = [];
+      const assigned = new Set();
+      for (const row of preset.rows) {
+        const present = row.filter((branch) => entriesByBranch.has(branch));
+        if (!present.length) continue;
+        present.forEach((branch) => assigned.add(branch));
+        rows.push(present);
+      }
+      const leftovers = branchOrder.filter((branch) => !assigned.has(branch));
+      for (const branch of leftovers) rows.push([branch]);
+      const rowWidths = rows.map(
+        (row) =>
+          row.reduce((sum, branch) => sum + branchBounds.get(branch).width, 0) +
+          preset.colGap * Math.max(0, row.length - 1),
+      );
+      const layoutWidth = Math.max(...rowWidths, 0);
+      let cursorY = pad;
+      rows.forEach((row, index) => {
+        const rowWidth = rowWidths[index];
+        let cursorX = pad + Math.max(0, (layoutWidth - rowWidth) / 2);
+        let maxRowHeight = 0;
+        for (const branch of row) {
+          const bounds = branchBounds.get(branch);
+          branchOffsets.set(branch, {
+            x: cursorX - bounds.minCol * colWidth,
+            y: cursorY - bounds.minRow * rowHeight,
+          });
+          cursorX += bounds.width + preset.colGap;
+          maxRowHeight = Math.max(maxRowHeight, bounds.height);
+        }
+        cursorY += maxRowHeight + preset.rowGap;
+      });
+    } else {
+      let cursorX = pad;
+      for (const branch of branchOrder) {
+        const bounds = branchBounds.get(branch);
+        branchOffsets.set(branch, {
+          x: cursorX - bounds.minCol * colWidth,
+          y: pad - bounds.minRow * rowHeight,
+        });
+        cursorX += bounds.width + branchGap;
+      }
     }
     const positions = new Map(
       entries.map((node) => [
         node.id,
         {
-          x: branchOffsets.get(node.branch ?? "main") + node.col * colWidth,
-          y: pad + (node.row ?? node.tier) * rowHeight,
+          x:
+            branchOffsets.get(node.branch ?? "main").x + node.col * colWidth,
+          y:
+            branchOffsets.get(node.branch ?? "main").y +
+            (node.row ?? node.tier) * rowHeight,
         },
       ]),
     );
@@ -228,10 +350,11 @@ export async function initSoulTree() {
           const startY = a.y + height;
           const endX = b.x + width / 2;
           const endY = b.y;
+          const attrs = `class=\"edge\" data-edge-parent=\"${escape(req.nodeId)}\" data-edge-child=\"${escape(node.id)}\" data-edge-required=\"${req.ranks}\"`;
           if (Math.abs(startX - endX) < 1)
-            return `<path d="M ${startX} ${startY} L ${endX} ${endY}"/>`;
+            return `<path ${attrs} d="M ${startX} ${startY} L ${endX} ${endY}"/>`;
           const midY = Math.round(startY + (endY - startY) * 0.45);
-          return `<path d="M ${startX} ${startY} V ${midY} H ${endX} V ${endY}"/>`;
+          return `<path ${attrs} d="M ${startX} ${startY} V ${midY} H ${endX} V ${endY}"/>`;
         }),
       )
       .join("");

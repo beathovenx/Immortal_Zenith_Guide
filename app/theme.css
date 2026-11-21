@@ -940,14 +940,34 @@ body.minimal-guide main > section:not(#worldmap):not(#soul-tree) {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  stroke: #8e815c;
-  stroke-width: 2;
-  opacity: 0.7;
   fill: none;
 }
 .soul-edges path {
+  stroke: #4f5348;
+  stroke-width: 1.8;
+  opacity: 0.5;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition:
+    stroke 0.18s ease,
+    opacity 0.18s ease,
+    stroke-width 0.18s ease,
+    filter 0.18s ease;
+}
+.soul-edges path.edge-unlocked {
+  stroke: #8a7d58;
+  opacity: 0.72;
+}
+.soul-edges path.edge-active {
+  stroke: #c4aa6c;
+  opacity: 0.95;
+  stroke-width: 2.2;
+}
+.soul-edges path.edge-focused {
+  stroke: #f2d286;
+  opacity: 1;
+  stroke-width: 2.6;
+  filter: drop-shadow(0 0 3px rgba(242, 210, 134, 0.55));
 }
 .soul-node {
   position: absolute;
