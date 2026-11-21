@@ -237,28 +237,14 @@ async function renderNotes(topic, target = "notes") {
   }
 }
 async function route() {
-  const [requested = "overview", topic] = location.hash.slice(1).split("/");
+  const [requested = "worldmap", topic] = location.hash.slice(1).split("/");
   if (requested === "content") {
     $("content").focus();
     return;
   }
-  const section = [
-    "overview",
-    "progression",
-    "codex",
-    "qi",
-    "library",
-    "demonic",
-    "attributes",
-    "reincarnation",
-    "worldmap",
-    "patchnotes",
-    "soul-tree",
-    "dao-points",
-    "fast-progress",
-  ].includes(requested)
+  const section = ["worldmap", "soul-tree"].includes(requested)
     ? requested
-    : "overview";
+    : "worldmap";
   for (const id of [
     "overview",
     "progression",
@@ -305,36 +291,12 @@ async function route() {
     renderCodex();
   }
   $("path-label").textContent =
-    section === "demonic" || (section === "library" && topic === "demonic")
-      ? "THE DEMONIC / YIN PATH"
-      : section === "attributes" ||
-          (section === "library" && topic === "attributes")
-        ? "THE ATTRIBUTE REFERENCE"
-        : section === "fast-progress" ||
-            (section === "library" && topic === "fast-progress")
-          ? "THE FAST PROGRESSION GUIDE"
-          : section === "worldmap" ||
-              (section === "library" && topic === "worldmap")
-            ? "THE WORLD MAP TIERS"
-          : section === "patchnotes" ||
-              (section === "library" && topic === "patchnotes")
-            ? "PATCH NOTES HIGHLIGHTS"
-          : section === "dao-points" ||
-              (section === "library" && topic === "dao-points")
-            ? "MAXIMIZE DAO SOUL POINTS"
-            : section === "reincarnation" ||
-                (section === "library" && topic === "reincarnation")
-              ? "THE REINCARNATION GUIDE"
-              : section === "soul-tree"
-                ? "THE SOUL TREE"
-                : section === "codex"
-                  ? "THE BUILD CODEX"
-                  : ["overview", "progression"].includes(section)
-                    ? "THE LIGHTNING PATH"
-                    : "CULTIVATOR'S FIELD RESEARCH";
+    section === "soul-tree" ? "THE SOUL TREE" : "THE WORLD MAP TIERS";
   window.scrollTo(0, 0);
 }
 async function init() {
+  document.body.classList.add("minimal-guide");
+  if (!location.hash) location.hash = "#worldmap";
   const response = await fetch(toAppUrl("data.json"));
   if (!response.ok)
     throw new Error(

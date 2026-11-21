@@ -805,6 +805,12 @@ dialog::backdrop {
 .image-failed {
   outline: 2px solid #ad6551;
 }
+body.minimal-guide nav a:not([href="#worldmap"]):not([href="#soul-tree"]) {
+  display: none;
+}
+body.minimal-guide main > section:not(#worldmap):not(#soul-tree) {
+  display: none !important;
+}
 .soul-toolbar,
 .soul-controls,
 .soul-tabs,
