@@ -1,3 +1,25 @@
+const tierBranchPointRequirements = Object.freeze({
+  2: 5,
+  3: 10,
+});
+
+export function requiredBranchPoints(node) {
+  return tierBranchPointRequirements[node.tier] ?? 0;
+}
+
+export function branchPoints(node, ranks, nodes) {
+  let total = 0;
+  for (const candidate of nodes.values()) {
+    if (
+      candidate.tree === node.tree &&
+      candidate.branch === node.branch &&
+      candidate.tier < node.tier
+    )
+      total += ranks[candidate.id] ?? 0;
+  }
+  return total;
+}
+
 export function validateTree(entries) {
   if (!Array.isArray(entries) || !entries.length)
     throw new Error("Soul Tree data contains no nodes.");
@@ -44,9 +66,22 @@ export function validateTree(entries) {
 }
 
 export function missingPrerequisites(node, ranks, nodes) {
-  return (node.prereqs ?? [])
+  const missing = (node.prereqs ?? [])
     .filter((req) => (ranks[req.nodeId] ?? 0) < req.ranks)
     .map((req) => ({ ...req, name: nodes.get(req.nodeId).name }));
+  const requiredPoints = requiredBranchPoints(node);
+  if (requiredPoints > 0) {
+    const spentPoints = branchPoints(node, ranks, nodes);
+    if (spentPoints < requiredPoints) {
+      missing.push({
+        kind: "branch_points",
+        name: `${node.branch} branch points`,
+        ranks: requiredPoints,
+        current: spentPoints,
+      });
+    }
+  }
+  return missing;
 }
 
 export function nextCost(node, rank) {
@@ -104,11 +139,12 @@ export function planCost(ranks, nodes) {
 export function canRemoveRank(node, ranks, nodes) {
   const rank = ranks[node.id] ?? 0;
   if (!rank) return false;
+  const updated = { ...ranks };
+  if (rank === 1) delete updated[node.id];
+  else updated[node.id] = rank - 1;
   return ![...nodes.values()].some(
     (child) =>
-      (ranks[child.id] ?? 0) > 0 &&
-      (child.prereqs ?? []).some(
-        (req) => req.nodeId === node.id && rank - 1 < req.ranks,
-      ),
+      (updated[child.id] ?? 0) > 0 &&
+      missingPrerequisites(child, updated, nodes).length > 0,
   );
 }

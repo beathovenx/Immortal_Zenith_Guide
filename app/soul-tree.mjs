@@ -1,9 +1,11 @@
 import {
+  branchPoints,
   canRemoveRank,
   fitTreeScale,
   missingPrerequisites,
   nextCost,
   planCost,
+  requiredBranchPoints,
   validatePlan,
   validateTree,
 } from "./soul-tree-model.mjs";
@@ -122,7 +124,28 @@ export async function initSoulTree() {
     const rank = ranks[node.id] ?? 0;
     const missing = missingPrerequisites(node, ranks, nodes);
     const maxed = node.maxRanks > 0 && rank >= node.maxRanks;
-    const requirements = node.prereqs ?? [];
+    const requirements = node.prereqs
+      ? node.prereqs.map((req) => {
+          const parent = nodes.get(req.nodeId);
+          const currentRanks = ranks[req.nodeId] ?? 0;
+          return {
+            name: parent.name,
+            ranks: req.ranks,
+            current: currentRanks,
+            met: currentRanks >= req.ranks,
+          };
+        })
+      : [];
+    const requiredPoints = requiredBranchPoints(node);
+    if (requiredPoints > 0) {
+      const spentPoints = branchPoints(node, ranks, nodes);
+      requirements.push({
+        name: `${node.branch} branch points`,
+        ranks: requiredPoints,
+        current: spentPoints,
+        met: spentPoints >= requiredPoints,
+      });
+    }
     $("soul-spent").textContent =
       `${format(planCost(ranks, nodes))} DSP planned`;
     $("soul-picker").value = node.id;
@@ -137,11 +160,10 @@ export async function initSoulTree() {
       <ul class="soul-requirements">${
         requirements.length
           ? requirements
-              .map((req) => {
-                const parent = nodes.get(req.nodeId);
-                const met = (ranks[req.nodeId] ?? 0) >= req.ranks;
-                return `<li class="${met ? "met" : ""}">${met ? "✓" : "○"} ${escape(parent.name)}${req.ranks > 1 ? ` · rank ${req.ranks}` : ""}</li>`;
-              })
+              .map(
+                (req) =>
+                  `<li class="${req.met ? "met" : ""}">${req.met ? "✓" : "○"} ${escape(req.name)}${req.ranks > 1 ? ` · rank ${req.ranks}` : ""}${req.current !== undefined ? ` <small>(${req.current}/${req.ranks})</small>` : ""}</li>`,
+              )
               .join("")
           : "<li>None · root node</li>"
       }</ul>
