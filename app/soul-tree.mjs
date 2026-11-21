@@ -127,12 +127,14 @@ export async function initSoulTree() {
     const requirements = node.prereqs
       ? node.prereqs.map((req) => {
           const parent = nodes.get(req.nodeId);
+          const requiredRanks =
+            parent.maxRanks === 0 ? req.ranks : Math.min(req.ranks, parent.maxRanks);
           const currentRanks = ranks[req.nodeId] ?? 0;
           return {
             name: parent.name,
-            ranks: req.ranks,
+            ranks: requiredRanks,
             current: currentRanks,
-            met: currentRanks >= req.ranks,
+            met: currentRanks >= requiredRanks,
           };
         })
       : [];

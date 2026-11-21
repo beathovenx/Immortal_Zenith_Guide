@@ -437,6 +437,15 @@ test("Soul Tree snapshot resolves prerequisite paths and plans rank costs", asyn
   );
   assert.equal(canRemoveRank(prereqNode, plan, nodes), false);
   assert.equal(canRemoveRank(wandering, plan, nodes), true);
+  const eternalSpring = nodes.get("qi_gen_eternal");
+  assert.equal(
+    missingPrerequisites(
+      eternalSpring,
+      { qi_gen_rate: 10, deep_reservoir: 5 },
+      nodes,
+    ).length,
+    0,
+  );
   assert.throws(() => {
     const invalidPlan = { ...plan, [prereq.nodeId]: prereq.ranks - 1 };
     validatePlan(invalidPlan, nodes);

@@ -20,6 +20,11 @@ export function branchPoints(node, ranks, nodes) {
   return total;
 }
 
+function effectiveRequiredRanks(req, parent) {
+  if (!parent || parent.maxRanks === 0) return req.ranks;
+  return Math.min(req.ranks, parent.maxRanks);
+}
+
 export function validateTree(entries) {
   if (!Array.isArray(entries) || !entries.length)
     throw new Error("Soul Tree data contains no nodes.");
@@ -67,8 +72,19 @@ export function validateTree(entries) {
 
 export function missingPrerequisites(node, ranks, nodes) {
   const missing = (node.prereqs ?? [])
-    .filter((req) => (ranks[req.nodeId] ?? 0) < req.ranks)
-    .map((req) => ({ ...req, name: nodes.get(req.nodeId).name }));
+    .filter((req) => {
+      const parent = nodes.get(req.nodeId);
+      const required = effectiveRequiredRanks(req, parent);
+      return (ranks[req.nodeId] ?? 0) < required;
+    })
+    .map((req) => {
+      const parent = nodes.get(req.nodeId);
+      return {
+        ...req,
+        ranks: effectiveRequiredRanks(req, parent),
+        name: parent.name,
+      };
+    });
   const requiredPoints = requiredBranchPoints(node);
   if (requiredPoints > 0) {
     const spentPoints = branchPoints(node, ranks, nodes);
