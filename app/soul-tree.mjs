@@ -64,6 +64,43 @@ export async function initSoulTree() {
       storageWarning = `Could not save the plan: ${error.message}. Changes are only kept in this tab.`;
       $("soul-status").textContent = storageWarning;
     }
+
+    function exportPlan() {
+      const payload = {
+        format: "zenith-soul-tree-plan-v1",
+        exportedAt: new Date().toISOString(),
+        wikiSnapshot: data.fetchedAt,
+        ranks,
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], {
+        type: "application/json",
+      });
+      const url = URL.createObjectURL(blob);
+      const date = new Date().toISOString().slice(0, 10);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = `soul-tree-plan-${date}.json`;
+      document.body.append(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+      $("soul-status").textContent =
+        "Plan exported as JSON. You can import it for another character.";
+    }
+
+    function importPlan(text) {
+      const parsed = JSON.parse(text);
+      const candidate =
+        parsed && typeof parsed === "object" && parsed.ranks && !Array.isArray(parsed.ranks)
+          ? parsed.ranks
+          : parsed;
+      validatePlan(candidate, nodes);
+      ranks = candidate;
+      save();
+      renderDetails();
+      $("soul-status").textContent =
+        `Imported plan with ${Object.keys(ranks).length} configured nodes.`;
+    }
   }
 
   function renderDetails() {
@@ -298,6 +335,20 @@ export async function initSoulTree() {
     ranks = {};
     save();
     renderDetails();
+  });
+  $("soul-export").addEventListener("click", exportPlan);
+  $("soul-import").addEventListener("click", () => $("soul-import-file").click());
+  $("soul-import-file").addEventListener("change", async (event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    try {
+      importPlan(await file.text());
+    } catch (error) {
+      $("soul-status").textContent =
+        `Could not import plan: ${error.message}. Use a valid Soul Tree plan JSON file.`;
+    } finally {
+      event.target.value = "";
+    }
   });
   $("soul-snapshot").textContent =
     `Wiki snapshot: ${data.fetchedAt.slice(0, 10)} · ${nodes.size} nodes · local planning only`;

@@ -17,7 +17,7 @@
           >IMMORTAL ZENITH<small>CULTIVATOR'S ATLAS</small></span
         ></a
       >
-      <div class="private-label"><span></span> LOCAL / PRIVATE GUIDE</div>
+      <div class="private-label"><span></span> ONLINE SOUL TREE PLANNER</div>
       <nav aria-label="Guide sections">
         <a href="#overview">01 <span>Your path</span></a>
         <a href="#progression">02 <span>Realm progression</span></a>
@@ -27,10 +27,10 @@
         <a href="#demonic">06 <span>Demonic / yin path</span></a>
         <a href="#attributes">07 <span>Attributes explained</span></a>
         <a href="#reincarnation">08 <span>Reincarnation & soul</span></a>
-        <a href="#soul-tree">09 <span>Soul Tree planner</span></a>
+        <a href="#soul-tree">1 <span>Soul Tree planner</span></a>
         <a href="#dao-points">10 <span>Maximize Dao points</span></a>
         <a href="#fast-progress">11 <span>Fast progression</span></a>
-        <a href="#worldmap">12 <span>World map tiers</span></a>
+        <a href="#worldmap">2 <span>World map tiers</span></a>
         <a href="#patchnotes">13 <span>Patch notes highlights</span></a>
       </nav>
       <section class="sidebar-note">
@@ -413,6 +413,18 @@
           <button id="soul-reset" class="button" type="button">
             Clear plan
           </button>
+          <button id="soul-export" class="button" type="button">
+            Export plan
+          </button>
+          <button id="soul-import" class="button" type="button">
+            Import plan
+          </button>
+          <input
+            id="soul-import-file"
+            type="file"
+            accept="application/json,.json,text/plain,.txt"
+            hidden
+          />
         </div>
         <p id="soul-snapshot" class="muted"></p>
         <p id="soul-status" class="muted" role="status"></p>
