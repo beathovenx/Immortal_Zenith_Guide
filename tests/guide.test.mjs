@@ -415,10 +415,10 @@ test("Soul Tree snapshot resolves prerequisite paths and plans rank costs", asyn
 });
 test("Soul Tree scale fits the available width", () => {
   assert.equal(fitTreeScale(600, 1500), 0.4);
-  assert.equal(fitTreeScale(2000, 1500), 1);
+  assert.equal(fitTreeScale(2000, 1500), 4 / 3);
   assert.equal(fitTreeScale(600, 1500, 0.5), 0.2);
   assert.throws(() => fitTreeScale(0, 1500), RangeError);
-  assert.throws(() => fitTreeScale(600, 1500, 1.1), RangeError);
+  assert.throws(() => fitTreeScale(600, 1500, 1.6), RangeError);
 });
 test("Guide serves only intended app routes and local dependencies", async () => {
   for (const route of [

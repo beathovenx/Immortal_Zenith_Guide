@@ -64,10 +64,10 @@ export function fitTreeScale(availableWidth, canvasWidth, zoomFactor = 1) {
     canvasWidth <= 0 ||
     !Number.isFinite(zoomFactor) ||
     zoomFactor <= 0 ||
-    zoomFactor > 1
+    zoomFactor > 1.5
   )
     throw new RangeError("Invalid Soul Tree dimensions or zoom factor.");
-  return Math.min(1, availableWidth / canvasWidth) * zoomFactor;
+  return Math.min(1.35, (availableWidth / canvasWidth) * zoomFactor);
 }
 
 export function validatePlan(ranks, nodes) {

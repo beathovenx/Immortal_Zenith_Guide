@@ -216,7 +216,7 @@ export async function initSoulTree() {
     $("soul-sizer").style.width = `${Math.ceil(w * zoom)}px`;
     $("soul-sizer").style.height = `${Math.ceil(h * zoom)}px`;
     $("soul-zoom-value").textContent = `${Math.round(zoom * 100)}%`;
-    $("soul-zoom-in").disabled = zoomFactor >= 1;
+    $("soul-zoom-in").disabled = zoomFactor >= 1.5;
     $("soul-zoom-out").disabled = zoomFactor <= 0.5;
   }
 
@@ -280,7 +280,7 @@ export async function initSoulTree() {
     selectNode(event.target.value, true),
   );
   $("soul-zoom-in").addEventListener("click", () => {
-    zoomFactor = Math.min(1, Math.round((zoomFactor + 0.1) * 10) / 10);
+    zoomFactor = Math.min(1.5, Math.round((zoomFactor + 0.1) * 10) / 10);
     updateZoom();
   });
   $("soul-zoom-out").addEventListener("click", () => {
