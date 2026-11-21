@@ -102,25 +102,6 @@ The workflow runs on pushes to `main`, installs dependencies, runs
 For your custom domain, a [CNAME](app/CNAME) file is included with:
 `zenithguide.com`.
 
-## Optional local farming bot (AutoHotkey)
-
-For your requested monster-farming loop automation, a local bot scaffold is in
-[bot/README.md](bot/README.md):
-
-- [bot/farm-bot.ahk](bot/farm-bot.ahk)
-- [bot/farm-bot.ini](bot/farm-bot.ini)
-
-It implements the flow:
-
-- wait for home HP >= 90%
-- open combat and start selected beast fight
-- use basic attack or technique
-- continue with Again while HP >= 30%
-- Return and wait for regen when HP drops below threshold
-
-You must calibrate HP bar regions and click targets for your own resolution/UI
-scale before use.
-
 ## Recovered files
 
 - [Original embedded assets](recovered/raw/): 70 files, 5,138,100 bytes total,
