@@ -933,9 +933,50 @@ body.minimal-guide
 }
 .soul-controls {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) auto auto;
-  align-items: center;
+  grid-template-columns: 1fr auto auto;
+  align-items: start;
   gap: 10px;
+}
+.soul-control-mode {
+  display: grid;
+  gap: 8px;
+  justify-content: start;
+  justify-items: start;
+}
+.soul-phase-toggle {
+  justify-self: start;
+  min-width: 0;
+  width: auto;
+  padding-inline: 10px;
+  white-space: nowrap;
+}
+.soul-mode-guide {
+  margin: 0;
+  max-width: 360px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+.soul-spent {
+  display: grid;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid #34444a;
+  border-radius: 8px;
+  background: #0f171b;
+  justify-self: end;
+}
+.soul-spent > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #b7c4be;
+  font-size: 12px;
+}
+.soul-spent strong {
+  color: #f3d68f;
+  font-size: 13px;
+  letter-spacing: 0.03em;
 }
 .soul-controls label {
   display: flex;
@@ -960,9 +1001,11 @@ body.minimal-guide
 }
 .soul-plan-actions {
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
   gap: 8px;
-  flex-wrap: wrap;
+  justify-self: end;
 }
 .soul-plan-actions .button {
   margin: 0;
@@ -1056,13 +1099,17 @@ body.minimal-guide
 }
 .soul-node-name {
   flex: 1;
+  padding-bottom: 10px;
   font:
     11px/1.15 Georgia,
     serif;
 }
 .soul-node-rank {
-  align-self: flex-end;
-  font-size: 9px;
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
+  font-size: 10px;
+  line-height: 1;
   color: #e6c77e;
 }
 .soul-node.locked {
@@ -1071,6 +1118,13 @@ body.minimal-guide
 .soul-node.planned {
   border-color: #d7bc77;
   background: #313623;
+}
+.soul-node.planned-phase2 {
+  border-color: #d36b6b;
+  background: #352020;
+}
+.soul-node.planned-phase2 .soul-node-rank {
+  color: #ff9a9a;
 }
 .soul-node.selected {
   outline: 2px solid var(--jade);
@@ -1139,9 +1193,15 @@ body.minimal-guide
 @media (max-width: 1150px) {
   .soul-controls {
     grid-template-columns: 1fr;
+    align-items: stretch;
   }
   .soul-layout {
     grid-template-columns: 1fr;
+  }
+  .soul-plan-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
   .soul-detail {
     position: static;

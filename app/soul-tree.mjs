@@ -33,14 +33,55 @@ export async function initSoulTree() {
   const data = await response.json();
   const nodes = validateTree(data.entries);
   const $ = (id) => document.getElementById(id);
-  let ranks = {};
+  const cleanRankMap = (value) => {
+    if (!value || typeof value !== "object" || Array.isArray(value))
+      throw new Error("Saved Soul Tree plan has an invalid format.");
+    const cleaned = {};
+    for (const [id, rank] of Object.entries(value)) {
+      const node = nodes.get(id);
+      if (!node || !Number.isSafeInteger(rank) || rank < 0)
+        throw new Error(`Invalid saved rank for ${id}.`);
+      if (node.maxRanks !== 0 && rank > node.maxRanks)
+        throw new Error(`Invalid saved rank for ${id}.`);
+      if (rank > 0) cleaned[id] = rank;
+    }
+    return cleaned;
+  };
+  const combineRanks = (primary, secondary) => {
+    const combined = { ...primary };
+    for (const [id, rank] of Object.entries(secondary))
+      combined[id] = (combined[id] ?? 0) + rank;
+    return combined;
+  };
+  let primaryRanks = {};
+  let secondaryRanks = {};
+  let planningPhase = "primary";
   let storageWarning = "";
   try {
     const saved = localStorage.getItem(storageKey);
     if (saved !== null) {
       const parsed = JSON.parse(saved);
-      validatePlan(parsed, nodes);
-      ranks = parsed;
+      if (
+        parsed &&
+        typeof parsed === "object" &&
+        !Array.isArray(parsed) &&
+        (parsed.primaryRanks || parsed.secondaryRanks)
+      ) {
+        primaryRanks = cleanRankMap(parsed.primaryRanks ?? {});
+        secondaryRanks = cleanRankMap(parsed.secondaryRanks ?? {});
+      } else if (
+        parsed &&
+        typeof parsed === "object" &&
+        !Array.isArray(parsed) &&
+        parsed.ranks
+      ) {
+        primaryRanks = cleanRankMap(parsed.ranks);
+        secondaryRanks = {};
+      } else {
+        primaryRanks = cleanRankMap(parsed);
+        secondaryRanks = {};
+      }
+      validatePhases(primaryRanks, secondaryRanks);
     }
   } catch (error) {
     storageWarning = `Could not load the saved plan: ${error.message}. Starting with an empty plan.`;
@@ -89,13 +130,37 @@ export async function initSoulTree() {
       rowGap: 52,
     },
   };
+  const getEffectiveRanks = () => combineRanks(primaryRanks, secondaryRanks);
+  const getContextRanks = () =>
+    planningPhase === "primary" ? primaryRanks : getEffectiveRanks();
+  const getActiveRanks = () =>
+    planningPhase === "primary" ? primaryRanks : secondaryRanks;
+  const setActiveRanks = (next) => {
+    if (planningPhase === "primary") primaryRanks = next;
+    else secondaryRanks = next;
+  };
+  const validatePhases = (primary, secondary) => {
+    validatePlan(primary, nodes);
+    validatePlan(combineRanks(primary, secondary), nodes);
+  };
+  const phaseLabel = () =>
+    planningPhase === "primary"
+      ? "First/Current Reincarnation"
+      : "Next Reincarnation";
 
   function save() {
     try {
-      localStorage.setItem(storageKey, JSON.stringify(ranks));
+      localStorage.setItem(
+        storageKey,
+        JSON.stringify({
+          format: "zenith-soul-tree-plan-v2",
+          primaryRanks,
+          secondaryRanks,
+        }),
+      );
       storageWarning = "";
       $("soul-status").textContent =
-        "Saved locally in this browser. This planner never edits your character.";
+        `${phaseLabel()} saved locally. This planner never edits your character.`;
     } catch (error) {
       storageWarning = `Could not save the plan: ${error.message}. Changes are only kept in this tab.`;
       $("soul-status").textContent = storageWarning;
@@ -119,10 +184,12 @@ export async function initSoulTree() {
     const baseName = cleanedBaseName || suggestedName;
     const fileName = /\.json$/i.test(baseName) ? baseName : `${baseName}.json`;
     const payload = {
-      format: "zenith-soul-tree-plan-v1",
+      format: "zenith-soul-tree-plan-v2",
       exportedAt: new Date().toISOString(),
       wikiSnapshot: data.fetchedAt,
-      ranks,
+      primaryRanks,
+      secondaryRanks,
+      ranks: getEffectiveRanks(),
     };
     const blob = new Blob([JSON.stringify(payload, null, 2)], {
       type: "application/json",
@@ -141,23 +208,55 @@ export async function initSoulTree() {
 
   function importPlan(text) {
     const parsed = JSON.parse(text);
-    const candidate =
-      parsed && typeof parsed === "object" && parsed.ranks && !Array.isArray(parsed.ranks)
-        ? parsed.ranks
-        : parsed;
-    validatePlan(candidate, nodes);
-    ranks = candidate;
+    let nextPrimary = {};
+    let nextSecondary = {};
+    if (
+      parsed &&
+      typeof parsed === "object" &&
+      !Array.isArray(parsed) &&
+      (parsed.primaryRanks || parsed.secondaryRanks)
+    ) {
+      nextPrimary = cleanRankMap(parsed.primaryRanks ?? {});
+      nextSecondary = cleanRankMap(parsed.secondaryRanks ?? {});
+    } else {
+      const candidate =
+        parsed &&
+        typeof parsed === "object" &&
+        parsed.ranks &&
+        !Array.isArray(parsed.ranks)
+          ? parsed.ranks
+          : parsed;
+      nextPrimary = cleanRankMap(candidate);
+      nextSecondary = {};
+    }
+    validatePhases(nextPrimary, nextSecondary);
+    primaryRanks = nextPrimary;
+    secondaryRanks = nextSecondary;
     save();
     renderDetails();
     $("soul-status").textContent =
-      `Loaded build with ${Object.keys(ranks).length} configured nodes.`;
+      `Loaded build with ${Object.keys(getEffectiveRanks()).length} configured nodes.`;
   }
 
   function renderDetails() {
+    const ranks = getEffectiveRanks();
+    const contextRanks = getContextRanks();
+    const activeRanks = getActiveRanks();
     const node = nodes.get(selected);
     const rank = ranks[node.id] ?? 0;
-    const missing = missingPrerequisites(node, ranks, nodes);
+    const activeRank = activeRanks[node.id] ?? 0;
+    const primaryRank = primaryRanks[node.id] ?? 0;
+    const secondaryRank = secondaryRanks[node.id] ?? 0;
+    const missing = missingPrerequisites(node, contextRanks, nodes);
     const maxed = node.maxRanks > 0 && rank >= node.maxRanks;
+    const phaseStillValid =
+      planningPhase === "primary"
+        ? canRemoveRank(node, primaryRanks, nodes)
+        : true;
+    const canRemoveFromActive =
+      activeRank > 0 &&
+      phaseStillValid &&
+      canRemoveRank(node, ranks, nodes);
     const requirements = node.prereqs
       ? node.prereqs.map((req) => {
           const parent = nodes.get(req.nodeId);
@@ -172,15 +271,18 @@ export async function initSoulTree() {
           };
         })
       : [];
-    $("soul-spent").textContent =
-      `${format(planCost(ranks, nodes))} DSP planned`;
-    $("soul-picker").value = node.id;
+    $("soul-spent-phase1").textContent = `${format(planCost(primaryRanks, nodes))} DSP`;
+    $("soul-spent-phase2").textContent = `${format(planCost(secondaryRanks, nodes))} DSP`;
+    $("soul-spent-total").textContent = `${format(planCost(ranks, nodes))} DSP`;
+    $("soul-phase-toggle").textContent = `Planning mode: ${phaseLabel()}`;
     $("soul-detail").innerHTML = `
       <img class="soul-detail-art" src="${escape(toAppUrl(node.localImage))}" alt="">
       <span class="eyebrow">${escape(node.tree)} / ROW ${node.row ?? node.tier}</span>
       <h2>${escape(node.name)}</h2>
       <p>${escape(node.description)}</p>
       <div class="soul-detail-rank">Current build <strong>${format(rank)} / ${node.maxRanks ? format(node.maxRanks) : "∞"}</strong></div>
+      <div class="soul-detail-rank">Current phase spend <strong>${format(activeRank)} rank${activeRank === 1 ? "" : "s"} (${escape(phaseLabel())})</strong></div>
+      <div class="soul-detail-rank">Split <strong>P1 ${format(primaryRank)} · P2 ${format(secondaryRank)}</strong></div>
       <div class="soul-detail-rank">Upgrade cost <strong>${maxed ? "Maxed" : `${format(nextCost(node, rank))} DSP`}</strong></div>
       <h3>Prerequisites</h3>
       <ul class="soul-requirements">${
@@ -194,18 +296,21 @@ export async function initSoulTree() {
           : "<li>None · root node</li>"
       }</ul>
       <div class="soul-actions">
-        <button type="button" class="button" data-soul-action="remove" ${canRemoveRank(node, ranks, nodes) ? "" : "disabled"}>− Remove rank</button>
+        <button type="button" class="button" data-soul-action="remove" ${canRemoveFromActive ? "" : "disabled"}>− Remove rank</button>
         <button type="button" class="button primary" data-soul-action="add" ${maxed || missing.length ? "disabled" : ""}>+ Plan rank</button>
       </div>
-      ${rank && !canRemoveRank(node, ranks, nodes) ? '<p class="muted">Remove dependent ranks before lowering this prerequisite.</p>' : ""}
+      ${activeRank && !canRemoveFromActive ? '<p class="muted">Remove dependent ranks before lowering this prerequisite.</p>' : ""}
       <a class="text-link" href="https://immortalzenith.com/wiki/soultree/${encodeURIComponent(node.id)}" target="_blank" rel="noopener noreferrer">Official node ↗</a>`;
 
     document.querySelectorAll("[data-soul-node]").forEach((button) => {
       const item = nodes.get(button.dataset.soulNode);
       const itemRank = ranks[item.id] ?? 0;
-      const locked = missingPrerequisites(item, ranks, nodes).length > 0;
+      const itemSecondaryRank = secondaryRanks[item.id] ?? 0;
+      const locked =
+        missingPrerequisites(item, contextRanks, nodes).length > 0;
       button.classList.toggle("selected", item.id === selected);
       button.classList.toggle("planned", itemRank > 0);
+      button.classList.toggle("planned-phase2", itemSecondaryRank > 0);
       button.classList.toggle("locked", locked);
       button.setAttribute("aria-pressed", String(item.id === selected));
       button.querySelector(".soul-node-rank").textContent =
@@ -213,12 +318,15 @@ export async function initSoulTree() {
           ? itemRank
             ? "✓"
             : ""
-          : `${itemRank}/${item.maxRanks || "∞"}`;
+          : itemSecondaryRank > 0
+            ? `${itemRank - itemSecondaryRank}+${itemSecondaryRank}/${item.maxRanks || "∞"}`
+            : `${itemRank}/${item.maxRanks || "∞"}`;
     });
     updateEdgeStyles();
   }
 
   function updateEdgeStyles() {
+    const ranks = getEffectiveRanks();
     $("soul-stage")
       .querySelectorAll(".soul-edges [data-edge-parent]")
       .forEach((edge) => {
@@ -747,18 +855,6 @@ export async function initSoulTree() {
         button.style.left = `${pos.x}px`;
         button.style.top = `${pos.y}px`;
       });
-    $("soul-picker").innerHTML = entries
-      .slice()
-      .sort(
-        (a, b) =>
-          (a.row ?? a.tier) - (b.row ?? b.tier) ||
-          a.name.localeCompare(b.name),
-      )
-      .map(
-        (node) =>
-          `<option value="${escape(node.id)}">${escape(node.name)} · row ${node.row ?? node.tier}</option>`,
-      )
-      .join("");
     document.querySelectorAll("[data-soul-tree]").forEach((button) => {
       button.setAttribute(
         "aria-pressed",
@@ -814,35 +910,55 @@ export async function initSoulTree() {
     }
     const action = event.target.closest("[data-soul-action]");
     if (!action) return;
+    const activeRanks = getActiveRanks();
+    const ranks = getEffectiveRanks();
+    const contextRanks = getContextRanks();
     const node = nodes.get(selected);
     const rank = ranks[selected] ?? 0;
+    const activeRank = activeRanks[selected] ?? 0;
+    const updateAndValidate = (nextActiveRank) => {
+      const nextActive = { ...activeRanks };
+      if (nextActiveRank <= 0) delete nextActive[selected];
+      else nextActive[selected] = nextActiveRank;
+      if (planningPhase === "primary") validatePhases(nextActive, secondaryRanks);
+      else validatePhases(primaryRanks, nextActive);
+      setActiveRanks(nextActive);
+    };
     if (
       action.dataset.soulAction === "add" &&
-      !missingPrerequisites(node, ranks, nodes).length &&
+      !missingPrerequisites(node, contextRanks, nodes).length &&
       (!node.maxRanks || rank < node.maxRanks)
     ) {
-      const updated = { ...ranks, [selected]: rank + 1 };
-      validatePlan(updated, nodes);
-      ranks = updated;
+      updateAndValidate(activeRank + 1);
     } else if (
       action.dataset.soulAction === "remove" &&
-      canRemoveRank(node, ranks, nodes)
+      activeRank > 0
     ) {
-      const updated = { ...ranks };
-      if (rank === 1) delete updated[selected];
-      else updated[selected] = rank - 1;
-      ranks = updated;
+      const canRemoveCurrent =
+        planningPhase === "primary"
+          ? canRemoveRank(node, primaryRanks, nodes) &&
+            canRemoveRank(node, ranks, nodes)
+          : canRemoveRank(node, ranks, nodes);
+      if (!canRemoveCurrent) return;
+      updateAndValidate(activeRank - 1);
     } else return;
     save();
     renderDetails();
     const sameAction = $("soul-detail").querySelector(
       `[data-soul-action="${action.dataset.soulAction}"]:not(:disabled)`,
     );
-    (sameAction ?? $("soul-picker")).focus();
+    const selectedNodeButton = $("soul-stage").querySelector(
+      `[data-soul-node="${CSS.escape(selected)}"]`,
+    );
+    const focusTarget = sameAction ?? selectedNodeButton;
+    focusTarget?.focus({ preventScroll: true });
   });
-  $("soul-picker").addEventListener("change", (event) =>
-    selectNode(event.target.value, true),
-  );
+  $("soul-phase-toggle").addEventListener("click", () => {
+    planningPhase = planningPhase === "primary" ? "secondary" : "primary";
+    renderDetails();
+    $("soul-status").textContent =
+      `${phaseLabel()} is active. New rank changes apply to this phase.`;
+  });
   $("soul-zoom-in").addEventListener("click", () => {
     zoomFactor = Math.min(1.5, Math.round((zoomFactor + 0.1) * 10) / 10);
     updateZoom();
@@ -853,13 +969,15 @@ export async function initSoulTree() {
   });
   $("soul-reset").addEventListener("click", () => {
     if (
-      !Object.keys(ranks).length ||
+      (!Object.keys(primaryRanks).length &&
+        !Object.keys(secondaryRanks).length) ||
       !confirm(
         "Clear all planned Soul Tree ranks? This does not affect the game.",
       )
     )
       return;
-    ranks = {};
+    primaryRanks = {};
+    secondaryRanks = {};
     save();
     renderDetails();
   });
@@ -881,7 +999,7 @@ export async function initSoulTree() {
     `Wiki snapshot: ${data.fetchedAt.slice(0, 10)} · ${nodes.size} nodes · local planning only`;
   $("soul-status").textContent =
     storageWarning ||
-    "Pick a node to inspect details. All planning stays local to this browser.";
+    "Pick a node to inspect details. First/Current Reincarnation and Next Reincarnation are tracked separately.";
   drawTree();
   new ResizeObserver(() => updateZoom()).observe($("soul-viewport"));
 }

@@ -35,8 +35,7 @@
         <a href="#patchnotes">13 <span>Patch notes highlights</span></a>
       </nav>
       <footer>
-        Unofficial companion<br />Client 1.31.0 · research 12 Nov 2026<br />Not
-        connected to your game.
+        Unofficial companion<br />Client 1.33.0 · research 21 Nov 2026
       </footer>
     </aside>
     <main id="content" tabindex="-1">
@@ -371,7 +370,6 @@
       </section>
       <section id="soul-tree" hidden>
         <div class="page-heading">
-          <span class="eyebrow">SOUL TREE COMMAND CENTER</span>
           <h1>Shape your next rebirth.</h1>
           <p>
             Compare paths, check gates, and map your point spend before you
@@ -411,25 +409,44 @@
                   Crafting
                 </button>
               </div>
-              <strong id="soul-spent">0 DSP planned</strong>
             </div>
             <div class="soul-controls">
-              <label class="soul-node-picker"
-                >Jump to node
-                <select id="soul-picker"></select
-              ></label>
-              <div class="soul-zoom" aria-label="Tree zoom">
-                <button id="soul-zoom-out" type="button" aria-label="Zoom out">
-                  −
+              <div class="soul-control-mode">
+                <div class="soul-zoom" aria-label="Tree zoom">
+                  <button id="soul-zoom-out" type="button" aria-label="Zoom out">
+                    −
+                  </button>
+                  <span id="soul-zoom-value">Fit</span>
+                  <button
+                    id="soul-zoom-in"
+                    type="button"
+                    aria-label="Zoom in, up to fit"
+                  >
+                    +
+                  </button>
+                </div>
+                <button id="soul-phase-toggle" class="button" type="button">
+                  Planning mode: First/Current Reincarnation
                 </button>
-                <span id="soul-zoom-value">Fit</span>
-                <button
-                  id="soul-zoom-in"
-                  type="button"
-                  aria-label="Zoom in, up to fit"
-                >
-                  +
-                </button>
+                <p class="soul-mode-guide muted">
+                  Plan your current build in First/Current Reincarnation first.
+                  Switch to Next Reincarnation to queue extra ranks for the next
+                  reset.
+                </p>
+              </div>
+              <div id="soul-spent" class="soul-spent" aria-live="polite">
+                <div>
+                  <span>First/Current Reincarnation</span>
+                  <strong id="soul-spent-phase1">0 DSP</strong>
+                </div>
+                <div>
+                  <span>Next Reincarnation</span>
+                  <strong id="soul-spent-phase2">0 DSP</strong>
+                </div>
+                <div>
+                  <span>Total</span>
+                  <strong id="soul-spent-total">0 DSP</strong>
+                </div>
               </div>
               <div class="soul-plan-actions">
                 <button id="soul-reset" class="button" type="button">
