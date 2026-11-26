@@ -19,17 +19,17 @@
       >
       <div class="private-label"><span></span> ONLINE SOUL TREE PLANNER</div>
       <nav aria-label="Guide sections">
-        <a href="#overview">01 <span>Your path</span></a>
-        <a href="#progression">02 <span>Realm progression</span></a>
-        <a href="#codex">03 <span>Build codex</span></a>
-        <a href="#qi">04 <span>Qi Cap laboratory</span></a>
-        <a href="#library">05 <span>Field notes & sources</span></a>
-        <a href="#demonic">06 <span>Demonic / yin path</span></a>
-        <a href="#attributes">07 <span>Attributes explained</span></a>
-        <a href="#reincarnation">08 <span>Reincarnation & soul</span></a>
         <a href="#soul-tree">1 <span>Soul Tree planner</span></a>
         <a href="#worldmap">2 <span>World map tiers</span></a>
         <a href="#manuals">3 <span>Manual stat tables</span></a>
+        <a href="#codex">4 <span>Bloodlines and Physiques</span></a>
+        <a href="#overview">01 <span>Your path</span></a>
+        <a href="#progression">02 <span>Realm progression</span></a>
+        <a href="#qi">05 <span>Qi Cap laboratory</span></a>
+        <a href="#library">06 <span>Field notes & sources</span></a>
+        <a href="#demonic">07 <span>Demonic / yin path</span></a>
+        <a href="#attributes">08 <span>Attributes explained</span></a>
+        <a href="#reincarnation">09 <span>Reincarnation & soul</span></a>
         <a href="#dao-points">10 <span>Maximize Dao points</span></a>
         <a href="#fast-progress">11 <span>Fast progression</span></a>
         <a href="#patchnotes">13 <span>Patch notes highlights</span></a>
@@ -117,35 +117,50 @@
       </section>
       <section id="codex" hidden>
         <div class="page-heading">
-          <span class="eyebrow">KNOW WHAT YOU ARE CHOOSING</span>
-          <h1>The build codex.</h1>
+          <span class="eyebrow">BLOODLINES · PHYSIQUES</span>
+          <h1>Bloodlines and Physiques.</h1>
           <p>
-            Actual bonuses and unlocks from the official public wiki snapshot.
-            Select an entry for its milestones and drawbacks.
+            Local snapshot only for now. Browse all bloodlines and physiques in
+            an in-game label style, then search to filter in real time.
           </p>
         </div>
-        <div class="filters">
-          <label
-            >Build
-            <select id="build">
-              <option value="all">All builds</option>
-              <option value="lightning">Lightning</option>
-              <option value="yin">Darkness / yin</option>
-            </select></label
+        <div class="codex-tabs" role="tablist" aria-label="Trait category">
+          <button
+            id="codex-tab-bloodlines"
+            type="button"
+            data-codex-collection="bloodlines"
+            aria-pressed="true"
           >
+            Bloodlines
+          </button>
+          <button
+            id="codex-tab-physiques"
+            type="button"
+            data-codex-collection="physiques"
+            aria-pressed="false"
+          >
+            Physiques
+          </button>
+        </div>
+        <div class="filters codex-filters">
           <label
             >Search
             <input
               id="search"
               type="search"
-              placeholder="Find a trait or manual…" /></label
-          ><label
-            >Category
-            <select id="category">
-              <option value="all">All entries</option>
-              <option value="bloodlines">Bloodlines</option>
-              <option value="physiques">Physiques</option>
-              <option value="manuals">Manuals</option>
+              placeholder="Find a trait…" /></label
+          >
+          <label
+            >Grade
+            <select id="rank-filter">
+              <option value="all">All grades</option>
+              <option value="D">D</option>
+              <option value="C">C</option>
+              <option value="B">B</option>
+              <option value="A">A</option>
+              <option value="S">S</option>
+              <option value="S+">S+</option>
+              <option value="SSS">SSS</option>
             </select></label
           >
         </div>

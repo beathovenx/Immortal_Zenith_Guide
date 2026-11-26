@@ -549,6 +549,30 @@ select {
   grid-template-columns: 180px minmax(0, 1fr) 180px;
   gap: 20px;
 }
+.codex-filters {
+  grid-template-columns: minmax(0, 1fr) 180px;
+  margin-top: 16px;
+}
+.codex-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.codex-tabs button {
+  border: 1px solid #3e4f58;
+  background: #121b20;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.codex-tabs button.selected,
+.codex-tabs button[aria-pressed="true"] {
+  border-color: #6da6d6;
+  color: #d4ebff;
+  background: #1d2a33;
+}
 .codex-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -574,6 +598,130 @@ select {
 .codex-card p {
   color: var(--muted);
   font-size: 12px;
+}
+.trait-label-card {
+  position: relative;
+  align-items: stretch;
+  gap: 12px;
+  text-align: left;
+  border-radius: 12px;
+  border-color: #23323a;
+  overflow: hidden;
+  background: radial-gradient(circle at top right, #182129 0%, #0d1218 62%);
+}
+.trait-label-card.with-art {
+  background-image:
+    linear-gradient(180deg, rgba(8, 12, 16, 0.34) 0%, rgba(8, 12, 16, 0.9) 72%),
+    var(--trait-art);
+  background-size: cover;
+  background-position: center;
+}
+.trait-label-card:hover {
+  border-color: #385569;
+}
+.trait-label-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.trait-rank {
+  min-width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #438fd0;
+  border-radius: 9px;
+  color: #8ec4ff;
+  font: 700 18px/1 Georgia;
+}
+.trait-label-card h3 {
+  margin: 0;
+  font: 30px/1.1 Georgia;
+  color: #e9d8b4;
+}
+.trait-label-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #d7dce2;
+}
+.trait-block h4 {
+  margin: 8px 0 10px;
+  font: 600 12px/1 system-ui;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.trait-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.trait-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 5px 9px;
+  border: 1px solid #25514b;
+  background: rgba(20, 33, 36, 0.85);
+  font-size: 12px;
+}
+.trait-chip strong {
+  font-size: 21px;
+  font-family: Georgia, serif;
+  font-weight: 600;
+  line-height: 1;
+}
+.trait-chip.positive {
+  border-color: #1e6f5f;
+}
+.trait-chip.positive strong {
+  color: #9de8cf;
+}
+.trait-chip.negative {
+  border-color: #7a3232;
+}
+.trait-chip.negative strong {
+  color: #ff8f8f;
+}
+.trait-chip.absorb {
+  border-color: #8b6f2b;
+  background: rgba(43, 35, 16, 0.85);
+}
+.trait-chip.absorb strong {
+  color: #f4cc7b;
+}
+.trait-milestones {
+  display: none;
+  margin-top: 6px;
+}
+.trait-label-card.expanded .trait-milestones {
+  display: block;
+}
+.trait-milestones ol {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+.trait-milestones li {
+  display: grid;
+  gap: 6px;
+}
+.trait-milestones p {
+  margin: 0;
+  color: #d0d5db;
+}
+.milestone-art {
+  color: #f4cc7b;
+  font-size: 12px;
+}
+.trait-expand-hint {
+  margin-top: 4px;
+  color: #b5c0cc;
+  font-size: 11px;
 }
 .codex-card .text-link {
   display: block;
@@ -692,6 +840,34 @@ select {
 }
 .prose tr:nth-child(even) {
   background: #111c21;
+}
+#worldmap-guide table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: visible;
+  table-layout: auto;
+}
+#worldmap-guide th,
+#worldmap-guide td {
+  min-width: 0;
+  padding: 8px 6px;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  vertical-align: middle;
+}
+#worldmap-guide th:first-child,
+#worldmap-guide td:first-child {
+  width: 15%;
+  text-align: left;
+  white-space: normal;
+}
+#worldmap-guide th:nth-child(2),
+#worldmap-guide td:nth-child(2) {
+  width: 9%;
+  white-space: nowrap;
 }
 .manual-table-wrap {
   overflow-x: auto;
@@ -866,12 +1042,12 @@ dialog::backdrop {
 }
 body.minimal-guide
   nav
-  a:not([href="#worldmap"]):not([href="#soul-tree"]):not([href="#manuals"]) {
+  a:not([href="#worldmap"]):not([href="#soul-tree"]):not([href="#manuals"]):not([href="#codex"]) {
   display: none;
 }
 body.minimal-guide
   main
-  > section:not(#worldmap):not(#soul-tree):not(#manuals) {
+  > section:not(#worldmap):not(#soul-tree):not(#manuals):not(#codex) {
   display: none !important;
 }
 .soul-toolbar,
@@ -1254,7 +1430,7 @@ body.minimal-guide
     grid-template-columns: 1fr;
   }
   .codex-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .character-strip {
     grid-template-columns: 1fr 1fr;
@@ -1367,16 +1543,28 @@ body.minimal-guide
   .filters {
     grid-template-columns: 1fr;
   }
+  .codex-filters {
+    grid-template-columns: 1fr;
+  }
+  .codex-tabs {
+    flex-wrap: wrap;
+  }
   .codex-grid {
     grid-template-columns: 1fr;
   }
-  .codex-card {
+  .codex-card:not(.trait-label-card) {
     flex-direction: row;
   }
-  .codex-card img {
+  .codex-card:not(.trait-label-card) img {
     width: 70px;
     height: 70px;
     align-self: flex-start;
+  }
+  .trait-label-card h3 {
+    font-size: 25px;
+  }
+  .trait-chip strong {
+    font-size: 17px;
   }
   .page-heading h1 {
     font-size: 40px;

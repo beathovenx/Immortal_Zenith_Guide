@@ -1,6 +1,6 @@
 import { marked } from "./vendor/marked.js";
 import DOMPurify from "./vendor/purify.js";
-import { realms, stages, calculateQi, filterEntries } from "./model.mjs";
+import { realms, stages, calculateQi } from "./model.mjs";
 import { initSoulTree } from "./soul-tree.mjs";
 
 const $ = (id) => document.getElementById(id);
@@ -23,13 +23,41 @@ const toAppUrl = (value) => {
 let data;
 let allManuals = [];
 let manualIconMap = {};
+let traitImageMap = {};
+let traitCatalog = {
+  bloodlines: [],
+  physiques: [],
+};
 let saved = {};
 let noteRequest = 0;
 let soulTreePromise;
+const traitEntriesById = new Map();
+const codexState = {
+  collection: "bloodlines",
+};
 const labels = {
   bloodlines: "Bloodline",
   physiques: "Physique",
   manuals: "Manual",
+};
+const traitCollections = ["bloodlines", "physiques"];
+const rankOrder = ["S+", "S", "A", "B", "C", "D"];
+const traitMapVersion = "20261125";
+const statKeyLabels = {
+  attack: "Attack",
+  damageReduction: "Damage Red",
+  defense: "Defense",
+  elemAtk: "Atk",
+  elemRes: "Res",
+  energy: "Energy",
+  fortune: "Fortune",
+  health: "Health",
+  healthRegen: "Health Regen",
+  mentalFortitude: "Mental Fortitude",
+  qiPoolCap: "Qi Cap",
+  speed: "Speed",
+  stamina: "Stamina",
+  staminaRegen: "Stamina Regen",
 };
 const tasks = [
   [
@@ -258,10 +286,166 @@ function showError(error) {
     error.message ||
     "Unable to load the guide. Check the local server and reload.";
 }
+function normalizeImageKey(path) {
+  return typeof path === "string" ? path.replace(/^\/+/, "") : path;
+}
+function normalizeTraitSource(source) {
+  if (typeof source !== "string") return source;
+  return source.replace(
+    "https://d1okzqj8ull9h6.cloudfront.net",
+    "https://d27wzk5al56txp.cloudfront.net",
+  );
+}
+function entryArtUrl(entry) {
+  if (!entry?.image) return null;
+  const imageKey = normalizeImageKey(entry.image);
+  const mapped = data.images?.[imageKey] ?? data.images?.[entry.image];
+  if (mapped?.src) return toAppUrl(mapped.src);
+  const alternateKey = imageKey.endsWith(".png")
+    ? imageKey.replace(/\.png$/i, ".webp")
+    : imageKey.endsWith(".webp")
+      ? imageKey.replace(/\.webp$/i, ".png")
+      : null;
+  const traitMapped =
+    traitImageMap[imageKey] ??
+    traitImageMap[entry.image] ??
+    (alternateKey ? traitImageMap[alternateKey] : null);
+  return traitMapped?.source
+    ? toAppUrl(normalizeTraitSource(traitMapped.source))
+    : null;
+}
 function image(entry, className = "") {
-  const asset = data.images[entry.image];
-  if (!asset) throw new Error(`Missing local artwork: ${entry.image}`);
-  return `<img class="${className}" src="${escape(toAppUrl(asset.src))}" alt="" loading="lazy">`;
+  const src = entryArtUrl(entry);
+  if (!src) {
+    return `<span class="${className} stage-sigil" aria-hidden="true">☯</span>`;
+  }
+  return `<img class="${className}" src="${escape(src)}" alt="" loading="lazy">`;
+}
+function traitCardArtUrl(entry) {
+  return entryArtUrl(entry);
+}
+function normalizeTraitEntries(collection, payload) {
+  const entries = Array.isArray(payload?.entries) ? payload.entries : [];
+  return [...entries]
+    .map((entry) => ({ ...entry, collection }))
+    .sort((left, right) => {
+      const leftRank = rankOrder.indexOf(left.rank ?? "");
+      const rightRank = rankOrder.indexOf(right.rank ?? "");
+      const rankCompare =
+        (leftRank === -1 ? rankOrder.length : leftRank) -
+        (rightRank === -1 ? rankOrder.length : rightRank);
+      if (rankCompare !== 0) return rankCompare;
+      return left.name.localeCompare(right.name);
+    });
+}
+function formatTraitNumber(value) {
+  return Number.isInteger(value) ? String(value) : format(value);
+}
+function statLabel(path) {
+  if (!path.length) return "";
+  const [group, detail] = path;
+  if (group === "elemAtk" || group === "elemRes") {
+    const part = group === "elemAtk" ? "Atk" : "Res";
+    if (detail) {
+      const element = String(detail);
+      return `${element.charAt(0).toUpperCase()}${element.slice(1)} ${part}`;
+    }
+    return `Element ${part}`;
+  }
+  return statKeyLabels[group] ?? group;
+}
+function collectTraitStats(source, isPercent, list, path = []) {
+  if (!source || typeof source !== "object") return;
+  for (const [key, value] of Object.entries(source)) {
+    if (value && typeof value === "object") {
+      collectTraitStats(value, isPercent, list, [...path, key]);
+      continue;
+    }
+    if (!Number.isFinite(value)) continue;
+    list.push({
+      label: statLabel([...path, key]),
+      value,
+      suffix: isPercent ? "%" : "",
+    });
+  }
+}
+function summarizeTrait(entry) {
+  const bonuses = [];
+  const drawbacks = [];
+  collectTraitStats(entry.bonuses?.stats, false, bonuses);
+  collectTraitStats(entry.bonuses?.statsPct, true, bonuses);
+  if (Number.isFinite(entry.bonuses?.qiGenMult)) {
+    bonuses.push({
+      label: "Qi Gen",
+      value: entry.bonuses.qiGenMult,
+      mode: "multiplier",
+    });
+  }
+  collectTraitStats(entry.drawbacks?.stats, false, drawbacks);
+  collectTraitStats(entry.drawbacks?.statsPct, true, drawbacks);
+  const searchText = [
+    entry.name,
+    entry.rank ?? "",
+    entry.description ?? "",
+    ...bonuses.map(({ label, value, suffix }) => `${label} ${value}${suffix ?? ""}`),
+    ...drawbacks.map(({ label, value, suffix }) => `${label} ${value}${suffix ?? ""}`),
+  ]
+    .join(" ")
+    .toLowerCase();
+  return {
+    bonuses: bonuses.slice(0, 10),
+    drawbacks: drawbacks.slice(0, 10),
+    searchText,
+  };
+}
+function traitChip(trait, tone) {
+  const valueText =
+    trait.mode === "multiplier"
+      ? `x${formatTraitNumber(trait.value)}`
+      : `${trait.value > 0 ? "+" : ""}${formatTraitNumber(trait.value)}${trait.suffix ?? ""}`;
+  return `<span class="trait-chip ${tone}"><span>${escape(trait.label)}</span><strong>${escape(valueText)}</strong></span>`;
+}
+function traitBlock(title, chips, tone) {
+  if (!chips.length) return "";
+  return `<div class="trait-block"><h4>${title}</h4><div class="trait-chips">${chips.map((trait) => traitChip(trait, tone)).join("")}</div></div>`;
+}
+function milestoneChips(milestone) {
+  const chips = [];
+  collectTraitStats(milestone?.stats, false, chips);
+  collectTraitStats(milestone?.statsPct, true, chips);
+  return chips.slice(0, 6);
+}
+function traitMilestones(entry) {
+  const milestones = Array.isArray(entry.milestones) ? entry.milestones : [];
+  if (!milestones.length) return "";
+  return `<div class="trait-milestones"><h4>Realm milestones</h4><ol>${milestones
+    .map((milestone) => {
+      const chips = milestoneChips(milestone);
+      const absorbChip = milestone.absorbElement
+        ? `<span class="trait-chip absorb"><span>Absorb</span><strong>${escape(milestone.absorbElement)}</strong></span>`
+        : "";
+      const statChips = chips
+        .map((trait) => traitChip(trait, "positive"))
+        .join("");
+      const milestoneChipsMarkup =
+        statChips || absorbChip
+          ? `<div class="trait-chips">${statChips}${absorbChip}</div>`
+          : "";
+      return `<li><b>${escape(realms[milestone.realm] ?? `Realm ${milestone.realm}`)}</b><p>${escape(milestone.description ?? "")}</p>${milestone.grantsBattleTechniqueName ? `<span class="milestone-art">${escape(milestone.grantsBattleTechniqueName)}</span>` : ""}${milestoneChipsMarkup}</li>`;
+    })
+    .join("")}</ol></div>`;
+}
+function traitLabelCard(entry, summary) {
+  const art = traitCardArtUrl(entry);
+  return `<button type="button" class="codex-card trait-label-card${art ? " with-art" : ""}" data-entry="${escape(entry.id)}" data-trait-art="${escape(art ?? "")}" aria-expanded="false">
+    <div class="trait-label-head"><span class="eyebrow">${escape(labels[entry.collection]).toUpperCase()}</span><span class="trait-rank">${escape(entry.rank ?? "?")}</span></div>
+    <h3>${escape(entry.name)}</h3>
+    <p>${escape(entry.description)}</p>
+    ${traitBlock("Bonuses", summary.bonuses, "positive")}
+    ${traitBlock("Drawbacks", summary.drawbacks, "negative")}
+    ${traitMilestones(entry)}
+    <span class="trait-expand-hint">Tap to expand/collapse milestones</span>
+  </button>`;
 }
 function entryButton(entry, target = false) {
   return `<button type="button" class="${target ? "target-card" : "codex-card"}" data-entry="${escape(entry.id)}">${image(entry)}<div><span class="eyebrow">${escape(labels[entry.collection])} <b class="rank">${escape(entry.rank ?? `T${entry.realmTier}`)}</b></span><h3>${escape(entry.name)}</h3><p>${target ? (entry.collection === "bloodlines" ? "Your long-term offensive lightning lineage." : "Your long-term defensive lightning foundation.") : escape(entry.description)}</p><span class="text-link">View bonuses & milestones <span aria-hidden="true">↗</span></span></div></button>`;
@@ -296,7 +480,7 @@ function artDetails(id) {
   return `<p class="accent">Art: ${escape(art.name)}</p><p>${escape(elements.join(" / "))} · ${escape(art.kind)} · requires ${escape(realms[art.minRealmMajor])}</p><p>Raw base ${format(art.baseAmount)}${art.scaleStat ? ` + ${format(art.scaleFactor)} × ${escape(art.scaleStat)}` : ""} · Energy ${format(art.energyCost)} · Stamina ${format(art.staminaCost)} · Cooldown ${format(art.cooldown)}</p>${art.effects?.length ? `<p>Effects: ${art.effects.map(escape).join(", ")}</p>` : ""}`;
 }
 function showEntry(id) {
-  const entry = data.entries.find((item) => item.id === id);
+  const entry = traitEntriesById.get(id) ?? data.entries.find((item) => item.id === id);
   if (!entry) throw new Error("This codex entry was not found.");
   const milestones = entry.milestones ?? entry.comprehension ?? [];
   $("detail-body").innerHTML =
@@ -314,17 +498,44 @@ function showEntry(id) {
   $("close-detail").focus();
 }
 function renderCodex() {
-  const entries = filterEntries(
-    data.entries,
-    $("search").value,
-    $("category").value,
-    $("build").value,
-  );
+  const search = $("search").value.trim().toLowerCase();
+  const selectedRank = $("rank-filter").value;
+  for (const collection of traitCollections) {
+    const button = document.querySelector(`[data-codex-collection="${collection}"]`);
+    if (!button) continue;
+    const selected = codexState.collection === collection;
+    button.setAttribute("aria-pressed", String(selected));
+    button.classList.toggle("selected", selected);
+  }
+  const entries = (traitCatalog[codexState.collection] ?? [])
+    .map((entry) => ({ entry, summary: summarizeTrait(entry) }))
+    .filter(
+      ({ entry, summary }) =>
+        (!search || summary.searchText.includes(search)) &&
+        (selectedRank === "all" || entry.rank === selectedRank),
+    );
+  const label = codexState.collection === "bloodlines" ? "bloodlines" : "physiques";
   $("results").textContent =
-    `${entries.length} ${entries.length === 1 ? "entry" : "entries"} · official snapshot ${data.updated}`;
+    `${entries.length} ${label} · local snapshot ${data.updated}`;
   $("cards").innerHTML = entries.length
-    ? entries.map((entry) => entryButton(entry)).join("")
-    : '<p class="empty">No entries match. Try a broader search or another category.</p>';
+    ? entries.map(({ entry, summary }) => traitLabelCard(entry, summary)).join("")
+    : '<p class="empty">No labels match. Try a broader search.</p>';
+  document.querySelectorAll(".trait-label-card[data-trait-art]").forEach((card) => {
+    const art = card.dataset.traitArt;
+    if (!art) return;
+    card.style.setProperty("--trait-art", `url("${art}")`);
+  });
+}
+function toggleTraitCard(card) {
+  const shouldExpand = !card.classList.contains("expanded");
+  document.querySelectorAll(".trait-label-card.expanded").forEach((expanded) => {
+    expanded.classList.remove("expanded");
+    expanded.setAttribute("aria-expanded", "false");
+  });
+  if (shouldExpand) {
+    card.classList.add("expanded");
+    card.setAttribute("aria-expanded", "true");
+  }
 }
 function renderStage() {
   const realm = Number($("realm").value);
@@ -517,10 +728,7 @@ async function route() {
     $("content").focus();
     return;
   }
-  const section = ["worldmap", "soul-tree", "manuals"].includes(requested)
-    ? requested
-    : "soul-tree";
-  for (const id of [
+  const sections = [
     "overview",
     "progression",
     "codex",
@@ -535,7 +743,9 @@ async function route() {
     "soul-tree",
     "dao-points",
     "fast-progress",
-  ])
+  ];
+  const section = sections.includes(requested) ? requested : "soul-tree";
+  for (const id of sections)
     $(id).hidden = id !== section;
   document.querySelectorAll("nav a").forEach((anchor) => {
     if (anchor.hash === `#${section}`)
@@ -563,16 +773,17 @@ async function route() {
     await soulTreePromise;
   }
   if (section === "manuals") renderManualTable();
-  if (section === "codex" && ["yin", "lightning"].includes(topic)) {
-    $("build").value = topic;
+  if (section === "codex" && traitCollections.includes(topic)) {
+    codexState.collection = topic;
     renderCodex();
   }
   const labelsBySection = {
+    codex: "BLOODLINES · PHYSIQUES",
     "soul-tree": "THE SOUL TREE",
     worldmap: "THE WORLD MAP TIERS",
     manuals: "MANUAL STAT TABLES",
   };
-  $("path-label").textContent = labelsBySection[section] ?? "THE SOUL TREE";
+  $("path-label").textContent = labelsBySection[section] ?? "THE CULTIVATOR'S ATLAS";
   window.scrollTo(0, 0);
 }
 async function init() {
@@ -584,6 +795,29 @@ async function init() {
       "Guide data is missing. Run npm.cmd run prepare:guide, then reload.",
     );
   data = await response.json();
+  const [bloodlinesResponse, physiquesResponse] = await Promise.all([
+    fetch(toAppUrl("bloodlines.json")),
+    fetch(toAppUrl("physiques.json")),
+  ]);
+  if (!bloodlinesResponse.ok || !physiquesResponse.ok)
+    throw new Error(
+      "Trait datasets are missing. Check tools/serve-guide.mjs routes and reload.",
+    );
+  const [bloodlinesPayload, physiquesPayload] = await Promise.all([
+    bloodlinesResponse.json(),
+    physiquesResponse.json(),
+  ]);
+  traitCatalog = {
+    bloodlines: normalizeTraitEntries("bloodlines", bloodlinesPayload),
+    physiques: normalizeTraitEntries("physiques", physiquesPayload),
+  };
+  traitEntriesById.clear();
+  for (const entry of [
+    ...data.entries,
+    ...traitCatalog.bloodlines,
+    ...traitCatalog.physiques,
+  ])
+    traitEntriesById.set(entry.id, entry);
   const manualsResponse = await fetch(toAppUrl("manuals.json"));
   if (!manualsResponse.ok)
     throw new Error(
@@ -600,6 +834,17 @@ async function init() {
   if (!iconMapPayload.icons || typeof iconMapPayload.icons !== "object")
     throw new Error("Manual icon map format is invalid.");
   manualIconMap = iconMapPayload.icons;
+  const traitImageResponse = await fetch(
+    toAppUrl(`trait-image-map.json?v=${encodeURIComponent(traitMapVersion)}`),
+  );
+  if (!traitImageResponse.ok)
+    throw new Error(
+      "Trait image map is missing. Check app/trait-image-map.json and reload.",
+    );
+  const traitImagePayload = await traitImageResponse.json();
+  if (!traitImagePayload.images || typeof traitImagePayload.images !== "object")
+    throw new Error("Trait image map format is invalid.");
+  traitImageMap = traitImagePayload.images;
   try {
     const stored = JSON.parse(
       localStorage.getItem("zenith-guide-tasks") ?? "{}",
@@ -657,6 +902,12 @@ async function init() {
   renderCodex();
   renderQi();
   renderManualTable();
+  document.querySelectorAll("[data-codex-collection]").forEach((button) => {
+    button.addEventListener("click", () => {
+      codexState.collection = button.dataset.codexCollection;
+      renderCodex();
+    });
+  });
   document.addEventListener("click", (event) => {
     const slot = event.target.closest("[data-manual-slot]");
     if (slot) {
@@ -678,6 +929,10 @@ async function init() {
     }
     const entry = event.target.closest("[data-entry]");
     if (entry) {
+      if (entry.classList.contains("trait-label-card")) {
+        toggleTraitCard(entry);
+        return;
+      }
       try {
         showEntry(entry.dataset.entry);
       } catch (error) {
@@ -711,8 +966,7 @@ async function init() {
   });
   $("realm").addEventListener("change", renderStage);
   $("search").addEventListener("input", renderCodex);
-  $("category").addEventListener("change", renderCodex);
-  $("build").addEventListener("change", renderCodex);
+  $("rank-filter").addEventListener("change", renderCodex);
   $("qi-form").addEventListener("input", renderQi);
   $("qi-form").addEventListener("submit", (event) => event.preventDefault());
   $("close-detail").addEventListener("click", () => $("detail").close());

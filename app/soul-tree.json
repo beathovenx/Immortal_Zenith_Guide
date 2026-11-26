@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T02:10:12.561Z",
+  "fetchedAt": "2026-11-26T14:42:05.173Z",
   "source": "https://api.immortalzenith.com/api/v1/public/wiki/soultree",
   "entries": [
     {
@@ -188,7 +188,7 @@
       "name": "Enduring Vitality",
       "description": "+1% Health regeneration per rank. Stacks to 10.",
       "tier": 3,
-      "col": 0,
+      "col": 2,
       "maxRanks": 10,
       "prereqs": [
         {
@@ -200,7 +200,7 @@
       "value": 1,
       "aspect": "health",
       "image": "/trees/enduring_vitality.png",
-      "row": 4,
+      "row": 3,
       "baseCost": 192,
       "costStep": 98,
       "localImage": "/assets/soul-tree/enduring_vitality.7fd3ae26.webp"
@@ -213,7 +213,7 @@
       "name": "Endless Breath",
       "description": "+1% Energy regeneration per rank. Stacks to 10.",
       "tier": 3,
-      "col": 1,
+      "col": 2,
       "maxRanks": 10,
       "prereqs": [
         {
@@ -250,7 +250,7 @@
       "value": 1,
       "aspect": "stamina",
       "image": "/trees/tireless_sinew.png",
-      "row": 4,
+      "row": 5,
       "baseCost": 192,
       "costStep": 98,
       "localImage": "/assets/soul-tree/tireless_sinew.1f8a85e8.webp"
@@ -1280,7 +1280,7 @@
       "name": "Eternal Defense",
       "description": "+5 Defense per rank. No limit.",
       "tier": 2,
-      "col": 0,
+      "col": 1,
       "maxRanks": 0,
       "prereqs": [
         {
@@ -1292,7 +1292,7 @@
       "value": 5,
       "aspect": "defense",
       "image": "/trees/eternal_defense.png",
-      "row": 3,
+      "row": 2,
       "baseCost": 113,
       "costStep": 66,
       "localImage": "/assets/soul-tree/eternal_defense.7a5890f1.webp"
@@ -1330,7 +1330,7 @@
       "name": "Eternal Speed",
       "description": "+2 Speed per rank. No limit.",
       "tier": 2,
-      "col": 2,
+      "col": 1,
       "maxRanks": 0,
       "prereqs": [
         {
@@ -2903,7 +2903,7 @@
       "tree": "crafting",
       "branch": "mastery",
       "name": "Polymath Soul",
-      "description": "Unlock an additional crafting specialization. 3 ranks → all four professions.",
+      "description": "Commit to one more craft at once (they share your crafting slots); 3 ranks: four of the five crafts.",
       "tier": 1,
       "col": 2,
       "maxRanks": 3,
@@ -2918,7 +2918,7 @@
       "image": "/trees/polymath_soul.png",
       "row": 1,
       "baseCost": 354,
-      "costStep": 265,
+      "costStep": 1220,
       "localImage": "/assets/soul-tree/polymath_soul.7fedbb40.webp"
     },
     {
@@ -3081,7 +3081,7 @@
       "tree": "crafting",
       "branch": "memory",
       "name": "Diagram Recall",
-      "description": "Carry 5 array diagrams through rebirth, per rank.",
+      "description": "Carry 5 array part diagrams through rebirth, per rank, taken in turn from each part kind (activation sequence, elemental essence, flow pattern, formation design), best tier first. Assembled arrays and master designs are not kept.",
       "tier": 1,
       "col": 2,
       "maxRanks": 6,
@@ -3229,7 +3229,7 @@
       "prereqs": [
         {
           "nodeId": "deep_reservoir",
-          "ranks": 10
+          "ranks": 5
         },
         {
           "nodeId": "qi_gen_rate",
